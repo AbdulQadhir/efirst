@@ -1,20 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React from 'react';
 import {
   StyleSheet,
   View,
-  Text,
+  ScrollView,
   Dimensions
 } from 'react-native';
 
-import {Input, LabelInput, LabelHeader, Button, ButtonLabel, ButtonExtLogin } from "./uicomponents/Input";
+import {Input, LabelInput, LabelHeader, Button, ButtonLabel, ButtonExtLogin, LoginFooter } from "./uicomponents/components";
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 const entireScreenWidth = Dimensions.get('window').width;
@@ -24,6 +16,8 @@ const App: () => React$Node = () => {
   return (
     <>
           <View style={styles.body} >
+            <View style={styles.container} >
+            <ScrollView showsVerticalScrollIndicator={false} >
             <LabelHeader label={"Login"} />
 
             <LabelInput label={"Username"} />
@@ -33,6 +27,9 @@ const App: () => React$Node = () => {
             <Button label="Login" />
             <ButtonLabel label={"Don't have an account ? Sign up"} />
             <ButtonExtLogin />
+            </ScrollView >
+            </View>
+            <LoginFooter />
           </View>
     </>
   );
@@ -40,7 +37,12 @@ const App: () => React$Node = () => {
 
 const styles = EStyleSheet.create({
   body : {
-    padding: "30 rem"
+    height: "100%"
+  },
+  container : {
+    padding: "30 rem",
+    backgroundColor: "#f8f9fc",
+    height: "70%"
   }
 });
 
