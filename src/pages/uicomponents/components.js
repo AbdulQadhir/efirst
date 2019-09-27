@@ -157,6 +157,7 @@ export const LoginFooter = (props) => {
     return (
         <View style={styles.loginfooter} >
             <Image style={styles.loginfooter_img} source={img} />
+            <View style={{backgroundColor:"#e2eae7", height:5, width: "30%"}} ></View>
         </View>
     )
 }
@@ -195,12 +196,13 @@ const styles = EStyleSheet.create({
     loginfooter:{
         flex: 1,
         alignItems: "center",
-        height: "30%",
+        height: "20%",
         backgroundColor: "#FFF",
-        paddingTop: "10 rem"
+        paddingTop: "10 rem",
+        justifyContent:"space-around"
     },
     loginfooter_img: {
-        height: "120 rem",
+        height: "90 rem",
         resizeMode: "contain"
     },
     myreqitem_completed : {

@@ -42,7 +42,7 @@ const styles = EStyleSheet.create({
   container : {
     padding: "30 rem",
     backgroundColor: "#f8f9fc",
-    height: "70%"
+    height: "80%"
   }
 });
 

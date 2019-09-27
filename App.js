@@ -16,7 +16,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Page from "./src/pages/splash"
+import Page from "./src/pages/login"
 
 const App: () => React$Node = () => {
   return (
