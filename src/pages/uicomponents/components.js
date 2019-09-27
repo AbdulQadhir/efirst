@@ -39,7 +39,7 @@ export const LabelHeader = (props) => {
 
 export const Button = (props) => {
     return (
-        <TouchableOpacity style={styles.button} {...props}  >
+        <TouchableOpacity  style={[styles.button, props.extraStyle]} {...props}  >
             <Text style={styles.txtBtn} >{props.label}</Text>
         </TouchableOpacity>
     )
@@ -367,12 +367,12 @@ const styles = EStyleSheet.create({
         fontWeight : "bold"
     },
     button : {
+        width: "200 rem",
         padding : "15 rem",
         backgroundColor : "#f90a08",
         borderRadius : "10 rem",
         alignItems : "center",
         alignSelf: "center",
-        width: "50%",
         margin : "8 rem"
     },
     txtBtnLbl :{
