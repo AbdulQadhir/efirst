@@ -289,6 +289,7 @@ const styles = EStyleSheet.create({
         marginTop : "3 rem"
     },
     dash_card_txtTitle : {
+        fontFamily: "Montsterrat",
         fontSize : "$inputFontSize",
         color: "#081344",
         fontWeight: "bold",
@@ -348,19 +349,20 @@ const styles = EStyleSheet.create({
       borderColor : "#081344",
       fontSize : "$inputFontSize",
       paddingHorizontal : "10 rem",
-      paddingVertical : "7 rem",
+      paddingVertical : "5 rem",
       color : "$inputTextColor",
-      margin : "8 rem"
+      margin : "3 rem"
     },
     lblInput : {
         fontSize : "$inputFontSize",
         color : "#081344",
-        margin : "8 rem"
+        margin : "3 rem"
     },
     lblHeader : {
         fontSize : "30 rem",
         color : "#58546b",
-        margin : "8 rem",
+        marginVertical : "10 rem",
+        marginHorizontal : "5 rem",
         fontWeight: "bold"
     },
     txtBtn: {

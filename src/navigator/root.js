@@ -7,11 +7,11 @@ import MainMenu from "./root_main";
 
 const root = createSwitchNavigator(
     {
-        MainMenu: {
-            screen: MainMenu
-        },
         Auth: {
             screen: AuthStack
+        },
+        MainMenu: {
+            screen: MainMenu
         },
     },
     {
