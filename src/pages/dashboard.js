@@ -21,7 +21,7 @@ const App: () => React$Node = () => {
               <DashNotify updates={0} />
               <View style={{ alignSelf:"flex-end"}}>
                 <View style={{ flexDirection: "row", width: "100%", justifyContent:"space-between" }} >
-                  <DashCard updates={0} label="Action Required" type={1} />
+                  <DashCard updates={0} label="Action Required" type={1} onPress={()=>alert("To My Requests")} />
                   <DashCard updates={0} label="In Review" type={2} />
                 </View>
                 <View style={{ flexDirection: "row", width: "100%", justifyContent:"space-between", marginTop:5 }} >

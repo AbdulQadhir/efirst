@@ -12,7 +12,8 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 
-const App: () => React$Node = () => {
+class App extends React.Component {
+  render() {
   return (
     <>
           <View style={styles.body} >
@@ -24,7 +25,7 @@ const App: () => React$Node = () => {
             <Input  />
             <LabelInput label={"Password"} />
             <Input  />
-            <Button label="Login" />
+            <Button label="Login" onPress={()=>this.props.navigation.navigate("MainMenu")} />
             <ButtonLabel label={"Don't have an account ? Sign up"} />
             <ButtonExtLogin />
             </ScrollView >
@@ -33,6 +34,7 @@ const App: () => React$Node = () => {
           </View>
     </>
   );
+}
 };
 
 const styles = EStyleSheet.create({

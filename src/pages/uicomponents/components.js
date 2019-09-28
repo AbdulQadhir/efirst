@@ -96,7 +96,7 @@ export const DashCard = (props) => {
     }
 
     return (
-        <View style={props.type==1 ? styles.dash_card_outer_required : styles.dash_card_outer} >
+        <TouchableOpacity style={props.type==1 ? styles.dash_card_outer_required : styles.dash_card_outer} onPress={props.onPress} >
             <View style={styles.dash_card} >
                 <View style={{ alignItems: "center"  }} >
                     <Image style={styles.dash_card_img} source={img} />
@@ -108,7 +108,7 @@ export const DashCard = (props) => {
                     <Text style={styles.dash_card_txtUpdates} >You have {props.updates} Updates</Text>
                 </View>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 
