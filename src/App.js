@@ -24,7 +24,7 @@ const App: () => React$Node = () => {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor} loading={null}>
-        <Page />
+        <RootContainer />
       </PersistGate>
     </Provider>
   );

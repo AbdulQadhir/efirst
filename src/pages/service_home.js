@@ -1,17 +1,25 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {StyleSheet, View, Text, Dimensions} from 'react-native';
 
 import {ServiceHomeItem} from './uicomponents/components';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import {HeaderTitle, ServiceHomeText} from './uicomponents/components';
 
 import {calcHeight, calcWidth} from '../config';
 import { ScrollView } from 'react-native-gesture-handler';
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
-const App: () => React$Node = () => {
+
+class App extends Component {
+  
+  static navigationOptions = {
+    headerTitle: <HeaderTitle title="Request a Service" />
+  };
+
+  render() {
   return (
     <View style={styles.body}>
-      <ScrollView >
+      <ScrollView showsVerticalScrollIndicator={false} >
       <View
         style={{
           flexDirection: 'column',
@@ -23,17 +31,18 @@ const App: () => React$Node = () => {
             <ServiceHomeItem title="Translation Services" desc="Get your documents translated as legally required" />
             <ServiceHomeItem title="Visa Services" desc="Apply for New VISA, renewals and cancellations" />
             <ServiceHomeItem title="Tax/Vat Services" desc="Get your TAX/VAT as legally required" />
-            <Text style={styles.bottomText} >
-            {`Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
+            <ServiceHomeText text={`Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
 
 Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum`}
-            </Text>
+            />
         </View>
       </View>
       </ScrollView >
     </View>
   );
+}
 };
+
 
 const styles = EStyleSheet.create({
   body: {
@@ -42,9 +51,6 @@ const styles = EStyleSheet.create({
     paddingRight: calcWidth(7.5),
     paddingLeft: calcWidth(7.5),
   },
-  bottomText : {
-    fontSize: "15 rem"
-  }
 });
 
 export default App;

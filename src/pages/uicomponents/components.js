@@ -278,47 +278,69 @@ export const ServiceHomeItem = props => {
   );
 };
 
+export const HeaderTitle = props => {
+  return (
+    <View style={{flex:1, justifyContent: "center"}}>
+    <Text style={styles.header_title} >{props.title}</Text>
+    </View>
+  );
+};
+
+export const ServiceHomeText = props => {
+  return (
+    <Text style={styles.servicehome_text} >{props.text}</Text>
+  );
+};
 const styles = EStyleSheet.create({
+  header_title: {
+    textAlign:"center",
+    fontSize: RFValue(17),
+    fontWeight: "bold"
+  },
+  servicehome_text: {
+    fontSize: RFValue(14),
+    padding: calcHeight(0.5),
+  },
   servicehome_item : {
-    padding: "5 rem",
+    padding: calcHeight(1),
     borderBottomWidth : 1,
     borderColor: "#999999",
     width: "100%",
     flexDirection : "row",
-    paddingHorizontal: "20 rem",
+    paddingHorizontal: calcHeight(2),
   },
   servicehome_item_right : {
-    padding: "5 rem",
-    paddingHorizontal: "10 rem",
+    padding: calcHeight(1),
+    paddingHorizontal: calcHeight(1.5),
     flex: 1
   },
   servicehome_item_title:{
-    fontSize : "18 rem",
+    fontSize: RFValue(16),
     fontWeight : "bold",
-    paddingVertical: "5 rem"
+    paddingVertical: calcHeight(0.5),
   },
   servicehome_item_btn:{
     backgroundColor: "#47489f",
-    padding: "5 rem",
+    padding: calcHeight(0.5),
     alignItems: "center",
-    borderRadius: "5 rem",
+    borderRadius: calcHeight(1),
     width: "50%"
   },
   servicehome_item_btntxt:{
-    fontSize : "14 rem",
+    fontSize: RFValue(13),
     color:"#FFF",
     textAlign: "center",
     fontWeight: "bold",
   },
   servicehome_item_text: {
-    fontSize : "12 rem",
+    fontSize: RFValue(11),
     color: "#666666",
-    paddingVertical: "5 rem",
+    paddingVertical: calcHeight(1),
   },
   servicehome_item_img: {
-    width: "33 rem",
-    height: "33 rem",
-    margin: "8 rem"
+    width: calcHeight(8),
+    height: calcHeight(8),
+    margin: calcHeight(1),
   },
   loginfooter: {
     alignItems: 'center',

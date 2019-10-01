@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import HomeScreen from './screen';
 import {DashboardData} from './action';
-import {View} from 'react-native';
+import {View,Text} from 'react-native';
 import {serviceRequestData} from '../service/action';
 import {profileData} from '../profile/action';
 import {
@@ -16,6 +16,8 @@ import {FAQCategoryData, clearFaq} from '../faq/action';
 import AlertView from '../../styled/alert-view';
 import Loader from '../../styled/loader';
 import OneSignal from 'react-native-onesignal';
+import {HeaderTitle} from '../../pages/uicomponents/components';
+
 class Container extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +26,10 @@ class Container extends Component {
     };
     this.onOpened = this.onOpened.bind(this);
   }
+
+  static navigationOptions = {
+    headerTitle: <HeaderTitle title="Dashboard" />
+  };
 
   onOpened(openResult) {
     const data = openResult.notification.payload.additionalData;
