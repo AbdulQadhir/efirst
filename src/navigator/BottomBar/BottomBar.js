@@ -53,7 +53,9 @@ class BottomBar extends Component {
           <Text style={styles.text}>Dashboard</Text>
         </TouchableOpacity>
         <View style={styles.divider}></View>
-        <TouchableOpacity style={styles.view}>
+        <TouchableOpacity
+          style={styles.view}
+          onPress={this.navigateToScreen('Services')}>
           <Image
             source={require('../../Assets/bottom_bar/request_white_icon.png')}
             style={styles.img}

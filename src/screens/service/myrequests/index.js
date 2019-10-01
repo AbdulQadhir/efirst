@@ -6,6 +6,7 @@ import {servicesData, serviceRequestData} from '../action';
 import {View, StyleSheet, Text} from 'react-native';
 import Loader from '../../../styled/loader';
 import AlertView from '../../../styled/alert-view';
+import {HeaderTitle} from '../../../pages/uicomponents/components';
 
 class Container extends Component {
   _didFocusSubscription;
@@ -21,6 +22,11 @@ class Container extends Component {
 
     this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
   }
+  static navigationOptions = ({navigation}) => {
+    return {
+      title: navigation.getParam('headerTitle', 'My Requests'),
+    };
+  };
 
   componentDidUpdate = prevProps => {
     const {success} = this.props.services;

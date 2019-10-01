@@ -36,16 +36,6 @@ class RootContainer extends Component {
     <SafeAreaView
       style={{flex: 1}}
       forceInset={{bottom: 'never', top: 'never'}}>
-      {Platform.OS === 'ios' && (
-        <View
-          style={{
-            width: '100%',
-            height: STATUS_BAR_HEIGHT,
-            backgroundColor: '#f8f9fc',
-          }}>
-          <StatusBar barStyle="dark-content" />
-        </View>
-      )}
       {/* ))} */}
       <StatusBar backgroundColor="#f8f9fc" barStyle="dark-content" />
       <Fragment>

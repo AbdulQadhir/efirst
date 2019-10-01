@@ -1,15 +1,16 @@
 import {createDrawerNavigator} from 'react-navigation-drawer';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
-// import Dashboard from '../pages/dashboard';
-import Dashboard from '../screens/dashboard';
-import MyRequests from '../screens/service/myrequests';
+import DashboardStack from './dash_stack';
+import MyRequestStack from './myrequest_stack';
+import ServiceStack from './service_stack';
 import SideMenu from './SideMenu/SideMenu';
 import BottomBar from './BottomBar/BottomBar';
 
 const Tabs = createBottomTabNavigator(
   {
-    Dashboard: {screen: Dashboard},
-    MyRequests: {screen: MyRequests},
+    Dashboard: {screen: DashboardStack},
+    MyRequestStack: {screen: MyRequestStack},
+    Services: {screen: ServiceStack},
   },
   {
     tabBarComponent: BottomBar,
@@ -18,7 +19,13 @@ const Tabs = createBottomTabNavigator(
       inactiveTintColor: '#ddd',
     },
     defaultNavigationOptions: {
-      header: null,
+      headerStyle: {
+        backgroundColor: '#f4511e',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
     },
   },
 );

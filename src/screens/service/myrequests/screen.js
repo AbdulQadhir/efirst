@@ -127,6 +127,7 @@ export default ({
 const styles = EStyleSheet.create({
   body: {
     height: '100%',
+    backgroundColor: '#f8f9fc',
   },
   paddingView: {
     paddingRight: calcWidth(7.5),
