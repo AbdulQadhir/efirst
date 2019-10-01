@@ -28,6 +28,28 @@ import {
   userprofile,
   changepassword,
 } from '../screens/profile/reducer';
+
+import {
+  countries,
+  attestationrate,
+  documenttypes,
+  services,
+  documentattestation,
+  langtranslation,
+  documentlanguage,
+  certificatetype,
+  servicerequest,
+  translationrate,
+  message,
+  visaservice,
+  docSRAmUpdation,
+  srActivation,
+} from '../screens/service/reducer';
+
+import {faq, faqcategory} from '../screens/faq/reducer';
+
+import {dashboard} from '../screens/dashboard/reducer';
+
 import {onesignal, onesignalInfo} from '../screens/onesignal/reducer';
 const combinedReducers = {
   login,
@@ -49,6 +71,23 @@ const combinedReducers = {
   onesignal,
   onesignalInfo,
   applicationState,
+  countries,
+  attestationrate,
+  documenttypes,
+  services,
+  documentattestation,
+  langtranslation,
+  documentlanguage,
+  certificatetype,
+  servicerequest,
+  translationrate,
+  message,
+  visaservice,
+  docSRAmUpdation,
+  srActivation,
+  faq,
+  faqcategory,
+  dashboard,
 };
 
 export default persistCombineReducers(config, combinedReducers);

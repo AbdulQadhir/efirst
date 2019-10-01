@@ -51,26 +51,30 @@ const App: () => React$Node = () => {
   const emptyText =
     'Lorum ipsum Lorum ipsum Lorum ipsumLorum ipsum Lorum ipsum Lorum ipsumLorum ipsum Lorum ipsum Lorum ipsum;';
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={styles.body}>
+    <View style={styles.body}>
+      <View>
         <SearchBar />
-        {state ? (
-          renderList()
-        ) : (
-          <View style={styles.body}>
-            <NoRequestsLabel label="No new action required item available" />
-            <NoRequestsBody emptyText={emptyText} img={1} />
-          </View>
-        )}
       </View>
-    </ScrollView>
+
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View>
+          {state ? (
+            renderList()
+          ) : (
+            <View style={styles.body}>
+              <NoRequestsLabel label="No new action required item available" />
+              <NoRequestsBody emptyText={emptyText} img={1} />
+            </View>
+          )}
+        </View>
+      </ScrollView>
+    </View>
   );
 };
 
 const styles = EStyleSheet.create({
   body: {
     height: '100%',
-    backgroundColor: '#f8f9fc',
     paddingRight: calcWidth(7.5),
     paddingLeft: calcWidth(7.5),
   },
