@@ -23,9 +23,10 @@ class Container extends Component {
     this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
   }
 
-  static navigationOptions = {
-    headerTitle: <HeaderTitle title="My Requests" />
+  static navigationOptions = ({ navigation }) => {
+    headerTitle: <HeaderTitle title={navigation.getParam('headerTitle', 'My Requests')} />
   };
+
 
   componentDidUpdate = prevProps => {
     const {success} = this.props.services;
