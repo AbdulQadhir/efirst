@@ -4,6 +4,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 import initStore from './store';
 import {Platform} from 'react-native';
 import RootContainer from './rootContainer';
+import Page from './pages/service_home';
 const {store, persistor} = initStore();
 import {Sentry, SentrySeverity, SentryLog} from 'react-native-sentry';
 const sentryDsn = Platform.select({
@@ -23,7 +24,7 @@ const App: () => React$Node = () => {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor} loading={null}>
-        <RootContainer />
+        <Page />
       </PersistGate>
     </Provider>
   );

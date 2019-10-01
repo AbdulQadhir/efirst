@@ -263,7 +263,67 @@ export const MyRequestItem = props => {
   );
 };
 
+export const ServiceHomeItem = props => {
+  var img = require(`${assetsPath}Dashboard/card_required.png`);
+  return (
+    <View style={ styles.servicehome_item}>
+      <View >
+          <Image style={styles.servicehome_item_img} source={img} />
+
+      </View>
+      <View style={styles.servicehome_item_right} >
+        <Text style={styles.servicehome_item_title} >{props.title}</Text>
+        <Text  style={styles.servicehome_item_text} >{props.desc}</Text>
+        <TouchableOpacity  style={styles.servicehome_item_btn} {...props}  >
+            <Text style={styles.servicehome_item_btntxt} >Apply Now</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
 const styles = EStyleSheet.create({
+  servicehome_item : {
+    padding: "5 rem",
+    borderBottomWidth : 1,
+    borderColor: "#999999",
+    width: "100%",
+    flexDirection : "row",
+    paddingHorizontal: "20 rem",
+  },
+  servicehome_item_right : {
+    padding: "5 rem",
+    paddingHorizontal: "10 rem",
+    flex: 1
+  },
+  servicehome_item_title:{
+    fontSize : "18 rem",
+    fontWeight : "bold",
+    paddingVertical: "5 rem"
+  },
+  servicehome_item_btn:{
+    backgroundColor: "#47489f",
+    padding: "5 rem",
+    alignItems: "center",
+    borderRadius: "5 rem",
+    width: "50%"
+  },
+  servicehome_item_btntxt:{
+    fontSize : "14 rem",
+    color:"#FFF",
+    textAlign: "center",
+    fontWeight: "bold",
+  },
+  servicehome_item_text: {
+    fontSize : "12 rem",
+    color: "#666666",
+    paddingVertical: "5 rem",
+  },
+  servicehome_item_img: {
+    width: "33 rem",
+    height: "33 rem",
+    margin: "8 rem"
+  },
   loginfooter: {
     alignItems: 'center',
     height: calcHeight(20),
