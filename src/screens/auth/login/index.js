@@ -13,10 +13,11 @@ class Container extends Component {
   state = {
     success: false,
     error: false,
+    loading: false,
   };
   componentDidMount = async () => {
     if (this.props.token) {
-      // this.props.navigation.navigate('SplashScreen');
+      this.props.navigation.navigate('MainMenu');
     }
     this.props.getExtLoginUrls('0');
   };
@@ -24,6 +25,7 @@ class Container extends Component {
   async componentDidUpdate(prevProps) {
     if (this.props.login.success && !prevProps.login.success) {
       if (this.props.token) {
+        this.setState({loading: true});
         this.props.profileData(this.props.token.token);
       }
     }
@@ -32,9 +34,9 @@ class Container extends Component {
       const PlayerId = await AsyncStorage.getItem('playerid');
       const data = {UserId, PlayerId};
       const token = this.props.token.token;
+      this.setState({loading: false});
       this.props.registerOnesignal({data, token});
-      // this.props.navigation.navigate('SplashScreen');
-      alert('Login Success');
+      this.props.navigation.navigate('MainMenu');
     }
   }
   state = {
@@ -46,9 +48,7 @@ class Container extends Component {
   };
   render = () => (
     <View style={{flex: 1}}>
-      <Loader
-        loading={this.props.login.loading || this.props.profile.loading}
-      />
+      <Loader loading={this.props.login.loading || this.state.loading} />
 
       <LoginScreen
         {...this.props}

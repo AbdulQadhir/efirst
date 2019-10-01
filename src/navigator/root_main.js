@@ -1,7 +1,8 @@
 import {createDrawerNavigator} from 'react-navigation-drawer';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
-import Dashboard from '../pages/dashboard';
-import MyRequests from '../pages/myrequests';
+// import Dashboard from '../pages/dashboard';
+import Dashboard from '../screens/dashboard';
+import MyRequests from '../screens/service/myrequests';
 import SideMenu from './SideMenu/SideMenu';
 import BottomBar from './BottomBar/BottomBar';
 

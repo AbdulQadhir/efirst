@@ -229,34 +229,30 @@ export const LoginFooter = props => {
   );
 };
 
-export const MyRequestItem = props => {
-  var status_type = null;
-  switch (props.type) {
-    case 1:
-      status_type = styles.myreqitem_completed;
-      break;
-    case 2:
-      status_type = styles.myreqitem_rejected;
-      break;
-    default:
-      status_type = styles.myreqitem_other;
-  }
+export const MyRequestItem = ({
+  service,
+  color,
+  backgroundColor,
+  statusLabel,
+}) => {
   return (
     <View style={styles.myreqitem}>
       <View style={{flex: 1}}>
         <Text style={styles.myreqitem_head}>Date</Text>
-        <Text style={styles.myreqitem_text}>{props.date}</Text>
+        <Text style={styles.myreqitem_text}>{service.CreatedDate}</Text>
       </View>
       <View style={{flex: 2}}>
         <Text style={styles.myreqitem_head}>Service Request</Text>
-        <Text style={styles.myreqitem_text}>{props.service}</Text>
+        <Text style={styles.myreqitem_text}>
+          {service.SRTitle} - SR{service.SRID}
+        </Text>
       </View>
       <View style={{flex: 1}}>
         <Text style={[styles.myreqitem_head, {textAlign: 'center'}]}>
           Status
         </Text>
-        <Text style={[styles.myreqitem_status, status_type]}>
-          {props.status}
+        <Text style={[styles.myreqitem_status, {backgroundColor, color}]}>
+          {statusLabel}
         </Text>
       </View>
     </View>
@@ -335,18 +331,7 @@ const styles = EStyleSheet.create({
     height: calcHeight(14),
     resizeMode: 'contain',
   },
-  myreqitem_completed: {
-    backgroundColor: '#008837',
-    color: '#ffffff',
-  },
-  myreqitem_rejected: {
-    backgroundColor: '#ff0000',
-    color: '#ffffff',
-  },
-  myreqitem_other: {
-    backgroundColor: '#f84563',
-    color: '#ffffff',
-  },
+
   myreqitem_status: {
     padding: calcHeight(0.5),
     fontSize: RFValue(11),
