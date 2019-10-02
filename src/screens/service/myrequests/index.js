@@ -27,7 +27,6 @@ class Container extends Component {
     headerTitle: <HeaderTitle title={navigation.getParam('headerTitle', 'My Requests')} />
   };
 
-
   componentDidUpdate = prevProps => {
     const {success} = this.props.services;
     //console.log('result => ', `${loading} - ${error} - ${data}`);
