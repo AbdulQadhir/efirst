@@ -34,7 +34,7 @@ class App extends Component {
             }}>
             <View style={{flex: 1, justifyContent: 'center'}}>
               <ServiceHomeItem
-                onPress={()=>this.props.navigation.navigate("Attestation")}
+             
                 title="Attestation Services"
                 desc="Get your certificates attested as legally required"
                 type={1}
