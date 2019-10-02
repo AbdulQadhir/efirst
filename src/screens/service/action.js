@@ -136,7 +136,7 @@ const openFetcher = async (fetchData, type, dispatch) => {
   dispatch(setInStore(null, type.ERROR));
   try {
     const result = await fetchData();
-    console.log('result = > ' + JSON.stringify(result));
+
     if (checkResult(result, dispatch, error => setInStore(error, type.ERROR))) {
       dispatch(setInStore(true, type.SUCCESS));
       dispatch({type: 'APPLICATION_STATE_SUCCESS'});
@@ -157,7 +157,6 @@ const openAttestationFetcher = async (fetchData, type, dispatch) => {
   dispatch(setInStore(null, type.ERROR));
   try {
     const result = await fetchData();
-    console.log('result = > ' + JSON.stringify(result));
     if (checkResult(result, dispatch, error => setInStore(error, type.ERROR))) {
       dispatch(setInStore(result.data, type.DONE));
       dispatch(setInStore(true, type.SUCCESS));
@@ -198,7 +197,7 @@ const Fetcher = async (fetchData, type, dispatch) => {
 export const docAttestationCreate = payload => dispatch => {
   const {token, ...bodyData} = payload;
   const body = JSON.stringify(bodyData);
-  console.log('Body', body);
+
   return openAttestationFetcher(
     async () => {
       const result = await fetch(DOC_ATTESTATION_CREATE_URL, {
@@ -224,7 +223,7 @@ export const docAttestationCreate = payload => dispatch => {
 export const visaServiceCreate = payload => dispatch => {
   const {token, data} = payload;
   const body = data;
-  console.log('result = > ', body);
+
   return openAttestationFetcher(
     async () => {
       const result = await fetch(VISASERVICE_URL, {
@@ -250,8 +249,7 @@ export const visaServiceCreate = payload => dispatch => {
 export const updAttestationSRAmt = payload => dispatch => {
   const {token, ...bodyData} = payload;
   const body = JSON.stringify(bodyData);
-  console.log('Body', 'result = > Body : ' + body);
-  console.log('Body', 'result = > token : ' + token);
+
   return openAttestationFetcher(
     async () => {
       const result = await fetch(
@@ -305,9 +303,7 @@ export const activateSR = payload => dispatch => {
 
 export const sendOrReplyMessage = payload => dispatch => {
   const {token, ...bodyData} = payload;
-  console.log('Body Data', bodyData);
   const body = JSON.stringify(bodyData);
-  console.log(body);
   return openFetcher(
     async () => {
       const result = await fetch(MESSAGE_URL, {
@@ -438,9 +434,6 @@ export const attestationPrice = ({
   CertificateType,
   token,
 }) => dispatch => {
-  console.log(
-    `${ATTESTATION_PRICE_URL}?countryId=${CountryId}&documentTypeId=${CertificateType}`,
-  );
   return Fetcher(
     async () => {
       const result = await fetch(
@@ -469,9 +462,6 @@ export const translationPrice = ({
   toLanguage,
   token,
 }) => dispatch => {
-  console.log(
-    `${TRANSLATION_PRICE_URL}?fromLanguage=${fromLanguage}&toLanguage=${toLanguage}`,
-  );
   return Fetcher(
     async () => {
       const result = await fetch(
@@ -509,7 +499,6 @@ export const servicesData = ({statusId, token}) => dispatch => {
         },
       });
 
-      console.log('result =>', result);
       return result.json().then(data => ({
         data: data,
         status: result.ok,

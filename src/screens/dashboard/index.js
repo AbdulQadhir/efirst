@@ -16,7 +16,7 @@ import {FAQCategoryData, clearFaq} from '../faq/action';
 import AlertView from '../../styled/alert-view';
 import Loader from '../../styled/loader';
 import OneSignal from 'react-native-onesignal';
-import {HeaderTitle} from '../../pages/uicomponents/components';
+import {HeaderBtnMenu} from '../../pages/uicomponents/components';
 
 class Container extends Component {
   constructor(props) {
@@ -28,9 +28,14 @@ class Container extends Component {
     this.onOpened = this.onOpened.bind(this);
   }
 
-  static navigationOptions = {
+  static navigationOptions = ({navigation}) => ({
     title: 'Dashboard',
-  };
+    headerLeft: (
+      <View style={{flexDirection: "row"}} >
+        <HeaderBtnMenu onPress={() => alert("")} />
+      </View>
+    )
+  });
 
   onOpened(openResult) {
     const data = openResult.notification.payload.additionalData;

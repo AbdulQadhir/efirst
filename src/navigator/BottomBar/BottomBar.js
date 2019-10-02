@@ -37,6 +37,7 @@ class BottomBar extends Component {
     this.props.navigation.navigate('MyRequests', {
       headerTitle: 'My Requests',
       noDataLabel: 'No recent service request',
+      statusId: null,
     });
   }
   render() {

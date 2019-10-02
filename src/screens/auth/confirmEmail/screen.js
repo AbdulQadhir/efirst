@@ -45,6 +45,7 @@ const ConfirmEmail = ({
           onChangeText={value => setFieldValue('code', value)}
           value={values.code}
           error={touched.code && errors.code}
+          keyboardType="number-pad"
         />
         {errors.code && <ErrorLabel label={errors.code} />}
 

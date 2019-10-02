@@ -58,6 +58,7 @@ const RegistrationForm = ({
         onChangeText={value => setFieldValue('MobileNumber', value)}
         value={values.MobileNumber}
         error={touched.MobileNumber && errors.MobileNumber}
+        keyboardType="phone-pad"
       />
       {errors.MobileNumber && <ErrorLabel label={errors.MobileNumber} />}
       <LabelInput label={'Password'} />
@@ -106,7 +107,7 @@ export default withFormik({
       .required('Required'),
     Email: Yup.string()
       .min(4, 'Must be longer than 4 characters')
-      .email('Invalid')
+      .email('Invalid Email')
       .required('Required'),
     MobileNumber: Yup.string().required('Required'),
     Password: Yup.string()

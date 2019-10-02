@@ -11,7 +11,6 @@ import OneSignal from 'react-native-onesignal';
 class RootContainer extends Component {
   constructor(props) {
     super(props);
-    console.log('props---->', props);
   }
   componentDidMount() {
     OneSignal.addEventListener('received', this.onReceived);

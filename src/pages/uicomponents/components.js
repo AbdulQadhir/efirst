@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   View,
   Image,
+  Picker,
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
@@ -13,6 +14,9 @@ import {calcHeight, calcWidth} from '../../config';
 const entireScreenWidth = Dimensions.get('window').width;
 import LinearGradient from 'react-native-linear-gradient';
 import {BASE_URL} from '../../constants';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import IconsAws from 'react-native-vector-icons/FontAwesome';
+
 EStyleSheet.build({
   $rem: entireScreenWidth / 380,
   $inputFontSize: RFPercentage(2),
@@ -190,21 +194,21 @@ export const NoRequestsLabel = props => {
 
 export const NoRequestsBody = props => {
   var img = require(`${assetsPath}myrequests/empty1.png`);
-  /*   switch(props.type)
-    {
-        case 1: 
-            img = require(`${assetsPath}myrequests/empty1.png`);
-            break;
-        case 2: 
-            img = require(`${assetsPath}myrequests/empty2.png`);
-            break;
-        case 3: 
-            img = require(`${assetsPath}myrequests/empty3.png`);
-            break;
-    }
-*/
+  switch (props.img) {
+    case 3:
+      img = require(`${assetsPath}myrequests/empty2.png`);
+      break;
+    case 4:
+      img = require(`${assetsPath}myrequests/empty3.png`);
+      break;
+  }
+
   return (
-    <View style={{flexDirection: 'row', justifyContent: 'center', flex: 1}}>
+    <View
+      style={{
+        justifyContent: 'center',
+        flex: 1,
+      }}>
       <View style={styles.no_request_inner}>
         <Image style={styles.no_request_img} source={img} />
         <Text style={styles.no_request_body_text}>{props.emptyText}</Text>
@@ -260,7 +264,18 @@ export const MyRequestItem = ({
 };
 
 export const ServiceHomeItem = props => {
-  var img = require(`${assetsPath}Dashboard/card_required.png`);
+  var img = require(`${assetsPath}service/attestation-icon.png`);
+  switch (props.type) {
+    case 1:
+      img = require(`${assetsPath}service/attestation-icon.png`);
+      break;
+    case 2:
+      img = require(`${assetsPath}service/translation-icon.png`);
+      break;
+    case 3:
+      img = require(`${assetsPath}service/visa-icon.png`);
+      break;
+  }
   return (
     <View style={styles.servicehome_item}>
       <View>
@@ -288,10 +303,98 @@ export const HeaderTitle = props => {
 export const ServiceHomeText = props => {
   return <Text style={styles.servicehome_text}>{props.text}</Text>;
 };
+
+export const Pick = props => {
+  return (
+    <Picker
+      {...props}
+      style={styles.picker}
+      itemStyle={styles.pickeritem}></Picker>
+  );
+};
+
+export const HeaderBtnMenu = props => {
+  return (
+    <TouchableOpacity
+      style={{
+        padding: calcHeight(1),
+
+        paddingLeft: calcWidth(5),
+      }}
+      onPress={props.onPress}>
+      <Ionicons
+        name="ios-menu"
+        style={{
+          color: '#081344',
+          fontSize: RFValue(25),
+        }}
+      />
+    </TouchableOpacity>
+  );
+};
+
+export const HeaderBtnBack = props => {
+  return (
+    <TouchableOpacity
+      style={{
+        padding: calcHeight(1),
+        marginTop: calcHeight(0.2),
+        paddingLeft: calcWidth(5),
+      }}
+      onPress={props.onPress}>
+      <Ionicons
+        name="ios-arrow-back"
+        style={{
+          color: '#081344',
+          fontSize: RFValue(22),
+        }}
+      />
+    </TouchableOpacity>
+  );
+};
+
+export const HeaderBtnProfile = props => {
+  return (
+    <TouchableOpacity
+      style={{
+        padding: calcHeight(1),
+        paddingRight: calcWidth(4.5),
+        // height: calcHeight(5.5),
+      }}
+      onPress={props.onPress}>
+      <IconsAws
+        name="user-circle-o"
+        style={{
+          color: '#081344',
+          fontSize: RFValue(20),
+        }}
+      />
+    </TouchableOpacity>
+  );
+};
+
 const styles = EStyleSheet.create({
+  pickeritem: {
+    fontSize: '$inputFontSize',
+    paddingHorizontal: calcWidth(1.5),
+    paddingVertical: calcHeight(0.8),
+    color: '$inputTextColor',
+    margin: 5,
+    fontFamily: 'Montserrat-Light',
+  },
+  picker: {
+    borderBottomWidth: 1,
+    borderColor: '#081344',
+    fontSize: '$inputFontSize',
+    paddingHorizontal: calcWidth(1.5),
+    paddingVertical: calcHeight(0.8),
+    color: '$inputTextColor',
+    margin: 5,
+    fontFamily: 'Montserrat-Light',
+  },
   header_title: {
     textAlign: 'center',
-    fontSize: RFValue(17),
+    fontSize: RFValue(16.8),
     fontWeight: 'bold',
   },
   servicehome_text: {
@@ -321,13 +424,13 @@ const styles = EStyleSheet.create({
   },
   servicehome_item_btn: {
     backgroundColor: '#47489f',
-    padding: calcHeight(0.5),
+    padding: calcHeight(0.9),
     alignItems: 'center',
     borderRadius: calcHeight(1),
-    width: '50%',
+    width: calcHeight(12.5),
   },
   servicehome_item_btntxt: {
-    fontSize: RFValue(11.5),
+    fontSize: calcHeight(1.6),
     color: '#FFF',
     textAlign: 'center',
     fontFamily: 'Montserrat-Medium',
@@ -402,7 +505,7 @@ const styles = EStyleSheet.create({
     padding: calcHeight(2),
   },
   no_request_lbl: {
-    marginTop: calcHeight(2),
+    marginTop: calcHeight(1.5),
     borderBottomWidth: 1,
     alignItems: 'center',
     borderColor: '#999999',
@@ -605,5 +708,25 @@ const styles = EStyleSheet.create({
     fontSize: '$inputFontSize',
     fontFamily: 'Montserrat-SemiBold',
     marginLeft: calcWidth(1),
+  },
+});
+
+export const hdrStyles = EStyleSheet.create({
+  header: {
+    backgroundColor: '#f8f9fc',
+    elevation: 0,
+    shadowColor: 'transparent',
+    shadowOpacity: 0,
+    borderBottomColor: 'transparent',
+    height: calcHeight(5.5),
+  },
+  title: {
+    color: '#081344',
+    fontFamily: 'Montserrat-SemiBold',
+    fontSize: RFValue(17),
+    textAlign: 'center',
+    // backgroundColor: 'red',
+    //flex: 1,
+    width: '100%',
   },
 });

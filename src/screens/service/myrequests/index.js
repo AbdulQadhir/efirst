@@ -6,7 +6,10 @@ import {servicesData, serviceRequestData} from '../action';
 import {View, StyleSheet, Text} from 'react-native';
 import Loader from '../../../styled/loader';
 import AlertView from '../../../styled/alert-view';
-import {HeaderTitle} from '../../../pages/uicomponents/components';
+import {
+  HeaderBtnMenu,
+  HeaderBtnBack,
+} from '../../../pages/uicomponents/components';
 
 class Container extends Component {
   _didFocusSubscription;
@@ -23,12 +26,16 @@ class Container extends Component {
 
     this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
   }
-  static navigationOptions = ({navigation}) => {
-    return {
-      title: navigation.getParam('headerTitle', 'My Requests'),
-    };
-  };
 
+  static navigationOptions = ({navigation}) => ({
+    title: navigation.getParam('headerTitle', 'My Requests'),
+    headerLeft: (
+      <View style={{flexDirection: 'row'}}>
+        <HeaderBtnMenu onPress={() => alert('')} />
+        <HeaderBtnBack onPress={() => navigation.navigate('Dashboard')} />
+      </View>
+    ),
+  });
   componentDidUpdate = prevProps => {
     const {success, error} = this.props.services;
     //console.log('result => ', `${loading} - ${error} - ${data}`);
@@ -45,7 +52,8 @@ class Container extends Component {
   _onRefresh = () => {
     this.setState({Refreshing: true});
     const {token} = this.props.token;
-    this.props.servicesData({statusId: null, token});
+    const statusId = this.props.navigation.getParam('statusId', null);
+    this.props.servicesData({statusId: statusId, token});
   };
 
   setSearchText = searchText => {
@@ -67,7 +75,7 @@ class Container extends Component {
   }
 
   handleBackButtonClick() {
-    this.props.navigation.navigate('HomeScreen');
+    this.props.navigation.navigate('Dashboard');
     return true;
   }
   render = () => {

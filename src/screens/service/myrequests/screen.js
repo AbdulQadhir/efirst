@@ -18,6 +18,7 @@ export default ({
   serviceRequestData,
   headerTitle,
   setSearchText,
+  statusId,
   noDataLabel,
   state,
   _onRefresh,
@@ -75,6 +76,8 @@ export default ({
         break;
     }
   };
+  const emptyText =
+    'Lorum ipsum Lorum ipsum Lorum ipsumLorum ipsum Lorum ipsum Lorum ipsumLorum ipsum Lorum ipsum Lorum ipsum;';
   var renderList = () => {
     return services.data.length > 0 ? (
       services.data
@@ -93,9 +96,9 @@ export default ({
           return <MyRequestItem service={service} {...res} />;
         })
     ) : (
-      <View style={styles.body}>
+      <View style={[styles.body, {height: calcHeight(70)}]}>
         <NoRequestsLabel label={noDataLabel} />
-        {/* <NoRequestsBody emptyText={emptyText} img={1} /> */}
+        <NoRequestsBody emptyText={emptyText} img={statusId} />
       </View>
     );
   };

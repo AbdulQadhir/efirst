@@ -64,14 +64,13 @@ class Container extends Component {
         {...this.props}
         changeInternetStatus={this.changeInternetStatus}
       />
-      {this.props.confirmemail.success &&
-        this.state.success(
-          <AlertView
-            clearAlert={() => this.setState({success: false})}
-            type="success"
-            message="Verification completed successfully. Pls Login.."
-          />,
-        )}
+      {this.props.confirmemail.success && this.state.success && (
+        <AlertView
+          clearAlert={() => this.setState({success: false})}
+          type="success"
+          message="Verification completed successfully. Pls Login.."
+        />
+      )}
       {this.props.login.error && this.state.error && (
         <AlertView
           clearAlert={() => this.setState({error: false})}

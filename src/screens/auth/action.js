@@ -163,7 +163,7 @@ const openRegFetcher = async (fetchData, type, dispatch) => {
   dispatch(setInStore(null, type.ERROR));
   try {
     const result = await fetchData();
-    console.log(result);
+
     if (checkResult(result, dispatch, error => setInStore(error, type.ERROR))) {
       if (!result.data) {
         dispatch(setInStore(false, type.LOADING));
@@ -280,7 +280,7 @@ export const extRegisterUser = payload => dispatch => {
 export const confirmEmail = payload => dispatch => {
   const {code, userid} = payload;
   const url = `${CONFIRM_EMAIL_URL}?userId=${userid}&code=${code}`;
-  console.log(url);
+
   return openFetcher2(
     async () => {
       const result = await fetch(url, {
@@ -325,7 +325,7 @@ export const resetPasswordUser = payload => dispatch => {
 
 export const forgetChangePassword = payload => dispatch => {
   const body = JSON.stringify(payload);
-  console.log('body', body);
+
   return openFetcher2(
     async () => {
       const result = await fetch(CHANGE_PASSWORD_URL, {
@@ -406,7 +406,6 @@ export const getUserInfo = token => dispatch => {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log('Result', result);
       return result.json().then(data => ({
         data: data,
         status: result.ok,

@@ -42,6 +42,7 @@ const RegistrationForm = ({
         onChangeText={value => setFieldValue('Token', value)}
         value={values.Token}
         error={touched.Token && errors.Token}
+        keyboardType="number-pad"
       />
       {errors.Token && <ErrorLabel label={errors.Token} />}
       <LabelInput label={'New Password'} />

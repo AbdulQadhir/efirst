@@ -53,6 +53,7 @@ class Container extends Component {
           <AlertView
             clearAlert={() => this.setState({error: false})}
             type="error"
+            message="Invalid Code"
           />
         )}
         {success && this.state.success && (
@@ -61,12 +62,14 @@ class Container extends Component {
             type="success"
           />
         )}
-        <AlertView
-          Timeout={true}
-          defaultType={true}
-          type="success"
-          message="Please check your email for verification code"
-        />
+        {!this.state.error && (
+          <AlertView
+            Timeout={true}
+            defaultType={true}
+            type="success"
+            message="Please check your email for verification code"
+          />
+        )}
       </View>
     );
   };
