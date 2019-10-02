@@ -25,14 +25,13 @@ export default DashboardStack = createStackNavigator(
         color: '#081344',
         fontFamily: 'Montserrat-SemiBold',
         fontSize: RFValue(18),
-        marginTop: calcHeight(1.5),
-        //height: calcHeight(5),
+        textAlign: 'center',
+        flex: 1,
       },
       headerLeft: (
         <TouchableOpacity
           style={{
             padding: calcHeight(1),
-            paddingTop: calcHeight(1.5),
             paddingLeft: calcWidth(5),
             // height: calcHeight(5.5),
           }}
@@ -49,7 +48,6 @@ export default DashboardStack = createStackNavigator(
       headerRight: (
         <TouchableOpacity
           style={{
-            paddingTop: calcHeight(1.5),
             padding: calcHeight(1),
             paddingRight: calcWidth(4.5),
             // height: calcHeight(5.5),

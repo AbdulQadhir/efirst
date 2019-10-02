@@ -18,6 +18,7 @@ class Container extends Component {
       noDataLabel: '',
       searchText: '',
       Refreshing: false,
+      error: false,
     };
 
     this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
@@ -29,11 +30,15 @@ class Container extends Component {
   };
 
   componentDidUpdate = prevProps => {
-    const {success} = this.props.services;
+    const {success, error} = this.props.services;
     //console.log('result => ', `${loading} - ${error} - ${data}`);
 
     if (success && !prevProps.services.success) {
       this.setState({Refreshing: false});
+    }
+
+    if (error && !prevProps.services.error) {
+      this.setState({error: true});
     }
   };
 
@@ -83,7 +88,12 @@ class Container extends Component {
           {...this.props.navigation.state.params}
           setSearchText={this.setSearchText}
         />
-        {error && <AlertView type="error" />}
+        {error && this.state.error && (
+          <AlertView
+            clearAlert={() => this.setState({error: false})}
+            type="error"
+          />
+        )}
         {/* {success && <AlertView type="success" />} */}
       </View>
     );

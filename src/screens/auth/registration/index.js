@@ -6,6 +6,9 @@ import {View} from 'react-native';
 import Loader from '../../../styled/loader';
 import AlertView from '../../../styled/alert-view';
 class Container extends Component {
+  state = {
+    error: false,
+  };
   componentDidMount = () => {
     //if (this.props.user) this.props.navigation.navigate('Profile');
   };
@@ -15,6 +18,10 @@ class Container extends Component {
         redirectFrom: 'Register',
       });
     }
+
+    if (this.props.registration.error && !prevProps.registration.error) {
+      this.setState({error: true});
+    }
   };
   render = () => {
     const {loading, error, success} = this.props.registration;
@@ -22,7 +29,13 @@ class Container extends Component {
       <View style={{flex: 1}}>
         <Loader loading={loading} />
         <RegistrationScreen {...this.props} />
-        {error && <AlertView type="error" message="Email already exist." />}
+        {error && this.state.error && (
+          <AlertView
+            clearAlert={() => this.setState({error: false})}
+            type="error"
+            message="Email already exist."
+          />
+        )}
       </View>
     );
   };

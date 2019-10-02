@@ -100,8 +100,9 @@ export default ({
               }}>
               <DashCard
                 updates={
-                  dashboard.data &&
-                  dashboard.data.Tiles.ActionRequiredNewUpdateCount
+                  dashboard.data
+                    ? dashboard.data.Tiles.ActionRequiredNewUpdateCount
+                    : '0'
                 }
                 label="Action Required"
                 type={1}
@@ -109,7 +110,9 @@ export default ({
               />
               <DashCard
                 updates={
-                  dashboard.data && dashboard.data.Tiles.InReviewNewUpdateCount
+                  dashboard.data
+                    ? dashboard.data.Tiles.InReviewTotalUpdateCount
+                    : '0'
                 }
                 label="In Review"
                 type={2}
@@ -125,7 +128,9 @@ export default ({
               }}>
               <DashCard
                 updates={
-                  dashboard.data && dashboard.data.Tiles.CompletedNewUpdateCount
+                  dashboard.data
+                    ? dashboard.data.Tiles.CompletedNewUpdateCount
+                    : '0'
                 }
                 label="Completed"
                 type={3}
@@ -133,7 +138,9 @@ export default ({
               />
               <DashCard
                 updates={
-                  dashboard.data && dashboard.data.Tiles.RejectedNewUpdateCount
+                  dashboard.data
+                    ? dashboard.data.Tiles.RejectedNewUpdateCount
+                    : '0'
                 }
                 label="Rejected"
                 type={4}

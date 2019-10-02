@@ -23,6 +23,7 @@ class Container extends Component {
     super(props);
     this.state = {
       Refreshing: false,
+      error: false,
     };
     this.onOpened = this.onOpened.bind(this);
   }
@@ -57,9 +58,12 @@ class Container extends Component {
   };
 
   componentDidUpdate = prevProps => {
-    const {success} = this.props.dashboard;
+    const {success, error} = this.props.dashboard;
     if (success && !prevProps.dashboard.success) {
       this.setState({Refreshing: false});
+    }
+    if (error && !prevProps.dashboard.error) {
+      this.setState({error: true});
     }
   };
 
@@ -80,7 +84,12 @@ class Container extends Component {
           _onRefresh={this._onRefresh}
           state={this.state}
         />
-        {error && <AlertView type="error" />}
+        {error && this.state.error && (
+          <AlertView
+            clearAlert={() => this.setState({error: false})}
+            type="error"
+          />
+        )}
       </View>
     );
   };

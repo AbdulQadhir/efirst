@@ -11,6 +11,7 @@ class Container extends Component {
     super(props);
     this.state = {
       Email: '',
+      error: false,
     };
   }
   componentDidMount = () => {
@@ -28,6 +29,10 @@ class Container extends Component {
         Email: this.state.Email,
       });
     }
+
+    if (this.props.forgetpassword.error && !prevProps.forgetpassword.error) {
+      this.setState({error: true});
+    }
   }
   render() {
     const {loading, error} = this.props.forgetpassword;
@@ -39,7 +44,12 @@ class Container extends Component {
           {...this.props}
           setStateEmail={this.setStateEmail}
         />
-        {error && <AlertView type={error} />}
+        {error && this.state.error && (
+          <AlertView
+            clearAlert={() => this.setState({error: false})}
+            type={error}
+          />
+        )}
       </View>
     );
   }

@@ -12,6 +12,8 @@ class Container extends Component {
     super(props);
     this.state = {
       updated: false,
+      error: false,
+      success: false,
     };
   }
   componentDidMount = () => {
@@ -24,9 +26,16 @@ class Container extends Component {
       !prevProps.forgetchangepassword.success
     ) {
       {
-        alert('Password Changed');
-        this.props.navigation.navigate('Auth');
+        this.setState({success: true});
+        this.props.navigation.navigate('Login');
       }
+    }
+
+    if (
+      this.props.forgetchangepassword.error &&
+      !prevProps.forgetchangepassword.error
+    ) {
+      this.setState({error: true});
     }
   };
   render = () => {
@@ -40,8 +49,18 @@ class Container extends Component {
           Email={Email}
           updateState={this.updateState}
         />
-        {error && <AlertView type="error" />}
-        {success && <AlertView type="success" />}
+        {error && this.state.error && (
+          <AlertView
+            clearAlert={() => this.setState({error: false})}
+            type="error"
+          />
+        )}
+        {success && this.state.success && (
+          <AlertView
+            clearAlert={() => this.setState({success: false})}
+            type="success"
+          />
+        )}
         <AlertView
           Timeout={true}
           defaultType={true}

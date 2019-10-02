@@ -16,6 +16,10 @@ class Container extends Component {
     loading: false,
   };
   componentDidMount = async () => {
+    const showSuccess = this.props.navigation.getParam('showSuccess', null);
+    if (showSuccess) {
+      this.setState({success: true});
+    }
     if (this.props.token) {
       this.props.navigation.navigate('MainMenu');
     }
@@ -23,6 +27,10 @@ class Container extends Component {
   };
 
   async componentDidUpdate(prevProps) {
+    if (this.props.login.error && !prevProps.login.error) {
+      this.setState({error: true});
+    }
+
     if (this.props.login.success && !prevProps.login.success) {
       if (this.props.token) {
         this.setState({loading: true});
@@ -57,14 +65,16 @@ class Container extends Component {
         changeInternetStatus={this.changeInternetStatus}
       />
       {this.props.confirmemail.success &&
-        this.props.applicationState.success && (
+        this.state.success(
           <AlertView
+            clearAlert={() => this.setState({success: false})}
             type="success"
             message="Verification completed successfully. Pls Login.."
-          />
+          />,
         )}
-      {this.props.login.error && this.props.applicationState.error && (
+      {this.props.login.error && this.state.error && (
         <AlertView
+          clearAlert={() => this.setState({error: false})}
           type="error"
           message="Entered username or password is incorrect"
         />

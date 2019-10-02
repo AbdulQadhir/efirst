@@ -6,13 +6,18 @@ import {View} from 'react-native';
 import AlertView from '../../../styled/alert-view';
 import Loader from '../../../styled/loader';
 class Container extends Component {
+  state = {
+    error: false,
+  };
   componentDidMount = () => {
     //if (this.props.user) this.props.navigation.navigate('Profile');
   };
   componentDidUpdate(prevProps) {
     if (this.props.confirmemail.success && !prevProps.confirmemail.success) {
-      alert('Registration Success');
-      this.props.navigation.navigate('Auth');
+      this.props.navigation.navigate('Login', {showSuccess: true});
+    }
+    if (this.props.confirmemail.error && !prevProps.confirmemail.error) {
+      this.setState({error: true});
     }
   }
   render = () => {
@@ -22,7 +27,13 @@ class Container extends Component {
       <View style={{flex: 1}}>
         <Loader loading={loading} />
         <ConfirmEmail {...this.props} redirectFrom={redirectFrom} />
-        {error ? <AlertView type="error" message="Invalid code" /> : null}
+        {error && this.state.error && (
+          <AlertView
+            clearAlert={() => this.setState({error: false})}
+            type="error"
+            message="Invalid code"
+          />
+        )}
         <AlertView
           Timeout={true}
           defaultType={true}

@@ -11,19 +11,21 @@ class AlertView extends Component {
     };
   }
   componentDidMount() {
-    this.props.defaultType && this.setState({visible: true});
+    this.setState({visible: true});
     !this.props.Timeout && setTimeout(this.hideview, 5000);
   }
-  componentDidUpdate(prevProps) {
-    if (
-      this.props.applicationState.error ||
-      this.props.applicationState.success
-    ) {
-      this.setState({visible: true}, () => this.props.resetApplicationState());
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (
+  //     this.props.applicationState.error ||
+  //     this.props.applicationState.success
+  //   ) {
+  //     this.setState({visible: true}, () => this.props.resetApplicationState());
+  //   }
+  // }
   hideview = () => {
     this.setState({visible: false});
+    const {clearAlert} = this.props;
+    clearAlert && clearAlert();
   };
 
   render() {
