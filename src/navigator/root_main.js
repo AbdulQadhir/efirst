@@ -9,7 +9,7 @@ import BottomBar from './BottomBar/BottomBar';
 const Tabs = createBottomTabNavigator(
   {
     Dashboard: {screen: DashboardStack},
-    MyRequests: {screen: MyRequestStack},
+    MyRequestStack: {screen: MyRequestStack},
     Services: {screen: ServiceStack},
   },
   {
@@ -41,4 +41,3 @@ const Drawer = createDrawerNavigator(
 );
 
 export default Drawer;
-

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import HomeScreen from './screen';
 import {DashboardData} from './action';
-import {View,Text} from 'react-native';
+import {View, Text} from 'react-native';
 import {serviceRequestData} from '../service/action';
 import {profileData} from '../profile/action';
 import {
@@ -28,7 +28,7 @@ class Container extends Component {
   }
 
   static navigationOptions = {
-    headerTitle: <HeaderTitle title="Dashboard" />
+    title: 'Dashboard',
   };
 
   onOpened(openResult) {

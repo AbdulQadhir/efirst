@@ -49,14 +49,11 @@ const ConfirmEmail = ({
         {errors.code && <ErrorLabel label={errors.code} />}
 
         <Button label="Submit" onPress={handleSubmit} />
-        {redirectFrom === 'Register' ? (
-          <ButtonLabel
-            label={'Have an Account? Login'}
-            onPress={() => navigation.navigate('Login')}
-          />
-        ) : (
-          <ButtonLabel label={'Go back'} onPress={() => navigation.goBack()} />
-        )}
+
+        <ButtonLabel
+          label={'Have an Account? Login'}
+          onPress={() => navigation.navigate('Login')}
+        />
       </ScrollView>
     </View>
     <LoginFooter />

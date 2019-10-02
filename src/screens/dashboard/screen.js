@@ -35,6 +35,7 @@ export default ({
           headerTitle: 'Action Required',
           noDataLabel: 'No new action required item available',
         });
+
         break;
       }
       case 2: {

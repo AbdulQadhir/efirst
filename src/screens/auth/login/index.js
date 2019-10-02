@@ -48,7 +48,9 @@ class Container extends Component {
   };
   render = () => (
     <View style={{flex: 1}}>
-     {/* <Loader loading={this.props.login.loading || this.state.loading} /> */}
+      <Loader
+        loading={this.props.login.loading || this.props.profile.loading}
+      />
 
       <LoginScreen
         {...this.props}

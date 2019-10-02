@@ -18,6 +18,7 @@ export default ({
   serviceRequestData,
   headerTitle,
   setSearchText,
+  noDataLabel,
   state,
   _onRefresh,
 }) => {
@@ -38,37 +39,37 @@ export default ({
     switch (status) {
       case 'In Review':
         return {
-          color: '#6F5F0F',
+          color: '#ffffff',
           borderColor: '#6F5F0F',
-          backgroundColor: '#ffffff00',
+          backgroundColor: '#47489f',
           statusLabel: ProcessName,
         };
       case 'Completed':
         return {
           color: '#ffffff',
           borderColor: '#ffffff00',
-          backgroundColor: '#07AE12',
+          backgroundColor: '#5c9305',
           statusLabel: status,
         };
       case 'Rejected':
         return {
           color: '#ffffff',
           borderColor: '#DB0C0C',
-          backgroundColor: '#DB0C0C',
+          backgroundColor: '#f71414',
           statusLabel: status,
         };
       case 'On Hold':
         return {
           color: '#ffffff',
-          borderColor: '#123583',
-          backgroundColor: '#123583',
+          borderColor: '#ff7300',
+          backgroundColor: '#ff7300',
           statusLabel: status,
         };
       default:
         return {
-          color: '#6F5F0F',
+          color: '#ffffff',
           borderColor: '#6F5F0F',
-          backgroundColor: '#ffffff00',
+          backgroundColor: '#5c9305',
           statusLabel: status,
         };
         break;
@@ -93,7 +94,7 @@ export default ({
         })
     ) : (
       <View style={styles.body}>
-        <NoRequestsLabel label="No new action required item available" />
+        <NoRequestsLabel label={noDataLabel} />
         {/* <NoRequestsBody emptyText={emptyText} img={1} /> */}
       </View>
     );
@@ -126,6 +127,7 @@ export default ({
 const styles = EStyleSheet.create({
   body: {
     height: '100%',
+    backgroundColor: '#f8f9fc',
   },
   paddingView: {
     paddingRight: calcWidth(7.5),

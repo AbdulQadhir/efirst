@@ -262,16 +262,15 @@ export const MyRequestItem = ({
 export const ServiceHomeItem = props => {
   var img = require(`${assetsPath}Dashboard/card_required.png`);
   return (
-    <View style={ styles.servicehome_item}>
-      <View >
-          <Image style={styles.servicehome_item_img} source={img} />
-
+    <View style={styles.servicehome_item}>
+      <View>
+        <Image style={styles.servicehome_item_img} source={img} />
       </View>
-      <View style={styles.servicehome_item_right} >
-        <Text style={styles.servicehome_item_title} >{props.title}</Text>
-        <Text  style={styles.servicehome_item_text} >{props.desc}</Text>
-        <TouchableOpacity  style={styles.servicehome_item_btn} {...props}  >
-            <Text style={styles.servicehome_item_btntxt} >Apply Now</Text>
+      <View style={styles.servicehome_item_right}>
+        <Text style={styles.servicehome_item_title}>{props.title}</Text>
+        <Text style={styles.servicehome_item_text}>{props.desc}</Text>
+        <TouchableOpacity style={styles.servicehome_item_btn} {...props}>
+          <Text style={styles.servicehome_item_btntxt}>Apply Now</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -280,67 +279,70 @@ export const ServiceHomeItem = props => {
 
 export const HeaderTitle = props => {
   return (
-    <View style={{flex:1, justifyContent: "center"}}>
-    <Text style={styles.header_title} >{props.title}</Text>
+    <View style={{flex: 1, justifyContent: 'center'}}>
+      <Text style={styles.header_title}>{props.title}</Text>
     </View>
   );
 };
 
 export const ServiceHomeText = props => {
-  return (
-    <Text style={styles.servicehome_text} >{props.text}</Text>
-  );
+  return <Text style={styles.servicehome_text}>{props.text}</Text>;
 };
 const styles = EStyleSheet.create({
   header_title: {
-    textAlign:"center",
+    textAlign: 'center',
     fontSize: RFValue(17),
-    fontWeight: "bold"
+    fontWeight: 'bold',
   },
   servicehome_text: {
-    fontSize: RFValue(14),
+    marginLeft: calcWidth(2.7),
+    marginTop: calcHeight(2),
+    fontSize: RFValue(13),
     padding: calcHeight(0.5),
+    fontFamily: 'Montserrat-Light',
   },
-  servicehome_item : {
+  servicehome_item: {
     padding: calcHeight(1),
-    borderBottomWidth : 1,
-    borderColor: "#999999",
-    width: "100%",
-    flexDirection : "row",
+    borderBottomWidth: 1,
+    borderColor: '#999999',
+    width: '100%',
+    flexDirection: 'row',
     paddingHorizontal: calcHeight(2),
   },
-  servicehome_item_right : {
+  servicehome_item_right: {
     padding: calcHeight(1),
     paddingHorizontal: calcHeight(1.5),
-    flex: 1
+    flex: 1,
   },
-  servicehome_item_title:{
-    fontSize: RFValue(16),
-    fontWeight : "bold",
+  servicehome_item_title: {
+    fontSize: RFValue(14),
+    fontFamily: 'Montserrat-Medium',
     paddingVertical: calcHeight(0.5),
   },
-  servicehome_item_btn:{
-    backgroundColor: "#47489f",
+  servicehome_item_btn: {
+    backgroundColor: '#47489f',
     padding: calcHeight(0.5),
-    alignItems: "center",
+    alignItems: 'center',
     borderRadius: calcHeight(1),
-    width: "50%"
+    width: '50%',
   },
-  servicehome_item_btntxt:{
-    fontSize: RFValue(13),
-    color:"#FFF",
-    textAlign: "center",
-    fontWeight: "bold",
+  servicehome_item_btntxt: {
+    fontSize: RFValue(11.5),
+    color: '#FFF',
+    textAlign: 'center',
+    fontFamily: 'Montserrat-Medium',
   },
   servicehome_item_text: {
     fontSize: RFValue(11),
-    color: "#666666",
+    fontFamily: 'Montserrat-Light',
+    color: '#666666',
     paddingVertical: calcHeight(1),
   },
   servicehome_item_img: {
-    width: calcHeight(8),
-    height: calcHeight(8),
+    width: calcHeight(6),
+    height: calcHeight(6),
     margin: calcHeight(1),
+    marginTop: calcHeight(3),
   },
   loginfooter: {
     alignItems: 'center',
