@@ -42,6 +42,7 @@ class App extends Component {
                 title="Visa Services"
                 desc="Apply for New VISA, renewals and cancellations"
                 type={3}
+                onPress={()=>this.props.navigation.navigate("Attestation")}
               />
               <ServiceHomeItem
                 title="Attestation Services"

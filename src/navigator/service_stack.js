@@ -17,7 +17,7 @@ import {
 export default DashboardStack = createStackNavigator(
   {
     ServiceHome,
-    //  Attestation
+    Attestation
   },
   {
     defaultNavigationOptions: {

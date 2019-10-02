@@ -16,6 +16,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import {BASE_URL} from '../../constants';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import IconsAws from 'react-native-vector-icons/FontAwesome';
+import Radio from './radio';
+import CheckBox from 'react-native-check-box'
 
 EStyleSheet.build({
   $rem: entireScreenWidth / 380,
@@ -25,9 +27,16 @@ EStyleSheet.build({
 const assetsPath = '../../Assets/';
 const colorTop = '#a10606';
 const colorBottom = '#ff4747';
+
 export const Input = props => {
   return (
-    <TextInput style={styles.input} {...props} placeholderTextColor="#8d847d" />
+    <TextInput style={[styles.input,props.style]} {...props} placeholderTextColor="#8d847d" />
+  );
+};
+
+export const Input2 = props => {
+  return (
+    <TextInput style={[styles.input,{borderColor: "#999999" },props.style]} {...props} placeholderTextColor="#8d847d" />
   );
 };
 
@@ -309,6 +318,7 @@ export const Pick = props => {
     <Picker
       {...props}
       style={styles.picker}
+      activeItemTextStyle={{fontSize: 18, fontWeight: '300'}}
       itemStyle={styles.pickeritem}></Picker>
   );
 };
@@ -353,6 +363,15 @@ export const HeaderBtnBack = props => {
   );
 };
 
+export const RadioButton = props => {
+  return (
+    <TouchableOpacity onPress={props.onPress} style={{ flexDirection: "row", padding: 5, alignItems: "center", flex:1 }} >
+      <Radio {...props} />
+      <Text style={styles.radiotxt} >Radio</Text>
+    </TouchableOpacity>
+  );
+};
+
 export const HeaderBtnProfile = props => {
   return (
     <TouchableOpacity
@@ -373,13 +392,132 @@ export const HeaderBtnProfile = props => {
   );
 };
 
+export const TxtSubHead = (props) => {
+  return (
+      <Text style={styles.txtSubHead} >{props.title}</Text>
+  )
+}
+
+export const PriceDetailItem = (props) => {
+  return (
+        <View style={styles.pricedt_item} >
+          <View>
+            <Text style={styles.pricedt_item_txt} >{props.label}</Text>
+          </View>
+          <View>
+            <Text style={styles.pricedt_item_amt}>AED {props.amount}</Text>
+          </View>
+        </View>
+      )
+}
+
+export const TxtTotalAmount = (props) => {
+    return (
+      <View >
+          <Text style={styles.txt_total_amt}>Your Total Bill Amount : {props.amount}</Text>
+      </View>
+    )
+}
+
+export const TxtAgreement = (props) => {
+    return (
+      <View style={styles.agreement} >
+          <CheckBox {...props} checkBoxColor={"#f84563"} />
+          <Text style={styles.txt_agreement} >I have read & agree to the <Text style={styles.agreement_lnk} onPress={props.onTermsClick} >Terms and Conditions</Text> of Service</Text>
+      </View>
+    )
+}
+
+export const ButtonNormal = (props) => {
+    return (
+        <TouchableOpacity  style={[styles.button_normal, props.extraStyle]} {...props}  >
+            <Text style={styles.txtBtn} >{props.label}</Text>
+        </TouchableOpacity>
+    )
+}
+
 const styles = EStyleSheet.create({
+  agreement : {
+      marginVertical : calcWidth(5),
+      marginHorizontal : calcHeight(2),
+      flexDirection: "row",
+      alignItems: "center"
+  },
+  agreement_lnk : {
+      padding : calcHeight(1),
+      fontStyle: 'italic',
+      color: '#081344',
+      fontSize: RFValue(16),
+      textDecorationLine: 'underline',
+      fontFamily: 'Montserrat-Light',
+  },
+  txt_agreement : {
+      marginLeft : calcWidth(2),
+      padding : calcHeight(1),
+      fontStyle: 'italic',
+      color: '#081344',
+      fontSize: RFValue(16),
+      fontFamily: 'Montserrat-Light',
+  },
+  txt_total_amt : {
+      flex: 1,
+      padding : calcHeight(1),
+      backgroundColor : "#47489f",
+      borderRadius : calcHeight(1),
+      alignItems : "center",
+      textAlign:'center',
+      color:'#FFF',
+      fontSize: RFValue(14),
+      fontFamily: 'Montserrat-Medium',
+  },
+  pricedt_item_txt : {
+      fontSize: RFValue(16.8),
+      fontWeight:'bold',
+      color:'#081344',
+      fontFamily: 'Montserrat-Medium',
+  },
+  pricedt_item_amt : {
+      width: calcWidth(30),
+      padding : calcHeight(1),
+      backgroundColor : "#47489f",
+      borderRadius : calcHeight(0.8),
+      alignItems : "center",
+      textAlign:'center',
+      color:'#FFF',
+      fontSize: RFValue(13.5),
+      fontFamily: 'Montserrat-Light',
+  },
+  pricedt_item:{
+      flexDirection:'row',
+      marginVertical: calcHeight(1),
+      paddingHorizontal: calcHeight(5),
+      paddingVertical: calcHeight(4),
+      justifyContent:'space-between',
+      backgroundColor:'#f2f2f2',
+      alignItems : "center",
+      borderRadius : calcHeight(0.8),
+  },
+  txtSubHead : {
+      fontWeight: "bold",
+      fontSize : RFValue(16.8),
+      color : "#081344",
+      margin : calcHeight(0.8),
+      borderBottomWidth:1,
+      borderColor : "#999999",
+      paddingVertical : "5 rem",
+      fontFamily: 'Montserrat-Meduim',
+  }, 
+  radiotxt: {
+    fontSize: '$inputFontSize',
+    paddingHorizontal: calcWidth(1.5),
+    color: '$inputTextColor',
+    fontFamily: 'Montserrat-Light',
+  },
   pickeritem: {
     fontSize: '$inputFontSize',
     paddingHorizontal: calcWidth(1.5),
     paddingVertical: calcHeight(0.8),
     color: '$inputTextColor',
-    margin: 5,
     fontFamily: 'Montserrat-Light',
   },
   picker: {
@@ -388,8 +526,9 @@ const styles = EStyleSheet.create({
     fontSize: '$inputFontSize',
     paddingHorizontal: calcWidth(1.5),
     paddingVertical: calcHeight(0.8),
+    fontWeight: '100',
+  //  backgroundColor: "red",
     color: '$inputTextColor',
-    margin: 5,
     fontFamily: 'Montserrat-Light',
   },
   header_title: {
@@ -635,6 +774,15 @@ const styles = EStyleSheet.create({
     color: '#FFF',
 
     fontFamily: 'Montserrat-SemiBold',
+  },
+  button_normal: {
+    width: calcWidth(65),
+    padding: calcHeight(2),
+    backgroundColor: '#f84563',
+    borderRadius: calcHeight(2),
+    alignItems: 'center',
+    alignSelf: 'center',
+    margin: calcWidth(4),
   },
   button: {
     width: calcWidth(65),
