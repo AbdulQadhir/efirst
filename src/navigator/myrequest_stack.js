@@ -6,63 +6,20 @@ import Icons from 'react-native-vector-icons/Ionicons';
 import IconsAws from 'react-native-vector-icons/FontAwesome';
 import {calcHeight, calcWidth} from '../config';
 import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
+import {HeaderBtnMenu, HeaderBtnBack, HeaderBtnProfile, hdrStyles} from '../pages/uicomponents/components';
+
 export default MyRequestStack = createStackNavigator(
   {
     MyRequests: {screen: MyRequests},
   },
   {
     defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor: '#f8f9fc',
-        elevation: 0,
-        shadowColor: 'transparent',
-        shadowOpacity: 0,
-        borderBottomColor: 'transparent',
-        height: calcHeight(5.5),
-      },
+      headerStyle: hdrStyles.header,
       headerTintColor: '#fff',
-      headerTitleStyle: {
-        color: '#081344',
-        fontFamily: 'Montserrat-SemiBold',
-        fontSize: RFValue(18),
-        marginTop: calcHeight(1.5),
-        //height: calcHeight(5),
-      },
-      headerLeft: (
-        <TouchableOpacity
-          style={{
-            padding: calcHeight(1),
-            paddingTop: calcHeight(1.5),
-            paddingLeft: calcWidth(5),
-            // height: calcHeight(5.5),
-          }}
-          onPress={() => navigation.navigate('FirstPage')}>
-          <Icons
-            name="ios-menu"
-            style={{
-              color: '#081344',
-              fontSize: RFValue(25),
-            }}
-          />
-        </TouchableOpacity>
-      ),
+      headerTitleStyle: hdrStyles.title,
       headerRight: (
-        <TouchableOpacity
-          style={{
-            paddingTop: calcHeight(1.5),
-            padding: calcHeight(1),
-            paddingRight: calcWidth(4.5),
-            // height: calcHeight(5.5),
-          }}
-          onPress={() => alert('Profile')}>
-          <IconsAws
-            name="user-circle-o"
-            style={{
-              color: '#081344',
-              fontSize: RFValue(20),
-            }}
-          />
-        </TouchableOpacity>
+        <HeaderBtnProfile
+          onPress={() => alert('Profile')} />
       ),
     },
   },

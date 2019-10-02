@@ -6,7 +6,7 @@ import {servicesData, serviceRequestData} from '../action';
 import {View, StyleSheet, Text} from 'react-native';
 import Loader from '../../../styled/loader';
 import AlertView from '../../../styled/alert-view';
-import {HeaderTitle} from '../../../pages/uicomponents/components';
+import {HeaderBtnMenu, HeaderBtnBack} from '../../../pages/uicomponents/components';
 
 class Container extends Component {
   _didFocusSubscription;
@@ -22,12 +22,16 @@ class Container extends Component {
 
     this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
   }
-  static navigationOptions = ({navigation}) => {
-    return {
-      title: navigation.getParam('headerTitle', 'My Requests'),
-    };
-  };
 
+  static navigationOptions = ({navigation}) => ({
+    title: navigation.getParam('headerTitle', 'My Requests'),
+    headerLeft: (
+      <View style={{flexDirection: "row"}} >
+        <HeaderBtnMenu onPress={() => alert("")} />
+        <HeaderBtnBack onPress={() => navigation.navigate("Dashboard")} />
+      </View>
+    )
+  });
   componentDidUpdate = prevProps => {
     const {success} = this.props.services;
     //console.log('result => ', `${loading} - ${error} - ${data}`);
