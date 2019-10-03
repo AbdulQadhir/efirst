@@ -936,7 +936,7 @@ export const hdrStyles = EStyleSheet.create({
     fontSize: RFValue(17),
     textAlign: 'center',
     // backgroundColor: 'red',
-    //flex: 1,
-    width: '100%',
+    flex: 1,
+    //width: '100%',
   },
 });
