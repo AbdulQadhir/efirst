@@ -34,7 +34,6 @@ export default class Radio extends Component {
                 : null
             }
           </View>
-          <Text style={this.props.style} >{this.props.label}</Text>
         </View>
         )
     }

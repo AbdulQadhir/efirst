@@ -18,6 +18,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import IconsAws from 'react-native-vector-icons/FontAwesome';
 import Radio from './radio';
 import CheckBox from 'react-native-check-box'
+import RNPickerSelect from 'react-native-picker-select';
+import PickerModal from 'react-native-picker-modal-view';
 
 EStyleSheet.build({
   $rem: entireScreenWidth / 380,
@@ -36,7 +38,13 @@ export const Input = props => {
 
 export const Input2 = props => {
   return (
-    <TextInput style={[styles.input,{borderColor: "#999999" },props.style]} {...props} placeholderTextColor="#8d847d" />
+    <TextInput  {...props} placeholder={props.placeholder} style={[styles.input,{borderColor: "#999999",flex:1 }]}  placeholderTextColor="#8d847d" />
+  );
+};
+
+export const InputNoBorder = props => {
+  return (
+    <TextInput  {...props} placeholder={props.placeholder} style={[styles.input,{borderBottomWidth: 0,flex:1}]}  placeholderTextColor="#8d847d" />
   );
 };
 
@@ -323,6 +331,12 @@ export const Pick = props => {
   );
 };
 
+export const RNPicker = props => {
+  return (    
+		<PickerModal {...props} />
+  );
+};
+
 export const HeaderBtnMenu = props => {
   return (
     <TouchableOpacity
@@ -436,7 +450,56 @@ export const ButtonNormal = (props) => {
     )
 }
 
+export const SelectFile = (props) => {
+  return (
+      <View>
+        <Text style={[styles.txtSubHead,{fontWeight:"300"}]} >{props.title}</Text>
+        <View style={{ flexDirection: "column",alignItems:'center' ,justifyContent:'center'}} >
+        <Text style={styles.selectfiletxt} >Select File</Text>
+        <View style={{ flexDirection: "row",width:"30%",justifyContent:'center'}}>
+            <TouchableOpacity 
+              onPress={props.onLeftPress}
+             style={[styles.btnFile,{borderWidth:1,borderRightWidth:1, padding:3,borderRadius:5, borderColor:"#081344" }]}  >
+              <Image style={styles.file_img} source={require(`${assetsPath}File/file1.png`)} />
+            </TouchableOpacity>
+            <TouchableOpacity 
+              onPress={props.onRightPress}
+             style={[styles.btnFile,{borderWidth:1,borderLefttWidth:1, padding:3,borderRadius:5, borderColor:"#081344"}]}   {...props}  >
+              <Image style={styles.file_img} source={require(`${assetsPath}File/file2.png`)} />
+            </TouchableOpacity>
+        </View>
+        <Text  style={styles.selectfilefooter}  >File Format  :  jpeg + png + jpg</Text>
+        <Text  style={styles.selectfilefooter}  >File Size > 5 MB</Text>
+        </View>
+      </View>
+  )
+}
+
+export const ModalPickerItem = (props) => {
+  return (
+    <TouchableOpacity onPress={props.onPress} ><Text style={[styles.input,{borderColor:"#999999"}]} >{props.label}</Text></TouchableOpacity>
+  )
+}
+
 const styles = EStyleSheet.create({
+  selectfilefooter : {
+    padding : calcWidth(1),
+    color: '#081344',
+    fontSize: RFValue(14),
+    fontFamily: 'Montserrat-Light',
+    textAlign : "center"
+  },
+  selectfiletxt : {
+    padding : calcWidth(1),
+    color: '#081344',
+    fontSize: RFValue(14),
+    fontFamily: 'Montserrat-Light',
+    textAlign : "center"
+  },
+  file_img:{
+    width: "35 rem",
+    height: "35 rem",
+  },
   agreement : {
       marginVertical : calcWidth(5),
       marginHorizontal : calcHeight(2),
@@ -521,13 +584,12 @@ const styles = EStyleSheet.create({
     fontFamily: 'Montserrat-Light',
   },
   picker: {
-    borderBottomWidth: 1,
     borderColor: '#081344',
     fontSize: '$inputFontSize',
     paddingHorizontal: calcWidth(1.5),
     paddingVertical: calcHeight(0.8),
     fontWeight: '100',
-  //  backgroundColor: "red",
+    backgroundColor: "red",
     color: '$inputTextColor',
     fontFamily: 'Montserrat-Light',
   },

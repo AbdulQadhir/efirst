@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, ScrollView, Dimensions, } from 'react-native';
+import {Modal, Text, TouchableOpacity, View, ScrollView, Dimensions, } from 'react-native';
 
 import {
   Input2,
@@ -11,14 +11,20 @@ import {
   PriceDetailItem,
   TxtTotalAmount,
   TxtAgreement,
-  ButtonNormal
+  ButtonNormal,
+  SelectFile,
+  InputNoBorder
 } from './uicomponents/components';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
 
+import ModalPicker from "./uicomponents/ModalPicker"
+
 import {calcHeight, calcWidth} from '../config';
+
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
+
 
 class App extends React.Component {
   static navigationOptions = {
@@ -26,9 +32,29 @@ class App extends React.Component {
   };
 
   state = {
-    state : ""
+    state : "",
+    selectedItem: {},
+    ModalVisible : false,
+    data : [
+        {label: "label1", value:"value1"},
+        {label: "label2", value:"value2"},
+        {label: "label3", value:"value3"},
+        {label: "label4", value:"value4"},
+    ]
   }
+  
+	selected(selected) {
+		this.setState({
+      selectedItem: {}
+		})
+  }
+
+  onModalPickerClose = () => {
+    this.setState({ModalVisible: false})
+  }
+  
   render() {
+    
     return (
       <View style={styles.body}>
         <View>
@@ -55,53 +81,28 @@ class App extends React.Component {
             <Input2 placeholder="Street Address*" />
             <ErrorLabel label="Required" />
 
-            <View style={{ borderBottomWidth: 1, borderColor: '#999999', margin: 5 }} >
-              <Pick
-                selectedValue={this.state.state}
-                onValueChange={(itemValue, itemIndex) =>
-                  this.setState({state: itemValue})
-                }>
-                <Pick.Item label="Java" value="java" />
-                <Pick.Item label="JavaScript" value="js" />
-              </Pick>
-            </View>
+            <ModalPicker placeholder="State*" data={this.state.data} onChange={(value)=>alert(value.value)} />
 
             <View  style={{flexDirection:"row", borderBottomWidth: 1, margin: 5, borderColor: "#999999"}} >
               <View style={{flex:1}}>
-                <Input2 placeholder="City*" style={{borderWidth: 0}} />
+                <InputNoBorder placeholder="City*" />
               </View>
               <View style={{flex:1}}>
-                <Input2 placeholder="PO Box" style={{borderWidth: 0}} />
+                <InputNoBorder placeholder="PO Box" />
               </View>
             </View>
 
-            <View style={{ borderBottomWidth: 1, borderColor: '#999999', margin: 5 }} >
-              <Pick
-                selectedValue={this.state.state}
-                onValueChange={(itemValue, itemIndex) =>
-                  this.setState({state: itemValue})
-                }>
-                <Pick.Item label="Java" value="java" />
-                <Pick.Item label="JavaScript" value="js" />
-              </Pick>
-            </View>
+            <ModalPicker placeholder="Certificate Issued Country*" data={this.state.data} onChange={(value)=>alert(value.value)} />
 
-            <View style={{ borderBottomWidth: 1, borderColor: '#999999', margin: 5 }} >
-              <Pick
-                selectedValue={this.state.state}
-                onValueChange={(itemValue, itemIndex) =>
-                  this.setState({state: itemValue})
-                }>
-                <Pick.Item label="Java" value="java" />
-                <Pick.Item label="JavaScript" value="js" />
-              </Pick>
-            </View>
+            <ModalPicker placeholder="Certificate Type*" data={this.state.data} onChange={(value)=>alert(value.value)} />
 
             <View style={{ borderBottomWidth: 1, borderColor: '#999999', margin: 5, flexDirection:"row" }} >
-              <RadioButton isSelected={true} onPress={()=>alert("")} />
-              <RadioButton isSelected={false} onPress={()=>alert("")}  />
+              <RadioButton isSelected={false} onPress={()=>alert("")} />
+              <RadioButton isSelected={true} onPress={()=>alert("")}  />
             </View>
             
+            <SelectFile title="Upload File" onLeftPress={()=>alert("left")} onRightPress={()=>alert("right")} />
+
             <TxtSubHead title="Your Bill Amount" />
 
             <PriceDetailItem label="Attestation Charge" amount="254" />
