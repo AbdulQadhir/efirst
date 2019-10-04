@@ -481,7 +481,92 @@ export const ModalPickerItem = (props) => {
   )
 }
 
+export const ProfilePhoto = (props) => {
+  return (
+         <View style={{ flexDirection: "column",alignItems:'center' ,justifyContent:'center', margin:10}} >
+              <View style={styles.profileBorder}>
+                      <Image style={styles.profile} source={props.img} />
+              </View>  
+         </View> 
+  )
+}
+
+export const ProfileName = (props) => {
+  return (
+         <View style={{ flexDirection: "column",alignItems:'center' ,justifyContent:'center'}} >
+              <Text  style={styles.profilename_txt} >{props.name}</Text>
+              <View  style={{ flexDirection: "row"}}>
+                  <Text  style={styles.profilename_desig}  >{props.designation}</Text> 
+                  <TouchableOpacity onPress={props.onEditPress} >
+                    <Image style={styles.editIcon} source={require(`${assetsPath}Profile/edit.png`)} />
+                  </TouchableOpacity>
+              </View>  
+         </View> 
+  )
+}
+
+export const ButtonSlim = (props) => {
+  return (
+      <TouchableOpacity  style={[ styles.btnSlim,props.color]} {...props}  >
+          <Text style={{ fontSize : 10, color : "#FFF", fontWeight : "bold"}} >name</Text>
+      </TouchableOpacity>
+  )
+}
+
+export const ProfileSaveIcon = (props) => {
+  return (
+      <TouchableOpacity onPress={props.onPress} style={{alignSelf:"flex-end", padding:10}}  >
+        <Ionicons name="md-checkmark-circle-outline"style={styles.profilesave_icon} />
+      </TouchableOpacity>
+  )
+}
+
+
 const styles = EStyleSheet.create({
+  profilesave_icon: {
+      fontSize: RFValue(17),
+  },
+  profilename_desig:{
+      fontSize: RFValue(13),
+      fontFamily: 'Montserrat-Light',
+      color:'#4d4d4d',
+      paddingHorizontal: calcWidth(1),
+  },
+  profilename_txt:{
+      fontSize: RFValue(16),
+      fontFamily: 'Montserrat-Medium',
+      color:'#4d4d4d',
+      paddingHorizontal: calcWidth(1),
+  },
+  btnSlim:{
+      width: "88 rem",
+      padding : "4 rem",
+      backgroundColor : "#EF6174",
+      borderRadius : "5 rem",
+      alignItems : "center",
+      alignSelf: "center",
+      margin : "10 rem",
+      fontSize:'10 rem'
+  },
+  editIcon:{
+      width: calcWidth(5),
+      height: calcWidth(5),
+      padding: calcWidth(1),
+  },
+  profile:{
+      width: "80 rem",
+      height: "80 rem",
+      borderRadius:"40 rem",
+  },
+  profileBorder:{
+      width: "90 rem",
+      height: "90 rem",
+      borderRadius:"50 rem",
+      borderWidth:3,
+      alignItems:'center' ,
+      justifyContent:'center',
+      borderColor:'#8d847d'
+  },
   selectfilefooter : {
     padding : calcWidth(1),
     color: '#081344',
