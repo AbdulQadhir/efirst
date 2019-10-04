@@ -16,6 +16,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {BASE_URL} from '../../constants';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import IconsAws from 'react-native-vector-icons/FontAwesome';
+import IconsAws5 from 'react-native-vector-icons/FontAwesome5';
 import Radio from './radio';
 import CheckBox from 'react-native-check-box';
 import CheckBoxItem from '../../styled/checkbox';
@@ -77,7 +78,7 @@ export const InputNoBorder = props => {
 };
 export const LabelInput = props => {
   return (
-    <Text {...props} style={styles.lblInput}>
+    <Text {...props} style={[styles.lblInput, props.style]}>
       {props.label}
     </Text>
   );
@@ -575,6 +576,7 @@ export const UploadValdation = props => (
     <Text style={styles.selectfilefooter}>File Size > 5 MB</Text>
   </View>
 );
+
 export const ModalPickerItem = props => {
   return (
     <TouchableOpacity onPress={props.onPress}>
@@ -611,22 +613,69 @@ export const ProfileName = (props) => {
 
 export const ButtonSlim = (props) => {
   return (
-      <TouchableOpacity  style={[ styles.btnSlim,props.color]} {...props}  >
-          <Text style={{ fontSize : 10, color : "#FFF", fontWeight : "bold"}} >name</Text>
-      </TouchableOpacity>
+        <Text style={[styles.btnslimtxt,props.style]} >{props.label}</Text>
   )
 }
 
 export const ProfileSaveIcon = (props) => {
   return (
-      <TouchableOpacity onPress={props.onPress} style={{alignSelf:"flex-end", padding:10}}  >
+      <TouchableOpacity onPress={props.onPress} style={[{alignSelf:"flex-end", padding:calcWidth(1), paddingHorizontal:calcWidth(2)}, props.style]}  >
         <Ionicons name="md-checkmark-circle-outline"style={styles.profilesave_icon} />
       </TouchableOpacity>
   )
 }
 
+export const Underline = (props) => {
+    return (
+        <View style={styles.underline} ></View>
+    )
+}
+
+export const ProfileSectionHdr = (props) => {
+  return (
+        <View style={styles.profile_section_hdr} >
+          <Text style={styles.profile_section_hdr_txt} >
+            <IconsAws5 name="ellipsis-v" />{"  "}
+            {props.label}
+          </Text>
+          <ProfileSaveIcon style={{alignSelf:"center"}} onPress={props.onSavePress} />
+        </View>
+  )
+}
 
 const styles = EStyleSheet.create({
+  profile_section_hdr: {
+    padding: calcWidth(2),
+    marginVertical: calcWidth(1),
+    marginTop: calcWidth(3),
+    borderRadius: calcWidth(2),
+    borderWidth: 1,
+    borderColor: "#8d847d",
+    paddingHorizontal: calcWidth(4),
+    flexDirection:"row",
+    justifyContent: "space-between",
+    alignItems:"center"
+  },
+  profile_section_hdr_txt: {
+    fontSize : RFValue(15),
+    color:'#4d4d4d',
+    fontFamily: 'Montserrat-Medium', //bold,
+  },
+  underline: {
+    borderTopWidth:1,
+    color:'#999999',
+    marginHorizontal: calcWidth(2),
+    marginVertical: calcWidth(5),
+  },
+  btnslimtxt:{
+    width: calcWidth(30),
+    fontSize : RFValue(13),
+    textAlign : "center",
+    color : "#FFF", 
+    fontFamily: 'Montserrat-Light', //bold,
+    padding: calcWidth(2.5),
+    borderRadius : calcWidth(2.5),
+  },
   profilesave_icon: {
       fontSize: RFValue(17),
   },
@@ -641,16 +690,6 @@ const styles = EStyleSheet.create({
       fontFamily: 'Montserrat-Medium',
       color:'#4d4d4d',
       paddingHorizontal: calcWidth(1),
-  },
-  btnSlim:{
-      width: "88 rem",
-      padding : "4 rem",
-      backgroundColor : "#EF6174",
-      borderRadius : "5 rem",
-      alignItems : "center",
-      alignSelf: "center",
-      margin : "10 rem",
-      fontSize:'10 rem'
   },
   editIcon:{
       width: calcWidth(5),
