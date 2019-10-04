@@ -16,6 +16,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {BASE_URL} from '../../constants';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import IconsAws from 'react-native-vector-icons/FontAwesome';
+import IconsAws5 from 'react-native-vector-icons/FontAwesome5';
 import Radio from './radio';
 import CheckBox from 'react-native-check-box';
 import CheckBoxItem from '../../styled/checkbox';
@@ -77,7 +78,7 @@ export const InputNoBorder = props => {
 };
 export const LabelInput = props => {
   return (
-    <Text {...props} style={styles.lblInput}>
+    <Text {...props} style={[styles.lblInput, props.style]}>
       {props.label}
     </Text>
   );
@@ -575,6 +576,7 @@ export const UploadValdation = props => (
     <Text style={styles.selectfilefooter}>File Size > 5 MB</Text>
   </View>
 );
+
 export const ModalPickerItem = props => {
   return (
     <TouchableOpacity onPress={props.onPress}>
@@ -585,9 +587,131 @@ export const ModalPickerItem = props => {
   );
 };
 
+export const ProfilePhoto = (props) => {
+  return (
+         <View style={{ flexDirection: "column",alignItems:'center' ,justifyContent:'center', margin:10}} >
+              <View style={styles.profileBorder}>
+                      <Image style={styles.profile} source={props.img} />
+              </View>  
+         </View> 
+  )
+}
+
+export const ProfileName = (props) => {
+  return (
+         <View style={{ flexDirection: "column",alignItems:'center' ,justifyContent:'center'}} >
+              <Text  style={styles.profilename_txt} >{props.name}</Text>
+              <View  style={{ flexDirection: "row"}}>
+                  <Text  style={styles.profilename_desig}  >{props.designation}</Text> 
+                  <TouchableOpacity onPress={props.onEditPress} >
+                    <Image style={styles.editIcon} source={require(`${assetsPath}Profile/edit.png`)} />
+                  </TouchableOpacity>
+              </View>  
+         </View> 
+  )
+}
+
+export const ButtonSlim = (props) => {
+  return (
+        <Text style={[styles.btnslimtxt,props.style]} >{props.label}</Text>
+  )
+}
+
+export const ProfileSaveIcon = (props) => {
+  return (
+      <TouchableOpacity onPress={props.onPress} style={[{alignSelf:"flex-end", padding:calcWidth(1), paddingHorizontal:calcWidth(2)}, props.style]}  >
+        <Ionicons name="md-checkmark-circle-outline"style={styles.profilesave_icon} />
+      </TouchableOpacity>
+  )
+}
+
+export const Underline = (props) => {
+    return (
+        <View style={styles.underline} ></View>
+    )
+}
+
+export const ProfileSectionHdr = (props) => {
+  return (
+        <View style={styles.profile_section_hdr} >
+          <Text style={styles.profile_section_hdr_txt} >
+            <IconsAws5 name="ellipsis-v" />{"  "}
+            {props.label}
+          </Text>
+          <ProfileSaveIcon style={{alignSelf:"center"}} onPress={props.onSavePress} />
+        </View>
+  )
+}
+
 const styles = EStyleSheet.create({
-  selectfilefooter: {
-    padding: calcWidth(1),
+  profile_section_hdr: {
+    padding: calcWidth(2),
+    marginVertical: calcWidth(1),
+    marginTop: calcWidth(3),
+    borderRadius: calcWidth(2),
+    borderWidth: 1,
+    borderColor: "#8d847d",
+    paddingHorizontal: calcWidth(4),
+    flexDirection:"row",
+    justifyContent: "space-between",
+    alignItems:"center"
+  },
+  profile_section_hdr_txt: {
+    fontSize : RFValue(15),
+    color:'#4d4d4d',
+    fontFamily: 'Montserrat-Medium', //bold,
+  },
+  underline: {
+    borderTopWidth:1,
+    color:'#999999',
+    marginHorizontal: calcWidth(2),
+    marginVertical: calcWidth(5),
+  },
+  btnslimtxt:{
+    width: calcWidth(30),
+    fontSize : RFValue(13),
+    textAlign : "center",
+    color : "#FFF", 
+    fontFamily: 'Montserrat-Light', //bold,
+    padding: calcWidth(2.5),
+    borderRadius : calcWidth(2.5),
+  },
+  profilesave_icon: {
+      fontSize: RFValue(17),
+  },
+  profilename_desig:{
+      fontSize: RFValue(13),
+      fontFamily: 'Montserrat-Light',
+      color:'#4d4d4d',
+      paddingHorizontal: calcWidth(1),
+  },
+  profilename_txt:{
+      fontSize: RFValue(16),
+      fontFamily: 'Montserrat-Medium',
+      color:'#4d4d4d',
+      paddingHorizontal: calcWidth(1),
+  },
+  editIcon:{
+      width: calcWidth(5),
+      height: calcWidth(5),
+      padding: calcWidth(1),
+  },
+  profile:{
+      width: "80 rem",
+      height: "80 rem",
+      borderRadius:"40 rem",
+  },
+  profileBorder:{
+      width: "90 rem",
+      height: "90 rem",
+      borderRadius:"50 rem",
+      borderWidth:3,
+      alignItems:'center' ,
+      justifyContent:'center',
+      borderColor:'#8d847d'
+  },
+  selectfilefooter : {
+    padding : calcWidth(1),
     color: '#081344',
     fontSize: RFValue(14),
     fontFamily: 'Montserrat-Light',
