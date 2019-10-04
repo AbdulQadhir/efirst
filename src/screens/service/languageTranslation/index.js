@@ -30,7 +30,7 @@ class Container extends Component {
     };
   }
   static navigationOptions = ({navigation}) => ({
-    title: 'Language Translation',
+    title: 'Translation Service',
     headerLeft: (
       <View style={{flexDirection: 'row'}}>
         <HeaderBtnMenu onPress={() => alert('')} />

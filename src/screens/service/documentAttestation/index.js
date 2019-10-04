@@ -31,7 +31,7 @@ class Container extends Component {
     };
   }
   static navigationOptions = ({navigation}) => ({
-    title: 'Document Attestation',
+    title: 'Attestation Service',
     headerLeft: (
       <View style={{flexDirection: 'row'}}>
         <HeaderBtnMenu onPress={() => alert('')} />

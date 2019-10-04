@@ -491,16 +491,16 @@ const DocumentAttestation = ({
             />
           </View>
           <View>
-            <UploadTitle title="Upload File" />
-            {renderDocs()}
+            <UploadTitle title="Passport or Emirates ID*" />
+            {/* {renderDocs()} */}
             <SelectFile
-              subTitle="Select File"
+              subTitle={Values.Files "Select File"}
               onLeftPress={() => openlaunchCamera(0)}
               onRightPress={() => openFile(0)}
             />
             <UploadValdation />
             {values.errorFileUpload && (
-              <ErrorLabel label="Upload File is Required" />
+              <ErrorLabel label="Passport or Emirates ID is Required" />
             )}
           </View>
           <TxtSubHead title="Your Bill Amount" />
