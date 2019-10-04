@@ -42,17 +42,23 @@ class App extends Component {
                 title="Visa Services"
                 desc="Apply for New VISA, renewals and cancellations"
                 type={3}
-                onPress={()=>this.props.navigation.navigate("Attestation")}
+                onPress={() => alert('Work in progress')}
               />
               <ServiceHomeItem
                 title="Attestation Services"
                 desc="Get your certificates attested as legally required"
                 type={1}
+                onPress={() =>
+                  this.props.navigation.navigate('DocumentAttestation')
+                }
               />
               <ServiceHomeItem
                 title="Translation Services"
                 desc="Get your documents translated as legally required"
                 type={2}
+                onPress={() =>
+                  this.props.navigation.navigate('LanguageTranslation')
+                }
               />
 
               <ServiceHomeText

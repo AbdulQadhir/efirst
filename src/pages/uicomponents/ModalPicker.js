@@ -1,71 +1,112 @@
 import React, {Component} from 'react';
-import {Modal, Text, TouchableOpacity, View,  } from 'react-native';
-import {InputNoBorder,ModalPickerItem} from "./components"
-import Ionicons from "react-native-vector-icons/Ionicons";
+import {
+  Modal,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
+import {InputNoBorder, ModalPickerItem} from './components';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import {calcWidth, calcHeight} from '../../config';
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
+import {ScrollView} from 'react-native-gesture-handler';
 
 export default class ModalPicker extends Component {
-
   state = {
-    state : "",
-    selectedItem: {},
-    modalVisible : false,
-    data : [
-        {label: "label1", value:"value1"},
-        {label: "label2", value:"value2"},
-        {label: "label3", value:"value3"},
-        {label: "label4", value:"value4"},
-    ]
-  }
+    state: '',
+    selectedValue: null,
+    selectedText: null,
+    modalVisible: false,
+  };
 
   onModalPickerClose = () => {
-    this.setState({modalVisible: false})
-  }
+    this.setState({modalVisible: false});
+  };
 
-  componentDidMount=()=>{
-      
-  }
+  componentDidMount = () => {};
 
-  onSelect(selected) {
-        this.setState({
-            selectedItem: selected,
-            modalVisible: false
-        })
-        this.props.onChange(selected);
-    }
+  onSelect(text, value) {
+    this.setState({
+      selectedValue: value,
+      selectedText: text,
+      modalVisible: false,
+    });
+    this.props.onChange(value);
+  }
 
   render() {
-    const renderList = this.props.data.map((datum) => {
-        return (
-            <ModalPickerItem onPress={()=>this.onSelect(datum)} label={datum.label} />
-        )
-    })
+    // const renderList = this.props.data.map(datum => {
+    //   return (
+    //     <ModalPickerItem
+    //       onPress={() => this.onSelect(datum)}
+    //       label={datum.label}
+    //     />
+    //   );
+    // });
     return (
-        <View>
-            <TouchableOpacity onPress={()=>this.setState({modalVisible: true})} style={{marginHorizontal:5, alignItems:"center", flexDirection:"row", borderBottomWidth:1, borderColor:"#999999"}} >
-                <InputNoBorder {...this.props}
-                    editable={false}
-                    value={this.state.selectedItem.label}
-                    style={{borderBottomWidth:0, flex:1}}
-                    />
-                <Ionicons name="ios-arrow-down" size={14} style={{paddingHorizontal:5}} />
-            </TouchableOpacity>
-            <Modal
-                animationType="slide"
-                transparent={false}
-                visible={this.state.modalVisible}
-                onRequestClose={this.onModalPickerClose} >
-                <View >
-                    <View style={{flex:1, alignItems: "flex-end", marginHorizontal: 8, height:10, marginBottom: 10}}>
-                        <TouchableOpacity onPress={this.onModalPickerClose} style={{padding:15}} >
-                            <Ionicons name="ios-close" size={20} style={{padding: 10}} />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{marginTop:20, padding: 5}}>
-                    {renderList}
-                    </View>
-                </View>
-            </Modal>
-        </View>
-    )
-    }
+      <View>
+        <TouchableWithoutFeedback
+          onPress={() => this.setState({modalVisible: true})}>
+          <View
+            style={{
+              marginHorizontal: calcWidth(2.1),
+              marginVertical: calcHeight(0.8),
+              alignItems: 'center',
+              flexDirection: 'row',
+              borderBottomWidth: 1,
+              borderColor: '#999999',
+            }}>
+            <Text
+              style={{
+                fontSize: RFPercentage(2),
+                paddingVertical: calcHeight(1),
+                color: '#8d847d',
+                marginLeft: calcHeight(0.8),
+                fontFamily: 'Montserrat-Light',
+                flex: 1,
+              }}>
+              {this.state.selectedText
+                ? this.state.selectedText
+                : this.props.placeholder}
+            </Text>
+            <Ionicons
+              name="ios-arrow-down"
+              size={RFValue(15)}
+              style={{paddingHorizontal: 5}}
+              color="#8d847d"
+            />
+          </View>
+        </TouchableWithoutFeedback>
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={this.state.modalVisible}
+          onRequestClose={this.onModalPickerClose}>
+          <ScrollView>
+            <View>
+              <View
+                style={{
+                  flex: 1,
+                  alignItems: 'flex-start',
+                  justifyContent: 'flex-end',
+                  marginHorizontal: calcWidth(5),
+                  height: calcHeight(8),
+                  marginTop: calcHeight(2),
+                }}>
+                <TouchableOpacity onPress={this.onModalPickerClose}>
+                  <Ionicons
+                    name="ios-close"
+                    color="#8d847d"
+                    size={RFValue(35)}
+                  />
+                </TouchableOpacity>
+              </View>
+              <View style={{paddingLeft: 5}}>{this.props.children}</View>
+            </View>
+          </ScrollView>
+        </Modal>
+      </View>
+    );
+  }
 }

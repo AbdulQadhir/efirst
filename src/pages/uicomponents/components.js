@@ -17,9 +17,9 @@ import {BASE_URL} from '../../constants';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import IconsAws from 'react-native-vector-icons/FontAwesome';
 import Radio from './radio';
-import CheckBox from 'react-native-check-box'
-import RNPickerSelect from 'react-native-picker-select';
-import PickerModal from 'react-native-picker-modal-view';
+import CheckBox from 'react-native-check-box';
+import CheckBoxItem from '../../styled/checkbox';
+// import PickerModal from 'react-native-picker-modal-view';
 
 EStyleSheet.build({
   $rem: entireScreenWidth / 380,
@@ -32,22 +32,49 @@ const colorBottom = '#ff4747';
 
 export const Input = props => {
   return (
-    <TextInput style={[styles.input,props.style]} {...props} placeholderTextColor="#8d847d" />
+    <TextInput
+      style={[styles.input, props.style]}
+      {...props}
+      placeholderTextColor="#8d847d"
+    />
   );
 };
 
 export const Input2 = props => {
+  const {style, noBorder} = props;
+
+  const borderBottomWidth = noBorder ? 0 : 1;
+
   return (
-    <TextInput  {...props} placeholder={props.placeholder} style={[styles.input,{borderColor: "#999999",flex:1 }]}  placeholderTextColor="#8d847d" />
+    <TextInput
+      placeholderTextColor="#8d847d"
+      {...props}
+      style={[
+        styles.input,
+        {borderColor: '#999999', borderBottomWidth},
+        props.style,
+      ]}
+    />
   );
 };
-
 export const InputNoBorder = props => {
   return (
-    <TextInput  {...props} placeholder={props.placeholder} style={[styles.input,{borderBottomWidth: 0,flex:1}]}  placeholderTextColor="#8d847d" />
+    <TextInput
+      {...props}
+      placeholder={props.placeholder}
+      style={[
+        styles.input,
+        {
+          borderBottomWidth: 0,
+          flex: 1,
+          paddingVertical: calcHeight(0.3),
+          paddingHorizontal: calcWidth(0),
+        },
+      ]}
+      placeholderTextColor="#8d847d"
+    />
   );
 };
-
 export const LabelInput = props => {
   return (
     <Text {...props} style={styles.lblInput}>
@@ -324,6 +351,7 @@ export const ServiceHomeText = props => {
 export const Pick = props => {
   return (
     <Picker
+      mode="dropdown"
       {...props}
       style={styles.picker}
       activeItemTextStyle={{fontSize: 18, fontWeight: '300'}}
@@ -331,11 +359,9 @@ export const Pick = props => {
   );
 };
 
-export const RNPicker = props => {
-  return (    
-		<PickerModal {...props} />
-  );
-};
+// export const RNPicker = props => {
+//   return <PickerModal {...props} />;
+// };
 
 export const HeaderBtnMenu = props => {
   return (
@@ -379,9 +405,22 @@ export const HeaderBtnBack = props => {
 
 export const RadioButton = props => {
   return (
-    <TouchableOpacity onPress={props.onPress} style={{ flexDirection: "row", padding: 5, alignItems: "center", flex:1 }} >
+    <TouchableOpacity
+      onPress={props.onPress}
+      style={{flexDirection: 'row', padding: 5, alignItems: 'center', flex: 1}}>
       <Radio {...props} />
-      <Text style={styles.radiotxt} >Radio</Text>
+      <Text style={styles.radiotxt}>{props.text}</Text>
+    </TouchableOpacity>
+  );
+};
+
+export const CheckBoxCustom = props => {
+  return (
+    <TouchableOpacity
+      onPress={props.onPress}
+      style={{flexDirection: 'row', padding: 5, alignItems: 'center', flex: 1}}>
+      <CheckBoxItem {...props} />
+      <Text style={styles.radiotxt}>{props.text}</Text>
     </TouchableOpacity>
   );
 };
@@ -406,80 +445,145 @@ export const HeaderBtnProfile = props => {
   );
 };
 
-export const TxtSubHead = (props) => {
+export const TxtSubHead = props => {
   return (
-      <Text style={styles.txtSubHead} >{props.title}</Text>
-  )
-}
+    <View
+      style={{
+        borderBottomWidth: 1,
+        borderColor: '#999999',
+        marginTop: calcHeight(2),
+        marginBottom: calcHeight(4),
+      }}>
+      <Text style={[styles.txtSubHead]}>{props.title}</Text>
+    </View>
+  );
+};
 
-export const PriceDetailItem = (props) => {
+export const PriceDetailItem = props => {
   return (
-        <View style={styles.pricedt_item} >
-          <View>
-            <Text style={styles.pricedt_item_txt} >{props.label}</Text>
-          </View>
-          <View>
-            <Text style={styles.pricedt_item_amt}>AED {props.amount}</Text>
-          </View>
-        </View>
-      )
-}
-
-export const TxtTotalAmount = (props) => {
-    return (
-      <View >
-          <Text style={styles.txt_total_amt}>Your Total Bill Amount : {props.amount}</Text>
-      </View>
-    )
-}
-
-export const TxtAgreement = (props) => {
-    return (
-      <View style={styles.agreement} >
-          <CheckBox {...props} checkBoxColor={"#f84563"} />
-          <Text style={styles.txt_agreement} >I have read & agree to the <Text style={styles.agreement_lnk} onPress={props.onTermsClick} >Terms and Conditions</Text> of Service</Text>
-      </View>
-    )
-}
-
-export const ButtonNormal = (props) => {
-    return (
-        <TouchableOpacity  style={[styles.button_normal, props.extraStyle]} {...props}  >
-            <Text style={styles.txtBtn} >{props.label}</Text>
-        </TouchableOpacity>
-    )
-}
-
-export const SelectFile = (props) => {
-  return (
+    <View style={styles.pricedt_item}>
       <View>
-        <Text style={[styles.txtSubHead,{fontWeight:"300"}]} >{props.title}</Text>
-        <View style={{ flexDirection: "column",alignItems:'center' ,justifyContent:'center'}} >
-        <Text style={styles.selectfiletxt} >Select File</Text>
-        <View style={{ flexDirection: "row",width:"30%",justifyContent:'center'}}>
-            <TouchableOpacity 
-              onPress={props.onLeftPress}
-             style={[styles.btnFile,{borderWidth:1,borderRightWidth:1, padding:3,borderRadius:5, borderColor:"#081344" }]}  >
-              <Image style={styles.file_img} source={require(`${assetsPath}File/file1.png`)} />
-            </TouchableOpacity>
-            <TouchableOpacity 
-              onPress={props.onRightPress}
-             style={[styles.btnFile,{borderWidth:1,borderLefttWidth:1, padding:3,borderRadius:5, borderColor:"#081344"}]}   {...props}  >
-              <Image style={styles.file_img} source={require(`${assetsPath}File/file2.png`)} />
-            </TouchableOpacity>
-        </View>
-        <Text  style={styles.selectfilefooter}  >File Format  :  jpeg + png + jpg</Text>
-        <Text  style={styles.selectfilefooter}  >File Size > 5 MB</Text>
-        </View>
+        <Text style={styles.pricedt_item_txt}>{props.label}</Text>
       </View>
-  )
-}
+      <View>
+        <Text style={styles.pricedt_item_amt}>AED {props.amount}</Text>
+      </View>
+    </View>
+  );
+};
 
-export const ModalPickerItem = (props) => {
+export const TxtTotalAmount = props => {
   return (
-    <TouchableOpacity onPress={props.onPress} ><Text style={[styles.input,{borderColor:"#999999"}]} >{props.label}</Text></TouchableOpacity>
-  )
-}
+    <View>
+      <Text style={styles.txt_total_amt}>
+        Your Total Bill Amount : {props.amount}
+      </Text>
+    </View>
+  );
+};
+
+export const TxtAgreement = props => {
+  return (
+    <View style={styles.agreement}>
+      <CheckBox {...props} checkBoxColor={'#f84563'} />
+      <Text style={styles.txt_agreement}>
+        I have read & agree to the{' '}
+        <Text style={styles.agreement_lnk} onPress={props.onTermsClick}>
+          Terms and Conditions
+        </Text>{' '}
+        of Service
+      </Text>
+    </View>
+  );
+};
+
+export const ButtonNormal = props => {
+  return (
+    <TouchableOpacity
+      style={[styles.button_normal, props.extraStyle]}
+      {...props}>
+      <Text style={styles.txtBtn}>{props.label}</Text>
+    </TouchableOpacity>
+  );
+};
+
+export const UploadTitle = props => (
+  <Text style={[styles.txtSubHead, {fontWeight: '300'}]}>{props.title}</Text>
+);
+
+export const SelectFile = props => {
+  return (
+    <View
+      style={{
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: calcHeight(1.5),
+      }}>
+      <Text style={styles.selectfiletxt}>{props.subTitle}</Text>
+      <View
+        style={{
+          flexDirection: 'row',
+
+          justifyContent: 'center',
+        }}>
+        <TouchableOpacity
+          onPress={props.onLeftPress}
+          style={[
+            styles.btnFile,
+            {
+              borderWidth: 1,
+              borderRightWidth: 1,
+              paddingVertical: calcHeight(1.2),
+              paddingHorizontal: calcWidth(5.2),
+              borderRadius: 5,
+              borderColor: '#081344',
+            },
+          ]}>
+          <Image
+            style={styles.file_img}
+            source={require(`${assetsPath}File/file1.png`)}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={props.onRightPress}
+          style={[
+            styles.btnFile,
+            {
+              borderWidth: 1,
+              borderLefttWidth: 1,
+              paddingVertical: calcHeight(1.2),
+              paddingHorizontal: calcWidth(5.2),
+              borderRadius: 5,
+              borderColor: '#081344',
+            },
+          ]}
+          {...props}>
+          <Image
+            style={styles.file_img}
+            source={require(`${assetsPath}File/file2.png`)}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+export const UploadValdation = props => (
+  <View>
+    <Text style={styles.selectfilefooter}>File Format : jpeg + png + jpg</Text>
+    <Text style={styles.selectfilefooter}>File Size > 5 MB</Text>
+  </View>
+);
+export const ModalPickerItem = props => {
+  return (
+    <TouchableOpacity onPress={props.onPress}>
+      <Text style={[styles.input, {borderColor: '#999999'}]}>
+        {props.label}
+      </Text>
+    </TouchableOpacity>
+  );
+};
 
 export const ProfilePhoto = (props) => {
   return (
@@ -572,89 +676,85 @@ const styles = EStyleSheet.create({
     color: '#081344',
     fontSize: RFValue(14),
     fontFamily: 'Montserrat-Light',
-    textAlign : "center"
+    textAlign: 'center',
   },
-  selectfiletxt : {
-    padding : calcWidth(1),
+  selectfiletxt: {
+    padding: calcWidth(1),
     color: '#081344',
     fontSize: RFValue(14),
     fontFamily: 'Montserrat-Light',
-    textAlign : "center"
+    textAlign: 'center',
   },
-  file_img:{
-    width: "35 rem",
-    height: "35 rem",
+  file_img: {
+    width: '35 rem',
+    height: '35 rem',
   },
-  agreement : {
-      marginVertical : calcWidth(5),
-      marginHorizontal : calcHeight(2),
-      flexDirection: "row",
-      alignItems: "center"
+  agreement: {
+    marginVertical: calcWidth(5),
+    marginHorizontal: calcHeight(2),
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  agreement_lnk : {
-      padding : calcHeight(1),
-      fontStyle: 'italic',
-      color: '#081344',
-      fontSize: RFValue(16),
-      textDecorationLine: 'underline',
-      fontFamily: 'Montserrat-Light',
+  agreement_lnk: {
+    padding: calcHeight(1),
+    //fontStyle: 'italic',
+    color: '#081344',
+    fontSize: RFValue(13),
+    textDecorationLine: 'underline',
+    fontFamily: 'Montserrat-LightItalic',
   },
-  txt_agreement : {
-      marginLeft : calcWidth(2),
-      padding : calcHeight(1),
-      fontStyle: 'italic',
-      color: '#081344',
-      fontSize: RFValue(16),
-      fontFamily: 'Montserrat-Light',
+  txt_agreement: {
+    marginLeft: calcWidth(2),
+    padding: calcHeight(1),
+    // fontStyle: 'italic',
+    color: '#081344',
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-LightItalic',
   },
-  txt_total_amt : {
-      flex: 1,
-      padding : calcHeight(1),
-      backgroundColor : "#47489f",
-      borderRadius : calcHeight(1),
-      alignItems : "center",
-      textAlign:'center',
-      color:'#FFF',
-      fontSize: RFValue(14),
-      fontFamily: 'Montserrat-Medium',
+  txt_total_amt: {
+    flex: 1,
+    padding: calcHeight(1),
+    backgroundColor: '#47489f',
+    borderRadius: calcHeight(1),
+    alignItems: 'center',
+    textAlign: 'center',
+    color: '#FFF',
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Medium',
   },
-  pricedt_item_txt : {
-      fontSize: RFValue(16.8),
-      fontWeight:'bold',
-      color:'#081344',
-      fontFamily: 'Montserrat-Medium',
+  pricedt_item_txt: {
+    fontSize: RFValue(14),
+    color: '#081344',
+    fontFamily: 'Montserrat-Medium',
   },
-  pricedt_item_amt : {
-      width: calcWidth(30),
-      padding : calcHeight(1),
-      backgroundColor : "#47489f",
-      borderRadius : calcHeight(0.8),
-      alignItems : "center",
-      textAlign:'center',
-      color:'#FFF',
-      fontSize: RFValue(13.5),
-      fontFamily: 'Montserrat-Light',
+  pricedt_item_amt: {
+    width: calcWidth(30),
+    padding: calcHeight(1),
+    backgroundColor: '#47489f',
+    borderRadius: calcHeight(0.8),
+    alignItems: 'center',
+    textAlign: 'center',
+    color: '#FFF',
+    fontSize: RFValue(12),
+    fontFamily: 'Montserrat-Light',
   },
-  pricedt_item:{
-      flexDirection:'row',
-      marginVertical: calcHeight(1),
-      paddingHorizontal: calcHeight(5),
-      paddingVertical: calcHeight(4),
-      justifyContent:'space-between',
-      backgroundColor:'#f2f2f2',
-      alignItems : "center",
-      borderRadius : calcHeight(0.8),
+  pricedt_item: {
+    flexDirection: 'row',
+    marginVertical: calcHeight(1),
+    paddingHorizontal: calcHeight(2),
+    paddingVertical: calcHeight(2),
+    justifyContent: 'space-between',
+    backgroundColor: '#f2f2f2',
+    alignItems: 'center',
+    borderRadius: calcHeight(0.8),
   },
-  txtSubHead : {
-      fontWeight: "bold",
-      fontSize : RFValue(16.8),
-      color : "#081344",
-      margin : calcHeight(0.8),
-      borderBottomWidth:1,
-      borderColor : "#999999",
-      paddingVertical : "5 rem",
-      fontFamily: 'Montserrat-Meduim',
-  }, 
+  txtSubHead: {
+    fontSize: RFValue(14),
+    color: '#081344',
+    margin: calcHeight(0.8),
+    paddingVertical: calcWidth(1),
+    fontFamily: 'Montserrat-Medium',
+  },
   radiotxt: {
     fontSize: '$inputFontSize',
     paddingHorizontal: calcWidth(1.5),
@@ -674,7 +774,7 @@ const styles = EStyleSheet.create({
     paddingHorizontal: calcWidth(1.5),
     paddingVertical: calcHeight(0.8),
     fontWeight: '100',
-    backgroundColor: "red",
+    //  backgroundColor: "red",
     color: '$inputTextColor',
     fontFamily: 'Montserrat-Light',
   },
@@ -899,7 +999,7 @@ const styles = EStyleSheet.create({
     paddingHorizontal: calcWidth(1.5),
     paddingVertical: calcHeight(0.8),
     color: '$inputTextColor',
-    margin: 5,
+    margin: calcHeight(1),
     fontFamily: 'Montserrat-Light',
   },
   lblInput: {
@@ -924,12 +1024,12 @@ const styles = EStyleSheet.create({
   },
   button_normal: {
     width: calcWidth(65),
-    padding: calcHeight(2),
+    padding: calcHeight(1.8),
     backgroundColor: '#f84563',
     borderRadius: calcHeight(2),
     alignItems: 'center',
     alignSelf: 'center',
-    margin: calcWidth(4),
+    marginTop: calcHeight(1.5),
   },
   button: {
     width: calcWidth(65),
@@ -1018,7 +1118,7 @@ export const hdrStyles = EStyleSheet.create({
   title: {
     color: '#081344',
     fontFamily: 'Montserrat-SemiBold',
-    fontSize: RFValue(17),
+    fontSize: RFValue(15),
     textAlign: 'center',
     // backgroundColor: 'red',
     flex: 1,
