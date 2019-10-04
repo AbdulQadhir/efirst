@@ -4,37 +4,28 @@ import {Dimensions} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {calcHeight, calcWidth} from '../../config';
 const {height, width} = Dimensions.get('window');
+import {RFValue} from 'react-native-responsive-fontsize';
 const entireScreenWidth = width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
-
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 export default class Radio extends Component {
   render() {
     return (
       <View style={{flexDirection: 'row'}}>
-        <View
-          style={{
-            height: calcHeight(2.6),
-            width: calcHeight(2.6),
-            borderRadius: calcHeight(1.5),
-            borderWidth: 1.3,
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderColor: '#081344 ',
-          }}>
+        <View style={{flexDirection: 'row'}}>
           {this.props.isSelected ? (
-            <View
-              style={{
-                height: calcHeight(1.5),
-                width: calcHeight(1.5),
-                borderRadius: calcHeight(0.9),
-                // borderWidth: 1.3,
-                backgroundColor: '#f84563',
-                // borderColor: '#081344 ',
-              }}
+            <MaterialIcons
+              name="radio-button-checked"
+              style={eStyles.radioStyle}
             />
-          ) : null}
+          ) : (
+            <MaterialIcons
+              name="radio-button-unchecked"
+              style={eStyles.radioStyle}
+            />
+          )}
+          <Text style={this.props.style}>{this.props.label}</Text>
         </View>
-        <Text style={this.props.style}>{this.props.label}</Text>
       </View>
     );
   }
@@ -46,5 +37,9 @@ const eStyles = EStyleSheet.create({
   },
   alignHorizontal: {
     paddingHorizontal: '20 rem',
+  },
+  radioStyle: {
+    fontSize: RFValue(25),
+    color: '#f84563',
   },
 });

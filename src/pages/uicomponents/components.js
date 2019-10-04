@@ -18,6 +18,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import IconsAws from 'react-native-vector-icons/FontAwesome';
 import Radio from './radio';
 import CheckBox from 'react-native-check-box';
+import CheckBoxItem from '../../styled/checkbox';
+// import PickerModal from 'react-native-picker-modal-view';
 
 EStyleSheet.build({
   $rem: entireScreenWidth / 380,
@@ -55,7 +57,24 @@ export const Input2 = props => {
     />
   );
 };
-
+export const InputNoBorder = props => {
+  return (
+    <TextInput
+      {...props}
+      placeholder={props.placeholder}
+      style={[
+        styles.input,
+        {
+          borderBottomWidth: 0,
+          flex: 1,
+          paddingVertical: calcHeight(0.3),
+          paddingHorizontal: calcWidth(0),
+        },
+      ]}
+      placeholderTextColor="#8d847d"
+    />
+  );
+};
 export const LabelInput = props => {
   return (
     <Text {...props} style={styles.lblInput}>
@@ -340,6 +359,10 @@ export const Pick = props => {
   );
 };
 
+// export const RNPicker = props => {
+//   return <PickerModal {...props} />;
+// };
+
 export const HeaderBtnMenu = props => {
   return (
     <TouchableOpacity
@@ -391,6 +414,17 @@ export const RadioButton = props => {
   );
 };
 
+export const CheckBoxCustom = props => {
+  return (
+    <TouchableOpacity
+      onPress={props.onPress}
+      style={{flexDirection: 'row', padding: 5, alignItems: 'center', flex: 1}}>
+      <CheckBoxItem {...props} />
+      <Text style={styles.radiotxt}>{props.text}</Text>
+    </TouchableOpacity>
+  );
+};
+
 export const HeaderBtnProfile = props => {
   return (
     <TouchableOpacity
@@ -418,7 +452,7 @@ export const TxtSubHead = props => {
         borderBottomWidth: 1,
         borderColor: '#999999',
         marginTop: calcHeight(2),
-        marginBottom: calcHeight(4.9),
+        marginBottom: calcHeight(4),
       }}>
       <Text style={[styles.txtSubHead]}>{props.title}</Text>
     </View>
@@ -473,7 +507,103 @@ export const ButtonNormal = props => {
   );
 };
 
+export const UploadTitle = props => (
+  <Text style={[styles.txtSubHead, {fontWeight: '300'}]}>{props.title}</Text>
+);
+
+export const SelectFile = props => {
+  return (
+    <View
+      style={{
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: calcHeight(1.5),
+      }}>
+      <Text style={styles.selectfiletxt}>{props.subTitle}</Text>
+      <View
+        style={{
+          flexDirection: 'row',
+
+          justifyContent: 'center',
+        }}>
+        <TouchableOpacity
+          onPress={props.onLeftPress}
+          style={[
+            styles.btnFile,
+            {
+              borderWidth: 1,
+              borderRightWidth: 1,
+              paddingVertical: calcHeight(1.2),
+              paddingHorizontal: calcWidth(5.2),
+              borderRadius: 5,
+              borderColor: '#081344',
+            },
+          ]}>
+          <Image
+            style={styles.file_img}
+            source={require(`${assetsPath}File/file1.png`)}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={props.onRightPress}
+          style={[
+            styles.btnFile,
+            {
+              borderWidth: 1,
+              borderLefttWidth: 1,
+              paddingVertical: calcHeight(1.2),
+              paddingHorizontal: calcWidth(5.2),
+              borderRadius: 5,
+              borderColor: '#081344',
+            },
+          ]}
+          {...props}>
+          <Image
+            style={styles.file_img}
+            source={require(`${assetsPath}File/file2.png`)}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+export const UploadValdation = props => (
+  <View>
+    <Text style={styles.selectfilefooter}>File Format : jpeg + png + jpg</Text>
+    <Text style={styles.selectfilefooter}>File Size > 5 MB</Text>
+  </View>
+);
+export const ModalPickerItem = props => {
+  return (
+    <TouchableOpacity onPress={props.onPress}>
+      <Text style={[styles.input, {borderColor: '#999999'}]}>
+        {props.label}
+      </Text>
+    </TouchableOpacity>
+  );
+};
+
 const styles = EStyleSheet.create({
+  selectfilefooter: {
+    padding: calcWidth(1),
+    color: '#081344',
+    fontSize: RFValue(14),
+    fontFamily: 'Montserrat-Light',
+    textAlign: 'center',
+  },
+  selectfiletxt: {
+    padding: calcWidth(1),
+    color: '#081344',
+    fontSize: RFValue(14),
+    fontFamily: 'Montserrat-Light',
+    textAlign: 'center',
+  },
+  file_img: {
+    width: '35 rem',
+    height: '35 rem',
+  },
   agreement: {
     marginVertical: calcWidth(5),
     marginHorizontal: calcHeight(2),
@@ -482,19 +612,19 @@ const styles = EStyleSheet.create({
   },
   agreement_lnk: {
     padding: calcHeight(1),
-    fontStyle: 'italic',
+    //fontStyle: 'italic',
     color: '#081344',
     fontSize: RFValue(13),
     textDecorationLine: 'underline',
-    fontFamily: 'Montserrat-Light',
+    fontFamily: 'Montserrat-LightItalic',
   },
   txt_agreement: {
     marginLeft: calcWidth(2),
     padding: calcHeight(1),
-    fontStyle: 'italic',
+    // fontStyle: 'italic',
     color: '#081344',
     fontSize: RFValue(13),
-    fontFamily: 'Montserrat-Light',
+    fontFamily: 'Montserrat-LightItalic',
   },
   txt_total_amt: {
     flex: 1,
@@ -554,7 +684,6 @@ const styles = EStyleSheet.create({
     fontFamily: 'Montserrat-Light',
   },
   picker: {
-    borderBottomWidth: 1,
     borderColor: '#081344',
     fontSize: '$inputFontSize',
     paddingHorizontal: calcWidth(1.5),
@@ -785,7 +914,7 @@ const styles = EStyleSheet.create({
     paddingHorizontal: calcWidth(1.5),
     paddingVertical: calcHeight(0.8),
     color: '$inputTextColor',
-    margin: 5,
+    margin: calcHeight(1),
     fontFamily: 'Montserrat-Light',
   },
   lblInput: {
@@ -904,10 +1033,10 @@ export const hdrStyles = EStyleSheet.create({
   title: {
     color: '#081344',
     fontFamily: 'Montserrat-SemiBold',
-    fontSize: RFValue(17),
+    fontSize: RFValue(15),
     textAlign: 'center',
     // backgroundColor: 'red',
-    //flex: 1,
-    width: '100%',
+    flex: 1,
+    //width: '100%',
   },
 });

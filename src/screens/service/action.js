@@ -195,30 +195,54 @@ const Fetcher = async (fetchData, type, dispatch) => {
 };
 
 export const docAttestationCreate = payload => dispatch => {
-  const {token, ...bodyData} = payload;
-  const body = JSON.stringify(bodyData);
-
+  const {token, data} = payload;
+  const body = data;
   return openAttestationFetcher(
     async () => {
       const result = await fetch(DOC_ATTESTATION_CREATE_URL, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
-          'Content-Type': 'application/json',
+          'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${token}`,
         },
         body,
       });
-
       return result.json().then(data => ({
         data: data,
         status: result.ok,
       }));
     },
-    attestationState,
+
+    langTransState,
     dispatch,
   );
 };
+
+// export const docAttestationCreate = payload => dispatch => {
+//   const {token, ...bodyData} = payload;
+
+//   return openAttestationFetcher(
+//     async () => {
+//       const result = await fetch(DOC_ATTESTATION_CREATE_URL, {
+//         method: 'POST',
+//         headers: {
+//           Accept: 'application/json',
+//           'Content-Type': 'application/json',
+//           Authorization: `Bearer ${token}`,
+//         },
+//         body,
+//       });
+
+//       return result.json().then(data => ({
+//         data: data,
+//         status: result.ok,
+//       }));
+//     },
+//     attestationState,
+//     dispatch,
+//   );
+// };
 
 export const visaServiceCreate = payload => dispatch => {
   const {token, data} = payload;

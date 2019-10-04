@@ -49,7 +49,7 @@ import {
 import {faq, faqcategory} from '../screens/faq/reducer';
 
 import {dashboard} from '../screens/dashboard/reducer';
-
+import {paymentdetail} from '../screens/foloosi/reducer';
 import {onesignal, onesignalInfo} from '../screens/onesignal/reducer';
 const combinedReducers = {
   login,
@@ -88,6 +88,7 @@ const combinedReducers = {
   faq,
   faqcategory,
   dashboard,
+  paymentdetail,
 };
 
 export default persistCombineReducers(config, combinedReducers);
