@@ -22,7 +22,6 @@ export default MyRequestStack = createStackNavigator(
       headerStyle: hdrStyles.header,
       headerTintColor: '#fff',
       headerTitleStyle: hdrStyles.title,
-      headerRight: <HeaderBtnProfile onPress={() => alert('Profile')} />,
     },
   },
 );

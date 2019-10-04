@@ -9,6 +9,7 @@ import AlertView from '../../../styled/alert-view';
 import {
   HeaderBtnMenu,
   HeaderBtnBack,
+  HeaderBtnProfile
 } from '../../../pages/uicomponents/components';
 
 class Container extends Component {
@@ -35,6 +36,7 @@ class Container extends Component {
         <HeaderBtnBack onPress={() => navigation.navigate('Dashboard')} />
       </View>
     ),
+    headerRight: <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
   });
   componentDidUpdate = prevProps => {
     const {success, error} = this.props.services;

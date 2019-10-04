@@ -16,7 +16,7 @@ import {FAQCategoryData, clearFaq} from '../faq/action';
 import AlertView from '../../styled/alert-view';
 import Loader from '../../styled/loader';
 import OneSignal from 'react-native-onesignal';
-import {HeaderBtnMenu} from '../../pages/uicomponents/components';
+import {HeaderBtnMenu, HeaderBtnProfile} from '../../pages/uicomponents/components';
 
 class Container extends Component {
   constructor(props) {
@@ -34,7 +34,8 @@ class Container extends Component {
       <View style={{flexDirection: "row"}} >
         <HeaderBtnMenu onPress={() => alert("")} />
       </View>
-    )
+    ),
+    headerRight: <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
   });
 
   onOpened(openResult) {

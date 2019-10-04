@@ -15,17 +15,29 @@ import {
 
 import EStyleSheet from 'react-native-extended-stylesheet';
 import DateTimePicker from "react-native-modal-datetime-picker";
+import {
+  HeaderBtnMenu,
+  HeaderBtnBack,
+  HeaderBtnProfile
+} from './uicomponents/components';
 
 import {calcHeight, calcWidth} from '../config';
 
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 
-
 class App extends React.Component {
-  static navigationOptions = {
-    title: 'Attestation Service',
-  };
+  
+  static navigationOptions = ({navigation}) => ({
+    title: "Manage my Profile",
+    headerLeft: (
+      <View style={{flexDirection: 'row'}}>
+        <HeaderBtnMenu onPress={() => alert('')} />
+        <HeaderBtnBack onPress={() => navigation.navigate('Dashboard')} />
+      </View>
+    ),
+    headerRight: <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
+  });
 
   state = {
     state : "",

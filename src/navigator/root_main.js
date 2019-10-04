@@ -5,12 +5,14 @@ import MyRequestStack from './myrequest_stack';
 import ServiceStack from './service_stack';
 import SideMenu from './SideMenu/SideMenu';
 import BottomBar from './BottomBar/BottomBar';
+import ProfileStack from './profile_stack';
 
 const Tabs = createBottomTabNavigator(
   {
     Dashboard: {screen: DashboardStack},
     MyRequestStack: {screen: MyRequestStack},
     Services: {screen: ServiceStack},
+    Profile: {screen: ProfileStack},
   },
   {
     tabBarComponent: BottomBar,
