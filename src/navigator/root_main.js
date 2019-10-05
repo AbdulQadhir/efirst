@@ -7,6 +7,8 @@ import SideMenu from './SideMenu/SideMenu';
 import BottomBar from './BottomBar/BottomBar';
 import ProfileStack from './profile_stack';
 
+import {calcHeight, calcWidth} from '../config';
+
 const Tabs = createBottomTabNavigator(
   {
     Dashboard: {screen: DashboardStack},
@@ -38,7 +40,7 @@ const Drawer = createDrawerNavigator(
   },
   {
     contentComponent: SideMenu,
-    drawerWidth: 250,
+    drawerWidth: calcWidth(80),
   },
 );
 

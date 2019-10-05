@@ -32,7 +32,7 @@ class Container extends Component {
     title: 'Dashboard',
     headerLeft: (
       <View style={{flexDirection: "row"}} >
-        <HeaderBtnMenu onPress={() => alert("")} />
+        <HeaderBtnMenu onPress={() => navigation.openDrawer()} />
       </View>
     ),
     headerRight: <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />

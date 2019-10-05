@@ -17,9 +17,11 @@ import {BASE_URL} from '../../constants';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import IconsAws from 'react-native-vector-icons/FontAwesome';
 import IconsAws5 from 'react-native-vector-icons/FontAwesome5';
+import IconsAnt from 'react-native-vector-icons/AntDesign';
 import Radio from './radio';
 import CheckBox from 'react-native-check-box';
 import CheckBoxItem from '../../styled/checkbox';
+import {Assets} from '../../../node_modules/react-navigation-stack';
 // import PickerModal from 'react-native-picker-modal-view';
 
 EStyleSheet.build({
@@ -285,9 +287,10 @@ export const MyRequestItem = ({
   color,
   backgroundColor,
   statusLabel,
+  onPress,
 }) => {
   return (
-    <View style={styles.myreqitem}>
+    <TouchableOpacity onPress={onPress} style={styles.myreqitem}>
       <View style={{flex: 1}}>
         <Text style={styles.myreqitem_head}>Date</Text>
         <Text style={styles.myreqitem_text}>{service.CreatedDate}</Text>
@@ -306,7 +309,7 @@ export const MyRequestItem = ({
           {statusLabel}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -632,7 +635,11 @@ export const ProfileName = props => {
 };
 
 export const ButtonSlim = props => {
-  return <Text style={[styles.btnslimtxt, props.style]}>{props.label}</Text>;
+  return (
+    <TouchableOpacity onPress={props.onPress}>
+      <Text style={[styles.btnslimtxt, props.style]}>{props.label}</Text>
+    </TouchableOpacity>
+  );
 };
 
 export const ProfileSaveIcon = props => {
@@ -675,7 +682,190 @@ export const ProfileSectionHdr = props => {
   );
 };
 
+export const SRDetailsHdr = props => {
+  return (
+    <View style={styles.srdt_hdr} {...props}>
+      <IconsAws5
+        name="ellipsis-v"
+        style={[styles.srdt_hdr_txt, {fontSize: RFValue(12)}]}
+      />
+      <Text style={styles.srdt_hdr_txt}> {props.label}</Text>
+    </View>
+  );
+};
+
+export const SRDtDate = props => {
+  return (
+    <View
+      style={{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: calcWidth(2),
+        marginHorizontal: calcWidth(2),
+      }}>
+      <Text style={{fontSize: RFValue(17), color: '#8d847d'}}>
+        {props.label}
+      </Text>
+      <View style={{flexDirection: 'row'}}>
+        <TouchableOpacity
+          onPress={props.onRefresh}
+          style={{padding: calcWidth(2)}}>
+          <Ionicons
+            name="ios-refresh"
+            style={{fontSize: RFValue(17), color: '#8d847d'}}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={props.onChatPress}
+          style={{padding: calcWidth(2)}}>
+          <IconsAnt
+            name="message1"
+            style={{fontSize: RFValue(17), color: '#8d847d'}}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+export const SRTimeline = props => {
+  return (
+    <View style={styles.srtimeline}>
+      <View style={{flex: 1, alignItems: 'center'}}>
+        <Text style={styles.srtimeline_title}>{props.title}</Text>
+        <View
+          style={{
+            borderBottomWidth: 1,
+            padding: 3,
+            borderColor: '#081344',
+            width: '75%',
+          }}></View>
+        <Text style={styles.srtimeline_date}>{props.date} </Text>
+      </View>
+    </View>
+  );
+};
+
+export const SideMenuItem = props => {
+  return (
+    <TouchableOpacity
+      onPress={props.onPress}
+      style={{
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: calcWidth(5),
+        paddingHorizontal: calcWidth(7),
+      }}>
+      <Image source={props.img} style={styles.sidemenuitem_img} />
+      <Text style={styles.sidemenuitem_txt}>{props.label}</Text>
+    </TouchableOpacity>
+  );
+};
+
+export const SideMenuDivider = () => {
+  return (
+    <View
+      style={{
+        borderColor: '#999999',
+        borderTopWidth: 1,
+        width: '80%',
+        marginVertical: calcWidth(3),
+        alignSelf: 'center',
+      }}></View>
+  );
+};
+
+export const SideMenuHeader = props => {
+  return (
+    <View
+      style={{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: calcWidth(3),
+        marginVertical: calcWidth(3),
+      }}>
+      <View style={styles.sidemenuhdr_img_border}>
+        <Image
+          style={styles.sidemenuhdr_img}
+          source={require(`${assetsPath}Profile/profile.jpg`)}
+        />
+      </View>
+      <View style={{flexDirection: 'column', padding: calcWidth(2)}}>
+        <Text style={[styles.profilename_txt, {width: calcWidth(50)}]}>
+          {props.name}
+        </Text>
+        <Text style={[styles.profilename_desig, {width: calcWidth(50)}]}>
+          {props.desig}
+        </Text>
+      </View>
+    </View>
+  );
+};
+
 const styles = EStyleSheet.create({
+  sidemenuhdr_img_border: {
+    width: calcWidth(15),
+    height: calcWidth(15),
+    borderRadius: calcWidth(7.5),
+    borderWidth: 3,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#8d847d',
+  },
+  sidemenuhdr_img: {
+    width: calcWidth(13),
+    height: calcWidth(13),
+    borderRadius: calcWidth(6.5),
+  },
+  sidemenuitem_img: {
+    width: calcWidth(6),
+    height: calcWidth(6),
+  },
+  sidemenuitem_txt: {
+    fontSize: RFValue(15),
+    paddingHorizontal: calcWidth(3),
+    color: '#4d4d4d',
+    fontFamily: 'Montserrat-Medium',
+  },
+  srtimeline_date: {
+    fontSize: RFValue(13),
+    padding: calcWidth(2),
+    textAlign: 'center',
+    color: '#081344',
+    fontFamily: 'Montserrat-Light',
+  },
+  srtimeline_title: {
+    fontSize: RFValue(15),
+    fontFamily: 'Montserrat-Medium', //bold,
+    color: '#081344',
+  },
+  srtimeline: {
+    flexDirection: 'row',
+    paddingHorizontal: 15,
+    justifyContent: 'space-between',
+    backgroundColor: '#EDECF0',
+    alignItems: 'center',
+    borderRadius: '10 rem',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: calcWidth(4),
+  },
+  srdt_hdr_txt: {
+    fontSize: RFValue(17),
+    color: '#081344',
+    textAlign: 'center',
+    padding: calcWidth(1),
+  },
+  srdt_hdr: {
+    paddingHorizontal: calcWidth(2),
+    borderWidth: 1,
+    borderRadius: calcWidth(2),
+    borderColor: '#999999',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
   profile_section_hdr: {
     padding: calcHeight(1),
     marginVertical: calcHeight(1.2),
@@ -700,15 +890,14 @@ const styles = EStyleSheet.create({
     marginTop: calcHeight(2),
   },
   btnslimtxt: {
-    width: calcWidth(30),
-    fontSize: RFValue(12),
+    width: calcWidth(28),
+    fontSize: RFValue(13),
     textAlign: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
     color: '#FFF',
     fontFamily: 'Montserrat-Light', //bold,
-    padding: calcHeight(1.3),
+    padding: calcWidth(2),
     borderRadius: calcWidth(2.5),
+    margin: calcWidth(1),
   },
   profilesave_icon: {
     fontSize: RFValue(19),
