@@ -29,7 +29,7 @@ class SideMenu extends Component {
             <SideMenuItem label="Documents" img={require(`${assetsPath}Menubar/doc.png`)}  />
             <SideMenuDivider />
             <SideMenuItem onPress={navigateToScreen("FAQHome")} label="FAQ" img={require(`${assetsPath}Menubar/dash.png`)}  />
-            <SideMenuItem label="Support" img={require(`${assetsPath}Menubar/support.png`)}  />
+            <SideMenuItem onPress={navigateToScreen("Support")}  label="Support" img={require(`${assetsPath}Menubar/support.png`)}  />
             <SideMenuItem label="Settings" img={require(`${assetsPath}Menubar/dash.png`)}  />
             <SideMenuItem label="Log Out" img={require(`${assetsPath}Menubar/dash.png`)}  />
         </ScrollView>

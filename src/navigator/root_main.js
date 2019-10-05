@@ -7,6 +7,7 @@ import ServiceStack from './service_stack';
 import SideMenu from './SideMenu/SideMenu';
 import BottomBar from './BottomBar/BottomBar';
 import ProfileStack from './profile_stack';
+import SupportStack from './support_stack';
 
 import {calcHeight, calcWidth} from '../config';
 
@@ -17,6 +18,7 @@ const Tabs = createBottomTabNavigator(
     Services: {screen: ServiceStack},
     Profile: {screen: ProfileStack},
     FAQ: {screen: FAQStack},
+    Support: {screen: SupportStack},
   },
   {
     tabBarComponent: BottomBar,

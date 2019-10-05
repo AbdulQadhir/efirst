@@ -754,8 +754,46 @@ export const FAQuestion = (props) => {
         )
 }
 
+export const InputSupport = (props) => {
+  return (
+      <TextInput {...props}  style={[styles.input,{fontFamily: 'Montserrat-Medium', color:"#081344",textAlignVertical: 'top'}, props.style]}
+          placeholderTextColor="#081344"
+       />
+  )
+}
+
+export const TxtInputMessage = (props) => {
+  return (
+      <TextInput style={[styles.input,{fontWeight:'bold',textAlignVertical: 'top',fontSize:18}]} {...props}  placeholder={props.name} multiline={true} numberOfLines={8}
+          placeholderTextColor="#081344"
+       />
+  )
+}
+
+
+export const SupportDetail = (props) => {
+  return (
+          <View style={{marginTop: calcHeight(2), marginHorizontal: calcWidth(2)}} >
+               <Text style={styles.supportdt_title}>{props.title}</Text>
+               <Text style={styles.supportdt_data}>{props.data} </Text>
+          </View>
+        )
+}
 
 const styles = EStyleSheet.create({
+  supportdt_title:{
+      fontSize:RFValue(15),
+      fontFamily: 'Montserrat-BoldItalic', 
+      fontStyle:'italic',
+      fontWeight: "bold",
+      color:'#081344'
+  },
+  supportdt_data:{
+      fontSize:RFValue(13),
+      fontFamily: 'Montserrat-Bold', 
+      padding:calcHeight(1),
+      color:'#081344'
+  },
   faq_ans:{
       color:'#081344',
       fontSize:RFValue(13),
