@@ -688,19 +688,53 @@ export const SRTimeline = (props) => {
 export const SideMenuItem = (props) => {
     return (
         <TouchableOpacity onPress={props.onPress} style={{ flexDirection: "row",alignItems:'center',padding: calcWidth(5),paddingHorizontal: calcWidth(7)}} >
-            <Image source={require(`${assetsPath}Menubar/dash.png`)} style={styles.sidemenuitem_img} />
+            <Image source={props.img} style={styles.sidemenuitem_img} />
             <Text style={styles.sidemenuitem_txt} >{props.label}</Text>
         </TouchableOpacity>
     )
 }
 
+export const SideMenuDivider = () => {
+  return (
+      <View style={{borderColor: "#999999",borderTopWidth: 1,width:"80%", marginVertical: calcWidth(3), alignSelf:"center" }} ></View>
+  )
+}
+
+export const SideMenuHeader = (props) => {
+  return (  
+        <View style={{ flexDirection: "row",alignItems:'center' ,justifyContent:'center', padding: calcWidth(3), marginVertical: calcWidth(3)}} >
+          <View style={styles.sidemenuhdr_img_border}>
+            <Image style={styles.sidemenuhdr_img} source={require(`${assetsPath}Profile/profile.jpg`)} />
+          </View>  
+         <View style={{ flexDirection: "column",padding:calcWidth(2)}} >
+            <Text  style={[styles.profilename_txt,{width:calcWidth(50)}]} >{props.name}</Text>
+            <Text  style={[styles.profilename_desig,{width:calcWidth(50)}]}  >{props.desig}</Text> 
+         </View> 
+        </View>
+  )
+}
+
 const styles = EStyleSheet.create({
+  sidemenuhdr_img_border:{
+      width: calcWidth(15),
+      height: calcWidth(15),
+      borderRadius:calcWidth(7.5),
+      borderWidth:3,
+      alignItems:'center' ,
+      justifyContent:'center',
+      borderColor:'#8d847d'
+  },
+  sidemenuhdr_img : {
+    width: calcWidth(13),
+    height: calcWidth(13),
+    borderRadius: calcWidth(6.5)
+  },
   sidemenuitem_img : {
     width: calcWidth(6),
     height: calcWidth(6),
   },
   sidemenuitem_txt : {
-    fontSize: RFValue(17),
+    fontSize: RFValue(15),
     paddingHorizontal: calcWidth(3),
     color:'#4d4d4d',
     fontFamily: 'Montserrat-Medium', 
