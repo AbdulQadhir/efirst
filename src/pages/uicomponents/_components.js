@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const entireScreenWidth = Dimensions.get('window').width;
 const entireScreenHeight = Dimensions.get('window').height;
@@ -205,7 +206,7 @@ export const PriceDetails = (props) => {
                 <Text style={{fontSize:24,fontWeight:'bold',color:'#081344'}}>{props.priceDt}</Text>
                 </View>
                 <View>
-                <Text style={styles.buttonAED}>{props.btnName} Attestation</Text>
+                <Text style={styles.buttonAED}>{props.btnName}</Text>
                 </View>
             </View>
             )
@@ -308,17 +309,6 @@ export const ButtonSlim = (props) => {
 }
 
 
-export const FAQMenu = (props) => {
-    return (
-        <View style={{ alignItems:'center' ,justifyContent:'center'}} >
-            <View  style={styles.menu}  {...props}  >
-                 <Image style={styles.file_img} source={require(`${assetsPath}File/file1.png`)} />
-            </View>
-            <Text style={{ fontSize : 14,color:'#081344',padding:5}} >{props.btnName} General</Text>
-        </View>
-    )
-}
-
 export const BoxHeading = (props) => {
     return (
             <View  style={styles.boxHeading}  {...props}  >
@@ -416,15 +406,127 @@ export const FAQuestion = (props) => {
             <View>
                <View style={{flexDirection:'row',justifyContent:'space-between', borderBottomWidth:1,padding:3,color:'#8d847d'}}>
                     <Text style={{fontSize:22,fontWeight:'bold',color:'#081344'}}>{props.title}</Text>
+                   
                     <Image style={{width:25,height:25}} source={require(`${assetsPath}FAQMenu/question.png`)} />
                </View >
-               <View style={{padding:10}}>
-                    <Text style={{fontSize:16,paddingHorizontal:40,textAlign:'center',color:'#8d847d'}}>{props.data}</Text>
+               <View style={{padding:5}}>
+                    <Text style={{fontSize:16,paddingHorizontal:40,textAlign:'center',color:'#081344'}}>{props.data}</Text>
                </View>
             </View>
             )
 }
+
+
+export const FAQMenu = (props) => {
+
+    return (
+        <View style={styles.faqView}>
+            <View  style={styles.menu}  {...props}  >
+                 <Image style={styles.file_img} source={props.img} />
+            </View>
+            <Text style={styles.faqTxt} >{props.btnName} </Text>
+        </View>
+    )
+}
+
+export const LogoUnderline = (props) => {
+    return (
+        <View style={{ borderTopWidth:4,width:'30 %',borderColor:'#e2eae7'}} >
+        </View>
+    )
+}
+
+export const FAQButton= (props) => {
+    return (
+        <TouchableOpacity  style={styles.btnFAQ} {...props}  >
+            <Text style={{ fontSize : 16, color : "#FFF", fontWeight : "bold"}} >{props.btnName}</Text>
+        </TouchableOpacity>
+    )
+}
+export const VisaBorder = (props) => {
+    return (
+        <View style={{backgroundColor:'#081344'}} >
+            <Text style={styles.visaBorder} >{props.name}</Text>
+        </View>
+    )
+}
+
+export const VisaTitles = (props) => {
+    
+    return (
+           
+            <View style={[styles.price,{alignItems:'center',marginTop:20}]} >
+               <View>
+                 <Text style={{fontSize:22,fontWeight:'bold',color:'#081344'}}>{props.title}Visa stamping</Text>
+               </View>
+            </View>
+            )
+}
+export const TxtInputBold = (props) => {
+    return (
+        <TextInput style={[styles.input,{fontWeight:'bold',fontSize:18}]} {...props}  placeholder={props.name}
+            placeholderTextColor="#081344"
+         />
+    )
+}
+
+export const TxtInputMessage = (props) => {
+    return (
+        <TextInput style={[styles.input,{fontWeight:'bold',textAlignVertical: 'top',fontSize:18}]} {...props}  placeholder={props.name} multiline={true} numberOfLines={8}
+            placeholderTextColor="#081344"
+         />
+    )
+}
+
+export const SupportDetails = (props) => {
+    
+    return (
+           
+            <View style={{paddingHorizontal:10}} >
+                 <Text style={styles.supportDtTxt1}>{props.title}</Text>
+                 <Text style={styles.supportDtTxt2}>{props.data} </Text>
+            </View>
+            )
+}
 const styles = EStyleSheet.create({
+    supportDtTxt1:{
+        fontSize:18,
+        fontWeight:'bold',
+        fontStyle:'italic',
+        color:'#081344'
+    },
+    supportDtTxt2:{
+        fontSize:14,
+        padding:5,
+        color:'#081344'},
+    visaBorder:{ 
+        fontSize : 15,
+        color : "#FFF",
+        textAlign:'center',
+        padding:5
+    },
+    btnFAQ:{
+        width: "200 rem",
+        padding : "8 rem",
+        backgroundColor : "#081344",
+        borderRadius : "5 rem",
+        alignItems : "center",
+        alignSelf: "center",
+        margin : "10 rem",
+        fontSize:RFValue(10),
+    },
+    faqView:{
+        alignItems:'center' ,
+        justifyContent:'center',
+        padding:10,
+        alignSelf: "center",
+        width:'28%'
+    },
+    faqTxt:{ 
+        fontSize : RFValue(11),
+        color:'#081344',
+        padding:5
+    },
     loginfooter:{
         flex: 1,
         alignItems: "center",
@@ -698,9 +800,9 @@ const styles = EStyleSheet.create({
         fontSize:18,
     },
     btnPay : {
-        width: "280 rem",
+        width: "235 rem",
         padding : "18 rem",
-        backgroundColor : "#EF6174",
+        backgroundColor : "#f84563",
         borderRadius : "15 rem",
         alignItems : "center",
         alignSelf: "center",
@@ -755,13 +857,11 @@ const styles = EStyleSheet.create({
         fontSize:'10 rem'
     },
     menu : {
-        width: "60 rem",
-        height: "60 rem",
-        paddingVertical : "8 rem",
-        paddingHorizontal:"20 rem",
+        width: "65 rem",
+        height: "70 rem",
         borderWidth: 1,
         borderRadius : "7 rem",
-        borderColor: "#999999",
+        borderColor: "#8d847d",
         alignItems:'center' ,
         justifyContent:'center'
     },

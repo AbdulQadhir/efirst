@@ -28,7 +28,7 @@ class SideMenu extends Component {
             <SideMenuItem onPress={navigateToScreen("Profile")} label="Profile" img={require(`${assetsPath}Menubar/profile.png`)}  />
             <SideMenuItem label="Documents" img={require(`${assetsPath}Menubar/doc.png`)}  />
             <SideMenuDivider />
-            <SideMenuItem label="FAQ" img={require(`${assetsPath}Menubar/dash.png`)}  />
+            <SideMenuItem onPress={navigateToScreen("FAQHome")} label="FAQ" img={require(`${assetsPath}Menubar/dash.png`)}  />
             <SideMenuItem label="Support" img={require(`${assetsPath}Menubar/support.png`)}  />
             <SideMenuItem label="Settings" img={require(`${assetsPath}Menubar/dash.png`)}  />
             <SideMenuItem label="Log Out" img={require(`${assetsPath}Menubar/dash.png`)}  />

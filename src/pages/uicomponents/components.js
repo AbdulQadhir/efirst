@@ -714,7 +714,101 @@ export const SideMenuHeader = (props) => {
   )
 }
 
+export const FAQLogoUnderline = (props) => {
+  return (
+      <View style={{ borderTopWidth:4,width:'55%',borderColor:'#e2eae7', marginVertical: calcWidth(4), alignSelf:"center"}} >
+      </View>
+  )
+}
+
+export const FAQMenuItem = (props) => {
+  return (
+      <TouchableOpacity onPress={props.onPress} style={styles.faqView}>
+          <View  style={styles.menu}  {...props}  >
+               <Image style={styles.file_img} source={props.img} />
+          </View>
+          <Text style={styles.faqTxt} >{props.btnName} </Text>
+      </TouchableOpacity>
+  )
+}
+
+export const FAQCategoryHdr= (props) => {
+  return (
+      <View  style={styles.faqcat_hdr} {...props}  >
+          <Text style={styles.faqcat_hdrtxt} >{props.label}</Text>
+      </View>
+  )
+}
+
+export const FAQuestion = (props) => {
+  return (
+          <View style={{marginTop:calcWidth(2)}} >
+             <View style={{flexDirection:'row',justifyContent:'space-between', borderBottomWidth:1, borderColor:"#999999",padding:calcWidth(1),color:'#8d847d'}}>
+                  <Text style={styles.faq_qst}>{props.question}</Text>
+                  <Image style={styles.faq_qst_img} source={require(`${assetsPath}FAQMenu/question.png`)} />
+             </View >
+             <View style={{padding:5}}>
+                  <Text style={styles.faq_ans}>{props.answer}</Text>
+             </View>
+          </View>
+        )
+}
+
+
 const styles = EStyleSheet.create({
+  faq_ans:{
+      color:'#081344',
+      fontSize:RFValue(13),
+      fontFamily: 'Montserrat-Light', 
+      marginHorizontal: calcWidth(3),
+  },
+  faq_qst:{
+      color:'#081344',
+      fontSize:RFValue(15),
+      fontFamily: 'Montserrat-Medium', 
+  },
+  faq_qst_img:{
+      height: calcWidth(7),
+      width: calcWidth(7),
+  },
+  faqcat_hdrtxt:{
+      color : "#FFF",
+      fontSize:RFValue(15),
+      fontFamily: 'Montserrat-Medium', 
+  },
+  faqcat_hdr:{
+      width: calcWidth(50),
+      padding : calcWidth(2),
+      backgroundColor : "#081344",
+      borderRadius : calcWidth(1),
+      alignItems : "center",
+      alignSelf: "center",
+      margin : calcWidth(1),
+      fontSize:RFValue(10),
+  },
+  menu : {
+      width: calcWidth(15),
+      height: calcWidth(15),
+      borderWidth: 1,
+      borderRadius : calcWidth(2),
+      borderColor: "#8d847d",
+      alignItems:'center' ,
+      justifyContent:'center'
+  },
+  faqView:{
+      alignItems:'center' ,
+      justifyContent:'center',
+      padding: calcWidth(2),
+      alignSelf: "center",
+      width:'28%'
+  },
+  faqTxt:{ 
+      fontSize : RFValue(11),
+      color:'#081344',
+      padding:calcWidth(2),
+      height: calcWidth(12),
+      textAlign: "center"
+  },
   sidemenuhdr_img_border:{
       width: calcWidth(15),
       height: calcWidth(15),
