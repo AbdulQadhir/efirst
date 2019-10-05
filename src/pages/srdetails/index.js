@@ -12,6 +12,7 @@ import Ionicons from 'react-native-vector-icons/AntDesign';
 
 import Details from "./details";
 import SRDetails from "./srdetails";
+import Documents from "./documents";
 
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
@@ -35,7 +36,6 @@ class App extends React.Component {
         this.setState({selectedTab: tab})
     }
     
-
   static navigationOptions = ({navigation}) => ({
     title: "Service Details",
     headerLeft: (
@@ -61,6 +61,7 @@ class App extends React.Component {
                     </View>
                     <View style={{flex:1}}>
                         {this.state.selectedTab == 1 ? (<Details />) : (<View />)}
+                        {this.state.selectedTab == 2 ? (<Documents />) : (<View />)}
                         {this.state.selectedTab == 3 ? (<SRDetails />) : (<View />)}
                     </View>
                 </View>  

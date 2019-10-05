@@ -4,7 +4,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 import initStore from './store';
 import {Platform} from 'react-native';
 import RootContainer from './rootContainer';
-//import Page from './pages/support';
+//import Page from './pages/srdetails';
 const {store, persistor} = initStore();
 import {Sentry, SentrySeverity, SentryLog} from 'react-native-sentry';
 const sentryDsn = Platform.select({

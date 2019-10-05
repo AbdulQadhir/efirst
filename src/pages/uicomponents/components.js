@@ -780,7 +780,45 @@ export const SupportDetail = (props) => {
         )
 }
 
+export const SRDocumentItem = (props) => {
+  return (
+    <TouchableOpacity onPress={props.onPress}>
+      <View style={styles.doc_main}>
+        <Image
+          style={styles.image}
+          source={require("../../Assets/service/document.png")}
+        />
+        <Text
+          style={{
+            textAlign: "center",
+            padding: 5,
+            marginTop: 5,
+            color: "#515A5A",
+            fontSize: RFValue(13)
+          }}
+        >
+          {props.name}
+        </Text>
+      </View>
+    </TouchableOpacity>
+        )
+}
+
+
+
+
 const styles = EStyleSheet.create({
+  doc_main: {
+    backgroundColor: "#E5E8E8",
+    borderRadius: calcHeight(1),
+    padding: calcHeight(1),
+    margin: calcHeight(0.5),
+    alignItems: "center"
+  },
+  image: {
+    width: calcHeight(7),
+    height: calcHeight(7),
+  },
   supportdt_title:{
       fontSize:RFValue(15),
       fontFamily: 'Montserrat-BoldItalic', 

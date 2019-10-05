@@ -10,7 +10,6 @@ import {InputSupport, ButtonNormal, SupportDetail} from "./uicomponents/componen
 
 import {
   HeaderBtnProfile,
-  ServiceHomeText,
   HeaderBtnMenu,
   HeaderBtnBack,
 } from './uicomponents/components';
