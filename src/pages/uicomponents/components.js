@@ -132,6 +132,7 @@ export const ButtonExtLogin = props => {
         onPress={() =>
           navigation.navigate('ExternalLogin', {
             uri: BASE_URL + extLoginUrls.data[0].Url,
+            headerTitle: 'wwww.facebook.com',
           })
         }
         style={styles.btnExtLeft}
@@ -146,6 +147,7 @@ export const ButtonExtLogin = props => {
         onPress={() =>
           navigation.navigate('ExternalLogin', {
             uri: BASE_URL + extLoginUrls.data[1].Url,
+            headerTitle: 'wwww.google.com',
           })
         }
         style={styles.btnExtRight}
@@ -419,9 +421,13 @@ export const CheckBoxCustom = props => {
   return (
     <TouchableOpacity
       onPress={props.onPress}
-      style={{flexDirection: 'row', padding: 5, alignItems: 'center', flex: 1}}>
+      style={{
+        flexDirection: 'row',
+        padding: 5,
+        alignItems: 'center',
+      }}>
       <CheckBoxItem {...props} />
-      <Text style={styles.radiotxt}>{props.text}</Text>
+      {props.text && <Text style={styles.radiotxt}>{props.text}</Text>}
     </TouchableOpacity>
   );
 };
@@ -587,131 +593,159 @@ export const ModalPickerItem = props => {
   );
 };
 
-export const ProfilePhoto = (props) => {
+export const ProfilePhoto = props => {
   return (
-         <View style={{ flexDirection: "column",alignItems:'center' ,justifyContent:'center', margin:10}} >
-              <View style={styles.profileBorder}>
-                      <Image style={styles.profile} source={props.img} />
-              </View>  
-         </View> 
-  )
-}
+    <View
+      style={{
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 10,
+      }}>
+      <View style={styles.profileBorder}>
+        <Image style={styles.profile} source={props.img} />
+      </View>
+    </View>
+  );
+};
 
-export const ProfileName = (props) => {
+export const ProfileName = props => {
   return (
-         <View style={{ flexDirection: "column",alignItems:'center' ,justifyContent:'center'}} >
-              <Text  style={styles.profilename_txt} >{props.name}</Text>
-              <View  style={{ flexDirection: "row"}}>
-                  <Text  style={styles.profilename_desig}  >{props.designation}</Text> 
-                  <TouchableOpacity onPress={props.onEditPress} >
-                    <Image style={styles.editIcon} source={require(`${assetsPath}Profile/edit.png`)} />
-                  </TouchableOpacity>
-              </View>  
-         </View> 
-  )
-}
+    <View
+      style={{
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+      <Text style={styles.profilename_txt}>{props.name}</Text>
+      <View style={{flexDirection: 'row'}}>
+        <Text style={styles.profilename_desig}>{props.designation}</Text>
+        <TouchableOpacity onPress={props.onEditPress}>
+          <Image
+            style={styles.editIcon}
+            source={require(`${assetsPath}Profile/edit.png`)}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
 
-export const ButtonSlim = (props) => {
+export const ButtonSlim = props => {
+  return <Text style={[styles.btnslimtxt, props.style]}>{props.label}</Text>;
+};
+
+export const ProfileSaveIcon = props => {
   return (
-        <Text style={[styles.btnslimtxt,props.style]} >{props.label}</Text>
-  )
-}
+    <TouchableOpacity
+      onPress={props.onPress}
+      style={[
+        {
+          alignSelf: 'flex-end',
+          padding: calcWidth(1),
+          paddingHorizontal: calcWidth(2),
+        },
+        props.style,
+      ]}>
+      <Ionicons
+        name="md-checkmark-circle-outline"
+        style={styles.profilesave_icon}
+      />
+    </TouchableOpacity>
+  );
+};
 
-export const ProfileSaveIcon = (props) => {
+export const Underline = props => {
+  return <View style={styles.underline}></View>;
+};
+
+export const ProfileSectionHdr = props => {
   return (
-      <TouchableOpacity onPress={props.onPress} style={[{alignSelf:"flex-end", padding:calcWidth(1), paddingHorizontal:calcWidth(2)}, props.style]}  >
-        <Ionicons name="md-checkmark-circle-outline"style={styles.profilesave_icon} />
-      </TouchableOpacity>
-  )
-}
-
-export const Underline = (props) => {
-    return (
-        <View style={styles.underline} ></View>
-    )
-}
-
-export const ProfileSectionHdr = (props) => {
-  return (
-        <View style={styles.profile_section_hdr} >
-          <Text style={styles.profile_section_hdr_txt} >
-            <IconsAws5 name="ellipsis-v" />{"  "}
-            {props.label}
-          </Text>
-          <ProfileSaveIcon style={{alignSelf:"center"}} onPress={props.onSavePress} />
-        </View>
-  )
-}
+    <View style={styles.profile_section_hdr}>
+      <Text style={styles.profile_section_hdr_txt}>
+        <IconsAws5 style={{fontSize: RFValue(12)}} name="ellipsis-v" />
+        {'  '}
+        {props.label}
+      </Text>
+      <ProfileSaveIcon
+        style={{alignSelf: 'center'}}
+        onPress={props.onSavePress}
+      />
+    </View>
+  );
+};
 
 const styles = EStyleSheet.create({
   profile_section_hdr: {
-    padding: calcWidth(2),
-    marginVertical: calcWidth(1),
-    marginTop: calcWidth(3),
-    borderRadius: calcWidth(2),
+    padding: calcHeight(1),
+    marginVertical: calcHeight(1.2),
+    marginTop: calcHeight(5),
+    borderRadius: calcHeight(1.5),
     borderWidth: 1,
-    borderColor: "#8d847d",
+    borderColor: '#8d847d',
     paddingHorizontal: calcWidth(4),
-    flexDirection:"row",
-    justifyContent: "space-between",
-    alignItems:"center"
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   profile_section_hdr_txt: {
-    fontSize : RFValue(15),
-    color:'#4d4d4d',
+    fontSize: RFValue(13),
+    color: '#4d4d4d',
     fontFamily: 'Montserrat-Medium', //bold,
   },
   underline: {
-    borderTopWidth:1,
-    color:'#999999',
+    borderTopWidth: 1,
+    borderColor: '#999999',
     marginHorizontal: calcWidth(2),
-    marginVertical: calcWidth(5),
+    marginTop: calcHeight(2),
   },
-  btnslimtxt:{
+  btnslimtxt: {
     width: calcWidth(30),
-    fontSize : RFValue(13),
-    textAlign : "center",
-    color : "#FFF", 
+    fontSize: RFValue(12),
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#FFF',
     fontFamily: 'Montserrat-Light', //bold,
-    padding: calcWidth(2.5),
-    borderRadius : calcWidth(2.5),
+    padding: calcHeight(1.3),
+    borderRadius: calcWidth(2.5),
   },
   profilesave_icon: {
-      fontSize: RFValue(17),
+    fontSize: RFValue(19),
   },
-  profilename_desig:{
-      fontSize: RFValue(13),
-      fontFamily: 'Montserrat-Light',
-      color:'#4d4d4d',
-      paddingHorizontal: calcWidth(1),
+  profilename_desig: {
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Light',
+    color: '#4d4d4d',
+    paddingHorizontal: calcWidth(1),
   },
-  profilename_txt:{
-      fontSize: RFValue(16),
-      fontFamily: 'Montserrat-Medium',
-      color:'#4d4d4d',
-      paddingHorizontal: calcWidth(1),
+  profilename_txt: {
+    fontSize: RFValue(16),
+    fontFamily: 'Montserrat-Medium',
+    color: '#4d4d4d',
+    paddingHorizontal: calcWidth(1),
   },
-  editIcon:{
-      width: calcWidth(5),
-      height: calcWidth(5),
-      padding: calcWidth(1),
+  editIcon: {
+    width: calcWidth(5),
+    height: calcWidth(5),
+    padding: calcHeight(1),
   },
-  profile:{
-      width: "80 rem",
-      height: "80 rem",
-      borderRadius:"40 rem",
+  profile: {
+    width: '80 rem',
+    height: '80 rem',
+    borderRadius: '40 rem',
   },
-  profileBorder:{
-      width: "90 rem",
-      height: "90 rem",
-      borderRadius:"50 rem",
-      borderWidth:3,
-      alignItems:'center' ,
-      justifyContent:'center',
-      borderColor:'#8d847d'
+  profileBorder: {
+    width: '90 rem',
+    height: '90 rem',
+    borderRadius: '50 rem',
+    borderWidth: 3,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#8d847d',
   },
-  selectfilefooter : {
-    padding : calcWidth(1),
+  selectfilefooter: {
+    padding: calcWidth(1),
     color: '#081344',
     fontSize: RFValue(14),
     fontFamily: 'Montserrat-Light',
@@ -799,6 +833,7 @@ const styles = EStyleSheet.create({
     paddingHorizontal: calcWidth(1.5),
     color: '$inputTextColor',
     fontFamily: 'Montserrat-Light',
+    marginBottom: calcHeight(0.5),
   },
   pickeritem: {
     fontSize: '$inputFontSize',
@@ -845,7 +880,7 @@ const styles = EStyleSheet.create({
   servicehome_item_title: {
     fontSize: RFValue(14),
     fontFamily: 'Montserrat-Medium',
-    paddingVertical: calcHeight(0.5),
+    paddingVertical: calcHeight(0.55),
   },
   servicehome_item_btn: {
     backgroundColor: '#47489f',

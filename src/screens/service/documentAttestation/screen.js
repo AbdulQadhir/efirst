@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, ScrollView, Dimensions} from 'react-native';
+import {StyleSheet, View, ScrollView, Dimensions, Text} from 'react-native';
 
 import {
   Input2,
@@ -14,6 +14,7 @@ import {
   ModalPickerItem,
   UploadValdation,
   UploadTitle,
+  CheckBoxCustom,
 } from '../../../pages/uicomponents/components';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -96,8 +97,6 @@ const DocumentAttestation = ({
     };
     try {
       ImagePicker.showImagePicker(options, response => {
-        console.log('Response = ', response);
-
         if (response.didCancel) {
           console.log('User cancelled photo picker');
         } else if (response.error) {
@@ -125,11 +124,11 @@ const DocumentAttestation = ({
                   type: response.type,
                   name: imgName,
                 };
-          console.log('PiC====>', pic);
-          var files = values.Files;
-          if (i == 0) files.push(pic);
-          else files[i] = pic;
-          setFieldValue('Files', files);
+          //   console.log('PiC====>', pic);
+          //   var files = values.Files;
+          //   if (i == 0) files.push(pic);
+          //   else files[i] = pic;
+          setFieldValue('File', pic);
 
           return;
         }
@@ -157,10 +156,10 @@ const DocumentAttestation = ({
             type: res.type,
             name: res.name,
           };
-          var files = values.Files;
-          if (i == 0) files.push(file);
-          else files[i] = file;
-          setFieldValue('Files', files);
+          //   var files = values.Files;
+          //   if (i == 0) files.push(file);
+          //   else files[i] = file;
+          setFieldValue('File', file);
         } else {
           showToast('- Invalid file type.\n- File must be smaller than 5 MB');
         }
@@ -171,14 +170,20 @@ const DocumentAttestation = ({
   };
 
   checkPhoneValid = () => {
+    if (values.File === undefined) {
+      console.log('undefined');
+    }
+    if (!values.File) {
+      console.log('empty');
+    }
     console.log('submit');
     setPhoneError('');
     if (!phone.isValidNumber()) {
       setPhoneError('Invalid Format');
       return;
     }
-    if (values.Files.length === 0) {
-      setFieldValue('errorFileUpload', 'Upload File is Required');
+    if (!values.File) {
+      setFieldValue('errorFileUpload', 'Passport or Emirates ID is Required');
     } else {
       setFieldValue('errorFileUpload', null);
     }
@@ -189,8 +194,6 @@ const DocumentAttestation = ({
   };
 
   const attestationRateByCountryandDCType = (CountryId, CertificateType) => {
-    console.log('CountryId', CountryId);
-    console.log('CertificateType', CertificateType);
     if (CountryId && CertificateType) {
       attestationPrice({
         CountryId: CountryId,
@@ -231,18 +234,18 @@ const DocumentAttestation = ({
     {name: 'Umm Al Qwain'},
   ];
 
-  const renderDocs = i => {
-    return values.Files.map(doc => {
-      return (
-        <SelectFile
-          title="Upload File"
-          subTitle={doc.name || 'Select File'}
-          onLeftPress={() => openlaunchCamera(0)}
-          onRightPress={() => openFile(0)}
-        />
-      );
-    });
-  };
+  //   const renderDocs = i => {
+  //     return values.Files.map(doc => {
+  //       return (
+  //         <SelectFile
+  //           title="Upload File"
+  //           subTitle={doc.name || 'Select File'}
+  //           onLeftPress={() => openlaunchCamera(0)}
+  //           onRightPress={() => openFile(0)}
+  //         />
+  //       );
+  //     });
+  //   };
   return (
     <View style={styles.body}>
       <Modal
@@ -494,7 +497,7 @@ const DocumentAttestation = ({
             <UploadTitle title="Passport or Emirates ID*" />
             {/* {renderDocs()} */}
             <SelectFile
-              subTitle={Values.Files "Select File"}
+              subTitle={values.File ? values.File.name : 'Select File'}
               onLeftPress={() => openlaunchCamera(0)}
               onRightPress={() => openFile(0)}
             />
@@ -539,13 +542,41 @@ const DocumentAttestation = ({
             }
           />
 
-          <TxtAgreement
-            onTermsClick={() => {
-              setShowTerms(true);
-            }}
-            // onTermsClick={() => alert('Terms')}
-            isChecked={true}
-          />
+          <View
+            style={{
+              flexDirection: 'row',
+              paddingHorizontal: calcWidth(4),
+              paddingVertical: calcHeight(3),
+              width: calcWidth(88),
+            }}>
+            <CheckBoxCustom
+              isSelected={values.ShowTerms}
+              onPress={() => {
+                console.log(values.ShowTerms);
+                if (values.ShowTerms) {
+                  setFieldValue('ShowTerms', false);
+                } else {
+                  setFieldValue('ShowTerms', true);
+                }
+              }}
+            />
+            <Text
+              style={{
+                fontSize: RFValue(13),
+                paddingHorizontal: calcWidth(1.5),
+                color: '#081344',
+                fontFamily: 'Montserrat-LightItalic',
+                marginBottom: calcHeight(0.5),
+              }}>
+              I have read & agree to the{' '}
+              <Text
+                style={{textDecorationLine: 'underline'}}
+                onPress={() => setShowTerms(true)}>
+                Terms and Conditions
+              </Text>{' '}
+              of Service
+            </Text>
+          </View>
 
           <ButtonNormal label="Pay Now" onPress={checkPhoneValid} />
         </ScrollView>
@@ -586,7 +617,7 @@ export default withFormik({
     cca2: 'AE',
     callingCode: '971',
     errorPhone: '',
-    Files: [],
+    File: null,
     errorFileUpload: null,
     docAttestationCreate,
   }),
@@ -644,12 +675,12 @@ export default withFormik({
     data.append('SelectedCountryId', values.SelectedCountryId);
     data.append('SelectedCertificateType', values.SelectedCertificateType);
 
-    values.Files.map((item, index) => data.append('Files[]', item, item.name));
+    data.append('Files[]', values.File, values.File.name);
     data.append('Rate', Rate);
     //  data.append('ServiceId', 7);
     data.append('ServiceName', ServiceName);
     data.append('PickUpandDropOption', values.PickUpandDropOption);
-    data.append('DocumentCount', values.Files.length);
+    data.append('DocumentCount', 1);
     data.append('AddressLine1', values.Address1);
     data.append('POBox', values.Zip);
     data.append('Country', values.AddressCountry);

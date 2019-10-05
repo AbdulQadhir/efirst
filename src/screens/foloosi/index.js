@@ -18,6 +18,14 @@ class Container extends Component {
       loading: false,
     };
   }
+  static navigationOptions = ({navigation}) => ({
+    title: 'Make a Payment',
+    headerLeft: (
+      <View style={{flexDirection: 'row'}}>
+        <HeaderBtnBack onPress={() => navigation.goBack()} />
+      </View>
+    ),
+  });
   componentDidUpdate() {
     const {srid} = this.props.navigation.state.params;
 
