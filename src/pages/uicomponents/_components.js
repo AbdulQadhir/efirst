@@ -379,8 +379,8 @@ export const Date = (props) => {
               <Text style={{ fontSize : RFValue(17),color:'#081344'}} >{props.btnName}Sep 18, 2019, 9.43 am</Text>
             </View>
             <View  style={{flexDirection:'row',}} {...props}  >
-                <Image style={{width:25,height:25}} source={require(`${assetsPath}Service/refresh.png`)} />
-                <Image style={{width:25,height:25}} source={require(`${assetsPath}Service/message.png`)} />
+                <Image style={{width:25,height:25}} source={require(`${assetsPath}service/refresh.png`)} />
+                <Image style={{width:25,height:25}} source={require(`${assetsPath}service/message.png`)} />
             </View>
         </View>
     )

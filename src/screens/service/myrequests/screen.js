@@ -93,7 +93,7 @@ export default ({
             service.SRStatusName,
             service.ProcessName,
           );
-          return <MyRequestItem service={service} {...res} />;
+          return <MyRequestItem onPress={()=>navigation.navigate("SRDetails")} service={service} {...res} />;
         })
     ) : (
       <View style={[styles.body, {height: calcHeight(70)}]}>

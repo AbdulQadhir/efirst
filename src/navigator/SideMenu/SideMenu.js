@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import styles from './SideMenu.style';
 import {NavigationActions} from 'react-navigation';
 import {ScrollView, Text, View} from 'react-native';
+import {SideMenuItem} from "../../pages/uicomponents/components"
 
 class SideMenu extends Component {
   navigateToScreen = (route) => () => {
@@ -17,33 +18,11 @@ class SideMenu extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          <View>
-            <Text style={styles.sectionHeadingStyle}>
-              Section 1
-            </Text>
-            <View style={styles.navSectionStyle}>
-              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('Page1')}>
-              Page1
-              </Text>
-            </View>
-          </View>
-          <View>
-            <Text style={styles.sectionHeadingStyle}>
-              Section 2
-            </Text>
-            <View style={styles.navSectionStyle}>
-              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('Page2')}>
-                Page2
-              </Text>
-              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('Page3')}>
-                Page3
-              </Text>
-            </View>
-          </View>
+            <SideMenuItem label="Dashboard" />
+            <SideMenuItem label="Dashboard" />
+            <SideMenuItem label="Dashboard" />
+            <SideMenuItem label="Dashboard" />
         </ScrollView>
-        <View style={styles.footerContainer}>
-          <Text>This is my fixed footer</Text>
-        </View>
       </View>
     );
   }

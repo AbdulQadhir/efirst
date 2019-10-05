@@ -1,7 +1,8 @@
 export default {
     container: {
       paddingTop: 20,
-      flex: 1
+      flex: 1,
+      backgroundColor: "#f8f9fc"
     },
     navItemStyle: {
       padding: 10
