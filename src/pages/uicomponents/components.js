@@ -521,6 +521,15 @@ export const UploadTitle = props => (
   <Text style={[styles.txtSubHead, {fontWeight: '300'}]}>{props.title}</Text>
 );
 
+export const ReplyButton = props => {
+  return (
+    <TouchableOpacity
+      onPress={props.onPress}
+      style={[styles.reply_button, props.style]}>
+      <Text style={styles.reply_text}>{props.label}</Text>
+    </TouchableOpacity>
+  );
+};
 export const SelectFile = props => {
   return (
     <View
@@ -700,16 +709,22 @@ export const SRDtDate = props => {
       style={{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: calcWidth(2),
+        padding: calcHeight(1),
         marginHorizontal: calcWidth(2),
+        paddingVertical: calcHeight(1.5),
       }}>
-      <Text style={{fontSize: RFValue(17), color: '#8d847d'}}>
+      <Text
+        style={{
+          fontSize: RFValue(16),
+          fontFamily: 'Montserrat-Light',
+          color: '#8d847d',
+        }}>
         {props.label}
       </Text>
       <View style={{flexDirection: 'row'}}>
         <TouchableOpacity
           onPress={props.onRefresh}
-          style={{padding: calcWidth(2)}}>
+          style={{paddingHorizontal: calcWidth(1)}}>
           <Ionicons
             name="ios-refresh"
             style={{fontSize: RFValue(17), color: '#8d847d'}}
@@ -717,7 +732,7 @@ export const SRDtDate = props => {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={props.onChatPress}
-          style={{padding: calcWidth(2)}}>
+          style={{paddingHorizontal: calcWidth(2)}}>
           <IconsAnt
             name="message1"
             style={{fontSize: RFValue(17), color: '#8d847d'}}
@@ -728,7 +743,19 @@ export const SRDtDate = props => {
   );
 };
 
-export const SRTimeline = props => {
+export const SRMessage = ({name, date, message, replyEvent}) => {
+  return (
+    <View style={styles.srmessagearea}>
+      <View style={{flex: 1, alignItems: 'center'}}>
+        <Text style={styles.srmessage_title}>{name}</Text>
+        <Text style={styles.srmessage_date}>{date} </Text>
+        <Text style={styles.srmessage_date}>{message} </Text>
+      </View>
+    </View>
+  );
+};
+
+export const SRMessageArea = props => {
   return (
     <View style={styles.srtimeline}>
       <View style={{flex: 1, alignItems: 'center'}}>
@@ -740,7 +767,27 @@ export const SRTimeline = props => {
             borderColor: '#081344',
             width: '75%',
           }}></View>
-        <Text style={styles.srtimeline_date}>{props.date} </Text>
+        {props.children}
+        <ReplyButton label="Reply" onPress={props.onPress} />
+      </View>
+    </View>
+  );
+};
+
+export const SRTimeline = props => {
+  const {color} = props;
+  return (
+    <View style={styles.srtimeline}>
+      <View style={{flex: 1, alignItems: 'center'}}>
+        <Text style={[styles.srtimeline_title, {color}]}>{props.title}</Text>
+        <View
+          style={{
+            borderBottomWidth: 1,
+            padding: 3,
+            borderColor: color,
+            width: '75%',
+          }}></View>
+        <Text style={[styles.srtimeline_date, {color}]}>{props.date} </Text>
       </View>
     </View>
   );
@@ -829,15 +876,29 @@ const styles = EStyleSheet.create({
     fontFamily: 'Montserrat-Medium',
   },
   srtimeline_date: {
-    fontSize: RFValue(13),
+    fontSize: RFValue(12),
     padding: calcWidth(2),
     textAlign: 'center',
     color: '#081344',
     fontFamily: 'Montserrat-Light',
   },
   srtimeline_title: {
-    fontSize: RFValue(15),
+    fontSize: RFValue(16),
+    fontFamily: 'Montserrat-Light', //bold,
+    color: '#081344',
+  },
+
+  srmessage_date: {
+    fontSize: RFValue(12),
+    paddingBottom: calcHeight(0.8),
+    textAlign: 'center',
+    color: '#081344',
+    fontFamily: 'Montserrat-Light',
+  },
+  srmessage_title: {
+    fontSize: RFValue(13.5),
     fontFamily: 'Montserrat-Medium', //bold,
+    paddingBottom: calcHeight(0.5),
     color: '#081344',
   },
   srtimeline: {
@@ -849,13 +910,27 @@ const styles = EStyleSheet.create({
     borderRadius: '10 rem',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingVertical: calcHeight(1),
     marginTop: calcWidth(4),
   },
+
+  srmessagearea: {
+    flexDirection: 'row',
+    paddingHorizontal: 15,
+    justifyContent: 'space-between',
+    backgroundColor: '#EDECF0',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: calcWidth(2),
+    marginBottom: calcHeight(1.1),
+  },
   srdt_hdr_txt: {
-    fontSize: RFValue(17),
+    fontSize: RFValue(16),
     color: '#081344',
+    fontFamily: 'Montserrat-Light',
     textAlign: 'center',
-    padding: calcWidth(1),
+    padding: calcHeight(0.85),
   },
   srdt_hdr: {
     paddingHorizontal: calcWidth(2),
@@ -1264,6 +1339,20 @@ const styles = EStyleSheet.create({
     color: '$inputTextColor',
     margin: calcHeight(1),
     fontFamily: 'Montserrat-Light',
+  },
+  reply_text: {
+    fontSize: RFValue(12),
+    color: '#ffff',
+    fontFamily: 'Montserrat-Light',
+  },
+  reply_button: {
+    backgroundColor: '#47489f',
+    paddingVertical: calcHeight(0.4),
+    paddingHorizontal: calcWidth(7),
+    borderRadius: calcHeight(1),
+    marginBottom: calcHeight(1),
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   lblInput: {
     fontSize: '$inputFontSize',
