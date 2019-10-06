@@ -21,7 +21,7 @@ import IconsAnt from 'react-native-vector-icons/AntDesign';
 import Radio from './radio';
 import CheckBox from 'react-native-check-box';
 import CheckBoxItem from '../../styled/checkbox';
-import {Assets} from '../../../node_modules/react-navigation-stack';
+import {PROFILE_BASE_URL} from '../../constants';
 // import PickerModal from 'react-native-picker-modal-view';
 
 EStyleSheet.build({
@@ -800,7 +800,7 @@ export const SideMenuItem = props => {
       style={{
         flexDirection: 'row',
         alignItems: 'center',
-        padding: calcWidth(5),
+        padding: calcHeight(2),
         paddingHorizontal: calcWidth(7),
       }}>
       <Image source={props.img} style={styles.sidemenuitem_img} />
@@ -816,7 +816,7 @@ export const SideMenuDivider = () => {
         borderColor: '#999999',
         borderTopWidth: 1,
         width: '80%',
-        marginVertical: calcWidth(3),
+        marginVertical: calcHeight(1),
         alignSelf: 'center',
       }}></View>
   );
@@ -829,16 +829,25 @@ export const SideMenuHeader = props => {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: calcWidth(3),
-        marginVertical: calcWidth(3),
+        padding: calcHeight(1.5),
+        // marginVertical: calcHeight(1),
       }}>
       <View style={styles.sidemenuhdr_img_border}>
-        <Image
-          style={styles.sidemenuhdr_img}
-          source={require(`${assetsPath}Profile/profile.jpg`)}
-        />
+        {props.profilePic ? (
+          <Image
+            style={styles.sidemenuhdr_img}
+            source={{
+              uri: `${PROFILE_BASE_URL}${props.profilePic}`,
+            }}
+          />
+        ) : (
+          <Image
+            style={styles.sidemenuhdr_img}
+            source={require(`${assetsPath}Profile/profile.jpg`)}
+          />
+        )}
       </View>
-      <View style={{flexDirection: 'column', padding: calcWidth(2)}}>
+      <View style={{flexDirection: 'column', padding: calcHeight(1)}}>
         <Text style={[styles.profilename_txt, {width: calcWidth(50)}]}>
           {props.name}
         </Text>
@@ -850,24 +859,135 @@ export const SideMenuHeader = props => {
   );
 };
 
+export const FAQLogoUnderline = props => {
+  return (
+    <View
+      style={{
+        borderTopWidth: 4,
+        width: '55%',
+        borderColor: '#e2eae7',
+        marginVertical: calcWidth(4),
+        alignSelf: 'center',
+      }}></View>
+  );
+};
+
+export const FAQMenuItem = props => {
+  // console.log(props);
+  return (
+    <TouchableOpacity onPress={props.onPress} style={styles.faqView}>
+      <View style={styles.menu} {...props}>
+        <Image style={styles.file_img} source={props.img} />
+      </View>
+      <Text style={styles.faqTxt}>{props.btnName} </Text>
+    </TouchableOpacity>
+  );
+};
+
+export const FAQCategoryHdr = props => {
+  return (
+    <View style={styles.faqcat_hdr} {...props}>
+      <Text style={styles.faqcat_hdrtxt}>{props.label}</Text>
+    </View>
+  );
+};
+
+export const FAQuestion = props => {
+  return (
+    <View style={{marginTop: calcHeight(1)}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          borderBottomWidth: 1,
+          borderColor: '#999999',
+          width: calcWidth(80),
+          color: '#8d847d',
+        }}>
+        <Text style={styles.faq_qst}>{props.question}</Text>
+        <Image
+          style={styles.faq_qst_img}
+          source={require(`${assetsPath}FAQMenu/question.png`)}
+        />
+      </View>
+      <View style={{padding: calcHeight(1)}}>
+        <Text style={styles.faq_ans}>{props.answer}</Text>
+      </View>
+    </View>
+  );
+};
+
 const styles = EStyleSheet.create({
+  faq_ans: {
+    color: '#081344',
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Light',
+    marginHorizontal: calcWidth(3),
+  },
+  faq_qst: {
+    color: '#081344',
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Medium',
+  },
+  faq_qst_img: {
+    height: calcHeight(3),
+    width: calcHeight(3),
+  },
+  faqcat_hdrtxt: {
+    color: '#FFF',
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Medium',
+  },
+  faqcat_hdr: {
+    width: calcWidth(50),
+    padding: calcHeight(1),
+    backgroundColor: '#081344',
+    borderRadius: calcWidth(1),
+    alignItems: 'center',
+    alignSelf: 'center',
+    margin: calcHeight(1),
+  },
+  menu: {
+    width: calcHeight(8),
+    height: calcHeight(8),
+    borderWidth: 1,
+    borderRadius: calcHeight(2),
+    borderColor: '#8d847d',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  faqView: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: calcHeight(1),
+    alignSelf: 'center',
+    width: calcWidth(30),
+  },
+  faqTxt: {
+    fontSize: RFValue(11),
+    color: '#081344',
+    padding: calcWidth(2),
+    height: calcWidth(12),
+    textAlign: 'center',
+    fontFamily: 'Montserrat-Light',
+  },
   sidemenuhdr_img_border: {
-    width: calcWidth(15),
-    height: calcWidth(15),
-    borderRadius: calcWidth(7.5),
-    borderWidth: 3,
+    width: calcHeight(8.3),
+    height: calcHeight(8.3),
+    borderRadius: calcHeight(9),
+    borderWidth: calcHeight(0.33),
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: '#8d847d',
   },
   sidemenuhdr_img: {
-    width: calcWidth(13),
-    height: calcWidth(13),
-    borderRadius: calcWidth(6.5),
+    width: calcHeight(7),
+    height: calcHeight(7),
+    borderRadius: calcHeight(6.5),
   },
   sidemenuitem_img: {
-    width: calcWidth(6),
-    height: calcWidth(6),
+    width: calcHeight(3.8),
+    height: calcHeight(3.8),
   },
   sidemenuitem_txt: {
     fontSize: RFValue(15),
@@ -1023,8 +1143,8 @@ const styles = EStyleSheet.create({
     textAlign: 'center',
   },
   file_img: {
-    width: '35 rem',
-    height: '35 rem',
+    width: calcHeight(5),
+    height: calcHeight(5),
   },
   agreement: {
     marginVertical: calcWidth(5),

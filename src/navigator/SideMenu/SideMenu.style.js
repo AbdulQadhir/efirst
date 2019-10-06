@@ -1,22 +1,22 @@
+import {calcHeight, calcWidth} from '../../config';
 export default {
-    container: {
-      paddingTop: 20,
-      flex: 1,
-      backgroundColor: "#f8f9fc"
-    },
-    navItemStyle: {
-      padding: 10
-    },
-    navSectionStyle: {
-      backgroundColor: 'lightgrey'
-    },
-    sectionHeadingStyle: {
-      paddingVertical: 10,
-      paddingHorizontal: 5
-    },
-    footerContainer: {
-      padding: 20,
-      backgroundColor: 'lightgrey'
-    }
-  };
-  
+  container: {
+    paddingTop: calcHeight(5),
+    flex: 1,
+    backgroundColor: '#f8f9fc',
+  },
+  navItemStyle: {
+    padding: calcHeight(2),
+  },
+  navSectionStyle: {
+    backgroundColor: 'lightgrey',
+  },
+  sectionHeadingStyle: {
+    paddingVertical: calcHeight(2),
+    paddingHorizontal: calcWidth(5),
+  },
+  footerContainer: {
+    padding: calcHeight(5),
+    backgroundColor: 'lightgrey',
+  },
+};

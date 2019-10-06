@@ -33,7 +33,7 @@ class Container1 extends Component {
     title: 'Manage Profile',
     headerLeft: (
       <View style={{flexDirection: 'row'}}>
-        <HeaderBtnMenu onPress={() => alert('')} />
+        <HeaderBtnMenu onPress={() => navigation.openDrawer()} />
         <HeaderBtnBack onPress={() => navigation.navigate('Dashboard')} />
       </View>
     ),

@@ -4,7 +4,7 @@ import {StyleSheet, View, Text, Dimensions} from 'react-native';
 import {ServiceHomeItem} from './uicomponents/components';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {
-  HeaderTitle,
+  HeaderBtnProfile,
   ServiceHomeText,
   HeaderBtnMenu,
   HeaderBtnBack,
@@ -24,6 +24,7 @@ class App extends Component {
         <HeaderBtnBack onPress={() => navigation.navigate('Dashboard')} />
       </View>
     ),
+    headerRight: <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
   });
 
   render() {

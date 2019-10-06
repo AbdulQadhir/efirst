@@ -38,7 +38,7 @@ class App extends React.Component {
     title: 'Manage my Profile',
     headerLeft: (
       <View style={{flexDirection: 'row'}}>
-        <HeaderBtnMenu onPress={() => alert('')} />
+        <HeaderBtnMenu onPress={() => navigation.openDrawer()} />
         <HeaderBtnBack onPress={() => navigation.navigate('Dashboard')} />
       </View>
     ),

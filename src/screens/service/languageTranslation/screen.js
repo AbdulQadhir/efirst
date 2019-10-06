@@ -252,7 +252,7 @@ const LanguageTranslation = ({
         style={{top: calcHeight(5), marginBottom: calcHeight(7)}}
         isVisible={state.ShowTerms}>
         <ScrollView>
-          <View>
+          <View style={{flex: 1, backgroundColor: '#ffff'}}>
             <TermsandConditon setShowTerms={setShowTerms} />
           </View>
         </ScrollView>

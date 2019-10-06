@@ -12,7 +12,7 @@ import {
 import {
   HeaderBtnMenu,
   HeaderBtnBack,
-  HeaderBtnProfile
+  HeaderBtnProfile,
 } from '../../../pages/uicomponents/components';
 import {getPaymentDetail} from '../../foloosi/action';
 import Loader from '../../../styled/loader';
@@ -35,11 +35,13 @@ class Container extends Component {
     title: 'Attestation Service',
     headerLeft: (
       <View style={{flexDirection: 'row'}}>
-        <HeaderBtnMenu onPress={() => alert('')} />
+        <HeaderBtnMenu onPress={() => navigation.openDrawer()} />
         <HeaderBtnBack onPress={() => navigation.goBack()} />
       </View>
     ),
-    headerRight: <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
+    headerRight: (
+      <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
+    ),
   });
   setRequestedValue = amount => {
     this.setState({Requested: true, SRAmount: amount});

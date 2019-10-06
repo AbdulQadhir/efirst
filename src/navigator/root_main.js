@@ -2,6 +2,7 @@ import {createDrawerNavigator} from 'react-navigation-drawer';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import DashboardStack from './dash_stack';
 import MyRequestStack from './myrequest_stack';
+import FAQStack from './faq_stack';
 import ServiceStack from './service_stack';
 import SideMenu from './SideMenu/SideMenu';
 import BottomBar from './BottomBar/BottomBar';
@@ -15,6 +16,7 @@ const Tabs = createBottomTabNavigator(
     MyRequestStack: {screen: MyRequestStack},
     Services: {screen: ServiceStack},
     Profile: {screen: ProfileStack},
+    FAQ: {screen: FAQStack},
   },
   {
     tabBarComponent: BottomBar,
