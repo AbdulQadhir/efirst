@@ -169,7 +169,7 @@ const DocumentAttestation = ({
     }
   };
 
-  checkPhoneValid = () => {
+  const checkPhoneValid = () => {
     if (values.File === undefined) {
       console.log('undefined');
     }
@@ -648,8 +648,8 @@ export default withFormik({
 
   handleSubmit: (values, {props}) => {
     const {attestationrate, setRequestedValue} = props;
-    const {Files} = values;
-    if (Files.length === 0) {
+    const {File} = values;
+    if (!File) {
       setFieldValue('errorFileUpload', 'Upload File is Required');
       return;
     }
@@ -677,7 +677,7 @@ export default withFormik({
 
     data.append('Files[]', values.File, values.File.name);
     data.append('Rate', Rate);
-    //  data.append('ServiceId', 7);
+    data.append('ServiceId', 6);
     data.append('ServiceName', ServiceName);
     data.append('PickUpandDropOption', values.PickUpandDropOption);
     data.append('DocumentCount', 1);

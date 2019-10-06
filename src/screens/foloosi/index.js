@@ -6,7 +6,7 @@ import {servicesData} from '../service/action';
 import {PAYMENT_WEB_URL} from '../../constants';
 //import success from './success';
 import Loader from '../../styled/loader';
-
+import {HeaderBtnBack} from '../../pages/uicomponents/components';
 class Container extends Component {
   constructor(props) {
     super(props);
@@ -30,9 +30,6 @@ class Container extends Component {
     const {srid} = this.props.navigation.state.params;
 
     if (this.state.Requested) {
-      // this.props.navigation.navigate("FoloosiSuccess", {
-      //   srid
-      // });
       if (this.state.type == 'success') {
         const {token} = this.props.token;
         const statusId = null;

@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* efirstv2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* efirstv2Tests.m */; };
 		0723535F982849E99A4753F1 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03F9962B6A304A5AA49F5A9F /* Montserrat-Medium.otf */; };
@@ -41,6 +40,7 @@
 		E7CDA2CB38864BF8B7601D9A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB885BA96E9F486C9CF711F8 /* FontAwesome.ttf */; };
 		F441A5BC21767466BD822CED /* libPods-efirstv2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE752EE25FEACC9C48174EA /* libPods-efirstv2.a */; };
 		FB7519808FA5269CDF7C17D3 /* libPods-efirstv2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 477FB0CCE0D1B827AE95785E /* libPods-efirstv2Tests.a */; };
+		844AA536DCF04A87A8728CAE /* Montserrat-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B394826A434C480D8FA5FD92 /* Montserrat-MediumItalic.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +147,7 @@
 		EEAB37A77E7D442B8360FDD0 /* Pods-efirstv2-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-efirstv2-tvOSTests/Pods-efirstv2-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		F87667485D0F7D594518ACFD /* Pods-efirstv2-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-efirstv2-tvOS/Pods-efirstv2-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FA06CC4EF29F416A9DB81F16 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraBold.otf"; path = "../src/Assets/Fonts/Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
+		B394826A434C480D8FA5FD92 /* Montserrat-MediumItalic.otf */ = {isa = PBXFileReference; name = "Montserrat-MediumItalic.otf"; path = "../src/Assets/fonts/Montserrat-MediumItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +341,7 @@
 				A59ED3692567493C80056703 /* Montserrat-SemiBold.otf */,
 				17B0BB8750504AD997CB080F /* Montserrat-Thin.otf */,
 				CF87ED8A90134B5AA8C61031 /* Montserrat-LightItalic.otf */,
+				B394826A434C480D8FA5FD92 /* Montserrat-MediumItalic.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -510,6 +512,7 @@
 				A70890B2EB194CF7BEA97C59 /* Montserrat-Thin.otf in Resources */,
 				E336EC06233F6AB5008C65DB /* Montserrat-Light.otf in Resources */,
 				B326BAF4B2C0407FB69E5D5D /* Montserrat-LightItalic.otf in Resources */,
+				844AA536DCF04A87A8728CAE /* Montserrat-MediumItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -97,7 +97,7 @@ class SideMenu extends Component {
           <SideMenuItem
             onPress={navigateToScreen('FAQHome')}
             label="FAQ"
-            img={require(`${assetsPath}Menubar/faq.png`)}
+            img={require(`${assetsPath}Menubar/faq2.png`)}
           />
 
           <SideMenuItem

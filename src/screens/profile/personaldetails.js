@@ -44,32 +44,47 @@ const PersonalDetails = ({
     <View>
       <ProfileSectionHdr
         label={'Personal Details'}
-        onSavePress={handleSubmit}
+        value={values.ShowEditPersonal}
+        onPress={value => {
+          console.log('Value', value);
+          setFieldValue('ShowEditPersonal', value);
+        }}
+        handleSubmit={handleSubmit}
       />
       <View style={{paddingHorizontal: calcWidth(2)}}>
         <LabelInput label="Birthday" />
         <Input2
           style={{marginVertical: 0}}
-          onTouchStart={ShowDateTimePicker}
+          onTouchStart={values.ShowEditPersonal && ShowDateTimePicker}
           label="Birthday"
           onChangeText={value => setFieldValue('DOB', value)}
           value={dateFormat(values.DOB)}
+          editable={values.ShowEditPersonal}
         />
         <LabelInput label="Gender" />
-        <ModalPicker
-          placeholder="Gender"
-          ref={ref => {
-            genderPicker = ref;
-          }}
-          defaultValue={values.Gender}
-          onChange={value => setFieldValue('Gender', value)}>
-          {genders.map((gender, index) => (
-            <ModalPickerItem
-              onPress={() => genderPicker.onSelect(gender.name, gender.name)}
-              label={gender.name}
-            />
-          ))}
-        </ModalPicker>
+        {values.ShowEditPersonal ? (
+          <ModalPicker
+            placeholder="Gender"
+            ref={ref => {
+              genderPicker = ref;
+            }}
+            defaultValue={values.Gender}
+            onChange={value => setFieldValue('Gender', value)}>
+            {genders.map((gender, index) => (
+              <ModalPickerItem
+                onPress={() => genderPicker.onSelect(gender.name, gender.name)}
+                label={gender.name}
+              />
+            ))}
+          </ModalPicker>
+        ) : (
+          <Input2
+            style={{marginVertical: 0}}
+            label="Gender"
+            value={values.Gender}
+            editable={values.ShowEditPersonal}
+          />
+        )}
       </View>
       <DateTimePicker
         isVisible={values.IsDatePickerVisible}

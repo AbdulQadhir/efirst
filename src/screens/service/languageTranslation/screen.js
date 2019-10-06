@@ -92,7 +92,7 @@ const LanguageTranslation = ({
   let fromLanguagePicker = null;
   let documentTypePicker = null;
 
-  const openlaunchCamera = i => {
+  const openlaunchCamera = (i, type) => {
     const options = {
       quality: 1.0,
       maxWidth: 500,
@@ -130,10 +130,14 @@ const LanguageTranslation = ({
                   name: imgName,
                 };
           console.log('PiC====>', pic);
-          var files = values.Files;
-          if (i == 0) files.push(pic);
-          else files[i] = pic;
-          setFieldValue('Files', files);
+          if (type == 'EmiratesID') {
+            setFieldValue('EmiratesID', pic);
+          } else {
+            var files = values.Files;
+            if (i == 0) files.push(pic);
+            else files[i] = pic;
+            setFieldValue('Files', files);
+          }
 
           return;
         }
@@ -143,7 +147,7 @@ const LanguageTranslation = ({
     }
   };
 
-  const openFile = async i => {
+  const openFile = async (i, type) => {
     try {
       const res = await DocumentPicker.pick({
         type: [DocumentPicker.types.images],
@@ -161,10 +165,15 @@ const LanguageTranslation = ({
             type: res.type,
             name: res.name,
           };
-          var files = values.Files;
-          if (i == 0) files.push(file);
-          else files[i] = file;
-          setFieldValue('Files', files);
+
+          if (type == 'EmiratesID') {
+            setFieldValue('EmiratesID', file);
+          } else {
+            var files = values.Files;
+            if (i == 0) files.push(file);
+            else files[i] = file;
+            setFieldValue('Files', files);
+          }
         } else {
           showToast('- Invalid file type.\n- File must be smaller than 5 MB');
         }
@@ -183,7 +192,6 @@ const LanguageTranslation = ({
     }
   };
   checkPhoneValid = () => {
-    console.log('submit1');
     setPhoneError('');
     if (!phone.isValidNumber()) {
       setPhoneError('Invalid Format');
@@ -196,6 +204,11 @@ const LanguageTranslation = ({
     } else {
       console.log('submit3');
       setFieldValue('errorFileUpload', null);
+    }
+    if (!values.EmiratesID) {
+      setFieldValue('errorEmiratesIDUpload', 'Emirates ID is Required');
+    } else {
+      setFieldValue('errorEmiratesIDUpload', null);
     }
     handleSubmit();
   };
@@ -549,13 +562,29 @@ const LanguageTranslation = ({
             {renderDocs()}
             <SelectFile
               subTitle="Select File"
-              onLeftPress={() => openlaunchCamera(0)}
-              onRightPress={() => openFile(0)}
+              onLeftPress={() => openlaunchCamera(0, 'Files')}
+              onRightPress={() => openFile(0, 'Files')}
             />
             <UploadValdation />
 
             {values.errorFileUpload && (
               <ErrorLabel label="Upload File is Required" />
+            )}
+          </View>
+
+          <View>
+            <UploadTitle title="Passport or Emirates ID*" />
+            {/* {renderDocs()} */}
+            <SelectFile
+              subTitle={
+                values.EmiratesID ? values.EmiratesID.name : 'Select File'
+              }
+              onLeftPress={() => openlaunchCamera(0, 'EmiratesID')}
+              onRightPress={() => openFile(0, 'EmiratesID')}
+            />
+            <UploadValdation />
+            {values.errorEmiratesIDUpload && (
+              <ErrorLabel label="Passport or Emirates ID is Required" />
             )}
           </View>
           <TxtSubHead title="Your Bill Amount" />
@@ -606,7 +635,8 @@ const LanguageTranslation = ({
                     : translationrate.data.Rate * values.Files.length +
                       translationrate.data.LeagualStampRate +
                       translationrate.data.ServiceCharge
-                  : translationrate.data.Rate * values.Files.length
+                  : translationrate.data.Rate * values.Files.length +
+                    translationrate.data.ServiceCharge
                 : 0
             }
           />
@@ -682,12 +712,14 @@ export default withFormik({
     LegalStamp: false,
     PickUpandDropOption: 'Through Courier',
     Files: [],
+    EmiratesID: null,
     AgreeTerms: false,
     doclangTransCreate,
     cca2: 'AE',
     callingCode: '971',
     errorPhone: '',
     errorFileUpload: null,
+    errorEmiratesIDUpload: null,
     errorSelectedLang: null,
     ShowTerms: false,
   }),
@@ -726,12 +758,15 @@ export default withFormik({
     } = values;
     if (
       SelectedFromDocumentLanguageId == SelectedToDocumentLanguageId ||
-      Files.length === 0
+      Files.length === 0 ||
+      !values.EmiratesID
     ) {
       if (Files.length === 0) {
         setFieldValue('errorFileUpload', 'Upload File is Required');
       }
-
+      if (!values.EmiratesID) {
+        setFieldValue('errorEmiratesIDUpload', 'Emirates ID is Required');
+      }
       if (SelectedFromDocumentLanguageId == SelectedToDocumentLanguageId) {
         setFieldValue(
           'errorSelectedLang',
@@ -766,6 +801,7 @@ export default withFormik({
     // } ${values.AddressCountry} ZIP- ${values.Zip}`;
 
     let data = new FormData();
+    values.Files.map((item, index) => data.append('Files[]', item, item.name));
     data.append('CustomerName', values.CustomerName);
     data.append('Email', values.Email);
     data.append('PersonalPhone', values.PersonalPhone);
@@ -781,7 +817,7 @@ export default withFormik({
       values.SelectedToDocumentLanguageId,
     );
     data.append('LegalStamp', values.LegalStamp);
-    values.Files.map((item, index) => data.append('Files[]', item, item.name));
+    data.append('Files[]', values.EmiratesID, values.EmiratesID.name);
     data.append('Rate', Rate);
     data.append('ServiceId', 7);
     data.append('ServiceName', 'TRANSLATION SERVICE');

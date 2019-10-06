@@ -57,7 +57,12 @@ const OfficeDetails = ({
     <View>
       <ProfileSectionHdr
         label={'Company Details'}
-        onSavePress={() => checkPhoneValid()}
+        value={values.ShowEditOffice}
+        onPress={value => {
+          console.log('Value', value);
+          setFieldValue('ShowEditOffice', value);
+        }}
+        handleSubmit={checkPhoneValid}
       />
       <View style={{paddingHorizontal: calcWidth(2)}}>
         <LabelInput label="Company" />
@@ -66,6 +71,7 @@ const OfficeDetails = ({
           label="Company"
           onChangeText={value => setFieldValue('Company', value)}
           value={values.Company}
+          editable={values.ShowEditOffice}
         />
         <LabelInput label="Phone" />
         <CountryPicker
@@ -97,13 +103,14 @@ const OfficeDetails = ({
             paddingHorizontal: calcHeight(1),
             fontFamily: 'Montserrat-Light',
           }}
-          onPressFlag={onPressFlag}
+          onPressFlag={values.ShowEditOffice && onPressFlag}
           placeholder="Phone"
           name="Phone"
           label="Mobile"
           keyboardType="numeric"
           onChangePhoneNumber={value => setFieldValue('CompanyPhone', value)}
           value={values.CompanyPhone}
+          editable={values.ShowEditOffice}
         />
         {values.phoneError && <ErrorLabel label="Invalid Phone" />}
 
@@ -114,6 +121,7 @@ const OfficeDetails = ({
           keyboardType="email-address"
           onChangeText={value => setFieldValue('CompanyEmail', value)}
           value={values.CompanyEmail}
+          editable={values.ShowEditOffice}
         />
         {errors.CompanyEmail && <ErrorLabel label="Invalid Email" />}
         <LabelInput label="Website" />
@@ -122,6 +130,7 @@ const OfficeDetails = ({
           label="Website"
           onChangeText={value => setFieldValue('CompanyWebsite', value)}
           value={values.CompanyWebsite}
+          editable={values.ShowEditOffice}
         />
       </View>
     </View>
