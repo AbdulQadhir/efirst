@@ -804,10 +804,22 @@ export const SRDocumentItem = (props) => {
         )
 }
 
-
-
+export const VisaBreadCrump = (props) => {
+  return (
+      <View style={{backgroundColor:'#081344'}} >
+          <Text style={styles.visaBorder} >{props.path}</Text>
+      </View>
+  )
+}
 
 const styles = EStyleSheet.create({
+  visaBorder:{ 
+      fontSize : RFValue(13),
+      fontFamily: 'Montserrat-Light', 
+      color : "#FFF",
+      textAlign:'center',
+      padding: calcHeight(1),
+  },
   doc_main: {
     backgroundColor: "#E5E8E8",
     borderRadius: calcHeight(1),
@@ -820,7 +832,7 @@ const styles = EStyleSheet.create({
     height: calcHeight(7),
   },
   supportdt_title:{
-      fontSize:RFValue(15),
+      fontSize: RFValue(15),
       fontFamily: 'Montserrat-BoldItalic', 
       fontStyle:'italic',
       fontWeight: "bold",
@@ -939,11 +951,10 @@ const styles = EStyleSheet.create({
     padding: calcWidth(1),
   },
   srdt_hdr:{
-    paddingHorizontal:calcWidth(2),
+    paddingHorizontal:calcWidth(3),
     borderWidth: 1,
     borderRadius : calcWidth(2),
     borderColor: "#999999",
-    justifyContent:'center',
     alignItems:"center",
     flexDirection: "row"
   },
