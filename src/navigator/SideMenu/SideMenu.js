@@ -93,13 +93,16 @@ class SideMenu extends Component {
           />
 
           <SideMenuDivider />
+
           <SideMenuItem
             onPress={navigateToScreen('FAQHome')}
             label="FAQ"
             img={require(`${assetsPath}Menubar/faq.png`)}
           />
+
           <SideMenuItem
             label="Support"
+            onPress={navigateToScreen('Support')}
             img={require(`${assetsPath}Menubar/support.png`)}
           />
 
