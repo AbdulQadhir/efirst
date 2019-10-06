@@ -248,11 +248,11 @@ class SRInfo extends Component {
                   <View
                     style={{
                       flexDirection: 'row',
-
+                      flex: 1,
                       borderBottomWidth: 1,
                       borderColor: '#999999',
                       marginHorizontal: calcWidth(2),
-                      paddingHorizontal: calcWidth(1),
+                      paddingLeft: calcWidth(1),
                       marginTop: calcHeight(2),
                       marginBottom: calcHeight(0.5),
                     }}>
@@ -273,26 +273,27 @@ class SRInfo extends Component {
                           fontFamily: 'Montserrat-Light',
                           fontSize: RFPercentage(2),
                           color: '#337ab7',
-                          //  textDecorationLine: 'underline',
                         }}>
                         {TrackingNo}
                       </Text>
                     </Text>
-
-                    <TouchableOpacity
+                    <View
                       style={{
-                        width: calcWidth(30),
-                        alignItems: 'flex-end',
-                        justifyContent: 'center',
-                      }}
-                      onPress={() => this.writeToClipboard(TrackingNo)}>
-                      <ClipboardIcon
-                        name="content-copy"
-                        size={23}
-                        color="#8d847d"
-                        style={{marginRight: 2}}
-                      />
-                    </TouchableOpacity>
+                        flex: 1,
+                      }}>
+                      <TouchableOpacity
+                        style={{
+                          alignItems: 'flex-end',
+                        }}
+                        onPress={() => this.writeToClipboard(TrackingNo)}>
+                        <ClipboardIcon
+                          name="content-copy"
+                          size={23}
+                          color="#8d847d"
+                          style={{marginRight: 2}}
+                        />
+                      </TouchableOpacity>
+                    </View>
                   </View>
                 )}
 

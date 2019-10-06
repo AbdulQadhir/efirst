@@ -3,6 +3,7 @@ import {View} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import LoginScreen from './screen';
 import {connect} from 'react-redux';
+import {DashboardData} from '../../dashboard/action';
 import {loginUser, getExtLoginUrls} from '../action';
 import {profileData} from '../../profile/action';
 import {registerOnesignal} from '../../onesignal/action';
@@ -21,7 +22,9 @@ class Container extends Component {
       this.setState({success: true});
     }
     if (this.props.token) {
-      this.props.navigation.navigate('MainMenu');
+      // this.props.navigation.navigate('MainMenu');
+      const token = this.props.token.token;
+      this.props.DashboardData(token);
     }
     this.props.getExtLoginUrls('0');
   };
@@ -44,7 +47,33 @@ class Container extends Component {
       const token = this.props.token.token;
       this.setState({loading: false});
       this.props.registerOnesignal({data, token});
-      this.props.navigation.navigate('MainMenu');
+      this.props.DashboardData(token);
+      //this.props.navigation.navigate('MainMenu');
+    }
+    if (this.props.dashboard.success && !prevProps.dashboard.success) {
+      const {data} = this.props.dashboard;
+      const {
+        ActionRequiredNewUpdateCount,
+        ActionRequiredTotalUpdateCount,
+        CompletedNewUpdateCount,
+        CompletedTotalUpdateCount,
+        InReviewNewUpdateCount,
+        InReviewTotalUpdateCount,
+        RejectedNewUpdateCount,
+        RejectedTotalUpdateCount,
+      } = data.Tiles;
+
+      const total =
+        ActionRequiredNewUpdateCount +
+        ActionRequiredTotalUpdateCount +
+        CompletedNewUpdateCount +
+        CompletedTotalUpdateCount +
+        InReviewNewUpdateCount +
+        InReviewTotalUpdateCount +
+        RejectedNewUpdateCount +
+        RejectedTotalUpdateCount;
+      if (total > 0) this.props.navigation.navigate('MainMenu');
+      else this.props.navigation.navigate('ServiceHome');
     }
   }
   state = {
@@ -57,13 +86,19 @@ class Container extends Component {
   render = () => (
     <View style={{flex: 1}}>
       <Loader
-        loading={this.props.login.loading || this.props.profile.loading}
+        loading={
+          this.props.login.loading ||
+          this.props.profile.loading ||
+          this.props.dashboard.loading
+        }
       />
 
-      <LoginScreen
-        {...this.props}
-        changeInternetStatus={this.changeInternetStatus}
-      />
+      {!this.props.token && (
+        <LoginScreen
+          {...this.props}
+          changeInternetStatus={this.changeInternetStatus}
+        />
+      )}
       {this.props.confirmemail.success && this.state.success && (
         <AlertView
           clearAlert={() => this.setState({success: false})}
@@ -95,6 +130,7 @@ const mapStateToProps = ({
   onesignalInfo,
   profile,
   applicationState,
+  dashboard,
 }) => ({
   token,
   login,
@@ -103,6 +139,7 @@ const mapStateToProps = ({
   onesignalInfo,
   profile,
   applicationState,
+  dashboard,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -110,6 +147,7 @@ const mapDispatchToProps = dispatch => ({
   getExtLoginUrls: data => dispatch(getExtLoginUrls(data)),
   registerOnesignal: data => dispatch(registerOnesignal(data)),
   profileData: payload => dispatch(profileData(payload)),
+  DashboardData: payload => dispatch(DashboardData(payload)),
 });
 
 export default connect(

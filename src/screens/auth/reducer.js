@@ -99,6 +99,8 @@ export const extUserInfo = (state = defaultGetUserInfoTokenState, action) => {
       return {...state, loading: action.state};
     case getUserInfoTokenState.DONE:
       return {...state, data: action.state};
+    case getUserInfoTokenState.SUCCESS:
+      return {...state, success: action.state};
     default:
       return state;
   }
@@ -127,6 +129,8 @@ export const extRegistration = (state = defaultExtRegister, action) => {
       return {...state, loading: action.state};
     case ExtRegistrationState.DONE:
       return {...state, data: action.state};
+    case ExtRegistrationState.SUCCESS:
+      return {...state, success: action.state};
     default:
       return state;
   }

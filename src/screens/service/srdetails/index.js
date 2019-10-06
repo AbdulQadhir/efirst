@@ -15,6 +15,7 @@ import {
 import EStyleSheet from 'react-native-extended-stylesheet';
 import React, {Component} from 'react';
 import Details from './details';
+import Documents from './documents';
 import Info from './info';
 
 const entireScreenWidth = Dimensions.get('window').width;
@@ -104,7 +105,7 @@ class ServiceDetails extends Component {
   }
 
   handleBackButtonClick() {
-    this.props.navigation.goBack();
+    this.props.navigation.navigate('MyRequests');
     return true;
   }
   render() {
@@ -174,6 +175,7 @@ class ServiceDetails extends Component {
             ) : (
               <View />
             )}
+            {this.state.selectedTab == 2 ? <Documents /> : <View />}
             {this.state.selectedTab == 3 ? <Info /> : <View />}
           </View>
         </View>

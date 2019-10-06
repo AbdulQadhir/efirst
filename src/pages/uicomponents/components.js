@@ -996,52 +996,52 @@ export const SupportDetail = props => {
   );
 };
 
-export const SRDocumentItem = (props) => {
+export const SRDocumentItem = props => {
   return (
     <TouchableOpacity onPress={props.onPress}>
       <View style={styles.doc_main}>
         <Image
           style={styles.image}
-          source={require("../../Assets/service/document.png")}
+          source={require('../../Assets/service/document.png')}
         />
         <Text
           style={{
-            textAlign: "center",
+            textAlign: 'center',
             padding: 5,
             marginTop: 5,
-            color: "#515A5A",
-            fontSize: RFValue(13)
-          }}
-        >
+            color: '#515A5A',
+            fontSize: RFValue(13),
+          }}>
           {props.name}
         </Text>
       </View>
     </TouchableOpacity>
-        )
-}
+  );
+};
 
-export const VisaBreadCrump = (props) => {
+export const VisaBreadCrump = props => {
   return (
-      <View style={{backgroundColor:'#081344'}} >
-          <Text style={styles.visaBorder} >{props.path}</Text>
-      </View>
-  )
-}
+    <View style={{backgroundColor: '#081344'}}>
+      <Text style={styles.visaBorder}>{props.path}</Text>
+    </View>
+  );
+};
 
 const styles = EStyleSheet.create({
-  visaBorder:{ 
-      fontSize : RFValue(13),
-      fontFamily: 'Montserrat-Light', 
-      color : "#FFF",
-      textAlign:'center',
-      padding: calcHeight(1),
+  visaBorder: {
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Light',
+    color: '#FFF',
+    textAlign: 'center',
+    padding: calcHeight(1),
   },
   doc_main: {
-    backgroundColor: "#E5E8E8",
+    backgroundColor: '#E5E8E8',
     borderRadius: calcHeight(1),
     padding: calcHeight(1),
     margin: calcHeight(0.5),
-    alignItems: "center"
+    alignItems: 'center',
+    width: calcWidth(40),
   },
   image: {
     width: calcHeight(7),

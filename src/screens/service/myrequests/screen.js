@@ -32,6 +32,9 @@ export default ({
 
   const navigateToDetail = serviceId => {
     const token1 = token.token;
+    //  const headerTitle: 'Rejected',
+    //  const noDataLabel: 'No recent rejected service request',
+    //  const statusId: 4,
     serviceRequestData({serviceId, token: token1});
     navigation.navigate('ServiceDetail');
   };
