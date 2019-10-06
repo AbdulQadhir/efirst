@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, ScrollView, Dimensions} from 'react-native';
+import {StyleSheet, View, ScrollView, Dimensions, Text} from 'react-native';
 
 import {
   Input2,
@@ -36,6 +36,8 @@ import {RFValue, RFPercentage} from 'react-native-responsive-fontsize';
 import ImagePicker from 'react-native-image-picker';
 import DocumentPicker from 'react-native-document-picker';
 import TermsandConditon from '../../../styled/TermsAndCondition';
+import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
+
 const DARK_COLOR = '#18171C';
 const LIGHT_COLOR = '#FFF';
 //import CheckBox from '../../../styled/checkbox';
@@ -201,18 +203,6 @@ const LanguageTranslation = ({
     console.log(attestationPrice);
   };
 
-  const attestationRateByCountryandDCType = (CountryId, CertificateType) => {
-    console.log('CountryId', CountryId);
-    console.log('CertificateType', CertificateType);
-    if (CountryId && CertificateType) {
-      attestationPrice({
-        CountryId: CountryId,
-        CertificateType: CertificateType,
-        token: token.token,
-      });
-    }
-  };
-
   navigateToScreen = route => {
     const navigateAction = NavigationActions.navigate({
       routeName: route,
@@ -262,7 +252,7 @@ const LanguageTranslation = ({
         style={{top: calcHeight(5), marginBottom: calcHeight(7)}}
         isVisible={state.ShowTerms}>
         <ScrollView>
-          <View>
+          <View style={{flex: 1, backgroundColor: '#ffff'}}>
             <TermsandConditon setShowTerms={setShowTerms} />
           </View>
         </ScrollView>
@@ -588,7 +578,7 @@ const LanguageTranslation = ({
             <PriceDetailItem
               label=" Legal Stamp Charge"
               amount={
-                translationrate.data ? translationrate.data.ServiceCharge : 0
+                translationrate.data ? translationrate.data.LeagualStampRate : 0
               }
             />
           )}
@@ -621,13 +611,41 @@ const LanguageTranslation = ({
             }
           />
 
-          <TxtAgreement
-            onTermsClick={() => {
-              setShowTerms(true);
-            }}
-            // onTermsClick={() => alert('Terms')}
-            isChecked={true}
-          />
+          <View
+            style={{
+              flexDirection: 'row',
+              paddingHorizontal: calcWidth(4),
+              paddingVertical: calcHeight(3),
+              width: calcWidth(88),
+            }}>
+            <CheckBoxCustom
+              isSelected={values.ShowTerms}
+              onPress={() => {
+                console.log(values.ShowTerms);
+                if (values.ShowTerms) {
+                  setFieldValue('ShowTerms', false);
+                } else {
+                  setFieldValue('ShowTerms', true);
+                }
+              }}
+            />
+            <Text
+              style={{
+                fontSize: RFValue(13),
+                paddingHorizontal: calcWidth(1.5),
+                color: '#081344',
+                fontFamily: 'Montserrat-LightItalic',
+                marginBottom: calcHeight(0.5),
+              }}>
+              I have read & agree to the{' '}
+              <Text
+                style={{textDecorationLine: 'underline'}}
+                onPress={() => setShowTerms(true)}>
+                Terms and Conditions
+              </Text>{' '}
+              of Service
+            </Text>
+          </View>
 
           <ButtonNormal label="Pay Now" onPress={checkPhoneValid} />
         </ScrollView>

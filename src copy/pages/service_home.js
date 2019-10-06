@@ -20,7 +20,7 @@ class App extends Component {
     title: 'Request a Service',
     headerLeft: (
       <View style={{flexDirection: 'row'}}>
-        <HeaderBtnMenu onPress={() => alert('')} />
+        <HeaderBtnMenu onPress={() => navigation.openDrawer()} />
         <HeaderBtnBack onPress={() => navigation.navigate('Dashboard')} />
       </View>
     ),
@@ -42,7 +42,7 @@ class App extends Component {
                 title="Visa Services"
                 desc="Apply for New VISA, renewals and cancellations"
                 type={3}
-                onPress={()=>this.props.navigation.navigate("Attestation")}
+                onPress={() => this.props.navigation.navigate('Attestation')}
               />
               <ServiceHomeItem
                 title="Attestation Services"

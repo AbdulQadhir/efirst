@@ -21,7 +21,7 @@ import IconsAnt from 'react-native-vector-icons/AntDesign';
 import Radio from './radio';
 import CheckBox from 'react-native-check-box';
 import CheckBoxItem from '../../styled/checkbox';
-import { Assets } from '../../../node_modules/react-navigation-stack';
+import {PROFILE_BASE_URL} from '../../constants';
 // import PickerModal from 'react-native-picker-modal-view';
 
 EStyleSheet.build({
@@ -134,6 +134,7 @@ export const ButtonExtLogin = props => {
         onPress={() =>
           navigation.navigate('ExternalLogin', {
             uri: BASE_URL + extLoginUrls.data[0].Url,
+            headerTitle: 'wwww.facebook.com',
           })
         }
         style={styles.btnExtLeft}
@@ -148,6 +149,7 @@ export const ButtonExtLogin = props => {
         onPress={() =>
           navigation.navigate('ExternalLogin', {
             uri: BASE_URL + extLoginUrls.data[1].Url,
+            headerTitle: 'wwww.google.com',
           })
         }
         style={styles.btnExtRight}
@@ -285,7 +287,7 @@ export const MyRequestItem = ({
   color,
   backgroundColor,
   statusLabel,
-  onPress
+  onPress,
 }) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.myreqitem}>
@@ -422,9 +424,13 @@ export const CheckBoxCustom = props => {
   return (
     <TouchableOpacity
       onPress={props.onPress}
-      style={{flexDirection: 'row', padding: 5, alignItems: 'center', flex: 1}}>
+      style={{
+        flexDirection: 'row',
+        padding: 5,
+        alignItems: 'center',
+      }}>
       <CheckBoxItem {...props} />
-      <Text style={styles.radiotxt}>{props.text}</Text>
+      {props.text && <Text style={styles.radiotxt}>{props.text}</Text>}
     </TouchableOpacity>
   );
 };
@@ -515,6 +521,15 @@ export const UploadTitle = props => (
   <Text style={[styles.txtSubHead, {fontWeight: '300'}]}>{props.title}</Text>
 );
 
+export const ReplyButton = props => {
+  return (
+    <TouchableOpacity
+      onPress={props.onPress}
+      style={[styles.reply_button, props.style]}>
+      <Text style={styles.reply_text}>{props.label}</Text>
+    </TouchableOpacity>
+  );
+};
 export const SelectFile = props => {
   return (
     <View
@@ -590,195 +605,360 @@ export const ModalPickerItem = props => {
   );
 };
 
-export const ProfilePhoto = (props) => {
+export const ProfilePhoto = props => {
   return (
-         <View style={{ flexDirection: "column",alignItems:'center' ,justifyContent:'center', margin:10}} >
-              <View style={styles.profileBorder}>
-                      <Image style={styles.profile} source={props.img} />
-              </View>  
-         </View> 
-  )
-}
-
-export const ProfileName = (props) => {
-  return (
-         <View style={{ flexDirection: "column",alignItems:'center' ,justifyContent:'center'}} >
-              <Text  style={styles.profilename_txt} >{props.name}</Text>
-              <View  style={{ flexDirection: "row"}}>
-                  <Text  style={styles.profilename_desig}  >{props.designation}</Text> 
-                  <TouchableOpacity onPress={props.onEditPress} >
-                    <Image style={styles.editIcon} source={require(`${assetsPath}Profile/edit.png`)} />
-                  </TouchableOpacity>
-              </View>  
-         </View> 
-  )
-}
-
-export const ButtonSlim = (props) => {
-  return (
-      <TouchableOpacity onPress={props.onPress} >
-        <Text style={[styles.btnslimtxt,props.style]} >{props.label}</Text>
-      </TouchableOpacity>
-  )
-}
-
-export const ProfileSaveIcon = (props) => {
-  return (
-      <TouchableOpacity onPress={props.onPress} style={[{alignSelf:"flex-end", padding:calcWidth(1), paddingHorizontal:calcWidth(2)}, props.style]}  >
-        <Ionicons name="md-checkmark-circle-outline"style={styles.profilesave_icon} />
-      </TouchableOpacity>
-  )
-}
-
-export const Underline = (props) => {
-    return (
-        <View style={styles.underline} ></View>
-    )
-}
-
-export const ProfileSectionHdr = (props) => {
-  return (
-        <View style={styles.profile_section_hdr} >
-          <Text style={styles.profile_section_hdr_txt} >
-            <IconsAws5 name="ellipsis-v" />{"  "}
-            {props.label}
-          </Text>
-          <ProfileSaveIcon style={{alignSelf:"center"}} onPress={props.onSavePress} />
-        </View>
-  )
-}
-
-export const SRDetailsHdr = (props) => {
-  return (
-          <View  style={styles.srdt_hdr}  {...props}  >
-            <IconsAws5 name="ellipsis-v" style={[styles.srdt_hdr_txt, {fontSize : RFValue(12)}]} />
-            <Text style={styles.srdt_hdr_txt} >{" "}{props.label}</Text>
-          </View>
-  )
-}
-
-export const SRDtDate = (props) => {
-  return (
-      <View style={{flexDirection:'row',justifyContent:'space-between',padding:calcWidth(2), marginHorizontal: calcWidth(2)}} >
-            <Text style={{ fontSize : RFValue(17),color:'#8d847d'}} >{props.label}</Text>
-            <View style={{flexDirection:"row"}} >
-              <TouchableOpacity onPress={props.onRefresh}style={{padding:calcWidth(2)}} >
-                <Ionicons name="ios-refresh" style={{ fontSize : RFValue(17),color:'#8d847d'}}  />
-              </TouchableOpacity >
-              <TouchableOpacity onPress={props.onChatPress} style={{padding:calcWidth(2)}} >
-                <IconsAnt name="message1" style={{ fontSize : RFValue(17),color:'#8d847d'}}  />
-              </TouchableOpacity >
-            </View>
+    <View
+      style={{
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 10,
+      }}>
+      <View style={styles.profileBorder}>
+        <Image style={styles.profile} source={props.img} />
       </View>
-  )
-}
+    </View>
+  );
+};
 
-export const SRTimeline = (props) => {
+export const ProfileName = props => {
   return (
-          <View style={styles.srtimeline} >
-             <View style={{flex:1, alignItems:"center"}}>
-               <Text style={styles.srtimeline_title}>{props.title}</Text>
-               <View style={{ borderBottomWidth:1,padding:3,borderColor:'#081344', width:"75%"}} ></View>
-               <Text style={styles.srtimeline_date}>{props.date} </Text>
-             </View>
-          </View>
-          )
-}
-
-export const SideMenuItem = (props) => {
-    return (
-        <TouchableOpacity onPress={props.onPress} style={{ flexDirection: "row",alignItems:'center',padding: calcWidth(5),paddingHorizontal: calcWidth(7)}} >
-            <Image source={props.img} style={styles.sidemenuitem_img} />
-            <Text style={styles.sidemenuitem_txt} >{props.label}</Text>
+    <View
+      style={{
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+      <Text style={styles.profilename_txt}>{props.name}</Text>
+      <View style={{flexDirection: 'row'}}>
+        <Text style={styles.profilename_desig}>{props.designation}</Text>
+        <TouchableOpacity onPress={props.onEditPress}>
+          <Image
+            style={styles.editIcon}
+            source={require(`${assetsPath}Profile/edit.png`)}
+          />
         </TouchableOpacity>
-    )
-}
+      </View>
+    </View>
+  );
+};
+
+export const ButtonSlim = props => {
+  return (
+    <TouchableOpacity onPress={props.onPress}>
+      <Text style={[styles.btnslimtxt, props.style]}>{props.label}</Text>
+    </TouchableOpacity>
+  );
+};
+
+export const ProfileSaveIcon = props => {
+  return (
+    <TouchableOpacity
+      onPress={props.onPress}
+      style={[
+        {
+          alignSelf: 'flex-end',
+          padding: calcWidth(1),
+          paddingHorizontal: calcWidth(2),
+        },
+        props.style,
+      ]}>
+      <Ionicons
+        name="md-checkmark-circle-outline"
+        style={styles.profilesave_icon}
+      />
+    </TouchableOpacity>
+  );
+};
+
+export const Underline = props => {
+  return <View style={styles.underline}></View>;
+};
+
+export const ProfileSectionHdr = props => {
+  return (
+    <View style={styles.profile_section_hdr}>
+      <Text style={styles.profile_section_hdr_txt}>
+        <IconsAws5 style={{fontSize: RFValue(12)}} name="ellipsis-v" />
+        {'  '}
+        {props.label}
+      </Text>
+      <ProfileSaveIcon
+        style={{alignSelf: 'center'}}
+        onPress={props.onSavePress}
+      />
+    </View>
+  );
+};
+
+export const SRDetailsHdr = props => {
+  return (
+    <View style={styles.srdt_hdr} {...props}>
+      <IconsAws5
+        name="ellipsis-v"
+        style={[styles.srdt_hdr_txt, {fontSize: RFValue(12)}]}
+      />
+      <Text style={styles.srdt_hdr_txt}> {props.label}</Text>
+    </View>
+  );
+};
+
+export const SRDtDate = props => {
+  return (
+    <View
+      style={{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: calcHeight(1),
+        marginHorizontal: calcWidth(2),
+        paddingVertical: calcHeight(1.5),
+      }}>
+      <Text
+        style={{
+          fontSize: RFValue(16),
+          fontFamily: 'Montserrat-Light',
+          color: '#8d847d',
+        }}>
+        {props.label}
+      </Text>
+      <View style={{flexDirection: 'row'}}>
+        <TouchableOpacity
+          onPress={props.onRefresh}
+          style={{paddingHorizontal: calcWidth(1)}}>
+          <Ionicons
+            name="ios-refresh"
+            style={{fontSize: RFValue(17), color: '#8d847d'}}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={props.onChatPress}
+          style={{paddingHorizontal: calcWidth(2)}}>
+          <IconsAnt
+            name="message1"
+            style={{fontSize: RFValue(17), color: '#8d847d'}}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+export const SRMessage = ({name, date, message, replyEvent}) => {
+  return (
+    <View style={styles.srmessagearea}>
+      <View style={{flex: 1, alignItems: 'center'}}>
+        <Text style={styles.srmessage_title}>{name}</Text>
+        <Text style={styles.srmessage_date}>{date} </Text>
+        <Text style={styles.srmessage_date}>{message} </Text>
+      </View>
+    </View>
+  );
+};
+
+export const SRMessageArea = props => {
+  return (
+    <View style={styles.srtimeline}>
+      <View style={{flex: 1, alignItems: 'center'}}>
+        <Text style={styles.srtimeline_title}>{props.title}</Text>
+        <View
+          style={{
+            borderBottomWidth: 1,
+            padding: 3,
+            borderColor: '#081344',
+            width: '75%',
+          }}></View>
+        {props.children}
+        <ReplyButton label="Reply" onPress={props.onPress} />
+      </View>
+    </View>
+  );
+};
+
+export const SRTimeline = props => {
+  const {color} = props;
+  return (
+    <View style={styles.srtimeline}>
+      <View style={{flex: 1, alignItems: 'center'}}>
+        <Text style={[styles.srtimeline_title, {color}]}>{props.title}</Text>
+        <View
+          style={{
+            borderBottomWidth: 1,
+            padding: 3,
+            borderColor: color,
+            width: '75%',
+          }}></View>
+        <Text style={[styles.srtimeline_date, {color}]}>{props.date} </Text>
+      </View>
+    </View>
+  );
+};
+
+export const SideMenuItem = props => {
+  return (
+    <TouchableOpacity
+      onPress={props.onPress}
+      style={{
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: calcHeight(2),
+        paddingHorizontal: calcWidth(7),
+      }}>
+      <Image source={props.img} style={styles.sidemenuitem_img} />
+      <Text style={styles.sidemenuitem_txt}>{props.label}</Text>
+    </TouchableOpacity>
+  );
+};
 
 export const SideMenuDivider = () => {
   return (
-      <View style={{borderColor: "#999999",borderTopWidth: 1,width:"80%", marginVertical: calcWidth(3), alignSelf:"center" }} ></View>
-  )
-}
+    <View
+      style={{
+        borderColor: '#999999',
+        borderTopWidth: 1,
+        width: '80%',
+        marginVertical: calcHeight(1),
+        alignSelf: 'center',
+      }}></View>
+  );
+};
 
-export const SideMenuHeader = (props) => {
-  return (  
-        <View style={{ flexDirection: "row",alignItems:'center' ,justifyContent:'center', padding: calcWidth(3), marginVertical: calcWidth(3)}} >
-          <View style={styles.sidemenuhdr_img_border}>
-            <Image style={styles.sidemenuhdr_img} source={require(`${assetsPath}Profile/profile.jpg`)} />
-          </View>  
-         <View style={{ flexDirection: "column",padding:calcWidth(2)}} >
-            <Text  style={[styles.profilename_txt,{width:calcWidth(50)}]} >{props.name}</Text>
-            <Text  style={[styles.profilename_desig,{width:calcWidth(50)}]}  >{props.desig}</Text> 
-         </View> 
-        </View>
-  )
-}
-
-export const FAQLogoUnderline = (props) => {
+export const SideMenuHeader = props => {
   return (
-      <View style={{ borderTopWidth:4,width:'55%',borderColor:'#e2eae7', marginVertical: calcWidth(4), alignSelf:"center"}} >
+    <View
+      style={{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: calcHeight(1.5),
+        // marginVertical: calcHeight(1),
+      }}>
+      <View style={styles.sidemenuhdr_img_border}>
+        {props.profilePic ? (
+          <Image
+            style={styles.sidemenuhdr_img}
+            source={{
+              uri: `${PROFILE_BASE_URL}${props.profilePic}`,
+            }}
+          />
+        ) : (
+          <Image
+            style={styles.sidemenuhdr_img}
+            source={require(`${assetsPath}Profile/profile.jpg`)}
+          />
+        )}
       </View>
-  )
-}
-
-export const FAQMenuItem = (props) => {
-  return (
-      <TouchableOpacity onPress={props.onPress} style={styles.faqView}>
-          <View  style={styles.menu}  {...props}  >
-               <Image style={styles.file_img} source={props.img} />
-          </View>
-          <Text style={styles.faqTxt} >{props.btnName} </Text>
-      </TouchableOpacity>
-  )
-}
-
-export const FAQCategoryHdr= (props) => {
-  return (
-      <View  style={styles.faqcat_hdr} {...props}  >
-          <Text style={styles.faqcat_hdrtxt} >{props.label}</Text>
+      <View style={{flexDirection: 'column', padding: calcHeight(1)}}>
+        <Text style={[styles.profilename_txt, {width: calcWidth(50)}]}>
+          {props.name}
+        </Text>
+        <Text style={[styles.profilename_desig, {width: calcWidth(50)}]}>
+          {props.desig}
+        </Text>
       </View>
-  )
-}
+    </View>
+  );
+};
 
-export const FAQuestion = (props) => {
+export const FAQLogoUnderline = props => {
   return (
-          <View style={{marginTop:calcWidth(2)}} >
-             <View style={{flexDirection:'row',justifyContent:'space-between', borderBottomWidth:1, borderColor:"#999999",padding:calcWidth(1),color:'#8d847d'}}>
-                  <Text style={styles.faq_qst}>{props.question}</Text>
-                  <Image style={styles.faq_qst_img} source={require(`${assetsPath}FAQMenu/question.png`)} />
-             </View >
-             <View style={{padding:5}}>
-                  <Text style={styles.faq_ans}>{props.answer}</Text>
-             </View>
-          </View>
-        )
-}
+    <View
+      style={{
+        borderTopWidth: 4,
+        width: '55%',
+        borderColor: '#e2eae7',
+        marginVertical: calcWidth(4),
+        alignSelf: 'center',
+      }}></View>
+  );
+};
 
-export const InputSupport = (props) => {
+export const FAQMenuItem = props => {
+  // console.log(props);
   return (
-      <TextInput {...props}  style={[styles.input,{fontFamily: 'Montserrat-Medium', color:"#081344",textAlignVertical: 'top'}, props.style]}
-          placeholderTextColor="#081344"
-       />
-  )
-}
+    <TouchableOpacity onPress={props.onPress} style={styles.faqView}>
+      <View style={styles.menu} {...props}>
+        <Image style={styles.file_img} source={props.img} />
+      </View>
+      <Text style={styles.faqTxt}>{props.btnName} </Text>
+    </TouchableOpacity>
+  );
+};
 
-export const TxtInputMessage = (props) => {
+export const FAQCategoryHdr = props => {
   return (
-      <TextInput style={[styles.input,{fontWeight:'bold',textAlignVertical: 'top',fontSize:18}]} {...props}  placeholder={props.name} multiline={true} numberOfLines={8}
-          placeholderTextColor="#081344"
-       />
-  )
-}
+    <View style={styles.faqcat_hdr} {...props}>
+      <Text style={styles.faqcat_hdrtxt}>{props.label}</Text>
+    </View>
+  );
+};
 
-
-export const SupportDetail = (props) => {
+export const FAQuestion = props => {
   return (
-          <View style={{marginTop: calcHeight(2), marginHorizontal: calcWidth(2)}} >
-               <Text style={styles.supportdt_title}>{props.title}</Text>
-               <Text style={styles.supportdt_data}>{props.data} </Text>
-          </View>
-        )
-}
+    <View style={{marginTop: calcHeight(1)}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          borderBottomWidth: 1,
+          borderColor: '#999999',
+          width: calcWidth(80),
+          color: '#8d847d',
+        }}>
+        <Text style={styles.faq_qst}>{props.question}</Text>
+        <Image
+          style={styles.faq_qst_img}
+          source={require(`${assetsPath}FAQMenu/question.png`)}
+        />
+      </View>
+      <View style={{padding: calcHeight(1)}}>
+        <Text style={styles.faq_ans}>{props.answer}</Text>
+      </View>
+    </View>
+  );
+};
+
+export const InputSupport = props => {
+  return (
+    <TextInput
+      {...props}
+      style={[
+        styles.input,
+        {
+          fontFamily: 'Montserrat-Medium',
+          color: '#081344',
+          textAlignVertical: 'top',
+        },
+        props.style,
+      ]}
+      placeholderTextColor="#081344"
+    />
+  );
+};
+
+export const TxtInputMessage = props => {
+  return (
+    <TextInput
+      style={[
+        styles.input,
+        {fontWeight: 'bold', textAlignVertical: 'top', fontSize: 18},
+      ]}
+      {...props}
+      placeholder={props.name}
+      multiline={true}
+      numberOfLines={8}
+      placeholderTextColor="#081344"
+    />
+  );
+};
+
+export const SupportDetail = props => {
+  return (
+    <View style={{marginTop: calcHeight(2), marginHorizontal: calcWidth(2)}}>
+      <Text style={styles.supportdt_title}>{props.title}</Text>
+      <Text style={styles.supportdt_data}>{props.data} </Text>
+    </View>
+  );
+};
 
 export const SRDocumentItem = (props) => {
   return (
@@ -831,202 +1011,231 @@ const styles = EStyleSheet.create({
     width: calcHeight(7),
     height: calcHeight(7),
   },
-  supportdt_title:{
-      fontSize: RFValue(15),
-      fontFamily: 'Montserrat-BoldItalic', 
-      fontStyle:'italic',
-      fontWeight: "bold",
-      color:'#081344'
+  supportdt_title: {
+    fontSize: RFValue(15),
+    fontFamily: 'Montserrat-BoldItalic',
+    fontStyle: 'italic',
+    fontWeight: 'bold',
+    color: '#081344',
   },
-  supportdt_data:{
-      fontSize:RFValue(13),
-      fontFamily: 'Montserrat-Bold', 
-      padding:calcHeight(1),
-      color:'#081344'
+  supportdt_data: {
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Bold',
+    padding: calcHeight(1),
+    color: '#081344',
   },
-  faq_ans:{
-      color:'#081344',
-      fontSize:RFValue(13),
-      fontFamily: 'Montserrat-Light', 
-      marginHorizontal: calcWidth(3),
+  faq_ans: {
+    color: '#081344',
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Light',
+    marginHorizontal: calcWidth(3),
   },
-  faq_qst:{
-      color:'#081344',
-      fontSize:RFValue(15),
-      fontFamily: 'Montserrat-Medium', 
+  faq_qst: {
+    color: '#081344',
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Medium',
   },
-  faq_qst_img:{
-      height: calcWidth(7),
-      width: calcWidth(7),
+  faq_qst_img: {
+    height: calcHeight(3),
+    width: calcHeight(3),
   },
-  faqcat_hdrtxt:{
-      color : "#FFF",
-      fontSize:RFValue(15),
-      fontFamily: 'Montserrat-Medium', 
+  faqcat_hdrtxt: {
+    color: '#FFF',
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Medium',
   },
-  faqcat_hdr:{
-      width: calcWidth(50),
-      padding : calcWidth(2),
-      backgroundColor : "#081344",
-      borderRadius : calcWidth(1),
-      alignItems : "center",
-      alignSelf: "center",
-      margin : calcWidth(1),
-      fontSize:RFValue(10),
+  faqcat_hdr: {
+    width: calcWidth(50),
+    padding: calcHeight(1),
+    backgroundColor: '#081344',
+    borderRadius: calcWidth(1),
+    alignItems: 'center',
+    alignSelf: 'center',
+    margin: calcHeight(1),
   },
-  menu : {
-      width: calcWidth(15),
-      height: calcWidth(15),
-      borderWidth: 1,
-      borderRadius : calcWidth(2),
-      borderColor: "#8d847d",
-      alignItems:'center' ,
-      justifyContent:'center'
+  menu: {
+    width: calcHeight(8),
+    height: calcHeight(8),
+    borderWidth: 1,
+    borderRadius: calcHeight(2),
+    borderColor: '#8d847d',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  faqView:{
-      alignItems:'center' ,
-      justifyContent:'center',
-      padding: calcWidth(2),
-      alignSelf: "center",
-      width:'28%'
+  faqView: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: calcHeight(1),
+    alignSelf: 'center',
+    width: calcWidth(30),
   },
-  faqTxt:{ 
-      fontSize : RFValue(11),
-      color:'#081344',
-      padding:calcWidth(2),
-      height: calcWidth(12),
-      textAlign: "center"
+  faqTxt: {
+    fontSize: RFValue(11),
+    color: '#081344',
+    padding: calcWidth(2),
+    height: calcWidth(12),
+    textAlign: 'center',
+    fontFamily: 'Montserrat-Light',
   },
-  sidemenuhdr_img_border:{
-      width: calcWidth(15),
-      height: calcWidth(15),
-      borderRadius:calcWidth(7.5),
-      borderWidth:3,
-      alignItems:'center' ,
-      justifyContent:'center',
-      borderColor:'#8d847d'
+  sidemenuhdr_img_border: {
+    width: calcHeight(8.3),
+    height: calcHeight(8.3),
+    borderRadius: calcHeight(9),
+    borderWidth: calcHeight(0.33),
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#8d847d',
   },
-  sidemenuhdr_img : {
-    width: calcWidth(13),
-    height: calcWidth(13),
-    borderRadius: calcWidth(6.5)
+  sidemenuhdr_img: {
+    width: calcHeight(7),
+    height: calcHeight(7),
+    borderRadius: calcHeight(6.5),
   },
-  sidemenuitem_img : {
-    width: calcWidth(6),
-    height: calcWidth(6),
+  sidemenuitem_img: {
+    width: calcHeight(3.8),
+    height: calcHeight(3.8),
   },
-  sidemenuitem_txt : {
+  sidemenuitem_txt: {
     fontSize: RFValue(15),
     paddingHorizontal: calcWidth(3),
-    color:'#4d4d4d',
-    fontFamily: 'Montserrat-Medium', 
+    color: '#4d4d4d',
+    fontFamily: 'Montserrat-Medium',
   },
-  srtimeline_date : {
-    fontSize:RFValue(13),
-    padding:calcWidth(2),
-    textAlign:'center',
-    color:'#081344',
-    fontFamily: 'Montserrat-Light', 
+  srtimeline_date: {
+    fontSize: RFValue(12),
+    padding: calcWidth(2),
+    textAlign: 'center',
+    color: '#081344',
+    fontFamily: 'Montserrat-Light',
   },
-  srtimeline_title : {
-    fontSize:RFValue(15),
+  srtimeline_title: {
+    fontSize: RFValue(16),
+    fontFamily: 'Montserrat-Light', //bold,
+    color: '#081344',
+  },
+
+  srmessage_date: {
+    fontSize: RFValue(12),
+    paddingBottom: calcHeight(0.8),
+    textAlign: 'center',
+    color: '#081344',
+    fontFamily: 'Montserrat-Light',
+  },
+  srmessage_title: {
+    fontSize: RFValue(13.5),
     fontFamily: 'Montserrat-Medium', //bold,
-    color:'#081344',
+    paddingBottom: calcHeight(0.5),
+    color: '#081344',
   },
-  srtimeline:{
-      flexDirection:'row',
-      paddingHorizontal:15,
-      justifyContent:'space-between',
-      backgroundColor:'#EDECF0',
-      alignItems : "center",
-      borderRadius : "10 rem",
-      justifyContent:'center'
-      ,alignItems:'center',
-      marginTop:calcWidth(4)
+  srtimeline: {
+    flexDirection: 'row',
+    paddingHorizontal: 15,
+    justifyContent: 'space-between',
+    backgroundColor: '#EDECF0',
+    alignItems: 'center',
+    borderRadius: '10 rem',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: calcHeight(1),
+    marginTop: calcWidth(4),
   },
-  srdt_hdr_txt:{
-    fontSize : RFValue(17),
-    color:'#081344',
-    textAlign : "center",
-    padding: calcWidth(1),
+
+  srmessagearea: {
+    flexDirection: 'row',
+    paddingHorizontal: 15,
+    justifyContent: 'space-between',
+    backgroundColor: '#EDECF0',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: calcWidth(2),
+    marginBottom: calcHeight(1.1),
   },
-  srdt_hdr:{
-    paddingHorizontal:calcWidth(3),
+  srdt_hdr_txt: {
+    fontSize: RFValue(16),
+    color: '#081344',
+    fontFamily: 'Montserrat-Light',
+    textAlign: 'center',
+    padding: calcHeight(0.85),
+  },
+  srdt_hdr: {
+    paddingHorizontal: calcWidth(2),
     borderWidth: 1,
-    borderRadius : calcWidth(2),
-    borderColor: "#999999",
-    alignItems:"center",
-    flexDirection: "row"
+    borderRadius: calcWidth(2),
+    borderColor: '#999999',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   profile_section_hdr: {
-    padding: calcWidth(2),
-    marginVertical: calcWidth(1),
-    marginTop: calcWidth(3),
-    borderRadius: calcWidth(2),
+    padding: calcHeight(1),
+    marginVertical: calcHeight(1.2),
+    marginTop: calcHeight(5),
+    borderRadius: calcHeight(1.5),
     borderWidth: 1,
-    borderColor: "#8d847d",
+    borderColor: '#8d847d',
     paddingHorizontal: calcWidth(4),
-    flexDirection:"row",
-    justifyContent: "space-between",
-    alignItems:"center"
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   profile_section_hdr_txt: {
-    fontSize : RFValue(15),
-    color:'#4d4d4d',
+    fontSize: RFValue(13),
+    color: '#4d4d4d',
     fontFamily: 'Montserrat-Medium', //bold,
   },
   underline: {
-    borderTopWidth:1,
-    color:'#999999',
+    borderTopWidth: 1,
+    borderColor: '#999999',
     marginHorizontal: calcWidth(2),
-    marginVertical: calcWidth(5),
+    marginTop: calcHeight(2),
   },
-  btnslimtxt:{
+  btnslimtxt: {
     width: calcWidth(28),
-    fontSize : RFValue(13),
-    textAlign : "center",
-    color : "#FFF", 
+    fontSize: RFValue(13),
+    textAlign: 'center',
+    color: '#FFF',
     fontFamily: 'Montserrat-Light', //bold,
     padding: calcWidth(2),
-    borderRadius : calcWidth(2.5),
+    borderRadius: calcWidth(2.5),
     margin: calcWidth(1),
   },
   profilesave_icon: {
-      fontSize: RFValue(17),
+    fontSize: RFValue(19),
   },
-  profilename_desig:{
-      fontSize: RFValue(13),
-      fontFamily: 'Montserrat-Light',
-      color:'#4d4d4d',
-      paddingHorizontal: calcWidth(1),
+  profilename_desig: {
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Light',
+    color: '#4d4d4d',
+    paddingHorizontal: calcWidth(1),
   },
-  profilename_txt:{
-      fontSize: RFValue(16),
-      fontFamily: 'Montserrat-Medium',
-      color:'#4d4d4d',
-      paddingHorizontal: calcWidth(1),
+  profilename_txt: {
+    fontSize: RFValue(16),
+    fontFamily: 'Montserrat-Medium',
+    color: '#4d4d4d',
+    paddingHorizontal: calcWidth(1),
   },
-  editIcon:{
-      width: calcWidth(5),
-      height: calcWidth(5),
-      padding: calcWidth(1),
+  editIcon: {
+    width: calcWidth(5),
+    height: calcWidth(5),
+    padding: calcHeight(1),
   },
-  profile:{
-      width: "80 rem",
-      height: "80 rem",
-      borderRadius:"40 rem",
+  profile: {
+    width: '80 rem',
+    height: '80 rem',
+    borderRadius: '40 rem',
   },
-  profileBorder:{
-      width: "90 rem",
-      height: "90 rem",
-      borderRadius:"50 rem",
-      borderWidth:3,
-      alignItems:'center' ,
-      justifyContent:'center',
-      borderColor:'#8d847d'
+  profileBorder: {
+    width: '90 rem',
+    height: '90 rem',
+    borderRadius: '50 rem',
+    borderWidth: 3,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#8d847d',
   },
-  selectfilefooter : {
-    padding : calcWidth(1),
+  selectfilefooter: {
+    padding: calcWidth(1),
     color: '#081344',
     fontSize: RFValue(14),
     fontFamily: 'Montserrat-Light',
@@ -1040,8 +1249,8 @@ const styles = EStyleSheet.create({
     textAlign: 'center',
   },
   file_img: {
-    width: '35 rem',
-    height: '35 rem',
+    width: calcHeight(5),
+    height: calcHeight(5),
   },
   agreement: {
     marginVertical: calcWidth(5),
@@ -1114,6 +1323,7 @@ const styles = EStyleSheet.create({
     paddingHorizontal: calcWidth(1.5),
     color: '$inputTextColor',
     fontFamily: 'Montserrat-Light',
+    marginBottom: calcHeight(0.5),
   },
   pickeritem: {
     fontSize: '$inputFontSize',
@@ -1160,7 +1370,7 @@ const styles = EStyleSheet.create({
   servicehome_item_title: {
     fontSize: RFValue(14),
     fontFamily: 'Montserrat-Medium',
-    paddingVertical: calcHeight(0.5),
+    paddingVertical: calcHeight(0.55),
   },
   servicehome_item_btn: {
     backgroundColor: '#47489f',
@@ -1355,6 +1565,20 @@ const styles = EStyleSheet.create({
     color: '$inputTextColor',
     margin: calcHeight(1),
     fontFamily: 'Montserrat-Light',
+  },
+  reply_text: {
+    fontSize: RFValue(12),
+    color: '#ffff',
+    fontFamily: 'Montserrat-Light',
+  },
+  reply_button: {
+    backgroundColor: '#47489f',
+    paddingVertical: calcHeight(0.4),
+    paddingHorizontal: calcWidth(7),
+    borderRadius: calcHeight(1),
+    marginBottom: calcHeight(1),
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   lblInput: {
     fontSize: '$inputFontSize',

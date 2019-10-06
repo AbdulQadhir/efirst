@@ -24,7 +24,10 @@ export default class ModalPicker extends Component {
     this.setState({modalVisible: false});
   };
 
-  componentDidMount = () => {};
+  componentDidMount = () => {
+    this.props.defaultValue &&
+      this.setState({selectedText: this.props.defaultValue});
+  };
 
   onSelect(text, value) {
     this.setState({

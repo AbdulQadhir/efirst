@@ -98,6 +98,7 @@ export const FAQCategoryData = token => dispatch => {
 };
 
 const GetFAQById = (categorylist, token, dispatch) => {
+  console.log('categorylist==>', categorylist);
   if (categorylist) {
     categorylist.forEach(elm => {
       dispatch(FAQData(token, elm));

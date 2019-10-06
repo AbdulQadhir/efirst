@@ -9,7 +9,7 @@ import AlertView from '../../../styled/alert-view';
 import {
   HeaderBtnMenu,
   HeaderBtnBack,
-  HeaderBtnProfile
+  HeaderBtnProfile,
 } from '../../../pages/uicomponents/components';
 
 class Container extends Component {
@@ -32,11 +32,13 @@ class Container extends Component {
     title: navigation.getParam('headerTitle', 'My Requests'),
     headerLeft: (
       <View style={{flexDirection: 'row'}}>
-        <HeaderBtnMenu onPress={() => alert('')} />
+        <HeaderBtnMenu onPress={() => navigation.openDrawer()} />
         <HeaderBtnBack onPress={() => navigation.navigate('Dashboard')} />
       </View>
     ),
-    headerRight: <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
+    headerRight: (
+      <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
+    ),
   });
   componentDidUpdate = prevProps => {
     const {success, error} = this.props.services;
