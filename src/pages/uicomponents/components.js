@@ -1166,7 +1166,7 @@ const styles = EStyleSheet.create({
   },
   visaBorder: {
     fontSize: RFValue(13),
-    fontFamily: 'Montserrat-Light',
+    fontFamily: 'Montserrat-LightItalic',
     color: '#FFF',
     textAlign: 'center',
     padding: calcHeight(1),
