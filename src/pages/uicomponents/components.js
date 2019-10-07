@@ -36,7 +36,7 @@ const colorBottom = '#ff4747';
 export const Input = props => {
   return (
     <TextInput
-    {...props}
+      {...props}
       style={[styles.input, props.style]}
       placeholderTextColor="#8d847d"
     />
@@ -413,7 +413,10 @@ export const RadioButton = props => {
   return (
     <TouchableOpacity
       onPress={props.onPress}
-      style={[{flexDirection: 'row', padding: 5, alignItems: 'center', flex: 1}, props.style]}>
+      style={[
+        {flexDirection: 'row', padding: 5, alignItems: 'center', flex: 1},
+        props.style,
+      ]}>
       <Radio {...props} />
       <Text style={styles.radiotxt}>{props.text}</Text>
     </TouchableOpacity>
@@ -458,12 +461,15 @@ export const HeaderBtnProfile = props => {
 export const TxtSubHead = props => {
   return (
     <View
-      style={[{
-        borderBottomWidth: 1,
-        borderColor: '#999999',
-        marginTop: calcHeight(2),
-        marginBottom: calcHeight(4),
-      },props.style]}>
+      style={[
+        {
+          borderBottomWidth: 1,
+          borderColor: '#999999',
+          marginTop: calcHeight(2),
+          marginBottom: calcHeight(4),
+        },
+        props.style,
+      ]}>
       <Text style={[styles.txtSubHead]}>{props.title}</Text>
     </View>
   );
@@ -1016,63 +1022,87 @@ export const SRDocumentItem = props => {
         </Text>
       </View>
     </TouchableOpacity>
-        )
+  );
 };
 
 export const VisaFlowQst = props => {
-  return (
-      <Text style={styles.visaflow_qst_txt}>{props.label}*</Text>
-  );
+  return <Text style={styles.visaflow_qst_txt}>{props.label}*</Text>;
 };
 
 export const VisaBreadCrump = props => {
   return (
-      <View style={{backgroundColor:'#081344'}} >
-          <Text style={styles.visaBorder} >{props.path}</Text>
-      </View>
-  )
+    <View style={{backgroundColor: '#081344'}}>
+      <Text style={styles.visaBorder}>{props.path}</Text>
+    </View>
+  );
 };
 
 export const VisaFlowChoice = props => {
   return (
-    <TouchableOpacity 
+    <TouchableOpacity
       onPress={props.onPress}
-      style={{ boderColor:'#999999', borderBottomWidth:1, marginVertical: calcHeight(1), flexDirection: "row", justifyContent:"space-between" }}>
+      style={{
+        boderColor: '#999999',
+        borderBottomWidth: 1,
+        marginVertical: calcHeight(1),
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+      }}>
       <Text style={styles.visaflow_choice_txt}>{props.label}</Text>
-      <RadioButton style={{flex:0}} text="" isSelected={props.isSelected} onPress={props.onPress} />
+      <RadioButton
+        style={{flex: 0}}
+        text=""
+        isSelected={props.isSelected}
+        onPress={props.onPress}
+      />
     </TouchableOpacity>
   );
 };
 
-export const VisaFlowChoiceNote = (props) => {
-  return (
-      <Text style={styles.visaflowchoice_note} >{props.text}</Text>
-  )
+export const VisaFlowChoiceNote = props => {
+  return <Text style={styles.visaflowchoice_note}>{props.text}</Text>;
 };
 
-export const VisaOgDocTxt = (props) => {
+export const VisaOgDocTxt = props => {
   return (
-      <View style={{justifyContent:'center',alignItems : "center",paddingVertical:calcHeight(1),paddingHorizontal:calcWidth(1.5)}} >
-             <Text style={styles.visaogdoc_txt}>{props.text}</Text>
-     </View>
-  )
-}
+    <View
+      style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingVertical: calcHeight(1),
+        paddingHorizontal: calcWidth(1.5),
+      }}>
+      <Text style={styles.visaogdoc_txt}>{props.text}</Text>
+    </View>
+  );
+};
 
-export const VisaDtItem = (props) => {
+export const VisaDtItem = props => {
   return (
-      <View style={{padding:10}}>
-          <View style={styles.txtBorder}>
-               <Text style={[styles.visadtitem_txt,{color:'#081344'}]}>{props.txt1}</Text>
-               <Text style={[styles.visadtitem_txt,{textAlign:"right"}]}>{props.txt2} </Text>
-          </View>
+    <View style={{padding: 10}}>
+      <View style={styles.txtBorder}>
+        <Text style={[styles.visadtitem_txt, {color: '#081344'}]}>
+          {props.txt1}
+        </Text>
+        <Text style={[styles.visadtitem_txt, {textAlign: 'right'}]}>
+          {props.txt2}{' '}
+        </Text>
       </View>
-          )
-}
-
+    </View>
+  );
+};
 
 export const VisaFileFormat = props => (
-  <View style={{backgroundColor:"#f2f2f2", borderRadius:calcHeight(1), justifyContent:"center", alignItems:"center", padding:calcHeight(1.5), margin:calcHeight(0.5)}} >
-    <View style={{borderBottomWidth:1, borderColor:"#081344"}} >
+  <View
+    style={{
+      backgroundColor: '#f2f2f2',
+      borderRadius: calcHeight(1),
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: calcHeight(1.5),
+      margin: calcHeight(0.5),
+    }}>
+    <View style={{borderBottomWidth: 1, borderColor: '#081344'}}>
       <Text style={styles.visafileformat_title}>{props.title}</Text>
     </View>
     <Text style={styles.visafileformat_footer}>{props.footer}</Text>
@@ -1080,67 +1110,66 @@ export const VisaFileFormat = props => (
 );
 
 const styles = EStyleSheet.create({
-  visafileformat_title:{
-      fontSize:RFValue(15),
-      fontFamily: 'Montserrat-Medium',
-      color:'#081344',
-      padding: calcHeight(0.5),
-      textAlign: "center",
+  visafileformat_title: {
+    fontSize: RFValue(15),
+    fontFamily: 'Montserrat-Medium',
+    color: '#081344',
+    padding: calcHeight(0.5),
+    textAlign: 'center',
   },
-  visafileformat_footer:{
-      fontSize:RFValue(12),
-      fontFamily: 'Montserrat-Medium',
-      color:'#081344',
-      padding: calcHeight(0.5),
-      textAlign: "center",
+  visafileformat_footer: {
+    fontSize: RFValue(12),
+    fontFamily: 'Montserrat-Medium',
+    color: '#081344',
+    padding: calcHeight(0.5),
+    textAlign: 'center',
   },
-  txtBorder:{
-      flexDirection:'row',
-      justifyContent:'space-between',
-      borderBottomWidth:1,
-      paddingVertical:5,
-      borderColor:'#081344'
+  txtBorder: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderBottomWidth: 1,
+    paddingVertical: 5,
+    borderColor: '#081344',
   },
-  visadtitem_txt:{
-      fontSize:RFValue(15),
-      width: calcWidth(40),
-      fontFamily: 'Montserrat-Medium',
-      color:'#081344'
+  visadtitem_txt: {
+    fontSize: RFValue(15),
+    width: calcWidth(40),
+    fontFamily: 'Montserrat-Medium',
+    color: '#081344',
   },
-  visaogdoc_txt:{
-      fontSize:RFValue(13),
-      fontFamily: 'Montserrat-Light',
-      color:'#081344'
+  visaogdoc_txt: {
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Light',
+    color: '#081344',
   },
-  visaflowchoice_note:{ 
-      fontSize : RFValue(13),
-      fontFamily: 'Montserrat-Light',
-      color : "#081344",
-      padding: calcHeight(1),
-      textAlign : "center",
-      flex: 1
+  visaflowchoice_note: {
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Light',
+    color: '#081344',
+    padding: calcHeight(1),
+    textAlign: 'center',
+    flex: 1,
   },
-  visaflow_choice_txt:{ 
-      fontSize : RFValue(13),
-      fontFamily: 'Montserrat-Light',
-      color : "#081344",
-      padding: calcHeight(1),
-      flex: 1
+  visaflow_choice_txt: {
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Light',
+    color: '#081344',
+    padding: calcHeight(1),
+    flex: 1,
   },
-  visaflow_qst_txt:{ 
-      fontSize : RFValue(13),
-      fontFamily: 'Montserrat-Italic',
-      color : "#081344",
-      padding: calcHeight(1),
-      marginVertical: calcHeight(1),
-      fontStyle: 'italic',
+  visaflow_qst_txt: {
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-LightItalic',
+    color: '#081344',
+    padding: calcHeight(1),
+    marginVertical: calcHeight(1),
   },
-  visaBorder:{ 
-      fontSize : RFValue(13),
-      fontFamily: 'Montserrat-Light', 
-      color : "#FFF",
-      textAlign:'center',
-      padding: calcHeight(1),
+  visaBorder: {
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Light',
+    color: '#FFF',
+    textAlign: 'center',
+    padding: calcHeight(1),
   },
   doc_main: {
     backgroundColor: '#E5E8E8',

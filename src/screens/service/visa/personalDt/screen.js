@@ -23,7 +23,7 @@ import {withFormik} from 'formik';
 import * as Yup from 'yup';
 import TermsandConditon from '../../../../styled/TermsAndCondition';
 // import TermsandConditon from '../../termsandcondition';
-
+import {nationalities} from '../../../../styled/nationalities';
 import Modal from 'react-native-modal';
 import ModalPicker from '../../../../pages/uicomponents/ModalPicker';
 import {calcHeight, calcWidth} from '../../../../config';
@@ -67,35 +67,28 @@ const darkTheme = StyleSheet.create({
 const VisaService = ({
   handleSubmit,
   setFieldValue,
-  handleBlur,
   values,
   errors,
-  touched,
-  countries,
-  certificatetype,
-  attestationrate,
   token,
-  attestationPrice,
   navigation,
   setShowTerms,
-  showToast,
   state,
 }) => {
   let countryPicker = null;
   let phone = null;
 
   let statePicker = null;
-  let issuedCountryPicker = null;
-  let certficatePicker = null;
+  let nationalityPicker = null;
 
   const ShowDateTimePicker = () => setFieldValue('IsDatePickerVisible', true);
   const HideDateTimePicker = () => setFieldValue('IsDatePickerVisible', false);
   const HandleDatePicked = date => {
-    setFieldValue('DOB', new Date(date).toDateString());
+    setFieldValue('PassportExiryDate', new Date(date).toDateString());
     HideDateTimePicker();
   };
 
   const dateFormat = date => {
+    console.log(date);
     return date
       ? new Date(date).getDate() +
           '/' +
@@ -106,24 +99,14 @@ const VisaService = ({
   };
 
   checkPhoneValid = () => {
-    if (values.File === undefined) {
-      console.log('undefined');
-    }
-    if (!values.File) {
-      console.log('empty');
-    }
-    console.log('submit');
     setPhoneError('');
     if (!phone.isValidNumber()) {
+      console.log('ABC');
       setPhoneError('Invalid Format');
-      return;
-    }
-    if (!values.File) {
-      setFieldValue('errorFileUpload', 'Passport or Emirates ID is Required');
     } else {
-      setFieldValue('errorFileUpload', null);
+      console.log('Hi');
+      handleSubmit();
     }
-    handleSubmit();
   };
   componentDidUpdate = () => {
     console.log(attestationPrice);
@@ -139,13 +122,12 @@ const VisaService = ({
     }
   };
 
-
-  setExpDateInit = () => {
+  const setExpDateInit = () => {
     var dt = new Date();
     dt.setMonth(dt.getMonth() + 6);
     return dt;
   };
-  
+
   navigateToScreen = route => {
     const navigateAction = NavigationActions.navigate({
       routeName: route,
@@ -250,7 +232,7 @@ const VisaService = ({
             value={values.PersonalPhone}
           />
           {values.errorPhone != '' && <ErrorLabel label="Invalid Phone" />}
-
+          {errors.Address1 && <ErrorLabel label={errors.Address1} />}
           <Input2
             placeholder="Land Phone"
             name="Office"
@@ -338,21 +320,48 @@ const VisaService = ({
           {errors.AddressCountry && (
             <ErrorLabel label={errors.AddressCountry} />
           )}
+          <ModalPicker
+            placeholder="Nationality*"
+            ref={ref => {
+              nationalityPicker = ref;
+            }}
+            onChange={value => setFieldValue('Nationality', value)}>
+            {nationalities.map((nationality, index) => (
+              <ModalPickerItem
+                onPress={() =>
+                  nationalityPicker.onSelect(
+                    nationality.value,
+                    nationality.value,
+                  )
+                }
+                label={nationality.value}
+              />
+            ))}
+          </ModalPicker>
+          {errors.Nationality && <ErrorLabel label={errors.Nationality} />}
 
           <Input2
             placeholder="Passport Exiry Date *"
             onTouchStart={ShowDateTimePicker}
             label="Passport Exiry Date *"
-            onChangeText={value => setFieldValue('DOB', value)}
-            value={dateFormat(values.DOB)}
+            onChangeText={value => {
+              console.log(value);
+              setFieldValue('PassportExiryDate', value);
+            }}
+            value={dateFormat(values.PassportExiryDate)}
           />
+          {errors.PassportExiryDate && (
+            <ErrorLabel label={errors.PassportExiryDate} />
+          )}
           {!navigation.state.params.passportExpiry && (
               <View
-                style={{ marginVertical: calcHeight(1), paddingHorizontal:calcWidth(2) }}
-              >
-                <Text style={{ fontSize: RFValue(12) }}>
-                  Note: Passport Validity should be more than 6 months
-                  while applying for any Visa
+                style={{
+                  marginVertical: calcHeight(1),
+                  paddingHorizontal: calcWidth(2),
+                }}>
+                <Text style={{fontSize: RFValue(12)}}>
+                  Note: Passport Validity should be more than 6 months while
+                  applying for any Visa
                 </Text>
               </View>
             ) && <View></View>}
@@ -396,7 +405,7 @@ const VisaService = ({
             </Text>
           </View>
 
-          <ButtonNormal  label="Pay Now" onPress={checkPhoneValid}  />
+          <ButtonNormal label="Pay Now" onPress={checkPhoneValid} />
         </ScrollView>
         <DateTimePicker
           isVisible={values.IsDatePickerVisible}
@@ -404,7 +413,7 @@ const VisaService = ({
           onCancel={HideDateTimePicker}
           minimumDate={
             navigation.state.params.passportExpiry
-              ? this.setExpDateInit()
+              ? setExpDateInit()
               : new Date()
           }
         />
@@ -414,40 +423,27 @@ const VisaService = ({
 };
 
 export default withFormik({
-  mapPropsToValues: ({
-    attestationPrice,
-    countries,
-    documenttypes,
-    documentTypes,
-    getCountries,
-    attestationrate,
-    profile,
-    token,
-    docAttestationCreate,
-  }) => ({
+  mapPropsToValues: ({profile}) => ({
     CustomerName: profile.data.userdetail.FirstName,
     Email: profile.data.contactdetail.Email,
     PersonalPhone: profile.data.contactdetail.Phone
       ? profile.data.contactdetail.Phone
       : '+971',
     Address1: profile.data.contactdetail.Addressline1,
+    OfficePhone: profile.data.officedetail.CompanyPhone,
     Zip: '',
     AddressCountry: 'United Arab Emirates',
-    OfficePhone: profile.data.officedetail.CompanyPhone,
     Street: '',
     City: '',
-    AgreeTerms: false,
     SelectedState: '',
-    SelectedCountryId: '',
-    SelectedCertificateType: '',
-    Nationality: "",
+    Nationality: '',
+    PassportExiryDate: null,
     ShowInfo: false,
+    AgreeTerms: false,
+    ShowTerms: false,
     cca2: 'AE',
     callingCode: '971',
     errorPhone: '',
-    File: null,
-    errorFileUpload: null,
-    docAttestationCreate,
   }),
   validateOnChange: false,
   validationSchema: Yup.object().shape({
@@ -460,33 +456,27 @@ export default withFormik({
       .min(4, 'Must be longer than 4 characters')
       .email('Email not valid')
       .required('Required'),
-    PersonalPhone: Yup.string()
+    PersonalPhone: Yup.number('Invalid No.')
       .nullable()
       .required('Required'),
+    AddressCountry: Yup.string().required('Required'),
     Address1: Yup.string()
       .nullable()
       .required('Required'),
-    SelectedCountryId: Yup.string().required('Required'),
-    SelectedCertificateType: Yup.string().required('Required'),
-    AddressCountry: Yup.string().required('Required'),
     Street: Yup.string().required('Required'),
     City: Yup.string().required('Required'),
     SelectedState: Yup.string().required('Required'),
-    Nationality: Yup.string().required("Required"),
+    Nationality: Yup.string().required('Required'),
+    PassportExiryDate: Yup.string().required('Required'),
   }),
-
   handleSubmit: (values, {props}) => {
-    const {navigation, setRequestedValue} = props;
-
+    console.log('Submit');
+    const {navigation, updateTotalAmount} = props;
     const token = props.token.token;
-
     const ServiceName = 'VISA SERVICE';
-
     const data = navigation.state.params.data;
-    const Address = `${values.Address1},${values.Street} ${values.City}, ${
-      values.SelectedState
-    } ${values.AddressCountry} - ${values.Zip}`;
-    
+    const Address = `${values.Address1},${values.Street} ${values.City}, ${values.SelectedState} ${values.AddressCountry} - ${values.Zip}`;
+
     data.ServiceName = ServiceName;
     data.CustomerName = values.CustomerName;
     data.Email = values.Email;
@@ -501,17 +491,17 @@ export default withFormik({
     data.Nationality = values.Nationality;
     data.PassportExiryDate = values.PassportExiryDate;
 
-    console.log("JSON", "result = > " + JSON.stringify(data));
-    setRequestedValue(data.TotalBillAmount);
+    console.log('JSON', 'result = > ' + JSON.stringify(data));
+    updateTotalAmount(data.TotalBillAmount);
     const serviceData = JSON.stringify(data);
     const docItem = navigation.state.params.docItem;
 
     let _data = new FormData();
-    docItem.map((item, index) => _data.append("Files[]", item, item.name));
-    _data.append("ServiceData", serviceData);
-    console.log("result = > ", serviceData);
-    console.log("data==>", JSON.stringify(_data));
-  //  return props.visaServiceCreate({ data: _data, token });
+    docItem.map((item, index) => _data.append('Files[]', item, item.name));
+    _data.append('ServiceData', serviceData);
+    console.log('result = > ', serviceData);
+    console.log('data==>', JSON.stringify(_data));
+    return props.visaServiceCreate({data: _data, token});
   },
 })(VisaService);
 

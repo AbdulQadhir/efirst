@@ -1,14 +1,7 @@
 import React, {Component} from 'react';
-import DocumentAttestation from './screen';
+import VisaServicePersonalScreen from './screen';
 import {connect} from 'react-redux';
-import {
-  countries,
-  getcertificateType,
-  attestationPrice,
-  docAttestationCreate,
-  servicesData,
-  updAttestationSRAmt,
-} from '../../action';
+import {visaServiceCreate} from '../../action';
 import {
   HeaderBtnMenu,
   HeaderBtnBack,
@@ -43,38 +36,31 @@ class Container extends Component {
       <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
     ),
   });
-  setRequestedValue = amount => {
-    this.setState({Requested: true, SRAmount: amount});
-  };
+  updateTotalAmount = totalBillAmt =>
+    this.setState({totalBillAmt, Requested: true});
   setShowTerms = state => {
     this.setState({ShowTerms: state});
   };
-  componentDidMount = () => {
-    this.props.getCountries(this.props.token.token);
-    this.props.getcertificateType(this.props.token.token);
-  };
-  showToast = text => {
-    this.refs.validationToasts.show(text, 3000);
-  };
+  componentDidMount = () => {};
+
   componentDidUpdate(prevProps) {
-    if (
-      this.props.documentattestation.success &&
-      !prevProps.documentattestation.success
-    ) {
+    if (this.props.visaservice.success && !prevProps.visaservice.success) {
       this.setState({Requested: false, UpdatedSRAmount: true});
-      var SrId = this.props.documentattestation.data.SRID;
+
+      var SrId = this.props.visaservice.data.Result.SRID;
       const {UserId} = this.props.profile.data.userdetail;
       this.props.getPaymentDetail({
         token: this.props.token.token,
         SrId,
-        Amount: this.state.SRAmount,
+        Amount: this.state.totalBillAmt,
         UserId,
       });
     }
+
     if (this.props.paymentdetail.success && !prevProps.paymentdetail.success) {
       const {UserId} = this.props.profile.data.userdetail;
       var {Id} = this.props.paymentdetail.data;
-      var {SRID} = this.props.documentattestation.data;
+      var {SRID} = this.props.visaservice.data.Result;
       this.props.navigation.navigate('Foloosi', {
         Id,
         userid: UserId,
@@ -84,44 +70,18 @@ class Container extends Component {
   }
 
   render = () => {
-    const {
-      countries,
-      certificatetype,
-      attestationrate,
-      documentattestation,
-      profile,
-    } = this.props;
+    const loading = this.props.visaservice.loading;
+    const error = this.props.visaservice.error;
 
-    const loading =
-      documentattestation.loading ||
-      countries.loading ||
-      certificatetype.loading ||
-      attestationrate.loading;
-
-    const error =
-      documentattestation.error ||
-      countries.error ||
-      certificatetype.error ||
-      attestationrate.error;
-
-    const success = documentattestation.success;
     return (
       <View style={{flex: 1}}>
-        {/* <Loader loading={loading} /> */}
-        <DocumentAttestation
-          showToast={this.showToast}
+        <Loader loading={loading} />
+        <VisaServicePersonalScreen
+          updateTotalAmount={this.updateTotalAmount}
           setRequestedValue={this.setRequestedValue}
           {...this.props}
           state={this.state}
           setShowTerms={this.setShowTerms}
-        />
-        <Toast
-          ref="validationToasts"
-          style={{
-            backgroundColor: '#d12626',
-            bottom: 25,
-          }}
-          position="bottom"
         />
         {error && <AlertView type="error" />}
         {/* {success && <AlertView type="success" />} */}
@@ -130,33 +90,20 @@ class Container extends Component {
   };
 }
 const mapStateToProps = ({
-  countries,
-  certificatetype,
-  attestationrate,
-  documentattestation,
   docSRAmUpdation,
   profile,
   token,
-  srActivation,
+  visaservice,
   paymentdetail,
 }) => ({
-  countries,
-  certificatetype,
-  attestationrate,
-  documentattestation,
   docSRAmUpdation,
   profile,
   token,
-  srActivation,
+  visaservice,
   paymentdetail,
 });
 const mapDispatchToProps = dispatch => ({
-  attestationPrice: payload => dispatch(attestationPrice(payload)),
-  getCountries: payload => dispatch(countries(payload)),
-  getcertificateType: payload => dispatch(getcertificateType(payload)),
-  docAttestationCreate: payload => dispatch(docAttestationCreate(payload)),
-  servicesData: payload => dispatch(servicesData(payload)),
-  updAttestationSRAmt: payload => dispatch(updAttestationSRAmt(payload)),
+  visaServiceCreate: payload => dispatch(visaServiceCreate(payload)),
   getPaymentDetail: payload => dispatch(getPaymentDetail(payload)),
 });
 
