@@ -7,15 +7,15 @@ import {
   Image
 } from 'react-native';
 
-import {VisaBreadCrump,FAQMenuItem} from "./uicomponents/components";
+import {VisaBreadCrump,FAQMenuItem} from '../../../pages/uicomponents/components';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import {calcHeight, calcWidth} from '../config';
+import {calcHeight, calcWidth} from '../../../config';
 import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
-const assetsPath = "../Assets/";
+const assetsPath = "../../../Assets/";
 
 class App extends React.Component {
   state = {

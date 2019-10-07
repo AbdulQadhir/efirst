@@ -8,15 +8,15 @@ import {
   BackHandler
 } from 'react-native';
 
-import { VisaBreadCrump, SRDetailsHdr, VisaFlowQst, VisaFlowChoice, VisaFlowChoiceNote } from "./uicomponents/components";
+import { VisaBreadCrump, SRDetailsHdr, VisaFlowQst, VisaFlowChoice, VisaFlowChoiceNote } from '../../../pages/uicomponents/components';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import {calcHeight, calcWidth} from '../config';
+import {calcHeight, calcWidth} from '../../../config';
 import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
-const assetsPath = "../Assets/";
+const assetsPath = "../../../Assets/";
 import visa_options from "./data";
 
 
@@ -42,9 +42,9 @@ class App extends React.Component {
       
       
   componentDidMount = () => {
-      const options = this.props.navigation.state.params ? this.props.navigation.state.params.options : visa_options;
-      const pageData = this.props.navigation.state.params ? this.props.navigation.state.params.pageData : [];
-      const lastSelected = this.props.navigation.state.params ? this.props.navigation.state.params.lastSelected : "";
+      const options = this.props.navigation.state.params.pageData ? this.props.navigation.state.params.options : visa_options;
+      const pageData = this.props.navigation.state.params.pageData ? this.props.navigation.state.params.pageData : [];
+      const lastSelected = this.props.navigation.state.params.pageData ? this.props.navigation.state.params.lastSelected : "";
       
       console.log("result => mount ",JSON.stringify(pageData));
       this.setState({ options: options });
