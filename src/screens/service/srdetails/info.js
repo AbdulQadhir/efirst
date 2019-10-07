@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
-import {View, ScrollView, StyleSheet, Linking, Clipboard} from 'react-native';
+import {
+  View,
+  ScrollView,
+  StyleSheet,
+  Linking,
+  Clipboard,
+  Text,
+} from 'react-native';
 
 import {connect} from 'react-redux';
 // import VisaServiceDt from './visaservicedt';
@@ -10,6 +17,7 @@ import {Input2} from '../../../pages/uicomponents/components';
 import Ionicons from 'react-native-vector-icons/AntDesign';
 
 import {calcHeight, calcWidth} from '../../../config';
+import {RFValue, RFPercentage} from 'react-native-responsive-fontsize';
 
 class SRInfo extends Component {
   certtificateTypeName = SelectedCertificateType => {
@@ -237,22 +245,108 @@ class SRInfo extends Component {
 
               {ServiceName === 'ATTESTATION SERVICE' &&
                 PickUpandDropOption == 'Through Courier' && (
-                  <Input2
-                    editable={false}
-                    value={`Shipment Tracking No: ${PickUpandDropOption}`}
-                    style={{borderColor: '#8d847d'}}
-                    multiline={true}
-                    scrollEnabled={false}
-                  />
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      flex: 1,
+                      borderBottomWidth: 1,
+                      borderColor: '#999999',
+                      marginHorizontal: calcWidth(2),
+                      paddingLeft: calcWidth(1),
+                      marginTop: calcHeight(2),
+                      marginBottom: calcHeight(0.5),
+                    }}>
+                    <Text
+                      style={{
+                        fontFamily: 'Montserrat-Light',
+                        fontSize: RFPercentage(2),
+                        color: '#8d847d',
+                      }}>
+                      Shipment Tracking No :{' '}
+                      <Text
+                        onPress={() =>
+                          Linking.openURL(
+                            'https://track.easypick.me/track-shipment',
+                          )
+                        }
+                        style={{
+                          fontFamily: 'Montserrat-Light',
+                          fontSize: RFPercentage(2),
+                          color: '#337ab7',
+                        }}>
+                        {TrackingNo}
+                      </Text>
+                    </Text>
+                    <View
+                      style={{
+                        flex: 1,
+                      }}>
+                      <TouchableOpacity
+                        style={{
+                          alignItems: 'flex-end',
+                        }}
+                        onPress={() => this.writeToClipboard(TrackingNo)}>
+                        <ClipboardIcon
+                          name="content-copy"
+                          size={23}
+                          color="#8d847d"
+                          style={{marginRight: 2}}
+                        />
+                      </TouchableOpacity>
+                    </View>
+                  </View>
                 )}
+
               {ServiceName === 'VISA SERVICE' && ThruCourier && (
-                <Input2
-                  editable={false}
-                  value={`Address: ${Address}`}
-                  style={{borderColor: '#8d847d'}}
-                  multiline={true}
-                  scrollEnabled={false}
-                />
+                <View
+                  style={{
+                    flexDirection: 'row',
+
+                    borderBottomWidth: 1,
+                    borderColor: '#999999',
+                    marginHorizontal: calcWidth(2),
+                    paddingHorizontal: calcWidth(1),
+                    marginTop: calcHeight(2),
+                    marginBottom: calcHeight(0.5),
+                  }}>
+                  <Text
+                    style={{
+                      fontFamily: 'Montserrat-Light',
+                      fontSize: RFPercentage(2),
+                      color: '#8d847d',
+                    }}>
+                    Shipment Tracking No :{' '}
+                    <Text
+                      onPress={() =>
+                        Linking.openURL(
+                          'https://track.easypick.me/track-shipment',
+                        )
+                      }
+                      style={{
+                        fontFamily: 'Montserrat-Light',
+                        fontSize: RFPercentage(2),
+                        color: '#337ab7',
+                        //  textDecorationLine: 'underline',
+                      }}>
+                      {TrackingNo}
+                    </Text>
+                  </Text>
+
+                  <TouchableOpacity
+                    style={{
+                      width: calcWidth(30),
+                      alignItems: 'flex-end',
+                      justifyContent: 'center',
+                    }}
+                    onPress={() => this.writeToClipboard(TrackingNo)}>
+                    <ClipboardIcon
+                      name="content-copy"
+                      size={23}
+                      color="#8d847d"
+                      style={{marginRight: 2}}
+                    />
+                  </TouchableOpacity>
+                </View>
               )}
               {ServiceName != 'VISA SERVICE' && (
                 <Input2

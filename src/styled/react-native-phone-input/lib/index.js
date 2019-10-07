@@ -189,12 +189,12 @@ export default class PhoneInput extends Component {
     return (
       <View style={[styles.container, this.props.style]}>
         <TouchableWithoutFeedback
-          onPress={this.onPressFlag}
+          onPress={this.props.editable && this.onPressFlag}
           disabled={disabled}>
           <Image
             source={Flags.get(iso2)}
             style={[styles.flag, this.props.flagStyle]}
-            onPress={this.onPressFlag}
+            onPress={this.props.editable && this.onPressFlag}
           />
         </TouchableWithoutFeedback>
         <View style={{flex: 1}}>
@@ -202,7 +202,7 @@ export default class PhoneInput extends Component {
             ref={ref => {
               this.inputPhone = ref;
             }}
-            editable={!disabled}
+            editable={this.props.editable}
             autoCorrect={false}
             style={[this.props.textStyle]}
             onChangeText={text => {

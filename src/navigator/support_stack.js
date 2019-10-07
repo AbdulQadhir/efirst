@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Support from '../pages/support';
+import Support from '../screens/support';
 import {createStackNavigator} from 'react-navigation-stack';
 import {
   HeaderBtnMenu,

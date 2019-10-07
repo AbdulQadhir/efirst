@@ -671,11 +671,35 @@ export const ProfileSaveIcon = props => {
   );
 };
 
+export const ProfileEditIcon = props => {
+  return (
+    <TouchableOpacity
+      onPress={props.onPress}
+      style={[
+        {
+          alignSelf: 'flex-end',
+          padding: calcWidth(1),
+          paddingHorizontal: calcWidth(2),
+        },
+        props.style,
+      ]}>
+      <Image
+        style={styles.editIcon}
+        source={require(`${assetsPath}Profile/edit.png`)}
+      />
+    </TouchableOpacity>
+  );
+};
+
 export const Underline = props => {
   return <View style={styles.underline}></View>;
 };
 
 export const ProfileSectionHdr = props => {
+  const {value, handleSubmit} = props;
+  const onPress = value => {
+    props.onPress(value);
+  };
   return (
     <View style={styles.profile_section_hdr}>
       <Text style={styles.profile_section_hdr_txt}>
@@ -683,10 +707,22 @@ export const ProfileSectionHdr = props => {
         {'  '}
         {props.label}
       </Text>
-      <ProfileSaveIcon
-        style={{alignSelf: 'center'}}
-        onPress={props.onSavePress}
-      />
+      {value ? (
+        <ProfileSaveIcon
+          style={{alignSelf: 'center'}}
+          onPress={() => {
+            handleSubmit();
+            // onPress(false);
+          }}
+        />
+      ) : (
+        <ProfileEditIcon
+          style={{alignSelf: 'center'}}
+          onPress={() => {
+            onPress(true);
+          }}
+        />
+      )}
     </View>
   );
 };
@@ -843,7 +879,7 @@ export const SideMenuHeader = props => {
         ) : (
           <Image
             style={styles.sidemenuhdr_img}
-            source={require(`${assetsPath}Profile/profile.jpg`)}
+            source={require(`${assetsPath}/userProfile.png`)}
           />
         )}
       </View>
@@ -863,11 +899,10 @@ export const FAQLogoUnderline = props => {
   return (
     <View
       style={{
-        borderTopWidth: 4,
-        width: '55%',
-        borderColor: '#e2eae7',
-        marginVertical: calcWidth(4),
-        alignSelf: 'center',
+        backgroundColor: '#e2eae7',
+        height: calcHeight(0.6),
+        width: calcWidth(31),
+        marginTop: calcHeight(-2.5),
       }}></View>
   );
 };
@@ -911,7 +946,7 @@ export const FAQuestion = props => {
         />
       </View>
       <View style={{padding: calcHeight(1)}}>
-        <Text style={styles.faq_ans}>{props.answer}</Text>
+        <Text style={[styles.faq_ans]}>{props.answer}</Text>
       </View>
     </View>
   );
@@ -924,9 +959,10 @@ export const InputSupport = props => {
       style={[
         styles.input,
         {
-          fontFamily: 'Montserrat-Medium',
+          fontFamily: 'Montserrat-Light',
           color: '#081344',
           textAlignVertical: 'top',
+          borderColor: '#999999',
         },
         props.style,
       ]}
@@ -960,23 +996,22 @@ export const SupportDetail = props => {
   );
 };
 
-export const SRDocumentItem = (props) => {
+export const SRDocumentItem = props => {
   return (
     <TouchableOpacity onPress={props.onPress}>
       <View style={styles.doc_main}>
         <Image
           style={styles.image}
-          source={require("../../Assets/service/document.png")}
+          source={require('../../Assets/service/document.png')}
         />
         <Text
           style={{
-            textAlign: "center",
+            textAlign: 'center',
             padding: 5,
             marginTop: 5,
-            color: "#515A5A",
-            fontSize: RFValue(13)
-          }}
-        >
+            color: '#515A5A',
+            fontSize: RFValue(13),
+          }}>
           {props.name}
         </Text>
       </View>
@@ -990,7 +1025,7 @@ export const VisaFlowQst = props => {
   );
 };
 
-export const VisaBreadCrump = (props) => {
+export const VisaBreadCrump = props => {
   return (
       <View style={{backgroundColor:'#081344'}} >
           <Text style={styles.visaBorder} >{props.path}</Text>
@@ -1084,26 +1119,25 @@ const styles = EStyleSheet.create({
       padding: calcHeight(1),
   },
   doc_main: {
-    backgroundColor: "#E5E8E8",
+    backgroundColor: '#E5E8E8',
     borderRadius: calcHeight(1),
     padding: calcHeight(1),
     margin: calcHeight(0.5),
-    alignItems: "center"
+    alignItems: 'center',
+    width: calcWidth(40),
   },
   image: {
     width: calcHeight(7),
     height: calcHeight(7),
   },
   supportdt_title: {
-    fontSize: RFValue(15),
-    fontFamily: 'Montserrat-BoldItalic',
-    fontStyle: 'italic',
-    fontWeight: 'bold',
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-MediumItalic',
     color: '#081344',
   },
   supportdt_data: {
     fontSize: RFValue(13),
-    fontFamily: 'Montserrat-Bold',
+    fontFamily: 'Montserrat-Light',
     padding: calcHeight(1),
     color: '#081344',
   },
@@ -1111,12 +1145,15 @@ const styles = EStyleSheet.create({
     color: '#081344',
     fontSize: RFValue(13),
     fontFamily: 'Montserrat-Light',
+    textAlign: 'justify',
     marginHorizontal: calcWidth(3),
   },
   faq_qst: {
     color: '#081344',
     fontSize: RFValue(13),
     fontFamily: 'Montserrat-Medium',
+    textAlign: 'justify',
+    width: calcWidth(73),
   },
   faq_qst_img: {
     height: calcHeight(3),
@@ -1195,6 +1232,7 @@ const styles = EStyleSheet.create({
     fontSize: RFValue(16),
     fontFamily: 'Montserrat-Light', //bold,
     color: '#081344',
+    textAlign: 'center',
   },
 
   srmessage_date: {
@@ -1209,6 +1247,7 @@ const styles = EStyleSheet.create({
     fontFamily: 'Montserrat-Medium', //bold,
     paddingBottom: calcHeight(0.5),
     color: '#081344',
+    textAlign: 'center',
   },
   srtimeline: {
     flexDirection: 'row',
@@ -1639,7 +1678,7 @@ const styles = EStyleSheet.create({
     //fontWeight: 'bold',
   },
   input: {
-    borderBottomWidth: 1,
+    borderBottomWidth: calcHeight(0.1),
     borderColor: '#081344',
     fontSize: '$inputFontSize',
     paddingHorizontal: calcWidth(1.5),

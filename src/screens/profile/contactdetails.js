@@ -52,7 +52,12 @@ const ContactDetails = ({
     <View>
       <ProfileSectionHdr
         label={'Contact Details'}
-        onSavePress={() => checkPhoneValid()}
+        value={values.ShowEditContact}
+        onPress={value => {
+          console.log('Value', value);
+          setFieldValue('ShowEditContact', value);
+        }}
+        handleSubmit={checkPhoneValid}
       />
       <View style={{paddingHorizontal: calcWidth(2)}}>
         <LabelInput label="Mobile" />
@@ -85,13 +90,14 @@ const ContactDetails = ({
             paddingHorizontal: calcHeight(1),
             fontFamily: 'Montserrat-Light',
           }}
-          onPressFlag={onPressFlag}
+          onPressFlag={values.ShowEditContact && onPressFlag}
           placeholder="Mobile"
           name="Phone"
           label="Mobile"
           keyboardType="numeric"
           onChangePhoneNumber={value => setFieldValue('Phone', value)}
           value={values.Phone}
+          editable={values.ShowEditContact}
         />
         {values.phoneError && <ErrorLabel label="Invalid Phone" />}
         <LabelInput label="Email" />
@@ -106,6 +112,7 @@ const ContactDetails = ({
           label="Address"
           onChangeText={value => setFieldValue('Addressline1', value)}
           value={values.Addressline1}
+          editable={values.ShowEditContact}
         />
         <LabelInput label="Website" />
         <Input2
@@ -113,6 +120,7 @@ const ContactDetails = ({
           label="Website"
           onChangeText={value => setFieldValue('Website', value)}
           value={values.Website}
+          editable={values.ShowEditContact}
         />
       </View>
     </View>

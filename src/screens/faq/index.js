@@ -50,7 +50,7 @@ class Container extends Component {
     ),
   });
   handleBackButtonClick = () => {
-    this.props.navigation.navigate('HomeScreen');
+    this.props.navigation.navigate('Dashboard');
     return true;
   };
   componentDidMount() {
@@ -112,7 +112,7 @@ class Container extends Component {
                       })
                     }
                     btnName={item.FAQCategoryName}
-                    img={require(`${assetsPath}FAQMenu/general.png`)}
+                    img={require(`${assetsPath}FAQMenu/faq.png`)}
                   />
                 ) : (
                   <FAQMenuItem

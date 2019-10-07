@@ -83,7 +83,7 @@ const UserDetails = ({
           }}
         />
       ) : (
-        <ProfilePhoto img={require(`../../Assets/Profile/profile.jpg`)} />
+        <ProfilePhoto img={require(`../../Assets/userProfile.png`)} />
       )}
       {values.ShowEditUser && (
         <TouchableOpacity onPress={selectPhotoTapped}>
@@ -118,6 +118,7 @@ const UserDetails = ({
             label="User Name"
             onChangeText={value => setFieldValue('FirstName', value)}
             value={values.FirstName}
+            editable={false}
           />
           <Input2
             placeholder="Designation"

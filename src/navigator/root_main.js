@@ -47,6 +47,7 @@ const Drawer = createDrawerNavigator(
   {
     contentComponent: SideMenu,
     drawerWidth: calcWidth(80),
+    overlayColor: 'rgba(0, 0, 0, 0)',
   },
 );
 

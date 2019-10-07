@@ -96,7 +96,6 @@ class Container extends Component {
 
     const loading =
       documentlanguage.loading ||
-      translationrate.loading ||
       documenttypes.loading ||
       langtranslation.loading;
 

@@ -4,6 +4,10 @@ export default {
     paddingTop: calcHeight(5),
     flex: 1,
     backgroundColor: '#f8f9fc',
+    shadowColor: '#000000',
+    shadowOpacity: 0.4,
+    shadowRadius: 8,
+    elevation: 10,
   },
   navItemStyle: {
     padding: calcHeight(2),

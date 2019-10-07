@@ -214,7 +214,7 @@ export const docAttestationCreate = payload => dispatch => {
       }));
     },
 
-    langTransState,
+    attestationState,
     dispatch,
   );
 };
