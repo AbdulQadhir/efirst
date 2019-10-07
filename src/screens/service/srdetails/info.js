@@ -20,6 +20,15 @@ import {calcHeight, calcWidth} from '../../../config';
 import {RFValue, RFPercentage} from 'react-native-responsive-fontsize';
 
 class SRInfo extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      totalBillAmt: 0
+    };
+  }
+
+
   certtificateTypeName = SelectedCertificateType => {
     console.log('certificateParams =>', SelectedCertificateType);
     const {certificatetype} = this.props;
@@ -68,10 +77,82 @@ class SRInfo extends Component {
       return '';
     }
   };
+
   writeToClipboard = async text => {
     await Clipboard.setString(text.toString());
     alert('Copied to Clipboard!');
   };
+  
+  renderPageData = (pageData) => {
+    return pageData.map(datum => {
+      return (
+        datum["Text"] != "Documents and Payment Collection" && (
+          <Input2
+            editable={false}
+            value={`${datum["Value"]}`}
+            style={{borderColor: '#8d847d'}}
+            multiline={true}
+            scrollEnabled={false}
+          />
+        )
+      );
+    });
+  };
+
+  renderDocsData = (pageData) => {
+    const docsAndPayment = pageData[pageData.length - 1];
+    return docsAndPayment.Documents.map(datum => {
+      return (
+        datum.Text != "Documents and Payment Collection" && (
+        <Input2
+          editable={false}
+          value={`${datum.Text}: ${datum.FileUploaded}`}
+          style={{borderColor: '#8d847d'}}
+          multiline={true}
+          scrollEnabled={false}
+          />
+        )
+      );
+    });
+  };
+
+  renderPriceDts = (pageData) => {
+    const docsAndPayment = pageData[pageData.length - 1];
+    return docsAndPayment.PriceDetils.map(datum => {
+      return (
+        <Input2
+          editable={false}
+          value={`${datum.Text}: AED ${datum.Value}`}
+          style={{borderColor: '#8d847d'}}
+          multiline={true}
+          scrollEnabled={false}
+          />
+      );
+    });
+  };
+
+  renderTotalPrice = (pageData) => {
+    
+    const docsAndPayment = pageData[pageData.length - 1];
+    let total = docsAndPayment.PriceDetils.reduce(
+      (accumulator, item) => accumulator + parseFloat(item.Value),
+      0
+    );
+    if (
+      docsAndPayment.OriginalDocumentSubmissionType.Value == "Through Courier"
+    )
+      total += 10;
+    return (
+      <Input2
+        editable={false}
+        value={`Total: AED ${total}`}
+        style={{borderColor: '#8d847d'}}
+        multiline={true}
+        scrollEnabled={false}
+        />
+    );
+  };
+
   render() {
     const {
       srInfo: {
@@ -91,6 +172,7 @@ class SRInfo extends Component {
     } = this.props;
 
     const pageData = this.props.srInfo.PageData || null;
+    
     const ServiceName = this.props.srInfo.Service
       ? this.props.srInfo.Service.ServiceName
       : this.props.srDetail.ServiceName;
@@ -414,6 +496,31 @@ class SRInfo extends Component {
                   scrollEnabled={false}
                 />
               )}
+              
+              {pageData && <View>
+                {this.renderPageData(pageData)}
+                {pageData[pageData.length - 1].IBANNumber && pageData[pageData.length - 1].IBANNumber.value!="" && (
+                  <Input2
+                    editable={false}
+                    value={pageData[pageData.length - 1].IBANNumber.value}
+                    style={{borderColor: '#8d847d'}}
+                    multiline={true}
+                    scrollEnabled={false}
+                  />
+                )}
+                {pageData[pageData.length - 1].AdditionalNotes && pageData[pageData.length - 1].AdditionalNotes.value!="" && (
+                  <Input2
+                    editable={false}
+                    value={pageData[pageData.length - 1].AdditionalNotes.value}
+                    style={{borderColor: '#8d847d'}}
+                    multiline={true}
+                    scrollEnabled={false}
+                  />
+                )}
+                {this.renderDocsData(pageData)}
+                {this.renderPriceDts(pageData)}
+                {this.renderTotalPrice(pageData)}
+              </View>}
             </View>
           </View>
         </>

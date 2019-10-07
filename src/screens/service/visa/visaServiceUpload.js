@@ -24,6 +24,7 @@ import {
   ButtonNormal,
   SelectFile,
   VisaFileFormat,
+  ErrorLabel
 } from '../../../pages/uicomponents/components';
 
 import {
@@ -42,6 +43,8 @@ import DocumentPicker from 'react-native-document-picker';
 
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
+
+import Toast, { DURATION } from "react-native-easy-toast";
 
 class App extends React.Component {
   static navigationOptions = ({navigation}) => ({
@@ -210,6 +213,10 @@ class App extends React.Component {
     } catch (err) {
       console.log(err);
     }
+  };
+
+  showToast = text => {
+    this.refs.validationToasts.show(text, 3000);
   };
 
   renderDocs = () => {
@@ -391,8 +398,16 @@ class App extends React.Component {
                 value={this.state.notes}
                 onTextChange={notes => this.setState({notes})}
               />
-
+              <ErrorLabel label={this.state.validationMsg} />
               <ButtonNormal label="Next" onPress={() => this.goToDetails()} />
+              <Toast
+                ref="validationToasts"
+                style={{
+                  backgroundColor: "#d12626",
+                  bottom: 25
+                }}
+                position="bottom"
+              />
             </View>
           </View>
         </ScrollView>

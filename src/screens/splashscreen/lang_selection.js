@@ -1,20 +1,26 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { View } from "react-native";
+import {  View, AsyncStorage, StatusBar } from "react-native";
 import { DASHBOARD_DATA_URL } from "../../constants";
-import AlertView from "../styled/alert-view";
-import Loader from "../styled/loader";
-
+import { NavigationActions } from "react-navigation";
+import { setStatusBar } from "./action";
 class SplashScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
-      error: null
+      loading: true,
+      error: ""
     };
   }
+  navigateTo = page => {
+    const resetAction = NavigationActions.reset({
+      index: 0,
+      actions: [NavigationActions.navigate({ routeName: page })]
+    });
+    this.props.navigation.dispatch(resetAction);
+  };
 
-  async componentDidMount() {
+  async getIn() {
     const { token } = this.props.token;
     const result = await fetch(DASHBOARD_DATA_URL, {
       method: "GET",
@@ -26,7 +32,7 @@ class SplashScreen extends Component {
       this.setState({ error });
       this.setState({ loading: false });
     });
-    if(!result) return;
+    if (!result) return;
     const data = await result.json();
     const {
       ActionRequiredNewUpdateCount,
@@ -49,24 +55,44 @@ class SplashScreen extends Component {
       RejectedNewUpdateCount +
       RejectedTotalUpdateCount;
 
-    this.setState({ loading: false }, () => {
-      if (total > 0) this.props.navigation.navigate("Home");
-      else this.props.navigation.navigate("SelectService");
-    });
+    if (total > 0) {
+      this.props.setStatusBar(true);
+      this.props.navigation.navigate("Home");
+    } else {
+      this.props.setStatusBar(true);
+      this.props.navigation.navigate("SelectService");
+    }
+  }
+
+  async componentDidMount() {
+    try {
+      this.props.setStatusBar(false);
+      const value = await AsyncStorage.getItem("InitialLogin");
+      if (value !== null) {
+        if (this.props.token) await this.getIn();
+        else {
+          this.props.setStatusBar(true);
+          this.props.navigation.push("Auth");
+        }
+      } else {
+        AsyncStorage.setItem("InitialLogin", "1");
+        this.setState({ loading: false });
+      }
+    } catch (error) {
+      this.setState({ loading: false });
+    }
   }
 
   render = () => {
     return (
-        !this.state.error ? (
-          <AlertView type="error" message="Sorry, No Internet connection" />
-        ) : (<View />)
+      <View />
     );
   };
 }
 
-const mapStateToProps = ({ dashboard, token }) => ({ dashboard, token });
+const mapStateToProps = ({ token }) => ({ token });
 const mapDispatchToProps = dispatch => ({
-  DashboardData: payload => dispatch(DashboardData(payload))
+  setStatusBar: payload => dispatch(setStatusBar(payload))
 });
 
 export default connect(
