@@ -58,21 +58,34 @@ class App extends React.Component {
                     </TouchableOpacity>
                     { this.state.activeAccordion == 1 && (
                     <View>
-                    <View style={{flexDirection:'row',justifyContent:'center', paddingHorizontal:calcWidth(3)}} >
-                          <FAQMenuItem 
-                            onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Partner / Investor", options: visa_options } )} 
-                            btnName="Partner / Investor"  
-                            img={require(`${assetsPath}Visa/partner.png`)}/>
-                          <FAQMenuItem 
-                            onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Husband Visa", options: visa_options } )} 
-                            btnName="Husband Visa"  
-                            img={require(`${assetsPath}Visa/husband.png`)}/>
-                          <FAQMenuItem 
-                            onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Child Visa", options: visa_options } )} 
-                            btnName="Child Visa"  
-                            img={require(`${assetsPath}Visa/child.png`)}/>
-                        
-                    </View>
+                      <View style={{flexDirection:'row',justifyContent:'center', paddingHorizontal:calcWidth(3)}} >
+                        <FAQMenuItem 
+                          onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Partner / Investor", options: visa_options } )} 
+                          btnName="Partner / Investor"  
+                          img={require(`${assetsPath}Visa/partner.png`)}/>
+                        <FAQMenuItem 
+                          onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Husband Visa", options: visa_options } )} 
+                          btnName="Husband Visa"  
+                          img={require(`${assetsPath}Visa/husband.png`)}/>
+                        <FAQMenuItem 
+                          onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Child Visa", options: visa_options } )} 
+                          btnName="Child Visa"  
+                          img={require(`${assetsPath}Visa/child.png`)}/>
+                      </View>
+                      <View style={{flexDirection:'row',justifyContent:'center', paddingHorizontal:calcWidth(3)}} >
+                        <FAQMenuItem 
+                          onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Partner / Investor", options: visa_options } )} 
+                          btnName="Parent Visa"  
+                          img={require(`${assetsPath}Visa/parent.png`)}/>
+                        <FAQMenuItem 
+                          onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Husband Visa", options: visa_options } )} 
+                          btnName="Wife Visa"  
+                          img={require(`${assetsPath}Visa/wife.png`)}/>
+                        <FAQMenuItem 
+                          onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Child Visa", options: visa_options } )} 
+                          btnName="Change Status"  
+                          img={require(`${assetsPath}Visa/change_status.png`)}/>
+                      </View>
                     </View>
                     )}
                 </View>
@@ -82,8 +95,37 @@ class App extends React.Component {
                           <Text style={{ padding:calcHeight(2), paddingHorizontal:calcWidth(2), fontSize:RFValue(16),fontFamily:'Montserrat-Medium',color:'#081344'}}>Visa Stamping</Text>
                     </TouchableOpacity>
                     { this.state.activeAccordion == 2 && (
+                    
                     <View>
+                    <View style={{flexDirection:'row',justifyContent:'center', paddingHorizontal:calcWidth(3)}} >
+                      <FAQMenuItem 
+                        onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Partner / Investor", options: visa_options } )} 
+                        btnName="Partner / Investor"  
+                        img={require(`${assetsPath}Visa/partner.png`)}/>
+                      <FAQMenuItem 
+                        onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Husband Visa", options: visa_options } )} 
+                        btnName="Husband Visa"  
+                        img={require(`${assetsPath}Visa/husband.png`)}/>
+                      <FAQMenuItem 
+                        onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Husband Visa", options: visa_options } )} 
+                        btnName="Wife Visa"  
+                        img={require(`${assetsPath}Visa/wife.png`)}/>
                     </View>
+                    <View style={{flexDirection:'row',justifyContent:'center', paddingHorizontal:calcWidth(3)}} >
+                      <FAQMenuItem 
+                        onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Partner / Investor", options: visa_options } )} 
+                        btnName="Parent Visa"  
+                        img={require(`${assetsPath}Visa/parent.png`)}/>
+                      <FAQMenuItem 
+                        onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Child Visa", options: visa_options } )} 
+                        btnName="Child Visa"  
+                        img={require(`${assetsPath}Visa/child.png`)}/>
+                      <FAQMenuItem 
+                        onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Child Visa", options: visa_options } )} 
+                        btnName="New Born"  
+                        img={require(`${assetsPath}Visa/newborn.png`)}/>
+                    </View>
+                  </View>
                     )}
                 </View>
 
@@ -92,8 +134,33 @@ class App extends React.Component {
                           <Text style={{ padding:calcHeight(2), paddingHorizontal:calcWidth(2), fontSize:RFValue(16),fontFamily:'Montserrat-Medium',color:'#081344'}}>Visa Renewal</Text>
                     </TouchableOpacity>
                     { this.state.activeAccordion == 3 && (
+                      
                     <View>
+                    <View style={{flexDirection:'row',justifyContent:'center', paddingHorizontal:calcWidth(3)}} >
+                      <FAQMenuItem 
+                        onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Partner / Investor", options: visa_options } )} 
+                        btnName="Partner / Investor"  
+                        img={require(`${assetsPath}Visa/partner.png`)}/>
+                      <FAQMenuItem 
+                        onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Husband Visa", options: visa_options } )} 
+                        btnName="Husband Visa"  
+                        img={require(`${assetsPath}Visa/husband.png`)}/>
+                      <FAQMenuItem 
+                        onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Husband Visa", options: visa_options } )} 
+                        btnName="Wife Visa"  
+                        img={require(`${assetsPath}Visa/wife.png`)}/>
                     </View>
+                    <View style={{flexDirection:'row',justifyContent:'center', paddingHorizontal:calcWidth(3)}} >
+                      <FAQMenuItem 
+                        onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Child Visa", options: visa_options } )} 
+                        btnName="Child Visa"  
+                        img={require(`${assetsPath}Visa/child.png`)}/>
+                      <FAQMenuItem 
+                        onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Partner / Investor", options: visa_options } )} 
+                        btnName="Parent Visa"  
+                        img={require(`${assetsPath}Visa/parent.png`)}/>
+                    </View>
+                  </View>
                     )}
                 </View>
 
@@ -103,6 +170,16 @@ class App extends React.Component {
                     </TouchableOpacity>
                     { this.state.activeAccordion == 4 && (
                     <View>
+                    <View style={{flexDirection:'row',justifyContent:'center', paddingHorizontal:calcWidth(3)}} >
+                    <FAQMenuItem 
+                        onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Partner / Investor", options: visa_options } )} 
+                        btnName="Partner / Investor"  
+                        img={require(`${assetsPath}Visa/partner.png`)}/>
+                      <FAQMenuItem 
+                        onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Partner / Investor", options: visa_options } )} 
+                        btnName="Family Visa"  
+                        img={require(`${assetsPath}Visa/family.png`)}/>
+                    </View>
                     </View>
                     )}
                 </View>
