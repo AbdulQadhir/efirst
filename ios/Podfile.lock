@@ -194,6 +194,8 @@ PODS:
   - react-native-onesignal (3.4.1):
     - OneSignal (= 2.11.0)
     - React (< 1.0.0, >= 0.13.0)
+  - react-native-viewpager (2.0.0):
+    - React
   - react-native-webview (7.4.1):
     - React
   - React-RCTActionSheet (0.61.1):
@@ -275,6 +277,7 @@ DEPENDENCIES:
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-onesignal (from `../node_modules/react-native-onesignal`)
+  - "react-native-viewpager (from `../node_modules/@react-native-community/viewpager`)"
   - react-native-webview (from `../node_modules/react-native-webview`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -342,6 +345,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-community/netinfo"
   react-native-onesignal:
     :path: "../node_modules/react-native-onesignal"
+  react-native-viewpager:
+    :path: "../node_modules/@react-native-community/viewpager"
   react-native-webview:
     :path: "../node_modules/react-native-webview"
   React-RCTActionSheet:
@@ -405,6 +410,7 @@ SPEC CHECKSUMS:
   react-native-image-picker: 7a85cf7b0a53845f03ae52fb4592a2748ded069b
   react-native-netinfo: 2bb2e5094edcfecfb340a85053608526cb20f185
   react-native-onesignal: 9a31fb7de8802bd150a1519fbde2fbc47596520c
+  react-native-viewpager: b3af530800cc7d160dbba33496340c6f7af41f6f
   react-native-webview: e800df5dd1a0f3555fd543ebf7d881a9014851f2
   React-RCTActionSheet: af4d951113b1e068bb30611f91b984a7a73597ff
   React-RCTAnimation: 4f518d70bb6890b7c3d9d732f84786d6693ca297

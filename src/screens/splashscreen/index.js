@@ -7,8 +7,9 @@ import {
   ImageBackground,
   StatusBar,
 } from 'react-native';
-
-import {Left, Right} from 'native-base';
+import {calcHeight, calcWidth} from '../../config';
+import {RFValue, RFPercentage} from 'react-native-responsive-fontsize';
+// import {Left, Right} from 'native-base';
 import {connect} from 'react-redux';
 import Swiper from '../../styled/react-native-swiper/src';
 import {setStatusBar} from './action';
@@ -23,43 +24,69 @@ const Background = props => {
             style={{
               marginTop: '25%',
               textAlign: 'center',
-              fontSize: 22,
+              fontSize: RFValue(22),
+              fontFamily: 'Montserrat-Light',
               fontWeight: 'bold',
               color: props.color,
             }}>
             {props.caption}
           </Text>
         </View>
-        <View style={{flexDirection: 'row', padding: 10, marginBottom: 0}}>
-          <Left>
+        <View style={styles.buttonWrapper}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'flex-start',
+              flex: 1,
+            }}>
             <TouchableOpacity
               style={{
-                padding: 10,
+                padding: calcHeight(1.3),
                 backgroundColor: 'rgba(250, 250, 250, 0.30)',
-                borderRadius: 25,
+                borderRadius: calcHeight(5),
               }}
               onPress={() => {
                 props.setStatusBar(true);
                 props.navigation.navigate('Auth');
               }}>
-              <Text style={{color: '#FFF', fontSize: 17}}>Skip</Text>
+              <Text
+                style={{
+                  color: '#FFF',
+                  fontFamily: 'Montserrat-Medium',
+                  fontSize: RFValue(13),
+                }}>
+                Skip
+              </Text>
             </TouchableOpacity>
-          </Left>
+          </View>
           {props.last && (
-            <Right>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+                alignItems: 'center',
+                flex: 1,
+              }}>
               <TouchableOpacity
                 style={{
-                  padding: 10,
+                  padding: calcHeight(1.3),
                   backgroundColor: 'rgba(250, 250, 250, 0.30)',
-                  borderRadius: 25,
+                  borderRadius: calcHeight(5),
                 }}
                 onPress={() => {
                   props.setStatusBar(true);
                   props.navigation.navigate('Auth');
                 }}>
-                <Text style={{color: '#FFF', fontSize: 17}}>Next</Text>
+                <Text
+                  style={{
+                    color: '#FFF',
+                    fontFamily: 'Montserrat-Medium',
+                    fontSize: RFValue(13),
+                  }}>
+                  Next
+                </Text>
               </TouchableOpacity>
-            </Right>
+            </View>
           )}
         </View>
       </View>
@@ -199,5 +226,17 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 30,
     fontWeight: 'bold',
+  },
+  buttonWrapper: {
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    flex: 1,
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
