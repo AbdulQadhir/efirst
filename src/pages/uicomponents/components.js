@@ -36,8 +36,8 @@ const colorBottom = '#ff4747';
 export const Input = props => {
   return (
     <TextInput
+    {...props}
       style={[styles.input, props.style]}
-      {...props}
       placeholderTextColor="#8d847d"
     />
   );
@@ -1069,7 +1069,31 @@ export const VisaDtItem = (props) => {
           )
 }
 
+
+export const VisaFileFormat = props => (
+  <View style={{backgroundColor:"#f2f2f2", borderRadius:calcHeight(1), justifyContent:"center", alignItems:"center", padding:calcHeight(1.5), margin:calcHeight(0.5)}} >
+    <View style={{borderBottomWidth:1, borderColor:"#081344"}} >
+      <Text style={styles.visafileformat_title}>{props.title}</Text>
+    </View>
+    <Text style={styles.visafileformat_footer}>{props.footer}</Text>
+  </View>
+);
+
 const styles = EStyleSheet.create({
+  visafileformat_title:{
+      fontSize:RFValue(15),
+      fontFamily: 'Montserrat-Medium',
+      color:'#081344',
+      padding: calcHeight(0.5),
+      textAlign: "center",
+  },
+  visafileformat_footer:{
+      fontSize:RFValue(12),
+      fontFamily: 'Montserrat-Medium',
+      color:'#081344',
+      padding: calcHeight(0.5),
+      textAlign: "center",
+  },
   txtBorder:{
       flexDirection:'row',
       justifyContent:'space-between',

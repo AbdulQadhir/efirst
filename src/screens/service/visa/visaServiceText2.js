@@ -9,15 +9,35 @@ import {
 import { VisaBreadCrump, TxtSubHead, VisaOgDocTxt, PriceDetailItem, ButtonNormal } from '../../../pages/uicomponents/components';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
+import {
+  HeaderBtnMenu,
+  HeaderBtnBack,
+  HeaderBtnProfile,
+} from '../../../pages/uicomponents/components';
+
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 import { calcWidth, calcHeight } from '../../../config';
 
 class App extends React.Component {
   
+  static navigationOptions = ({navigation}) => ({
+    title: 'Visa Service',
+    headerLeft: (
+      <View style={{flexDirection: 'row'}}>
+        <HeaderBtnMenu onPress={() => navigation.openDrawer()} />
+        <HeaderBtnBack onPress={() => navigation.goBack()} />
+      </View>
+    ),
+    headerRight: (
+      <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
+    ),
+  });
+
   constructor(props) {
     super(props);
     this.state = {
+      visaFlow: "",
       totalBillAmt: 0,
     };
   }
@@ -44,6 +64,8 @@ class App extends React.Component {
   }
   
   componentDidMount = () => {
+    this.setState({ visaFlow : this.props.navigation.state.params.visaFlow })
+
     let total = this.props.navigation.state.params.docsAndPayment.PriceDetils.reduce(
       (accumulator, item) => accumulator + parseFloat(item.Value),
       0
@@ -58,7 +80,7 @@ class App extends React.Component {
     <>
         <ScrollView>
           <View style={styles.body} >
-            <VisaBreadCrump path="Flow" />
+            <VisaBreadCrump  path={this.state.visaFlow}  />
             <View style={styles.container1}  >           
               <TxtSubHead title="Additional Notes" style={{marginBottom:0}} />
               <VisaOgDocTxt text={this.props.navigation.state.params.docsAndPayment.AdditionalNotes.value} />  

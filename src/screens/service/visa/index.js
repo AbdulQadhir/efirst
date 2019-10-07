@@ -22,6 +22,7 @@ import {
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 const assetsPath = "../../../Assets/";
+import visa_options from "./data";
 
 class App extends React.Component {
   
@@ -53,14 +54,24 @@ class App extends React.Component {
               <View style={{paddingHorizontal:20}}>
                 <View style={styles.box} >
                     <TouchableOpacity onPress={()=>this.openAccordion(1)} >
-                          <Text style={{ padding:calcHeight(2), paddingHorizontal:calcWidth(2), fontSize:RFValue(17),fontFamily:'Montserrat-Bold', fontWeight:"bold" ,color:'#081344'}}>New Visa</Text>
+                          <Text style={{ padding:calcHeight(2), paddingHorizontal:calcWidth(2), fontSize:RFValue(16),fontFamily:'Montserrat-Medium' ,color:'#081344'}}>New Visa</Text>
                     </TouchableOpacity>
                     { this.state.activeAccordion == 1 && (
                     <View>
-                    <View style={{flexDirection:'row',justifyContent:'center'}} >
-                          <FAQMenuItem onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Partner / Investor" } )} btnName="Partner / Investor"  img={require(`${assetsPath}FAQMenu/price.png`)}/>
-                          <FAQMenuItem onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Husband Visa" } )} btnName="Husband Visa"  img={require(`${assetsPath}FAQMenu/price.png`)}/>
-                          <FAQMenuItem onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Child Visa" } )} btnName="Child Visa" img={require(`${assetsPath}FAQMenu/price.png`)}/>
+                    <View style={{flexDirection:'row',justifyContent:'center', paddingHorizontal:calcWidth(3)}} >
+                          <FAQMenuItem 
+                            onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Partner / Investor", options: visa_options } )} 
+                            btnName="Partner / Investor"  
+                            img={require(`${assetsPath}Visa/partner.png`)}/>
+                          <FAQMenuItem 
+                            onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Husband Visa", options: visa_options } )} 
+                            btnName="Husband Visa"  
+                            img={require(`${assetsPath}Visa/husband.png`)}/>
+                          <FAQMenuItem 
+                            onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Child Visa", options: visa_options } )} 
+                            btnName="Child Visa"  
+                            img={require(`${assetsPath}Visa/child.png`)}/>
+                        
                     </View>
                     </View>
                     )}
@@ -68,7 +79,7 @@ class App extends React.Component {
 
                 <View style={styles.box} >
                     <TouchableOpacity onPress={()=>this.openAccordion(2)}>
-                          <Text style={{ padding:calcHeight(2), paddingHorizontal:calcWidth(2), fontSize:RFValue(17),fontFamily:'Montserrat-Bold', fontWeight:"bold" ,color:'#081344'}}>Visa Stamping</Text>
+                          <Text style={{ padding:calcHeight(2), paddingHorizontal:calcWidth(2), fontSize:RFValue(16),fontFamily:'Montserrat-Medium',color:'#081344'}}>Visa Stamping</Text>
                     </TouchableOpacity>
                     { this.state.activeAccordion == 2 && (
                     <View>
@@ -78,7 +89,7 @@ class App extends React.Component {
 
                 <View style={styles.box} >
                     <TouchableOpacity onPress={()=>this.openAccordion(3)}>
-                          <Text style={{ padding:calcHeight(2), paddingHorizontal:calcWidth(2), fontSize:RFValue(17),fontFamily:'Montserrat-Bold', fontWeight:"bold" ,color:'#081344'}}>Visa Renewal</Text>
+                          <Text style={{ padding:calcHeight(2), paddingHorizontal:calcWidth(2), fontSize:RFValue(16),fontFamily:'Montserrat-Medium',color:'#081344'}}>Visa Renewal</Text>
                     </TouchableOpacity>
                     { this.state.activeAccordion == 3 && (
                     <View>
@@ -88,7 +99,7 @@ class App extends React.Component {
 
                 <View style={styles.box} >
                     <TouchableOpacity onPress={()=>this.openAccordion(4)}>
-                          <Text style={{ padding:calcHeight(2), paddingHorizontal:calcWidth(2), fontSize:RFValue(17),fontFamily:'Montserrat-Bold', fontWeight:"bold" ,color:'#081344'}}>Visa Cancellation</Text>
+                          <Text style={{ padding:calcHeight(2), paddingHorizontal:calcWidth(2), fontSize:RFValue(16),fontFamily:'Montserrat-Medium',color:'#081344'}}>Visa Cancellation</Text>
                     </TouchableOpacity>
                     { this.state.activeAccordion == 4 && (
                     <View>

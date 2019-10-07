@@ -10,11 +10,42 @@ import {
 import { VisaBreadCrump, SRDetailsHdr, VisaOgDocTxt, VisaDtItem, ButtonNormal } from '../../../pages/uicomponents/components';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
+import {
+  HeaderBtnMenu,
+  HeaderBtnBack,
+  HeaderBtnProfile,
+} from '../../../pages/uicomponents/components';
+
+
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 import { calcWidth, calcHeight } from '../../../config';
 
 class App extends React.Component {
+  
+  static navigationOptions = ({navigation}) => ({
+    title: 'Visa Service',
+    headerLeft: (
+      <View style={{flexDirection: 'row'}}>
+        <HeaderBtnMenu onPress={() => navigation.openDrawer()} />
+        <HeaderBtnBack onPress={() => navigation.goBack()} />
+      </View>
+    ),
+    headerRight: (
+      <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
+    ),
+  });
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      visaFlow: "",
+    };
+  }
+    
+  componentDidMount = () => {
+      this.setState({ visaFlow : this.props.navigation.state.params.visaFlow })
+  };
   
   renderPageData = () => {
     return this.props.navigation.state.params.pageData.map(datum => {
@@ -63,7 +94,8 @@ class App extends React.Component {
       docsAndPayment,
       data: _data,
       passportExpiry : this.props.navigation.state.params.passportExpiry,
-      docItem
+      docItem,
+      visaFlow: this.state.visaFlow
     });
   }
 
@@ -72,7 +104,7 @@ class App extends React.Component {
     <>
         <ScrollView>
           <View style={styles.body} >
-            <VisaBreadCrump path="Flow" />
+            <VisaBreadCrump path={this.state.visaFlow} />
             <View style={styles.container1}  >           
               <View style={{paddingHorizontal: calcWidth(3)}} >
                 <SRDetailsHdr label="Original Document Required" />  

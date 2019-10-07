@@ -17,7 +17,15 @@ import {
   TxtTotalAmount,
   ButtonNormal,
   SelectFile,
+  VisaFileFormat,
 } from '../../../pages/uicomponents/components';
+
+import {
+  HeaderBtnMenu,
+  HeaderBtnBack,
+  HeaderBtnProfile,
+} from '../../../pages/uicomponents/components';
+
 
 import {validateFileTypeAndSizeForTranslation} from '../../../constants';
 
@@ -32,6 +40,20 @@ EStyleSheet.build({$rem: entireScreenWidth / 380});
 
 class App extends React.Component {
   
+  static navigationOptions = ({navigation}) => ({
+    title: 'Visa Service',
+    headerLeft: (
+      <View style={{flexDirection: 'row'}}>
+        <HeaderBtnMenu onPress={() => navigation.openDrawer()} />
+        <HeaderBtnBack onPress={() => navigation.goBack()} />
+      </View>
+    ),
+    headerRight: (
+      <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
+    ),
+  });
+
+
   constructor(props) {
     super(props);
     this.state = {
@@ -43,9 +65,17 @@ class App extends React.Component {
       courier_charge: 10,
       notes: "",
       iban: "",
-      validationMsg: ""
+      validationMsg: "",
+      visaFlow: "",
     };
   }
+  
+  componentDidMount = () => {
+    const pageData = this.props.navigation.state.params.pageData ? this.props.navigation.state.params.pageData : [];
+    
+    var visaFlow = pageData.map(obj => obj.Value).join(" > ");
+    this.setState({ visaFlow : visaFlow })
+  };
   
   componentWillMount = () => {
     BackHandler.addEventListener(
@@ -297,7 +327,8 @@ class App extends React.Component {
       docsAttached: this.state.docsAttached,
       docItem: this.state.docItem,
       docsAndPayment: docsAndPayment,
-      passportExpiry: this.props.navigation.state.params.details.PassportExpiry ? false : true
+      passportExpiry: this.props.navigation.state.params.details.PassportExpiry ? false : true,
+      visaFlow: this.state.visaFlow
     });
   };
 
@@ -310,7 +341,7 @@ class App extends React.Component {
     <>
         <ScrollView >
           <View style={styles.body} >
-            <VisaBreadCrump path="Flow" />
+            <VisaBreadCrump path={this.state.visaFlow} />
 
             <View style={styles.container}  >
               <SRDetailsHdr label="Origial Document Submission Type" />
@@ -322,10 +353,12 @@ class App extends React.Component {
                 onPress={()=> this.setSubmissionType("Direct Submission at Office")} 
                 isSelected={this.state.submissionType == "Direct Submission at Office"}  />
 
+              <VisaFileFormat title={"Upload Document Copies"} footer={"File format - .jpeg | .jpg | .png | .doc | .xls | .pdf"} />
+
               {this.renderDocs()}
 
               <Input placeholder="IBAN Number" value={this.state.iban} onTextChange={(iban)=>this.setState({iban})} />
-              <Input placeholder="Additional Notes" value={this.state.notes} onTextChange={(notes)=>this.setState({notes})}  />
+              <Input multiline={true} style={{height:calcHeight(10), textAlignVertical: 'top'}} placeholder="Additional Notes" value={this.state.notes} onTextChange={(notes)=>this.setState({notes})}  />
 
               <ButtonNormal label="Next" onPress={() => this.goToDetails()} />
             </View >
