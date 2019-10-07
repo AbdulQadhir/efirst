@@ -21,6 +21,7 @@ const Tabs = createBottomTabNavigator(
     Support: {screen: SupportStack},
   },
   {
+    backBehavior: 'none',
     tabBarComponent: BottomBar,
     tabBarOptions: {
       activeTintColor: '#4F4F4F',

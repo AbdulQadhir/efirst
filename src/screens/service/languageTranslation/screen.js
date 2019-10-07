@@ -274,7 +274,7 @@ const LanguageTranslation = ({
         <ScrollView
           contentContainerStyle={styles.container}
           showsVerticalScrollIndicator={false}
-          keyboardShouldPersistTaps="always">
+          keyboardShouldPersistTaps="handled">
           <Input2
             placeholder="Name*"
             name="CustomerName"
@@ -332,7 +332,7 @@ const LanguageTranslation = ({
             value={values.PersonalPhone}
           />
           {values.errorPhone != '' && <ErrorLabel label="Invalid Phone" />}
-
+          {errors.PersonalPhone && <ErrorLabel label="Required" />}
           <Input2
             placeholder="Land Phone"
             name="Office"

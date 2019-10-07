@@ -33,7 +33,7 @@ export default ({
       case 1: {
         navigation.navigate('MyRequests', {
           headerTitle: 'Action Required',
-          noDataLabel: 'No new action required item available',
+          noDataLabel: 'No updates here',
           statusId: 1,
         });
 
@@ -42,7 +42,7 @@ export default ({
       case 2: {
         navigation.navigate('MyRequests', {
           headerTitle: 'In Review',
-          noDataLabel: 'Service not requested',
+          noDataLabel: 'No updates here',
           statusId: 2,
         });
         break;
@@ -51,7 +51,7 @@ export default ({
       case 3: {
         navigation.navigate('MyRequests', {
           headerTitle: 'Completed',
-          noDataLabel: 'No recent completed service request',
+          noDataLabel: 'No updates here',
           statusId: 3,
         });
         break;
@@ -59,7 +59,7 @@ export default ({
       case 4: {
         navigation.navigate('MyRequests', {
           headerTitle: 'Rejected',
-          noDataLabel: 'No recent rejected service request',
+          noDataLabel: 'No updates here',
           statusId: 4,
         });
         break;

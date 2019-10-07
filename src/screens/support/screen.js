@@ -67,9 +67,7 @@ const Support = ({
   const checkPhoneValid = () => {
     setFieldValue('phoneError', null);
     if (values.PersonalPhone) {
-      console.log('Hi');
       if (!phone.isValidNumber()) {
-        console.log('Hi 123');
         setFieldValue('phoneError', 'Invalid Format');
         return;
       }
@@ -78,7 +76,9 @@ const Support = ({
   };
   return (
     <View style={styles.body}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="always">
         <View style={styles.box}>
           <InputSupport
             placeholder="Name*"
@@ -134,10 +134,10 @@ const Support = ({
             onChangePhoneNumber={value => setFieldValue('PersonalPhone', value)}
             value={values.PersonalPhone}
           />
-          {errors.phoneError && <ErrorLabel label="Invalid Phone" />}
-
+          {values.phoneError && <ErrorLabel label="Invalid Phone" />}
+          {errors.PersonalPhone && <ErrorLabel label={errors.PersonalPhone} />}
           <InputSupport
-            placeholder="Office Phone*"
+            placeholder="Office Phone"
             name="OfficePhone"
             label="Office"
             keyboardType="numeric"

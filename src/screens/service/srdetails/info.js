@@ -106,7 +106,8 @@ class SRInfo extends Component {
       <ScrollView showsVerticalScrollIndicator={false}>
         <>
           <View style={styles.body}>
-            <View style={{flexDirection: 'column', padding: calcWidth(3)}}>
+            <View
+              style={{flexDirection: 'column', paddingVertical: calcHeight(1)}}>
               <Input2 editable={false} value={`Name: ${CustomerName}`} />
               <Input2
                 editable={false}
@@ -221,27 +222,82 @@ class SRInfo extends Component {
               )}
 
               {(ServiceName === 'TRANSLATION SERVICE' ||
+                ServiceName == 'TRANSLATION') && (
+                <Input2
+                  editable={false}
+                  value={`Legal Stamp: ${legalStamp == true ? 'Yes' : 'No'}`}
+                  style={{borderColor: '#8d847d'}}
+                  multiline={true}
+                  scrollEnabled={false}
+                />
+              )}
+
+              {(ServiceName === 'TRANSLATION SERVICE' ||
                 ServiceName == 'TRANSLATION') &&
-                legalStamp == true && (
+                legalStamp && (
                   <Input2
                     editable={false}
-                    value={`Legal Stamp: ${legalStamp == true ? 'Yes' : 'No'}`}
+                    value={`Pick Up & Drop Option: ${PickUpandDropOption}`}
                     style={{borderColor: '#8d847d'}}
                     multiline={true}
                     scrollEnabled={false}
                   />
                 )}
 
-              {(ServiceName === 'TRANSLATION SERVICE' ||
-                ServiceName == 'TRANSLATION') && (
-                <Input2
-                  editable={false}
-                  value={`Pick Up & Drop Option: ${PickUpandDropOption}`}
-                  style={{borderColor: '#8d847d'}}
-                  multiline={true}
-                  scrollEnabled={false}
-                />
-              )}
+              {ServiceName === 'TRANSLATION SERVICE' &&
+                PickUpandDropOption == 'Through Courier' &&
+                legalStamp && (
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      flex: 1,
+                      borderBottomWidth: 1,
+                      borderColor: '#999999',
+                      marginHorizontal: calcWidth(2),
+                      paddingLeft: calcWidth(1),
+                      marginTop: calcHeight(2),
+                      marginBottom: calcHeight(0.5),
+                    }}>
+                    <Text
+                      style={{
+                        fontFamily: 'Montserrat-Light',
+                        fontSize: RFPercentage(2),
+                        color: '#8d847d',
+                      }}>
+                      Shipment Tracking No :{' '}
+                      <Text
+                        onPress={() =>
+                          Linking.openURL(
+                            'https://track.easypick.me/track-shipment',
+                          )
+                        }
+                        style={{
+                          fontFamily: 'Montserrat-Light',
+                          fontSize: RFPercentage(2),
+                          color: '#337ab7',
+                        }}>
+                        {TrackingNo}
+                      </Text>
+                    </Text>
+                    <View
+                      style={{
+                        flex: 1,
+                      }}>
+                      <TouchableOpacity
+                        style={{
+                          alignItems: 'flex-end',
+                        }}
+                        onPress={() => this.writeToClipboard(TrackingNo)}>
+                        <ClipboardIcon
+                          name="content-copy"
+                          size={RFValue(22)}
+                          color="#8d847d"
+                          style={{marginRight: 2}}
+                        />
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                )}
 
               {ServiceName === 'ATTESTATION SERVICE' &&
                 PickUpandDropOption == 'Through Courier' && (
@@ -288,7 +344,7 @@ class SRInfo extends Component {
                         onPress={() => this.writeToClipboard(TrackingNo)}>
                         <ClipboardIcon
                           name="content-copy"
-                          size={23}
+                          size={RFValue(22)}
                           color="#8d847d"
                           style={{marginRight: 2}}
                         />
@@ -301,11 +357,11 @@ class SRInfo extends Component {
                 <View
                   style={{
                     flexDirection: 'row',
-
+                    flex: 1,
                     borderBottomWidth: 1,
                     borderColor: '#999999',
                     marginHorizontal: calcWidth(2),
-                    paddingHorizontal: calcWidth(1),
+                    paddingLeft: calcWidth(1),
                     marginTop: calcHeight(2),
                     marginBottom: calcHeight(0.5),
                   }}>
@@ -326,26 +382,27 @@ class SRInfo extends Component {
                         fontFamily: 'Montserrat-Light',
                         fontSize: RFPercentage(2),
                         color: '#337ab7',
-                        //  textDecorationLine: 'underline',
                       }}>
                       {TrackingNo}
                     </Text>
                   </Text>
-
-                  <TouchableOpacity
+                  <View
                     style={{
-                      width: calcWidth(30),
-                      alignItems: 'flex-end',
-                      justifyContent: 'center',
-                    }}
-                    onPress={() => this.writeToClipboard(TrackingNo)}>
-                    <ClipboardIcon
-                      name="content-copy"
-                      size={23}
-                      color="#8d847d"
-                      style={{marginRight: 2}}
-                    />
-                  </TouchableOpacity>
+                      flex: 1,
+                    }}>
+                    <TouchableOpacity
+                      style={{
+                        alignItems: 'flex-end',
+                      }}
+                      onPress={() => this.writeToClipboard(TrackingNo)}>
+                      <ClipboardIcon
+                        name="content-copy"
+                        size={RFValue(22)}
+                        color="#8d847d"
+                        style={{marginRight: 2}}
+                      />
+                    </TouchableOpacity>
+                  </View>
                 </View>
               )}
               {ServiceName != 'VISA SERVICE' && (

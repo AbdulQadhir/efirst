@@ -319,7 +319,7 @@ const DocumentAttestation = ({
             value={values.PersonalPhone}
           />
           {values.errorPhone != '' && <ErrorLabel label="Invalid Phone" />}
-
+          {errors.PersonalPhone && <ErrorLabel label="Required" />}
           <Input2
             placeholder="Land Phone"
             name="Office"
@@ -673,7 +673,7 @@ export default withFormik({
     // data.append("Address", address);
 
     data.append('SelectedCountryId', values.SelectedCountryId);
-    data.append('SelectedCertificateType', values.SelectedCertificateType);
+    data.append('CertificateTypeId', values.SelectedCertificateType);
 
     data.append('Files[]', values.File, values.File.name);
     data.append('Rate', Rate);

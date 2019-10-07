@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {View, StyleSheet, ScrollView} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native';
 import UserDetail from './userdetails';
 import ContactDetail from './contactdetails';
 import PersonalDetail from './personaldetails';
@@ -21,6 +27,7 @@ import {
   HeaderBtnProfile,
   HeaderBtnBack,
 } from '../../pages/uicomponents/components';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {calcHeight, calcWidth} from '../../config';
 class Container1 extends Component {
   constructor(props) {
@@ -111,69 +118,74 @@ class Container1 extends Component {
     console.log('Success==>', success);
     return (
       <View style={styles.body}>
-        <View>
-          <ScrollView
-            contentContainerStyle={styles.container}
-            showsVerticalScrollIndicator={false}
-            keyboardShouldPersistTaps="always">
-            <Loader loading={loading} />
-            <UserDetail
-              userdetail={this.props.userdetail}
-              token={this.props.token}
-              userProfileCreate={userProfileCreate}
+        <KeyboardAwareScrollView
+          keyboardShouldPersistTaps="handled"
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.container}>
+          {/* <ScrollView
+              contentContainerStyle={styles.container}
+              showsVerticalScrollIndicator={false}
+              keyboardShouldPersistTaps="always"> */}
+          <Loader loading={loading} />
+
+          <UserDetail
+            userdetail={this.props.userdetail}
+            token={this.props.token}
+            userProfileCreate={userProfileCreate}
+          />
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              marginVertical: calcHeight(3),
+            }}>
+            <ButtonSlim
+              label={`Open Services: ${
+                dashboard.data
+                  ? dashboard.data.Tiles.InReviewNewUpdateCount +
+                    dashboard.data.Tiles.InReviewTotalUpdateCount
+                  : 0
+              }`}
+              style={{backgroundColor: '#47489f'}}
             />
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                marginVertical: calcHeight(3),
-              }}>
-              <ButtonSlim
-                label={`Open Services: ${
-                  dashboard.data
-                    ? dashboard.data.Tiles.InReviewNewUpdateCount +
-                      dashboard.data.Tiles.InReviewTotalUpdateCount
-                    : 0
-                }`}
-                style={{backgroundColor: '#47489f'}}
-              />
-              <ButtonSlim
-                label={`Completed Services: ${
-                  dashboard.data
-                    ? dashboard.data.Tiles.CompletedNewUpdateCount +
-                      dashboard.data.Tiles.CompletedTotalUpdateCount
-                    : 0
-                }`}
-                style={{backgroundColor: '#008837'}}
-              />
-              <ButtonSlim
-                label={`Rejected Services: ${
-                  dashboard.data
-                    ? dashboard.data.Tiles.RejectedNewUpdateCount +
-                      dashboard.data.Tiles.RejectedTotalUpdateCount
-                    : 0
-                }`}
-                style={{backgroundColor: '#ff0000'}}
-              />
-            </View>
-            <Underline />
-            <PersonalDetail
-              personaldetail={this.props.personaldetail}
-              token={this.props.token}
-              userPersonalDetailCreate={userPersonalDetailCreate}
+            <ButtonSlim
+              label={`Completed Services: ${
+                dashboard.data
+                  ? dashboard.data.Tiles.CompletedNewUpdateCount +
+                    dashboard.data.Tiles.CompletedTotalUpdateCount
+                  : 0
+              }`}
+              style={{backgroundColor: '#008837'}}
             />
-            <ContactDetail
-              contactdetail={this.props.contactdetail}
-              token={this.props.token}
-              userConatctDetailCreate={userConatctDetailCreate}
+            <ButtonSlim
+              label={`Rejected Services: ${
+                dashboard.data
+                  ? dashboard.data.Tiles.RejectedNewUpdateCount +
+                    dashboard.data.Tiles.RejectedTotalUpdateCount
+                  : 0
+              }`}
+              style={{backgroundColor: '#ff0000'}}
             />
-            <OfficeDetail
-              officedetail={this.props.officedetail}
-              token={this.props.token}
-              userOfficeAddressCreate={userOfficeAddressCreate}
-            />
-          </ScrollView>
-        </View>
+          </View>
+          <Underline />
+          <PersonalDetail
+            personaldetail={this.props.personaldetail}
+            token={this.props.token}
+            userPersonalDetailCreate={userPersonalDetailCreate}
+          />
+          <ContactDetail
+            contactdetail={this.props.contactdetail}
+            token={this.props.token}
+            userConatctDetailCreate={userConatctDetailCreate}
+          />
+          <OfficeDetail
+            officedetail={this.props.officedetail}
+            token={this.props.token}
+            userOfficeAddressCreate={userOfficeAddressCreate}
+          />
+          {/* </ScrollView> */}
+        </KeyboardAwareScrollView>
+
         {error && <AlertView type="error" />}
         {success && this.state.success && (
           <AlertView
@@ -227,10 +239,10 @@ export default connect(
 const styles = StyleSheet.create({
   body: {
     flex: 1,
+    backgroundColor: '#f8f9fc',
   },
   container: {
-    padding: calcWidth(3),
-
+    padding: calcHeight(3),
     backgroundColor: '#f8f9fc',
     justifyContent: 'center',
   },

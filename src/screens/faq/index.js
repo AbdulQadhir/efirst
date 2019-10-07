@@ -82,7 +82,7 @@ class Container extends Component {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'space-evenly',
-              height: '70%',
+              // height: '70%',
             }}>
             <Image
               style={styles.logo_img}
@@ -118,7 +118,7 @@ class Container extends Component {
                   <FAQMenuItem
                     btnName="Have a question?"
                     img={require(`${assetsPath}FAQMenu/qstn.png`)}
-                    onPress={() => alert('Support')}
+                    onPress={() => this.props.navigation.navigate('Support')}
                   />
                 );
               }}

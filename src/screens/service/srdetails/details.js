@@ -26,9 +26,12 @@ class Details extends Component {
     } = this.props;
 
     return (
-      <ScrollView style={{padding: 10}} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        style={{paddingHorizontal: calcWidth(1.5)}}
+        showsVerticalScrollIndicator={false}>
         <View style={styles.body}>
-          <View style={{flexDirection: 'column', padding: calcWidth(3)}}>
+          <View
+            style={{flexDirection: 'column', paddingVertical: calcHeight(1)}}>
             {messageList.map(item => (
               <SRMessageArea
                 title={item.NoteTitle}

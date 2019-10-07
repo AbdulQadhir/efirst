@@ -902,7 +902,7 @@ export const FAQLogoUnderline = props => {
         backgroundColor: '#e2eae7',
         height: calcHeight(0.6),
         width: calcWidth(31),
-        marginTop: calcHeight(-2.5),
+        marginTop: calcHeight(1),
       }}></View>
   );
 };

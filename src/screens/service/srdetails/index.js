@@ -17,6 +17,11 @@ import React, {Component} from 'react';
 import Details from './details';
 import Documents from './documents';
 import Info from './info';
+import {StackActions, NavigationActions} from 'react-navigation';
+
+const popAction = StackActions.pop({
+  n: 1,
+});
 
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
@@ -87,6 +92,7 @@ class ServiceDetails extends Component {
     }
   }
   componentDidMount() {
+    console.log(this.props.navigation);
     BackHandler.addEventListener(
       'hardwareBackPress',
       this.handleBackButtonClick,
@@ -105,7 +111,8 @@ class ServiceDetails extends Component {
   }
 
   handleBackButtonClick() {
-    this.props.navigation.navigate('MyRequests');
+    this.props.navigation.dispatch(NavigationActions.back({key: null}));
+
     return true;
   }
   render() {
@@ -125,7 +132,8 @@ class ServiceDetails extends Component {
           SendMessage={this.props.sendOrReplyMessage}
           profile={profile}
         />
-        <View style={{flexDirection: 'column', padding: 20, flex: 1}}>
+        <View
+          style={{flexDirection: 'column', padding: calcHeight(3), flex: 1}}>
           <SRDetailsHdr label={srDetail ? srDetail.SRTitle : ''} />
           <SRDtDate
             label={srDetail ? srDetail.CreatedDate : ''}

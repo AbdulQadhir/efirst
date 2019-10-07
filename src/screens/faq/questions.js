@@ -56,21 +56,19 @@ export default class FAQDetail extends Component {
     const faq = this.props.navigation.getParam('faq', []);
 
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: '#f8f9fc'}}>
         <View
           style={{
             alignSelf: 'center',
             justifyContent: 'center',
             flex: 1,
             backgroundColor: '#f8f9fc',
-            width: '100%',
           }}>
           <View
             style={{
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'space-evenly',
-              height: '70%',
             }}>
             <Image
               style={styles.logo_img}
@@ -81,7 +79,7 @@ export default class FAQDetail extends Component {
         </View>
         <View
           style={{
-            flex: 1,
+            flex: 2,
             backgroundColor: '#FFF',
             justifyContent: 'center',
             padding: calcWidth(3),
@@ -104,7 +102,7 @@ const styles = EStyleSheet.create({
     flex: 1,
   },
   logo_img: {
-    height: calcHeight(17),
+    height: calcHeight(15),
     resizeMode: 'contain',
   },
 });
