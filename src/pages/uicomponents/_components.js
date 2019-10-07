@@ -214,7 +214,7 @@ export const PriceDetails = (props) => {
 
 export const TxtUnderline = (props) => {
     return (
-        <Text  {...props} style={styles.txt} >Your Bill Amount</Text>
+        <Text  {...props} style={styles.txt} >{props.name}</Text>
     )
 }
 
@@ -222,8 +222,8 @@ export const ButtonLong = (props) => {
     
     return (
            
-            <View >
-                <Text style={styles.btnLong}>{props.btnName}HJ kjh kasjd</Text>
+            <View style={{paddingVertical:10}}>
+                <Text style={styles.btnLong}>{props.btnName}</Text>
             </View>
             )
 }
@@ -232,7 +232,7 @@ export const ButtonLong = (props) => {
 export const ButtonPay = (props) => {
     return (
         <TouchableOpacity  style={ styles.btnPay} {...props}  >
-            <Text style={styles.txtBtn} >Pay Now</Text>
+            <Text style={styles.txtBtn} >{props.btn}</Text>
         </TouchableOpacity>
     )
 }
@@ -263,8 +263,9 @@ export const SelectFile = (props) => {
             <Image style={styles.file_img} source={require(`${assetsPath}File/file2.png`)} />
             </View>
         </View>
-        <Text  style={{fontSize:16,padding:10}}  >File Format  :  jpeg + png + jpg</Text>
-        <Text  style={{fontSize:16}}  >File Size > 5 MB</Text>
+        <Text  style={{fontSize:16,padding:10}}  ></Text>
+        <Text  style={{fontSize:16}}  ></Text>
+        
         </View>
     )
 }
@@ -312,7 +313,7 @@ export const ButtonSlim = (props) => {
 export const BoxHeading = (props) => {
     return (
             <View  style={styles.boxHeading}  {...props}  >
-              <Text style={{ fontSize : 17,color:'#081344',padding:5}} >{props.btnName}</Text>
+              <Text style={styles.boxHeadingTxt} >{props.btnName}</Text>
             </View>
     )
 }
@@ -488,22 +489,75 @@ export const SupportDetails = (props) => {
             </View>
             )
 }
+export const FileUpload = (props) => {
+    return (
+        <View style={{ flexDirection: "column",alignItems:'center' ,justifyContent:'center',paddingVertical:10}} >
+        <Text style={{fontSize:20}} >Select File</Text>
+        <View style={{ flexDirection: "row",width:"30%"}}>
+            <View  style={[styles.btnFile,{borderLeftWidth:2,borderRightWidth:1}]}  {...props}  >
+                 <Image style={styles.file_img} source={require(`${assetsPath}File/file1.png`)} />
+            </View>
+            <View  style={[styles.btnFile,{borderLeftWidth:1,borderRightWidth:2}]}   {...props}  >
+            <Image style={styles.file_img} source={require(`${assetsPath}File/file2.png`)} />
+            </View>
+        </View>
+        </View>
+    )
+}
+export const VSText = (props) => {
+    return (
+        <View style={{justifyContent:'center',alignItems : "center",width:'80%',padding:10}} >
+               <Text style={{ color:'#081344',textAlign:'center', }}>hgjhsad sjdbksjdf kjsdfskjdhnfs skdjfhnsjd kfnksldn jkdsfslkdn cksdjns  ageed o the termd</Text>
+       </View>
+    )
+}
+
+export const TextTwo = (props) => {
+    
+    return (
+        <View style={{padding:10}}>
+            <View style={styles.txtBorder}>
+                 <Text style={[styles.textTwo,{color:'#081344'}]}>{props.txt1}</Text>
+                 <Text style={styles.textTwo}>{props.txt2} </Text>
+            </View>
+        </View>
+            )
+}
+
+
 const styles = EStyleSheet.create({
+    txtBorder:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    borderBottomWidth:1,
+    paddingVertical:5,
+    borderColor:'#081344'
+    },
+    textTwo:{
+        fontSize:RFValue(17),
+        color:'#081344'
+    },
+    boxHeadingTxt:{
+        fontSize : RFValue(18),
+        color:'#081344',
+        padding:5
+    },
     supportDtTxt1:{
-        fontSize:18,
+        fontSize:RFValue(18),
         fontWeight:'bold',
         fontStyle:'italic',
         color:'#081344'
     },
     supportDtTxt2:{
-        fontSize:14,
+        fontSize:RFValue(14),
         padding:5,
         color:'#081344'},
     visaBorder:{ 
-        fontSize : 15,
+        fontSize : RFValue(15),
         color : "#FFF",
         textAlign:'center',
-        padding:5
+        padding:5,
+        fontStyle:'italic'
     },
     btnFAQ:{
         width: "200 rem",
@@ -553,7 +607,7 @@ const styles = EStyleSheet.create({
     },
     myreqitem_status : {
         padding: "5 rem",
-        fontSize : "12 rem",
+        fontSize : RFValue(12),
         borderRadius: "5 rem",
     },
     myreqitem : {
@@ -566,13 +620,13 @@ const styles = EStyleSheet.create({
     myreqitem_text: {
         padding: "5 rem",
         color: "#4d4d4d",
-        fontSize : "12 rem",
+        fontSize : RFValue(12),
     },
     myreqitem_head: {
         fontWeight: "bold",
         padding: "5 rem",
         color: "#081344",
-        fontSize : "12 rem",
+        fontSize : RFValue(12),
     },
     no_request_body_text: {
         padding: "10 rem",
@@ -768,7 +822,7 @@ const styles = EStyleSheet.create({
         alignSelf: "center",
         textAlign:'center',
         color:'#FFF',
-        fontSize:18,
+        fontSize : RFValue(18),
     },
     price:{
         flexDirection:'row',
@@ -781,7 +835,7 @@ const styles = EStyleSheet.create({
 
     },
     txt : {
-        fontSize : "$inputFontSize",
+        fontSize : RFValue(17),
         color : "#081344",
         margin : "5 rem",
         borderBottomWidth:1,
@@ -791,13 +845,13 @@ const styles = EStyleSheet.create({
     btnLong : {
         width: "100%",
         padding : "12 rem",
-        backgroundColor : "#295198",
+        backgroundColor : "#47489f",
         borderRadius : "7 rem",
         alignItems : "center",
         alignSelf: "center",
         textAlign:'center',
         color:'#FFF',
-        fontSize:18,
+        fontSize : RFValue(18),
     },
     btnPay : {
         width: "235 rem",
@@ -807,7 +861,7 @@ const styles = EStyleSheet.create({
         alignItems : "center",
         alignSelf: "center",
         margin : "8 rem",
-        fontSize:'18 rem'
+        fontSize : RFValue(18),
     },
     btnFile : {
         paddingVertical : "8 rem",
@@ -854,7 +908,7 @@ const styles = EStyleSheet.create({
         alignItems : "center",
         alignSelf: "center",
         margin : "10 rem",
-        fontSize:'10 rem'
+        fontSize:RFValue(10)
     },
     menu : {
         width: "65 rem",
@@ -866,7 +920,7 @@ const styles = EStyleSheet.create({
         justifyContent:'center'
     },
     boxHeading:{
-        width: "100 %",
+        width: "85 %",
         paddingHorizontal:"10 rem",
         borderWidth: 1,
         borderRadius : "7 rem",

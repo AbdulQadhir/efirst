@@ -8,20 +8,38 @@ import {
   BackHandler
 } from 'react-native';
 
-import { VisaBreadCrump, SRDetailsHdr, VisaFlowQst, VisaFlowChoice, VisaFlowChoiceNote } from "./uicomponents/components";
+import { VisaBreadCrump, SRDetailsHdr, VisaFlowQst, VisaFlowChoice, VisaFlowChoiceNote } from '../../../pages/uicomponents/components';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import {calcHeight, calcWidth} from '../config';
+import {calcHeight, calcWidth} from '../../../config';
 import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
+
+import {
+  HeaderBtnMenu,
+  HeaderBtnBack,
+  HeaderBtnProfile,
+} from '../../../pages/uicomponents/components';
 
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
-const assetsPath = "../Assets/";
+const assetsPath = "../../../Assets/";
 import visa_options from "./data";
 
-
 class App extends React.Component {
-      
+    
+  static navigationOptions = ({navigation}) => ({
+    title: 'Visa Service',
+    headerLeft: (
+      <View style={{flexDirection: 'row'}}>
+        <HeaderBtnMenu onPress={() => navigation.openDrawer()} />
+        <HeaderBtnBack onPress={() => navigation.goBack()} />
+      </View>
+    ),
+    headerRight: (
+      <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
+    ),
+  });
+
   constructor(props) {
       super(props);
       this.state = {
@@ -40,11 +58,10 @@ class App extends React.Component {
       };
     }
       
-      
   componentDidMount = () => {
-      const options = this.props.navigation.state.params ? this.props.navigation.state.params.options : visa_options;
-      const pageData = this.props.navigation.state.params ? this.props.navigation.state.params.pageData : [];
-      const lastSelected = this.props.navigation.state.params ? this.props.navigation.state.params.lastSelected : "";
+      const options = this.props.navigation.state.params.pageData ? this.props.navigation.state.params.options : visa_options;
+      const pageData = this.props.navigation.state.params.pageData ? this.props.navigation.state.params.pageData : [];
+      const lastSelected = this.props.navigation.state.params.lastSelected ? this.props.navigation.state.params.lastSelected : "";
       
       console.log("result => mount ",JSON.stringify(pageData));
       this.setState({ options: options });
