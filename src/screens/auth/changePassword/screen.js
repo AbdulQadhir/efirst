@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Dimensions, ScrollView} from 'react-native';
-
+ 
 import {withFormik} from 'formik';
 import * as Yup from 'yup';
 import {
