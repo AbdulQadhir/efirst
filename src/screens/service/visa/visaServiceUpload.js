@@ -24,7 +24,7 @@ import {
   ButtonNormal,
   SelectFile,
   VisaFileFormat,
-  ErrorLabel
+  ErrorLabel,
 } from '../../../pages/uicomponents/components';
 
 import {
@@ -44,8 +44,9 @@ import DocumentPicker from 'react-native-document-picker';
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 
-import Toast, { DURATION } from "react-native-easy-toast";
-
+import Toast, {DURATION} from 'react-native-easy-toast';
+import {RFValue} from 'react-native-responsive-fontsize';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 class App extends React.Component {
   static navigationOptions = ({navigation}) => ({
     title: 'Visa Service',
@@ -292,7 +293,7 @@ class App extends React.Component {
 
     if (validationErr) {
       this.setState({validationMsg: validationErr});
-      return;
+      // return;
     }
 
     var pageData = this.props.navigation.state.params.pageData;
@@ -355,12 +356,15 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <ScrollView>
+        <KeyboardAwareScrollView keyboardShouldPersistTaps="handled">
           <View style={styles.body}>
             <VisaBreadCrump path={this.state.visaFlow} />
 
             <View style={styles.container}>
-              <SRDetailsHdr label="Origial Document Submission Type" />
+              <SRDetailsHdr
+                textStyle={{fontSize: RFValue(14.3)}}
+                label="Origial Document Submission Type"
+              />
 
               <VisaFlowChoice
                 label={'Through Courier'}
@@ -403,14 +407,14 @@ class App extends React.Component {
               <Toast
                 ref="validationToasts"
                 style={{
-                  backgroundColor: "#d12626",
-                  bottom: 25
+                  backgroundColor: '#d12626',
+                  bottom: 25,
                 }}
                 position="bottom"
               />
             </View>
           </View>
-        </ScrollView>
+        </KeyboardAwareScrollView>
       </>
     );
   }

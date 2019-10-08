@@ -31,9 +31,9 @@ const RegistrationForm = ({
 }) => (
   <View style={styles.body}>
     <ScrollView
+      keyboardShouldPersistTaps="handled"
       style={[styles.scrollStyle]}
       contentContainerStyle={styles.container}
-      keyboardShouldPersistTaps="always"
       showsVerticalScrollIndicator={false}>
       <LabelHeader label={'Change Password'} />
       <LabelInput label={'Verification Code'} />

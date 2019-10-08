@@ -36,7 +36,7 @@ const ConfirmEmail = ({
       <ScrollView
         contentContainerStyle={styles.container}
         showsVerticalScrollIndicator={false}
-        keyboardShouldPersistTaps="always">
+        keyboardShouldPersistTaps="handled">
         <LabelHeader label={'Enter verification code'} />
 
         <LabelInput label={'Verification Code'} />

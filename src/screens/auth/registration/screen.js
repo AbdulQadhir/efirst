@@ -33,7 +33,7 @@ const RegistrationForm = ({
     <ScrollView
       style={[styles.scrollStyle]}
       contentContainerStyle={styles.container}
-      keyboardShouldPersistTaps="always"
+      keyboardShouldPersistTaps="handled"
       showsVerticalScrollIndicator={false}>
       <LabelHeader label={'Sign Up'} />
       <LabelInput label={'Name'} />

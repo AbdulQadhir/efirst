@@ -174,7 +174,7 @@ const VisaService = ({
         <ScrollView
           contentContainerStyle={styles.container}
           showsVerticalScrollIndicator={false}
-          keyboardShouldPersistTaps="always">
+          keyboardShouldPersistTaps="handled">
           <Input2
             placeholder="Name*"
             name="CustomerName"

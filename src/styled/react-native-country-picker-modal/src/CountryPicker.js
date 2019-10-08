@@ -468,7 +468,7 @@ export default class CountryPicker extends Component {
                 {!this.props.hideAlphabetFilter && (
                   <ScrollView
                     contentContainerStyle={styles.letters}
-                    keyboardShouldPersistTaps="always">
+                    keyboardShouldPersistTaps="handled">
                     {this.state.filter === '' &&
                       this.state.letters.map((letter, index) =>
                         this.renderLetters(letter, index),

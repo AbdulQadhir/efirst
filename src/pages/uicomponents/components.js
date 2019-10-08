@@ -740,7 +740,7 @@ export const SRDetailsHdr = props => {
         name="ellipsis-v"
         style={[styles.srdt_hdr_txt, {fontSize: RFValue(12)}]}
       />
-      <Text style={styles.srdt_hdr_txt}> {props.label}</Text>
+      <Text style={[styles.srdt_hdr_txt, props.textStyle]}> {props.label}</Text>
     </View>
   );
 };
@@ -1042,8 +1042,8 @@ export const VisaFlowChoice = props => {
     <TouchableOpacity
       onPress={props.onPress}
       style={{
-        boderColor: '#999999',
-        borderBottomWidth: 1,
+        borderColor: '#999999',
+        borderBottomWidth: calcHeight(0.103),
         marginVertical: calcHeight(1),
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -1079,12 +1079,20 @@ export const VisaOgDocTxt = props => {
 
 export const VisaDtItem = props => {
   return (
-    <View style={{padding: 10}}>
+    <View style={{padding: calcHeight(1.5)}}>
       <View style={styles.txtBorder}>
         <Text style={[styles.visadtitem_txt, {color: '#081344'}]}>
           {props.txt1}
         </Text>
-        <Text style={[styles.visadtitem_txt, {textAlign: 'right'}]}>
+        <Text
+          style={[
+            styles.visadtitem_txt,
+            {
+              textAlign: 'right',
+              alignSelf: 'flex-end',
+              fontFamily: 'Montserrat-Light',
+            },
+          ]}>
           {props.txt2}{' '}
         </Text>
       </View>
@@ -1102,7 +1110,8 @@ export const VisaFileFormat = props => (
       padding: calcHeight(1.5),
       margin: calcHeight(0.5),
     }}>
-    <View style={{borderBottomWidth: 1, borderColor: '#081344'}}>
+    <View
+      style={{borderBottomWidth: calcHeight(0.102), borderColor: '#081344'}}>
       <Text style={styles.visafileformat_title}>{props.title}</Text>
     </View>
     <Text style={styles.visafileformat_footer}>{props.footer}</Text>
@@ -1112,14 +1121,14 @@ export const VisaFileFormat = props => (
 const styles = EStyleSheet.create({
   visafileformat_title: {
     fontSize: RFValue(15),
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat-Light',
     color: '#081344',
     padding: calcHeight(0.5),
     textAlign: 'center',
   },
   visafileformat_footer: {
     fontSize: RFValue(12),
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat-Light',
     color: '#081344',
     padding: calcHeight(0.5),
     textAlign: 'center',
@@ -1127,12 +1136,12 @@ const styles = EStyleSheet.create({
   txtBorder: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    borderBottomWidth: 1,
-    paddingVertical: 5,
-    borderColor: '#081344',
+    borderBottomWidth: calcHeight(0.11),
+    paddingVertical: calcHeight(1),
+    borderColor: '#99999999',
   },
   visadtitem_txt: {
-    fontSize: RFValue(15),
+    fontSize: RFValue(14),
     width: calcWidth(40),
     fontFamily: 'Montserrat-Medium',
     color: '#081344',
@@ -1395,15 +1404,15 @@ const styles = EStyleSheet.create({
     padding: calcHeight(1),
   },
   profile: {
-    width: '80 rem',
-    height: '80 rem',
-    borderRadius: '40 rem',
+    width: calcHeight(10),
+    height: calcHeight(10),
+    borderRadius: calcHeight(6),
   },
   profileBorder: {
-    width: '90 rem',
-    height: '90 rem',
-    borderRadius: '50 rem',
-    borderWidth: 3,
+    width: calcHeight(11.5),
+    height: calcHeight(11.5),
+    borderRadius: calcHeight(7),
+    borderWidth: calcHeight(0.4),
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: '#8d847d',
@@ -1487,10 +1496,10 @@ const styles = EStyleSheet.create({
   },
   txtSubHead: {
     fontSize: RFValue(14),
-    color: '#081344',
+    color: '#8d847d',
     margin: calcHeight(0.8),
     paddingVertical: calcWidth(1),
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat-Light',
   },
   radiotxt: {
     fontSize: '$inputFontSize',
