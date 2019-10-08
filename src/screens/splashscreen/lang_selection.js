@@ -82,7 +82,7 @@ class SplashScreen extends Component {
       this.props.navigation.navigate("Dashboard");
     } else {
       this.props.setStatusBar(true);
-      this.props.navigation.navigate("ServiceHome");
+      this.props.navigation.navigate("Services");
     }
   }
 
@@ -91,16 +91,17 @@ class SplashScreen extends Component {
       this.props.setStatusBar(false);
       const value = await AsyncStorage.getItem("InitialLogin");
       if (value !== null) {
-        if (this.props.token) await this.getIn();
+        if (this.props.token)
+          await this.getIn();
         else {
           this.props.setStatusBar(true);
-          this.props.navigation.push("Auth");
+          this.props.navigation.navigate("Auth");
         }
       } else {
         AsyncStorage.setItem("InitialLogin", "1");
         this.setState({ loading: false });
         this.setState({ getStartedText: "Get Started...!" });
-        setTimeout(() => {this.props.navigation.push("SplashSlider")}, 3000)
+        setTimeout(() => {this.props.navigation.navigate("SplashSlider")}, 3000)
       }
     } catch (error) {
       this.setState({ loading: false });

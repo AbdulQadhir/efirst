@@ -1,8 +1,8 @@
-import {createStackNavigator} from 'react-navigation-stack';
+import {createSwitchNavigator} from 'react-navigation';
 import LangSelection from '../screens/splashscreen/lang_selection';
 import SplashSlider from '../screens/splashscreen/index';
 
-export default SplashStack = createStackNavigator(
+export default SplashStack = createSwitchNavigator(
   {
     LangSelection: {
       screen: LangSelection,
