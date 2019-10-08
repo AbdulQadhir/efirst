@@ -4,11 +4,11 @@ import SplashSlider from '../screens/splashscreen/index';
 
 export default SplashStack = createStackNavigator(
   {
-    SplashSlider: {
-      screen: SplashSlider,
-    },
     LangSelection: {
       screen: LangSelection,
+    },
+    SplashSlider: {
+      screen: SplashSlider,
     },
   },
   {
