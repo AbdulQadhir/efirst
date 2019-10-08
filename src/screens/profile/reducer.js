@@ -156,6 +156,8 @@ export const profile = (state = initialProfile, action) => {
 
     case profileState.SUCCESS:
       return {...state, success: action.state};
+    case profileState.CLEAR:
+      return initialProfile;
     case profileState.ERROR:
       return {...state, error: action.state};
     default:

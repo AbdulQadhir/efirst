@@ -11,13 +11,8 @@ import {
 const assetsPath = '../../Assets/';
 
 import {NavigationActions, DrawerActions} from 'react-navigation';
-import {
-  Image,
-  View,
-  ScrollView,
-  TouchableOpacity,
-  AsyncStorage,
-} from 'react-native';
+import {Image, View, ScrollView, TouchableOpacity} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import {connect} from 'react-redux';
 import {Logout, clearLogoutState} from '../../screens/auth/action';
 import {unregisterOnesignal} from '../../screens/onesignal/action';
@@ -26,20 +21,27 @@ import {DashboardData} from '../../screens/dashboard/action';
 import {servicesData} from '../../screens/service/action';
 
 class SideMenu extends Component {
+  state = {
+    loading: false,
+  };
   componentDidUpdate(prevProps) {
     if (this.props.logout.success && !prevProps.logout.success) {
+      this.setState({loading: false});
       this.props.navigation.navigate('Auth');
       this.props.clearLogoutState();
     }
   }
 
   onLogout = async () => {
+    this.setState({loading: true});
     const {UserId} = this.props.userdetail;
     const PlayerId = await AsyncStorage.getItem('playerid');
     const data = {UserId, PlayerId};
     const token = this.props.token.token;
     this.props.unregisterOnesignal({data, token});
-    setTimeout(() => this.props.Logout(token), 50);
+    setTimeout(() => {
+      this.props.Logout(token);
+    }, 50);
   };
 
   render() {
@@ -52,9 +54,7 @@ class SideMenu extends Component {
 
     return (
       <View style={styles.container}>
-        <Loader
-          loading={this.props.logout.loading || this.props.onesignal.loading}
-        />
+        <Loader loading={this.state.loading} />
         <ScrollView>
           <SideMenuHeader
             profilePic={this.props.userdetail.ProfilePic}
