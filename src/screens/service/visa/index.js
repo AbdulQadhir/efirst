@@ -23,6 +23,7 @@ const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 const assetsPath = "../../../Assets/";
 import visa_options from "./data";
+import new_visa from "./new_visa";
 
 class App extends React.Component {
   
@@ -60,7 +61,7 @@ class App extends React.Component {
                     <View>
                       <View style={{flexDirection:'row',justifyContent:'center', paddingHorizontal:calcWidth(3)}} >
                         <FAQMenuItem 
-                          onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Partner / Investor", options: visa_options } )} 
+                          onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Partner / Investor", options: new_visa } )} 
                           btnName="Partner / Investor"  
                           img={require(`${assetsPath}Visa/partner.png`)}/>
                         <FAQMenuItem 

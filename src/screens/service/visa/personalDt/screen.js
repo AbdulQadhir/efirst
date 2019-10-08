@@ -467,7 +467,6 @@ export default withFormik({
     City: Yup.string().required('Required'),
     SelectedState: Yup.string().required('Required'),
     Nationality: Yup.string().required('Required'),
-    PassportExiryDate: Yup.string().required('Required'),
   }),
   handleSubmit: (values, {props}) => {
     console.log('Submit');

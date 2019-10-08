@@ -1,0 +1,3294 @@
+{
+    "title": "Who is the Sponsor?",
+    "options": [
+        "Partner/Investor",
+        "Employee"
+    ],
+    "Partner/Investor": {
+        "title": "Select Location",
+        "options": [
+            "Inside Country",
+            "Outside Country"
+        ],
+        "Inside Country": {
+            "title": "Visa Stamping Speed",
+            "options": [
+                "Normal",
+                "Urgent"
+            ],
+            "Normal": {
+                "title": "Medical Certificate Process Speed",
+                "options": [
+                    "Normal",
+                    "48 Hours",
+                    "24  Hours",
+                    "5 Hours",
+                    "2 Hours"
+                ],
+                "Normal": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 1139.75
+                    }, {
+                        "Text": "Change Status",
+                        "Value": 638.65
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 609.90
+                    }, {
+                        "Text": "Medical Charges",
+                        "Value": 320
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "48 Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 1139.75
+                    }, {
+                        "Text": "Change Status",
+                        "Value": 638.65
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 609.90
+                    }, {
+                        "Text": "Medical Charges",
+                        "Value": 430
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "24  Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 1139.75
+                    }, {
+                        "Text": "Change Status",
+                        "Value": 638.65
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 609.90
+                    }, {
+                        "Text": "Medical Charges",
+                        "Value": 530
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "5 Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 1139.75
+                    }, {
+                        "Text": "Change Status",
+                        "Value": 638.65
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 609.90
+                    }, {
+                        "Text": "Medical Charges - VIP",
+                        "Value": 750
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "2 Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 1139.75
+                    }, {
+                        "Text": "Change Status",
+                        "Value": 638.65
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 609.90
+                    }, {
+                        "Text": "Medical Charges - VVIP",
+                        "Value": 1070
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            },
+            "Urgent": {
+                "title": "Medical Certificate Process Speed",
+                "options": [
+                    "Normal",
+                    "48 Hours",
+                    "24  Hours",
+                    "5 Hours",
+                    "2 Hours"
+                ],
+                "Normal": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 1139.75
+                    }, {
+                        "Text": "Change Status",
+                        "Value": 638.65
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 689.90
+                    }, {
+                        "Text": "Medical Charges",
+                        "Value": 320
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "48 Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 1139.75
+                    }, {
+                        "Text": "Change Status",
+                        "Value": 638.65
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 689.90
+                    }, {
+                        "Text": "Medical Charges",
+                        "Value": 430
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "24  Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 1139.75
+                    }, {
+                        "Text": "Change Status",
+                        "Value": 638.65
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 689.90
+                    }, {
+                        "Text": "Medical Charges",
+                        "Value": 530
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "5 Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 1139.75
+                    }, {
+                        "Text": "Change Status",
+                        "Value": 638.65
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 689.90
+                    }, {
+                        "Text": "Medical Charges - VIP",
+                        "Value": 750
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "2 Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 1139.75
+                    }, {
+                        "Text": "Change Status",
+                        "Value": 638.65
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 689.90
+                    }, {
+                        "Text": "Medical Charges - VVIP",
+                        "Value": 1070
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            }
+        },
+        "Outside Country": {
+            "title": "Visa Stamping Speed",
+            "options": [
+                "Normal",
+                "Urgent"
+            ],
+            "Normal": {
+                "title": "Medical Certificate Process Speed",
+                "options": [
+                    "Normal",
+                    "48 Hours",
+                    "24  Hours",
+                    "5 Hours",
+                    "2 Hours"
+                ],
+                "Normal": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 489.75
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 609.90
+                    }, {
+                        "Text": "Medical Charges",
+                        "Value": 320
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "48 Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 489.75
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 609.90
+                    }, {
+                        "Text": "Medical Charges",
+                        "Value": 430
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "24  Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 489.75
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 609.90
+                    }, {
+                        "Text": "Medical Charges",
+                        "Value": 530
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "5 Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 489.75
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 609.90
+                    }, {
+                        "Text": "Medical Charges - VIP",
+                        "Value": 750
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "2 Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 489.75
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 609.90
+                    }, {
+                        "Text": "Medical Charges - VVIP",
+                        "Value": 1070
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            },
+            "Urgent": {
+                "title": "Medical Certificate Process Speed",
+                "options": [
+                    "Normal",
+                    "48 Hours",
+                    "24  Hours",
+                    "5 Hours",
+                    "2 Hours"
+                ],
+                "Normal": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 489.75
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 689.90
+                    }, {
+                        "Text": "Medical Charges",
+                        "Value": 320
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "48 Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 489.75
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 689.90
+                    }, {
+                        "Text": "Medical Charges",
+                        "Value": 430
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "24  Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 489.75
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 689.90
+                    }, {
+                        "Text": "Medical Charges",
+                        "Value": 530
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "5 Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 489.75
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 689.90
+                    }, {
+                        "Text": "Medical Charges - VIP",
+                        "Value": 750
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "2 Hours": {
+                    "docs": [
+                        "Sponsor's passport",
+                        "Sponsor's visa",
+                        "Residential ejari (under Sponsor's name)",
+                        "Memorandum of association (MOA)",
+                        "Trade License (Including Partner page)",
+                        "Marriage certificate attested",
+                        "Marriage certificate legally translated",
+                        "Wife's passport",
+                        "Wife's Photo (White background)",
+                        "Last 3 months bank statement (Optional)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Security Deposit",
+                        "Value": 3060
+                    }, {
+                        "Text": "Entry Permit",
+                        "Value": 489.75
+                    }, {
+                        "Text": "Stamping",
+                        "Value": 689.90
+                    }, {
+                        "Text": "Medical Charges - VVIP",
+                        "Value": 1070
+                    }, {
+                        "Text": "Insurance",
+                        "Value": 695.10
+                    }, {
+                        "Text": "Emirates ID Price - 3 years",
+                        "Value": 370
+                    }, {
+                        "Text": "Service Charge",
+                        "Value": 105
+                    }],
+                    "IBAN Number": "",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            ""
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "Employee": {
+        "title" : "Visa Duration",
+        "options": [
+            "2 Years",
+            "3 years"
+        ],
+        "2 Years" : {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "title": "Visa Stamping Speed",
+                "options": [
+                    "Normal",
+                    "Urgent"
+                ],
+                "Normal": {
+                    "title": "Medical Certificate Process Speed",
+                    "options": [
+                        "Normal",
+                        "48 Hours",
+                        "24  Hours",
+                        "5 Hours",
+
+                        "2 Hours"
+                    ],
+                    "Normal": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 459.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 320
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "48 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 459.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 430
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "24  Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 459.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 530
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "5 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 459.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 750
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "2 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 459.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 1070
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    }
+                },
+                "Urgent": {
+                    "title": "Medical Certificate Process Speed",
+                    "options": [
+                        "Normal",
+                        "48 Hours",
+                        "24  Hours",
+                        "5 Hours",
+                        "2 Hours"
+                    ],
+                    "Normal": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 539.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 320
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "48 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 539.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 430
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "24  Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 539.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 530
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "5 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 539.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 530
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "2 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 539.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 1070
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    }
+                }
+            },
+            "Outside Country": {
+                "title": "Visa Stamping Speed",
+                "options": [
+                    "Normal",
+                    "Urgent"
+                ],
+                "Normal": {
+                    "title": "Medical Certificate Process Speed",
+                    "options": [
+                        "Normal",
+                        "48 Hours",
+                        "24  Hours",
+                        "5 Hours",
+                        "2 Hours"
+                    ],
+                    "Normal": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 459.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 320
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "48 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 459.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 430
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "24  Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 459.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 530
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "5 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 459.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 750
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "2 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 459.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 1070
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    }
+                },
+                "Urgent": {
+                    "title": "Medical Certificate Process Speed",
+                    "options": [
+                        "Normal",
+                        "48 Hours",
+                        "24  Hours",
+                        "5 Hours",
+                        "2 Hours"
+                    ],
+                    "Normal": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 539.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 320
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "48 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 539.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 430
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "24  Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 539.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 530
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "5 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 539.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 750
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "2 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 539.90
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 1070
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 2 years",
+                            "Value": 270
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "3 Years" : {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "title": "Visa Stamping Speed",
+                "options": [
+                    "Normal",
+                    "Urgent"
+                ],
+                "Normal": {
+                    "title": "Medical Certificate Process Speed",
+                    "options": [
+                        "Normal",
+                        "48 Hours",
+                        "24  Hours",
+                        "5 Hours",
+                        "2 Hours"
+                    ],
+                    "Normal": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 544.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 320
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "48 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 544.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 430
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "24  Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 544.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 530
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "5 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 544.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 750
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "2 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 544.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 1070
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    }
+                },
+                "Urgent": {
+                    "title": "Medical Certificate Process Speed",
+                    "options": [
+                        "Normal",
+                        "48 Hours",
+                        "24  Hours",
+                        "5 Hours",
+                        "2 Hours"
+                    ],
+                    "Normal": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 624.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 320
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "48 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 624.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 430
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "24  Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 624.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 530
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "5 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 624.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 750
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "2 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 1138.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Change Status",
+                            "Value": 638.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 624.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 1070
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    }
+                }
+            },
+            "Outside Country": {
+                "title": "Visa Stamping Speed",
+                "options": [
+                    "Normal",
+                    "Urgent"
+                ],
+                "Normal": {
+                    "title": "Medical Certificate Process Speed",
+                    "options": [
+                        "Normal",
+                        "48 Hours",
+                        "24  Hours",
+                        "5 Hours",
+                        "2 Hours"
+                    ],
+                    "Normal": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 544.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 320
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "48 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 544.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 430
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "24  Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 544.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 530
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "5 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 544.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 750
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "2 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 544.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 1070
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    }
+                },
+                "Urgent": {
+                    "title": "Medical Certificate Process Speed",
+                    "options": [
+                        "Normal",
+                        "48 Hours",
+                        "24  Hours",
+                        "5 Hours",
+                        "2 Hours"
+                    ],
+                    "Normal": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 624.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 320
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "48 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 624.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 430
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "24  Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 624.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 530
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "5 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 624.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 750
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    },
+                    "2 Hours": {
+                        "docs": [
+                            "Sponsor's passport",
+                            "Sponsor's visa",
+                            "Residential ejari (under Sponsor's name)",
+                            "Labour contract",
+                            "Marriage certiﬁcate attested",
+                            "Marriage certificate legally translated",
+                            "Wife's passport",
+                            "Wife's Photo (White background)",
+                            "Last 3 months bank statement (Optional)"
+                        ],
+                        "PriceDetails": [{
+                            "Text": "Entry Permit",
+                            "Value": 488.90
+                        }, {
+                            "Text": "Sponsor File Opening",
+                            "Value": 298.90
+                        }, {
+                            "Text": "Stamping",
+                            "Value": 624.50
+                        }, {
+                            "Text": "Medical Charges",
+                            "Value": 1070
+                        }, {
+                            "Text": "Insurance",
+                            "Value": 695.10
+                        }, {
+                            "Text": "Emirates ID Price - 3 years",
+                            "Value": 370
+                        }, {
+                            "Text": "Service charge",
+                            "Value": 105
+                        }],
+                        "IBAN Number": "",
+                        "Notes": {
+                            "Text": "Notes",
+                            "Name": "Notes",
+                            "Options": [
+                                ""
+                            ]
+                        },
+                        "OriginalDocumentRequired": {
+                            "Text": "Original Document Required",
+                            "Name": "OriginalDocumentRequired",
+                            "Options": [
+                                "Sponsor's Emirates ID"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}

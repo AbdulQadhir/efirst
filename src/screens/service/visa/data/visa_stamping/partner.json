@@ -1,0 +1,71 @@
+{
+    "title": "Stamping Speed",
+    "options": [
+        "Normal",
+        "Urgent"
+    ],
+    "Normal": {
+        "docs": [
+            "Trade License (Including Partner page)",
+            "Medical result",
+            "Emirates ID application",
+            "Insurance",
+            "Visa page",
+            "Immigration card"
+        ],
+        "PriceDetails": [{
+            "Text": "Gov. fees",
+            "Value": 609.90
+        }, {
+            "Text": "Service charge",
+            "Value": 105
+        }],
+        "IBAN number": "",
+        "Notes": {
+            "Text": "Notes",
+            "Name": "Notes",
+            "Options": [
+                "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
+            ]
+        },
+        "OriginalDocumentRequired": {
+            "Text": "Original Document Required",
+            "Name": "OriginalDocumentRequired",
+            "Options": [
+                "Sponsor's Emirates, ID Sponsored Passport"
+            ]
+        }
+    },
+    "Urgent": {
+        "docs": [
+            "Trade License (Including Partner page)",
+            "Medical result",
+            "Emirates ID application",
+            "Insurance",
+            "Visa page",
+            "Immigration card"
+        ],
+        "PriceDetails": [{
+            "Text": "Gov. fees",
+            "Value": 689.90
+        }, {
+            "Text": "Service charge",
+            "Value": 105
+        }],
+        "IBAN number": "",
+        "Notes": {
+            "Text": "Notes",
+            "Name": "Notes",
+            "Options": [
+                "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
+            ]
+        },
+        "OriginalDocumentRequired": {
+            "Text": "Original Document Required",
+            "Name": "OriginalDocumentRequired",
+            "Options": [
+                "Sponsor's Emirates, ID Sponsored Passport"
+            ]
+        }
+    }
+}

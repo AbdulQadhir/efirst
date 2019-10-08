@@ -1,0 +1,68 @@
+{
+    "title": "Select Location",
+    "options": [
+        "Inside Country",
+        "Outside Country"
+    ],
+    "Inside Country": {
+        "docs": [
+            "Immigration card",
+            "Trade License (Including Partner page)",
+            "Visa",
+            "Passport",
+            "Share sale agreement"
+        ],
+        "PriceDetails": [{
+            "Text": "Gov. fees",
+            "Value": 225.65
+        }, {
+            "Text": "Service charge",
+            "Value": 105
+        }],
+        "Notes": {
+            "Text": "Notes",
+            "Name": "Notes",
+            "Options": [
+                ""
+            ]
+        },
+        "OriginalDocumentRequired": {
+            "Text": "Original Document Required",
+            "Name": "OriginalDocumentRequired",
+            "Options": [
+                "Sponsor's Emirates ID"
+            ]
+        },
+        "PassportExpiry": "None"
+    },
+    "Outside Country": {
+        "docs": [
+            "Immigration card",
+            "Trade License (Including Partner page)",
+            "Visa",
+            "Passport",
+            "Share sale agreement"
+        ],
+        "PriceDetails": [{
+            "Text": "Gov. fees",
+            "Value": 326.65
+        }, {
+            "Text": "Service charge",
+            "Value": 105
+        }],
+        "Notes": {
+            "Text": "Notes",
+            "Name": "Notes",
+            "Options": [
+                ""
+            ]
+        },
+        "OriginalDocumentRequired": {
+            "Text": "Original Document Required",
+            "Name": "OriginalDocumentRequired",
+            "Options": [
+                "Sponsor's Emirates ID"
+            ]
+        }
+    }
+}

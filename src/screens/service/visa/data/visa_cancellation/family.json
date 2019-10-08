@@ -1,0 +1,63 @@
+{
+    "title": "Select Location",
+    "options": [
+        "Inside Country",
+        "Outside Country"
+    ],
+    "Inside Country": {
+        "docs": [
+            "Sponsor's visa",
+            "Sponsored passport",
+            "Sponsored visa"
+        ],
+        "PriceDetails": [{
+            "Text": "Gov. fees",
+            "Value": 192.90
+        }, {
+            "Text": "Service charge",
+            "Value": 105
+        }],
+        "Notes": {
+            "Text": "Notes",
+            "Name": "Notes",
+            "Options": [
+                ""
+            ]
+        },
+        "OriginalDocumentRequired": {
+            "Text": "Original Document Required",
+            "Name": "OriginalDocumentRequired",
+            "Options": [
+                "Sponsor's Emirates ID"
+            ]
+        }
+    },
+    "Outside Country": {
+        "docs": [
+            "Sponsor's visa",
+            "Sponsored passport",
+            "Sponsored visa"
+        ],
+        "PriceDetails": [{
+            "Text": "Gov. fees",
+            "Value": 292.90
+        }, {
+            "Text": "Service charge",
+            "Value": 105
+        }],
+        "Notes": {
+            "Text": "Notes",
+            "Name": "Notes",
+            "Options": [
+                " Kindly note that for any of the  cancellation whose outside the country less than six months, any of the  following conditions has to be met        •Original passport has to be submitted        •Residence should be expired from outside         •Death from abroad         For any cancellation outside the country  who is abroad for more than six months usual procedure will be followed for all  categories.       "
+            ]
+        },
+        "OriginalDocumentRequired": {
+            "Text": "Original Document Required",
+            "Name": "OriginalDocumentRequired",
+            "Options": [
+                "Sponsor's Emirates ID"
+            ]
+        }
+    }
+}

@@ -1,0 +1,72 @@
+{
+    "title": "Location",
+    "options": [
+        "Inside Country",
+        "Outside Country"
+    ],
+    //new visa > Entry Permit > Partnerinvestor > Inside country
+    "Inside Country": {
+        "docs": [
+            "Trade License",
+            "Immigration card",
+            "Memorandum of association (MOA)",
+            "Passport",
+            "Photo (White background)"
+        ],
+        "PriceDetails": [{
+            "Text": "Gov. fees",
+            "Value": 1175.90
+        }, {
+            "Text": "Service charge",
+            "Value": 105
+        }],
+        "IBAN number": "",
+        "ibanRequired": "true",
+        "Notes": {
+            "Text": "Notes",
+            "Name": "Notes",
+            "Options": [
+                "This visa is for those who have a valid Dubai trade license and has a share of more than AED 72000 duly signed by all the parties and attested in Notary Public of any emirates. You need to process the change status application in order to avoid the violation."
+            ]
+        },
+        "OriginalDocumentRequired": {
+            "Text": "Original Document Required",
+            "Name": "OriginalDocumentRequired",
+            "Options": [
+                "Sponsor's Emirates ID"
+            ]
+        }
+    },
+    //new visa > Entry Permit > Partnerinvestor > Outside country
+    "Outside Country": {
+        "docs": [
+            "Trade License",
+            "Immigration card",
+            "Memorandum of association (MOA)",
+            "Passport",
+            "Photo (White background)"
+        ],
+        "PriceDetails": [{
+            "Text": "Gov. fees",
+            "Value": 525.90
+        }, {
+            "Text": "Service charge",
+            "Value": 105
+        }],
+        "IBAN number": "",
+        "Notes": {
+            "Text": "Notes",
+            "Name": "Notes",
+            "Options": [
+                "This visa is for those who have a valid Dubai trade license and has a share of more than AED 72000 duly signed by all the parties and attested in Notary Public of any emirates.  "
+            ]
+        },
+        "OriginalDocumentRequired": {
+            "Text": "Original Document Required",
+            "Name": "OriginalDocumentRequired",
+            "Options": [
+                "Sponsor's Emirates ID"
+            ]
+        }
+    }
+}

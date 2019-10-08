@@ -1,0 +1,975 @@
+{
+    "title": "Who is the Sponsor?",
+    "options": [
+        "Partner/Investor",
+        "Employee"
+    ],
+    "Partner/Investor": {
+        "title": "Select Child Age",
+        "options": [
+            "Below 18",
+            "Girl Above 18",
+            "Boy 18 - 21",
+            "Boy Above 21"
+        ],
+        "Below 18": {
+            "title": "Renewal Process Speed",
+            "options": [
+                "Normal",
+                "Urgent"
+            ],
+                "Normal": {
+                    "docs": [
+                        "Trade License (Including Partner page)",
+                        "Memorandum of association (MOA)",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Sponsor’s Passport",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor's visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child's passport",
+                        "Child’s Photo (white background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 609.90
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "ibanRequired": "true",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "Urgent": {
+                    "docs": [
+                        "Trade License (Including Partner page)",
+                        "Memorandum of association (MOA)",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Sponsor’s Passport",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor's visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child's passport",
+                        "Child’s Photo (white background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 689.90
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "ibanRequired": "true",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            },
+        "Girl Above 18": {
+                "title": "Renewal Process Speed",
+                "options": [
+                    "Normal",
+                    "Urgent"
+                ],
+                "Normal": {
+                    "docs": [
+                        "Trade License (Including Partner page)",
+                        "Memorandum of association (MOA)",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Sponsor’s Passport",
+                        "Medical result",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor's visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child's passport",
+                        "Child’s Photo (white background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 609.90
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "ibanRequired": "true",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "Urgent": {
+                    "docs": [
+                        "Trade License (Including Partner page)",
+                        "Memorandum of association (MOA)",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Sponsor’s Passport",
+                        "Medical result",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor's visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child's passport",
+                        "Child’s Photo (white background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 689.90
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "ibanRequired": "true",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            },
+        "Boy 18 - 21": {
+                "title": "Renewal Process Speed",
+                "options": [
+                    "Normal",
+                    "Urgent"
+                ],
+                "Normal": {
+                    "docs": [
+                        "Trade License (Including Partner page)",
+                        "Memorandum of association (MOA)",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Sponsor’s Passport",
+                        "Medical result",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor's visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child's passport",
+                        "Child’s Photo (white background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 392.90
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "ibanRequired": "true",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "Urgent": {
+                    "docs": [
+                        "Trade License (Including Partner page)",
+                        "Memorandum of association (MOA)",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Sponsor’s Passport",
+                        "Medical result",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor's visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child's passport",
+                        "Child’s Photo (white background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 472.90
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "ibanRequired": "true",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            },
+        "Boy Above 21": {
+                "title": "Renewal Process Speed",
+                "options": [
+                    "Normal",
+                    "Urgent"
+                ],
+                "Normal": {
+                    "docs": [
+                        "Trade License (Including Partner page)",
+                        "Memorandum of association (MOA)",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Sponsor’s Passport",
+                        "Medical result",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor's visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child's passport",
+                        "Child’s Photo (white background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 392.90
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "ibanRequired": "true",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "Urgent": {
+                    "docs": [
+                        "Trade License (Including Partner page)",
+                        "Memorandum of association (MOA)",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Sponsor’s Passport",
+                        "Medical result",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor's visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child's passport",
+                        "Child’s Photo (white background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 472.90
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "ibanRequired": "true",
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            }
+    },
+    "Employee": {
+        "title": "Select Child Age",
+        "options": [
+            "Below 18",
+            "Girl Above 18",
+            "Boy 18 - 21",
+            "Boy Above 21"
+        ],
+        "Below 18": {
+            "title": "Visa Duration",
+            "options": [
+                "3 Years",
+                "2 Years"
+            ],
+            "3 Years": {
+                "title": "Renewal Process Speed",
+                "options": [
+                    "Normal",
+                    "Urgent"
+                ],
+                "Normal": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 544.50
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "Urgent": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 624.50
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            },
+            "2 Years": {
+                "title": "Renewal Process Speed",
+                "options": [
+                    "Normal",
+                    "Urgent"
+                ],
+                "Normal": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 459.90
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "Urgent": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 539.90
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            }
+        },
+        "Girl Above 18": {
+            "title": "Visa Duration",
+            "options": [
+                "3 Years",
+                "2 Years"
+            ],
+            "3 Years": {
+                "title": "Renewal Process Speed",
+                "options": [
+                    "Normal",
+                    "Urgent"
+                ],
+                "Normal": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 544.50
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "Urgent": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 624.50
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            },
+            "2 Years": {
+                "title": "Renewal Process Speed",
+                "options": [
+                    "Normal",
+                    "Urgent"
+                ],
+                "Normal": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 459.90
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "Urgent": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 539.90
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            }
+        },
+        "Boy 18 - 21": {
+            "title": "Visa Duration",
+            "options": [
+                "3 Years",
+                "2 Years"
+            ],
+            "3 Years": {
+                "title": "Renewal Process Speed",
+                "options": [
+                    "Normal",
+                    "Urgent"
+                ],
+                "Normal": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 342.90
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "Urgent": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 422.90
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            },
+            "2 Years": {
+                "title": "Renewal Process Speed",
+                "options": [
+                    "Normal",
+                    "Urgent"
+                ],
+                "Normal": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 460
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "Urgent": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 540
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            }
+        },
+        "Boy Above 21": {
+            "title": "Visa Duration",
+            "options": [
+                "3 Years",
+                "2 Years"
+            ],
+            "3 Years": {
+                "title": "Renewal Process Speed",
+                "options": [
+                    "Normal",
+                    "Urgent"
+                ],
+                "Normal": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 460
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "Urgent": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 540
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            },
+            "2 Years": {
+                "title": "Renewal Process Speed",
+                "options": [
+                    "Normal",
+                    "Urgent"
+                ],
+                "Normal": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 460
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                },
+                "Urgent": {
+                    "docs": [
+                        "Sponsor’s Passport",
+                        "Labour Contract",
+                        "Last 3 month’s bank statement (Optional)",
+                        "Emirates ID application",
+                        "Insurance",
+                        "Sponsor’s Visa",
+                        "Residential Ejari (under sponsor’s name)",
+                        "Child’s Passport ",
+                        "Child’s Photo (White background)"
+                    ],
+                    "PriceDetails": [{
+                        "Text": "Gov. fees",
+                        "Value": 540
+                    }, {
+                        "Text": "Service charge",
+                        "Value": 105
+                    }],
+                    "Notes": {
+                        "Text": "Notes",
+                        "Name": "Notes",
+                        "Options": [
+                            "For three year employment visas sponsors will not have labour contract issued by ministry of labour as though they have the direct immigration visa. In this case they can submit the salary certificate of the company. Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date."
+                        ]
+                    },
+                    "OriginalDocumentRequired": {
+                        "Text": "Original Document Required",
+                        "Name": "OriginalDocumentRequired",
+                        "Options": [
+                            "Sponsor's Emirates ID"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

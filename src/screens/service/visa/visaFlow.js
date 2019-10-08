@@ -29,7 +29,6 @@ import {
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 const assetsPath = '../../../Assets/';
-import visa_options from './data';
 
 class App extends React.Component {
   static navigationOptions = ({navigation}) => ({
@@ -64,7 +63,7 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
-    const options = this.props.navigation.state.params.pageData
+    const options = this.props.navigation.state.params.options
       ? this.props.navigation.state.params.options
       : visa_options;
     const pageData = this.props.navigation.state.params.pageData

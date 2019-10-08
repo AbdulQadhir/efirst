@@ -1,0 +1,607 @@
+{
+    "title": "Who is the Sponsor?",
+    "options": [
+        "Partner/Investor",
+        "Employee"
+    ],
+    "Partner/Investor": {
+        "title": "Select Parents",
+        "options": [
+            "Mother",
+            "Father",
+            "Mother & Father"
+        ],
+        //new visa > Entry Permit > family > Partnerinvestor > parents > mother
+        "Mother": {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "docs": [
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under sponsor's name, 2 bedroom and hall)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Mother’s Passport",
+                    "Mother’s Photo (white background)",
+                    "Relationship certiﬁcate from embassy (Attested)",
+                    "Father's Death certificate/ Divorce certificate",
+                    "Aﬃdavit from the embassy to prove that other siblings are not capable to look after the mother"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 8060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 1138.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "Outside Country": {
+                "docs": [
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under sponsor's name, 2 bedroom and hall)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Mother’s Passport",
+                    "Mother’s Photo (white background)",
+                    "Relationship certiﬁcate from embassy (Attested)",
+                    "Father's Death certificate/ Divorce certificate",
+                    "Aﬃdavit from the embassy to prove that other siblings are not capable to look after the mother"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 8060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 489.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        },
+        //new visa > Entry Permit > family > Partnerinvestor > parents > father
+        "Father": {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under sponsor's name, 2 bedroom and hall)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Father’s Passport",
+                    "Father’s Photo (white background",
+                    "Relationship certiﬁcate from embassy (Attested)",
+                    "Mother's Death certificate/ Divorce certificate",
+                    "Aﬃdavit from the embassy to prove that other siblings are not capable to look after the father"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 8060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 1138.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "Outside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under sponsor's name, 2 bedroom and hall)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Father’s Passport",
+                    "Father’s Photo (white background",
+                    "Relationship certiﬁcate from embassy (Attested)",
+                    "Mother's Death certificate/ Divorce certificate",
+                    "Aﬃdavit from the embassy to prove that other siblings are not capable to look after the father"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 8060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 488.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        },
+        //new visa > Entry Permit > family > Partnerinvestor > parents > motherfather
+        "Mother & Father": {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "docs": [
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under sponsor's name, 2 bedroom and hall)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Mother’s Passport",
+                    "Mother’s Photo (White background)",
+                    "Father’s Passport",
+                    "Father’s Photo (White background)",
+                    "Relationship certiﬁcate from embassy (Attested)",
+                    "Aﬃdavit from the embassy to prove that other siblings are not capable to look after the parents"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 16120
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 2277.80
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "Outside Country": {
+                "docs": [
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under sponsor's name, 2 bedroom and hall)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Mother’s Passport",
+                    "Mother’s Photo (White background)",
+                    "Father’s Passport",
+                    "Father’s Photo (White background)",
+                    "Relationship certiﬁcate from embassy (Attested)",
+                    "Aﬃdavit from the embassy to prove that other siblings are not capable to look after the parents"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 16120
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 977.8
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        }
+    },
+    "Employee": {
+        "title": "Select Parents",
+        "options": [
+            "Mother",
+            "Father",
+            "Mother & Father"
+        ],
+        //new visa > Entry Permit > family > Partnerinvestor > parents > mother
+        "Mother": {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "docs": [
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under sponsor's name, 2 bedroom and hall)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Mother’s Passport",
+                    "Mother’s Photo (white background)",
+                    "Relationship certiﬁcate from embassy (Attested)",
+                    "Father's Death certificate/ Divorce certificate",
+                    "Aﬃdavit from the embassy to prove that other siblings are not capable to look after the mother"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 8060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 1138.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "Outside Country": {
+                "docs": [
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under sponsor's name, 2 bedroom and hall)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Mother’s Passport",
+                    "Mother’s Photo (white background)",
+                    "Relationship certiﬁcate from embassy (Attested)",
+                    "Father's Death certificate/ Divorce certificate",
+                    "Aﬃdavit from the embassy to prove that other siblings are not capable to look after the mother"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 8060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 489.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        },
+        //new visa > Entry Permit > family > Partnerinvestor > parents > father
+        "Father": {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under sponsor's name, 2 bedroom and hall)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Father’s Passport",
+                    "Father’s Photo (white background",
+                    "Relationship certiﬁcate from embassy (Attested)",
+                    "Mother's Death certificate/ Divorce certificate",
+                    "Aﬃdavit from the embassy to prove that other siblings are not capable to look after the father"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 8060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 1138.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "Outside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under sponsor's name, 2 bedroom and hall)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Father’s Passport",
+                    "Father’s Photo (white background",
+                    "Relationship certiﬁcate from embassy (Attested)",
+                    "Mother's Death certificate/ Divorce certificate",
+                    "Aﬃdavit from the embassy to prove that other siblings are not capable to look after the father"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 8060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 488.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        },
+        //new visa > Entry Permit > family > Partnerinvestor > parents > motherfather
+        "Mother & Father": {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "docs": [
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under sponsor's name, 2 bedroom and hall)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Mother’s Passport",
+                    "Mother’s Photo (White background)",
+                    "Father’s Passport",
+                    "Father’s Photo (White background)",
+                    "Relationship certiﬁcate from embassy (Attested)",
+                    "Aﬃdavit from the embassy to prove that other siblings are not capable to look after the parents"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 16120
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 2277.80
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "Outside Country": {
+                "docs": [
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under sponsor's name, 2 bedroom and hall)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Mother’s Passport",
+                    "Mother’s Photo (White background)",
+                    "Father’s Passport",
+                    "Father’s Photo (White background)",
+                    "Relationship certiﬁcate from embassy (Attested)",
+                    "Aﬃdavit from the embassy to prove that other siblings are not capable to look after the parents"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 16120
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 977.8
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        }
+    }
+}
