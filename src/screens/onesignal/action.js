@@ -50,6 +50,7 @@ const openFetcher = async (fetchData, type, dispatch) => {
 };
 
 export const registerOnesignal = payload => dispatch => {
+  console.log('Data===>', payload);
   const {token, data} = payload;
   const body = JSON.stringify(data);
   return openFetcher(
@@ -74,6 +75,7 @@ export const registerOnesignal = payload => dispatch => {
 };
 
 export const unregisterOnesignal = payload => dispatch => {
+  console.log('payload===>', payload);
   const {token, data} = payload;
   const body = JSON.stringify(data);
   return openFetcher(

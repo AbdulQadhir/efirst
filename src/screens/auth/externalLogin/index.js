@@ -2,9 +2,12 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {View, BackHandler} from 'react-native';
 import {WebView} from 'react-native-webview';
+import AsyncStorage from '@react-native-community/async-storage';
 import {DashboardData} from '../../dashboard/action';
 import {getUserInfo, setExtToken} from '../action';
+import {registerOnesignal} from '../../onesignal/action';
 import Loader from '../../../styled/loader';
+import {profileData} from '../../profile/action';
 import {
   ButtonSlim,
   Underline,
@@ -30,14 +33,20 @@ class Container extends Component {
   showAndHideLoader = val => {
     this.setState({loading: val});
   };
-  componentDidUpdate(prevProps) {
+  async componentDidUpdate(prevProps) {
     //console.log('this.props.token====>', this.props.token);
     if (this.props.token) {
-      // this.props.navigation.navigate('MainMenu');
-      if (!this.props.dashboard.data && !this.props.dashboard.loading) {
+      //this.props.navigation.navigate('MainMenu');
+      if (!this.props.profile.success && !this.props.profile.loading) {
         const token = this.props.token.token;
-        this.props.DashboardData(token);
+        //      this.props.DashboardData(token);
+        this.props.profileData(token);
       }
+
+      // if (!this.props.dashboard.data && !this.props.dashboard.loading) {
+      //   const token = this.props.token.token;
+      //   this.props.DashboardData(token);
+      // }
     }
     if (this.props.extUserInfo.success && !prevProps.extUserInfo.success) {
       if (!this.props.extUserInfo.data.HasRegistered) {
@@ -57,7 +66,16 @@ class Container extends Component {
         }
       }
     }
-
+    if (this.props.profile.success && !prevProps.profile.success) {
+      const {UserId} = this.props.profile.data.userdetail;
+      const PlayerId = await AsyncStorage.getItem('playerid');
+      console.log('PlayerId==>', PlayerId);
+      const data = {UserId, PlayerId};
+      const token = this.props.token.token;
+      this.props.registerOnesignal({data, token});
+      this.props.DashboardData(token);
+      //this.props.navigation.navigate('MainMenu');
+    }
     if (this.props.dashboard.success && !prevProps.dashboard.success) {
       const {data} = this.props.dashboard;
       const {
@@ -80,6 +98,7 @@ class Container extends Component {
         InReviewTotalUpdateCount +
         RejectedNewUpdateCount +
         RejectedTotalUpdateCount;
+      console.log('Total===>', total);
       if (total > 0) this.props.navigation.navigate('MainMenu');
       else this.props.navigation.navigate('ServiceHome');
     }
@@ -116,7 +135,13 @@ class Container extends Component {
   render = () => {
     return (
       <View style={{flex: 1}}>
-        <Loader loading={this.state.loading || this.props.dashboard.loading} />
+        <Loader
+          loading={
+            this.state.loading ||
+            this.props.dashboard.loading ||
+            this.props.profile.loading
+          }
+        />
         <WebView
           source={{uri: this.props.navigation.state.params.uri}}
           userAgent="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
@@ -130,15 +155,18 @@ class Container extends Component {
   };
 }
 
-const mapStateToProps = ({extUserInfo, token, dashboard}) => ({
+const mapStateToProps = ({extUserInfo, token, dashboard, profile}) => ({
   extUserInfo,
   token,
   dashboard,
+  profile,
 });
 const mapDispatchToProps = dispatch => ({
   getUserInfo: eToken => dispatch(getUserInfo(eToken)),
   setExtToken: data => dispatch(setExtToken(data)),
+  registerOnesignal: data => dispatch(registerOnesignal(data)),
   DashboardData: payload => dispatch(DashboardData(payload)),
+  profileData: payload => dispatch(profileData(payload)),
 });
 
 export default connect(

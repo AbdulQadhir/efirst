@@ -11,6 +11,7 @@ export const profileState = {
   SUCCESS: 'PROFILE_SUCCESS',
   ERROR: 'PROFILE_ERROR',
   DONE: 'PROFILE_DONE',
+  CLEAR: 'PROFILE_CLEAR',
 };
 
 export const userProfileState = {

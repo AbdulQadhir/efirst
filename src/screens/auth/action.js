@@ -10,7 +10,7 @@ import {
   BASE_URL,
   CHANGE_PASSWORD_URL,
 } from '../../constants';
-
+import {profileState} from '../profile/action';
 export const registrationState = {
   LOADING: 'REGISTRATION_LOADING',
   ERROR: 'REGISTRATION_ERROR',
@@ -97,10 +97,16 @@ export const setInStore = (state, type) => ({
   type,
   state,
 });
-export const clearData = () => ({
+export const clearData = dispatch => {
+  clearToken();
+  clearProfile();
+};
+const clearToken = () => ({
   type: tokenState.CLEAR,
 });
-
+const clearProfile = () => ({
+  type: profileState.CLEAR,
+});
 export const openFetcher = async (fetchData, type, dispatch) => {
   //dispatch(clearData());
   dispatch(setInStore(true, type.LOADING));
@@ -115,7 +121,9 @@ export const openFetcher = async (fetchData, type, dispatch) => {
         dispatch(
           setInStore('Wrong Email or Password, Please Try Again.', type.ERROR),
         );
-        dispatch(clearData());
+        dispatch(clearToken());
+        dispatch(clearProfile());
+
         dispatch({type: 'APPLICATION_STATE_ERROR'});
       } else {
         dispatch(setDone(result.data));
@@ -124,11 +132,13 @@ export const openFetcher = async (fetchData, type, dispatch) => {
         dispatch({type: 'APPLICATION_STATE_SUCCESS'});
       }
     } else {
-      dispatch(clearData());
+      dispatch(clearToken());
+      dispatch(clearProfile());
       dispatch(setInStore(false, type.LOADING));
     }
   } catch (error) {
-    dispatch(clearData());
+    dispatch(clearToken());
+    dispatch(clearProfile());
     dispatch(setInStore(false, type.LOADING));
     dispatch(setInStore(error, type.ERROR));
     dispatch({type: 'APPLICATION_STATE_ERROR'});
@@ -142,7 +152,8 @@ export const LogoutFetcher = async (fetchData, type, dispatch) => {
   try {
     const result = await fetchData();
     if (checkResult(result, dispatch, error => setInStore(error, type.ERROR))) {
-      dispatch(clearData());
+      dispatch(clearToken());
+      dispatch(clearProfile());
       dispatch(setInStore(true, type.SUCCESS));
       dispatch({type: 'APPLICATION_STATE_SUCCESS'});
       dispatch(setInStore(false, type.LOADING));
@@ -150,7 +161,8 @@ export const LogoutFetcher = async (fetchData, type, dispatch) => {
       dispatch(setInStore(false, type.LOADING));
     }
   } catch (error) {
-    dispatch(clearData());
+    dispatch(clearToken());
+    dispatch(clearProfile());
     dispatch(setInStore(false, type.LOADING));
     dispatch(setInStore(error, type.ERROR));
     dispatch({type: 'APPLICATION_STATE_ERROR'});
@@ -176,11 +188,13 @@ const openRegFetcher = async (fetchData, type, dispatch) => {
         dispatch({type: 'APPLICATION_STATE_SUCCESS'});
       }
     } else {
-      dispatch(clearData());
+      dispatch(clearToken());
+      dispatch(clearProfile());
       dispatch(setInStore(false, type.LOADING));
     }
   } catch (error) {
-    dispatch(clearData());
+    dispatch(clearToken());
+    dispatch(clearProfile());
     dispatch(setInStore(false, type.LOADING));
     dispatch(setInStore(error, type.ERROR));
     dispatch({type: 'APPLICATION_STATE_ERROR'});
@@ -348,6 +362,7 @@ export const forgetChangePassword = payload => dispatch => {
 };
 
 export const Logout = token => dispatch => {
+  console.log('Logout==>', token);
   return LogoutFetcher(
     async () => {
       const result = await fetch(LOGOUT_URL, {
