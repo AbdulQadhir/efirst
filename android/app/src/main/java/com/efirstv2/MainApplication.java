@@ -1,4 +1,4 @@
-package com.efirstv2;
+package com.efirst;
 
 import android.app.Application;
 import android.content.Context;

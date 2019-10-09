@@ -151,7 +151,7 @@ const styles = EStyleSheet.create({
     fontSize: RFValue(18),
     color: '#4d4d4d',
     textAlign: 'center',
-    padding: calcHeight(3),
+    paddingVertical: calcHeight(3),
     fontFamily: 'Montserrat-Light',
   },
   footertxt: {

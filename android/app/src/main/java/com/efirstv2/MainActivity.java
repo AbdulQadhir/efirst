@@ -1,4 +1,4 @@
-package com.efirstv2;
+package com.efirst;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

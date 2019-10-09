@@ -74,7 +74,7 @@ class App extends React.Component {
       iban: '',
       validationMsg: '',
       visaFlow: '',
-      ibanValidationMsg : ''
+      ibanValidationMsg: '',
     };
   }
 
@@ -179,14 +179,13 @@ class App extends React.Component {
 
     _docNames[doc].splice(index, 1);
     var docIndex = _docs.indexOf(doc);
-    if (docIndex > -1) 
-      _docs.splice(docIndex, 1);
+    if (docIndex > -1) _docs.splice(docIndex, 1);
 
     this.setState({
       docsAttached: _docs,
-      docNames: _docNames
+      docNames: _docNames,
     });
-  }
+  };
 
   openFile = async (doc, index) => {
     try {
@@ -301,20 +300,19 @@ class App extends React.Component {
       if (docsAttached.indexOf(doc) == -1 && docsNotRequired.indexOf(doc) == -1)
         validationErr = true;
     });
-    
+
     this.setState({validationMsg: 'Please select all required files'});
 
     if (
       this.props.navigation.state.params.details.ibanRequired &&
       this.state.iban == ''
-    )
-    {
+    ) {
       this.setState({ibanValidationMsg: 'Please fill the IBAN No.'});
       validationErr = true;
     }
 
     if (validationErr) {
-      // return;
+      return;
     }
 
     var pageData = this.props.navigation.state.params.pageData;
