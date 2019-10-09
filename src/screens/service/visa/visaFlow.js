@@ -218,7 +218,6 @@ class App extends React.Component {
   render() {
     return (
       <>
-      
         <Loader loading={this.state.loading} />
         <View style={styles.body}>
           <VisaBreadCrump path={this.state.visaFlow} />
