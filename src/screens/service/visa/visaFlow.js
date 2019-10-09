@@ -62,6 +62,53 @@ class App extends React.Component {
     };
   }
 
+ async componentDidMount() {
+   
+  const lastSelected = this.props.navigation.state.params.lastSelected
+  ? this.props.navigation.state.params.lastSelected
+  : '';
+
+  var pageData = this.props.navigation.state.params.pageData ? this.props.navigation.state.params.pageData : [];
+
+  this.setState({pageData: pageData});
+
+  var options = null;
+  if(this.props.navigation.state.params.url)
+  {
+    pageData.push({
+      Text: lastSelected,
+      Name: lastSelected.replace(/ /g, '') + "0",
+      Value: lastSelected,
+      ControlType: 'Radio',
+    });
+    try {
+      let response = await fetch(
+        this.props.navigation.state.params.url,
+      );
+      options = await response.json();
+      
+      this.setState({ pageData });
+    } catch (error) { 
+      this.setState({ options: {
+        title: '',
+        options: [],
+      }})
+    }
+  }
+  else
+  {
+    options = this.props.navigation.state.params.options;
+  }
+  
+  this.setState({options: options});
+
+  var visaFlow = pageData.map(obj => obj.Value).join(' > ');
+  this.setState({visaFlow: visaFlow});
+
+  this.setState({lastSelected});
+  
+};
+/*
   componentDidMount = () => {
     const options = this.props.navigation.state.params.options
       ? this.props.navigation.state.params.options
@@ -82,7 +129,7 @@ class App extends React.Component {
 
     this.setState({lastSelected});
   };
-
+*/
   handleBackButtonClick = () => {
     if (Array.isArray(this.state.pageData))
       this.setState(

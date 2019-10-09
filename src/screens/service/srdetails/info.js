@@ -24,7 +24,8 @@ class SRInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      totalBillAmt: 0
+      totalBillAmt: 0,
+      courier_charge : 10
     };
   }
 
@@ -519,6 +520,19 @@ class SRInfo extends Component {
                 )}
                 {this.renderDocsData(pageData)}
                 {this.renderPriceDts(pageData)}
+                {
+                  pageData[pageData.length - 1].OriginalDocumentSubmissionType.Value == "Through Courier" ?
+                  (
+                    <Input2
+                      editable={false}
+                      value={`Courier Charge: AED ${this.state.courier_charge}`}
+                      style={{borderColor: '#8d847d'}}
+                      multiline={true}
+                      scrollEnabled={false}
+                    />
+                  ) :
+                  (<View />)
+                }
                 {this.renderTotalPrice(pageData)}
               </View>}
             </View>

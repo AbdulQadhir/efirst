@@ -545,7 +545,17 @@ export const SelectFile = props => {
         justifyContent: 'center',
         paddingVertical: calcHeight(1.5),
       }}>
-      <Text style={styles.selectfiletxt}>{props.subTitle}</Text>
+      <View style={{ flex:1, flexDirection: "row" }} >
+        <Text style={styles.selectfiletxt}>{props.subTitle}</Text>
+        {props.onDelPress && (
+        <TouchableOpacity onPress={props.onDelPress} >
+          <Image
+              style={styles.del_icon_img}
+              source={require(`${assetsPath}service/delete.png`)}
+            />
+        </TouchableOpacity>
+        )}
+      </View> 
       <View
         style={{
           flexDirection: 'row',
@@ -1272,6 +1282,10 @@ const styles = EStyleSheet.create({
     width: calcHeight(7),
     height: calcHeight(7),
     borderRadius: calcHeight(6.5),
+  },
+  del_icon_img: {
+    width: calcHeight(2.5),
+    height: calcHeight(2.5),
   },
   sidemenuitem_img: {
     width: calcHeight(3.8),

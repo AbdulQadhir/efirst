@@ -39,6 +39,7 @@ class App extends React.Component {
     this.state = {
       visaFlow: "",
       totalBillAmt: 0,
+      courier_charge: 10
     };
   }
 
@@ -93,7 +94,15 @@ class App extends React.Component {
               <TxtSubHead title="Price Details" style={{marginBottom:0}} />
 
               {this.renderPriceDts()}
+              
+              {
+                this.props.navigation.state.params.docsAndPayment.OriginalDocumentSubmissionType.Value == "Through Courier" ?
+                (<PriceDetailItem label={"Courier Charge"} amount={this.state.courier_charge} />) :
+                (<View />)
+              }
+
               <PriceDetailItem label="Total Charge" amount={this.state.totalBillAmt} />
+              
               <ButtonNormal label="Next" onPress={() => {this.goToNext()}} />
               </View>
           </View>
