@@ -1,0 +1,209 @@
+{
+    "title": "Who is the Sponsor?",
+    "options": [
+        "Partner/Investor",
+        "Employee"
+    ],
+    "Partner/Investor": {
+        "title": "Select Location",
+        "options": [
+            "Inside Country",
+            "Outside Country"
+        ],
+        //new visa > Entry Permit > family > Partnerinvestor > husband > inside country
+        "Inside Country": {
+            "docs": [
+                "Trade License (Including Partner page)",
+                "Memorandum of association ( M O A )",
+                "Sponsor’s passport",
+                "Sponsor’s visa",
+                "Residential Ejari ( under sponsor’s name )",
+                "Last 3 months bank statement (Optional)",
+                "Husband’s passport ",
+                "Husband’s photo (white background)",
+                "Marriage Certificate attested",
+                "Marriage Certificate Legally Translated"
+            ],
+            "docsNotRequired": [
+                "Last 3 months bank statement"
+            ],
+            "PriceDetails": [{
+                "Text": "Sponsor File Opening",
+                "Value": 298.90
+            }, {
+                "Text": "Security Deposit",
+                "Value": 3060
+            }, {
+                "Text": "Gov. fees",
+                "Value": 1138.90
+            }, {
+                "Text": "Service charge",
+                "Value": 105
+            }],
+            "IBAN number": "",
+            "ibanRequired": "true",
+            "Notes": {
+                "Text": "Notes",
+                "Name": "Notes",
+                "Options": [
+                    ""
+                ]
+            },
+            "OriginalDocumentRequired": {
+                "Text": "Original Document Required",
+                "Name": "OriginalDocumentRequired",
+                "Options": [
+                    "Sponsor's Emirates ID"
+                ]
+            }
+        },
+        //new visa > Entry Permit > family > Partnerinvestor > husband > outside country
+        "Outside Country": {
+            "docs": [
+                "Trade License (Including Partner page)",
+                "Memorandum of association ( M O A )",
+                "Sponsor’s passport",
+                "Sponsor’s visa",
+                "Residential Ejari ( under sponsor’s name )",
+                "Last 3 months bank statement (Optional)",
+                "Husband’s passport ",
+                "Husband’s photo (white background)",
+                "Marriage Certificate attested",
+                "Marriage Certificate Legally Translated"
+            ],
+            "docsNotRequired": [
+                "Last 3 months bank statement"
+            ],
+            "PriceDetails": [{
+                "Text": "Sponsor File Opening",
+                "Value": 298.90
+            }, {
+                "Text": "Security Deposit",
+                "Value": 3060
+            }, {
+                "Text": "Gov. fees",
+                "Value": 488.90
+            }, {
+                "Text": "Service charge",
+                "Value": 105
+            }],
+            "IBAN number": "",
+            "ibanRequired": "true",
+            "Notes": {
+                "Text": "Notes",
+                "Name": "Notes",
+                "Options": [
+                    ""
+                ]
+            },
+            "OriginalDocumentRequired": {
+                "Text": "Original Document Required",
+                "Name": "OriginalDocumentRequired",
+                "Options": [
+                    "Sponsor's Emirates ID"
+                ]
+            }
+        }
+    },
+    "Employee": {
+        "title": "Select Location",
+        "options": [
+            "Inside Country",
+            "Outside Country"
+        ],
+        //new visa > Entry Permit > family > Partnerinvestor > husband > inside country
+        "Inside Country": {
+            "docs": [
+                "Trade License (Including Partner page)",
+                "Memorandum of association ( M O A )",
+                "Sponsor’s passport",
+                "Sponsor’s visa",
+                "Residential Ejari ( under sponsor’s name )",
+                "Last 3 months bank statement (Optional)",
+                "Husband’s passport ",
+                "Husband’s photo (white background)",
+                "Marriage Certificate attested",
+                "Marriage Certificate Legally Translated"
+            ],
+            "docsNotRequired": [
+                "Last 3 months bank statement"
+            ],
+            "PriceDetails": [{
+                "Text": "Sponsor File Opening",
+                "Value": 298.90
+            }, {
+                "Text": "Security Deposit",
+                "Value": 3060
+            }, {
+                "Text": "Gov. fees",
+                "Value": 1138.90
+            }, {
+                "Text": "Service charge",
+                "Value": 105
+            }],
+            "IBAN number": "",
+            "ibanRequired": "true",
+            "Notes": {
+                "Text": "Notes",
+                "Name": "Notes",
+                "Options": [
+                    ""
+                ]
+            },
+            "OriginalDocumentRequired": {
+                "Text": "Original Document Required",
+                "Name": "OriginalDocumentRequired",
+                "Options": [
+                    "Sponsor's Emirates ID"
+                ]
+            }
+        },
+        //new visa > Entry Permit > family > Partnerinvestor > husband > outside country
+        "Outside Country": {
+            "docs": [
+                "Trade License (Including Partner page)",
+                "Memorandum of association ( M O A )",
+                "Sponsor’s passport",
+                "Sponsor’s visa",
+                "Residential Ejari ( under sponsor’s name )",
+                "Last 3 months bank statement (Optional)",
+                "Husband’s passport ",
+                "Husband’s photo (white background)",
+                "Marriage Certificate attested",
+                "Marriage Certificate Legally Translated"
+            ],
+            "docsNotRequired": [
+                "Last 3 months bank statement"
+            ],
+            "PriceDetails": [{
+                "Text": "Sponsor File Opening",
+                "Value": 298.90
+            }, {
+                "Text": "Security Deposit",
+                "Value": 3060
+            }, {
+                "Text": "Gov. fees",
+                "Value": 488.90
+            }, {
+                "Text": "Service charge",
+                "Value": 105
+            }],
+            "IBAN number": "",
+            "ibanRequired": "true",
+            "Notes": {
+                "Text": "Notes",
+                "Name": "Notes",
+                "Options": [
+                    ""
+                ]
+            },
+            "OriginalDocumentRequired": {
+                "Text": "Original Document Required",
+                "Name": "OriginalDocumentRequired",
+                "Options": [
+                    "Sponsor's Emirates ID"
+                ]
+            }
+        }
+    }
+}

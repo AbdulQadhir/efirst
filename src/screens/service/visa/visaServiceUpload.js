@@ -74,6 +74,7 @@ class App extends React.Component {
       iban: '',
       validationMsg: '',
       visaFlow: '',
+      ibanValidationMsg : ''
     };
   }
 
@@ -172,6 +173,21 @@ class App extends React.Component {
     }
   };
 
+  removeFile = (doc, index) => {
+    var _docNames = this.state.docNames;
+    var _docs = this.state.docsAttached;
+
+    _docNames[doc].splice(index, 1);
+    var docIndex = _docs.indexOf(doc);
+    if (docIndex > -1) 
+      _docs.splice(docIndex, 1);
+
+    this.setState({
+      docsAttached: _docs,
+      docNames: _docNames
+    });
+  }
+
   openFile = async (doc, index) => {
     try {
       const res = await DocumentPicker.pick({
@@ -263,6 +279,7 @@ class App extends React.Component {
             subTitle={doc || 'Select File'}
             onLeftPress={() => this.openlaunchCamera(_doc, index)}
             onRightPress={() => this.openFile(_doc, index)}
+            onDelPress={() => this.removeFile(_doc, index)}
           />
         );
       })
@@ -279,20 +296,24 @@ class App extends React.Component {
 
     this.setState({validationMsg: ''});
 
-    var validationErr = '';
+    var validationErr = false;
     docs.forEach(doc => {
       if (docsAttached.indexOf(doc) == -1 && docsNotRequired.indexOf(doc) == -1)
-        validationErr = 'Please select all required files';
+        validationErr = true;
     });
+    
+    this.setState({validationMsg: 'Please select all required files'});
 
     if (
       this.props.navigation.state.params.details.ibanRequired &&
       this.state.iban == ''
     )
-      validationErr = 'Please fill the IBAN No.';
+    {
+      this.setState({ibanValidationMsg: 'Please fill the IBAN No.'});
+      validationErr = true;
+    }
 
     if (validationErr) {
-      this.setState({validationMsg: validationErr});
       // return;
     }
 
@@ -393,14 +414,15 @@ class App extends React.Component {
               <Input
                 placeholder="IBAN Number"
                 value={this.state.iban}
-                onTextChange={iban => this.setState({iban})}
+                onChangeText={iban => this.setState({iban})}
               />
+              <ErrorLabel label={this.state.ibanValidationMsg} />
               <Input
                 multiline={true}
                 style={{height: calcHeight(10), textAlignVertical: 'top'}}
                 placeholder="Additional Notes"
                 value={this.state.notes}
-                onTextChange={notes => this.setState({notes})}
+                onChangeText={notes => this.setState({notes})}
               />
               <ErrorLabel label={this.state.validationMsg} />
               <ButtonNormal label="Next" onPress={() => this.goToDetails()} />

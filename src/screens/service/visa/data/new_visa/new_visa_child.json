@@ -1,0 +1,793 @@
+{
+    "title": "Who is the Sponsor?",
+    "options": [
+        "Partner/Investor",
+        "Employee"
+    ],
+    "Partner/Investor": {
+        "title": "Select Child Age",
+        "options": [
+            "Below 18",
+            "Girl Above 18",
+            "Boy 18 - 21",
+            "Boy Above 21"
+        ],
+        "Below 18": {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Child’s Passport",
+                    "Birth certiﬁcate attested",
+                    "Birth certifcate legally translated",
+                    "Child’s Photo (White background)"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 1138.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "Outside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Child’s Passport",
+                    "Birth certiﬁcate attested",
+                    "Birth certifcate legally translated",
+                    "Child’s Photo (White background)"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 488.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        },
+        "Girl Above 18": {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "docs": [
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Child’s Passport",
+                    "Birth certiﬁcate attested",
+                    "Birth certifcate legally translated",
+                    "Child’s Photo (White background)",
+                    "Undertaking Letter from sponsor showing that she is not married"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 1138.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "Outside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Child’s Passport",
+                    "Birth certiﬁcate attested",
+                    "Birth certifcate legally translated",
+                    "Child’s Photo (White background)",
+                    "Undertaking Letter from sponsor showing that she is not married"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 488.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        },
+        "Boy 18 - 21": {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Child’s Passport",
+                    "Birth certiﬁcate attested",
+                    "Birth certifcate legally translated",
+                    "Child’s Photo (White background)",
+                    "College certiﬁcate or continuity certiﬁcate of UAE"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 1138.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "For those students ( boys above 18 ) who doesn’t have school or college certificate of uae and has other country college certificate will have an extra deposit of AED 5060."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "Outside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Child’s Passport",
+                    "Birth certiﬁcate attested",
+                    "Birth certifcate legally translated",
+                    "Child’s Photo (White background)",
+                    "College certiﬁcate or continuity certiﬁcate of UAE"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 488.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "For those students ( boys above 18 ) who doesn’t have school or college certificate of uae and has other country college certificate will have an extra deposit of AED 5060."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        },
+        "Boy Above 21": {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "docs": [
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Child’s Passport",
+                    "Birth certiﬁcate attested",
+                    "Birth certifcate legally translated",
+                    "Child’s Photo (White background)",
+                    "College certiﬁcate or continuity certiﬁcate of UAE"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 1138.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "For those students ( boys above 18 ) who doesn’t have school or college certificate of uae and has other country college certificate will have an extra deposit of AED 5060."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "Outside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Birth certiﬁcate attested",
+                    "Child’s Passport",
+                    "Child’s Photo (White background)",
+                    "Last 3 months bank statement (Optional)",
+                    "College certiﬁcate or continuity certiﬁcate of UAE",
+                    "Birth certifcate legally translated"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 488.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "For those students ( boys above 18 ) who doesn’t have school or college certificate of uae and has other country college certificate will have an extra deposit of AED 5060."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        }
+    },
+    "Employee": {
+        "title": "Select Child Age",
+        "options": [
+            "Below 18",
+            "Girl Above 18",
+            "Boy 18 - 21",
+            "Boy Above 21"
+        ],
+        "Below 18": {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Child’s Passport",
+                    "Birth certiﬁcate attested",
+                    "Birth certifcate legally translated",
+                    "Child’s Photo (White background)"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 1138.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "Outside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Child’s Passport",
+                    "Birth certiﬁcate attested",
+                    "Birth certifcate legally translated",
+                    "Child’s Photo (White background)"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 488.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        },
+        "Girl Above 18": {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "docs": [
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Child’s Passport",
+                    "Birth certiﬁcate attested",
+                    "Birth certifcate legally translated",
+                    "Child’s Photo (White background)",
+                    "Undertaking Letter from sponsor showing that she is not married"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 1138.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "Outside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Child’s Passport",
+                    "Birth certiﬁcate attested",
+                    "Birth certifcate legally translated",
+                    "Child’s Photo (White background)",
+                    "Undertaking Letter from sponsor showing that she is not married"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 488.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        },
+        "Boy 18 - 21": {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Child’s Passport",
+                    "Birth certiﬁcate attested",
+                    "Birth certifcate legally translated",
+                    "Child’s Photo (White background)",
+                    "College certiﬁcate or continuity certiﬁcate of UAE"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 1138.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "For those students ( boys above 18 ) who doesn’t have school or college certificate of uae and has other country college certificate will have an extra deposit of AED 5060."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "Outside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Child’s Passport",
+                    "Birth certiﬁcate attested",
+                    "Birth certifcate legally translated",
+                    "Child’s Photo (White background)",
+                    "College certiﬁcate or continuity certiﬁcate of UAE"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 488.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "For those students ( boys above 18 ) who doesn’t have school or college certificate of uae and has other country college certificate will have an extra deposit of AED 5060."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        },
+        "Boy Above 21": {
+            "title": "Select Location",
+            "options": [
+                "Inside Country",
+                "Outside Country"
+            ],
+            "Inside Country": {
+                "docs": [
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Last 3 months bank statement (Optional)",
+                    "Child’s Passport",
+                    "Birth certiﬁcate attested",
+                    "Birth certifcate legally translated",
+                    "Child’s Photo (White background)",
+                    "College certiﬁcate or continuity certiﬁcate of UAE"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 1138.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "For those students ( boys above 18 ) who doesn’t have school or college certificate of uae and has other country college certificate will have an extra deposit of AED 5060."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "Outside Country": {
+                "docs": [
+
+                    "Sponsor's Passport",
+                    "Sponsor's Visa",
+                    "Residential ejari (under Sponsor's name)",
+                    "Memorandum of association (MOA)",
+                    "Trade License (Including Partner page)",
+                    "Birth certiﬁcate attested",
+                    "Child’s Passport",
+                    "Child’s Photo (White background)",
+                    "Last 3 months bank statement (Optional)",
+                    "College certiﬁcate or continuity certiﬁcate of UAE",
+                    "Birth certifcate legally translated"
+                ],
+                "docsNotRequired": [
+                    "Last 3 months bank statement"
+                ],
+                "PriceDetails": [{
+                    "Text": "Security Deposit",
+                    "Value": 3060
+                }, {
+                    "Text": "Gov. fees",
+                    "Value": 488.90
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "IBAN number": "",
+                "ibanRequired": "true",
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "For those students ( boys above 18 ) who doesn’t have school or college certificate of uae and has other country college certificate will have an extra deposit of AED 5060."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        }
+    }
+} 

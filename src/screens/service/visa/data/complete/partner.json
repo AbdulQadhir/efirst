@@ -1,0 +1,943 @@
+{
+    "title": "Select Location",
+    "options": [
+        "Inside Country",
+        "Outside Country"
+    ],
+    "Inside Country": {
+        "title": "Visa Stamping Speed",
+        "options": [
+            "Normal",
+            "Urgent"
+        ],
+        "Normal": {
+            "title": "Medical Certificate Process Speed",
+            "options": [
+                "Normal",
+                "48 Hours",
+                "24  Hours",
+                "5 Hours",
+                "2 Hours"
+            ],
+            "Normal": {
+                "docs": [
+                    "Old Visa/Visit Visa",
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 1175.90
+                }, {
+                    "Text": "Change Status",
+                    "Value": 675.65
+                }, {
+                    "Text": "Stamping",
+                    "Value": 846.65
+                }, {
+                    "Text": "Medical Charges",
+                    "Value": 320
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "48 Hours": {
+                "docs": [
+                    "Old Visa/Visit Visa",
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Passport",
+                    "Photo (White background)",
+                    "Memmorandum of association (MOA)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Service Charge",
+                    "Value": 105
+                }, {
+                    "Text": "Entry Permit",
+                    "Value": 1175.90
+                }, {
+                    "Text": "Change Status",
+                    "Value": 675.65
+                }, {
+                    "Text": "Stamping",
+                    "Value": 846.65
+                }, {
+                    "Text": "Medical Charges",
+                    "Value": 430
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "24  Hours": {
+                "docs": [
+                    "Old Visa/Visit Visa",
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 1175.90
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }, {
+                    "Text": "Change Status",
+                    "Value": 675.65
+                }, {
+                    "Text": "Stamping",
+                    "Value": 846.65
+                }, {
+                    "Text": "Medical Charges",
+                    "Value": 530
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "5 Hours": {
+                "docs": [
+                    "Old Visa/Visit Visa",
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 1175.90
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }, {
+                    "Text": "Change Status",
+                    "Value": 675.65
+                }, {
+                    "Text": "Stamping",
+                    "Value": 846.65
+                }, {
+                    "Text": "Medical Charge - VIP",
+                    "Value": 750
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price (3 yrs)",
+                    "Value": 370
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "2 Hours": {
+                "docs": [
+                    "Old Visa/Visit Visa",
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 1175.90
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }, {
+                    "Text": "Change Status",
+                    "Value": 675.65
+                }, {
+                    "Text": "Stamping",
+                    "Value": 846.65
+                }, {
+                    "Text": "Medical Charge - VVIP",
+                    "Value": 1070
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price (3 yrs)",
+                    "Value": 370
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        },
+        "Urgent": {
+            "title": "Medical Certificate Process Speed",
+            "options": [
+                "Normal",
+                "48 Hours",
+                "24  Hours",
+                "5 Hours",
+                "2 Hours"
+            ],
+            "Normal": {
+                "docs": [
+                    "Old Visa/Visit Visa",
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 1175.90
+                }, {
+                    "Text": "Change Status",
+                    "Value": 675.65
+                }, {
+                    "Text": "Stamping",
+
+                    "Value": 925.65
+                }, {
+                    "Text": "Medical Charges",
+                    "Value": 320
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "48 Hours": {
+                "docs": [
+                    "Old Visa/Visit Visa",
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Passport",
+                    "Photo (White background)",
+                    "Memmorandum of association (MOA)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 1175.90
+                }, {
+                    "Text": "Change Status",
+                    "Value": 675.65
+                }, {
+                    "Text": "Stamping",
+                    "Value": 925.65
+                }, {
+                    "Text": "Medical Charges",
+                    "Value": 430
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                },{
+                    "Text": "Service Charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "24  Hours": {
+                "docs": [
+                    "Old Visa/Visit Visa",
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 1175.90
+                }, {
+                    "Text": "Change Status",
+                    "Value": 675.65
+                }, {
+                    "Text": "Stamping",
+                    "Value": 925.65
+                }, {
+                    "Text": "Medical Charges",
+                    "Value": 530
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "5 Hours": {
+                "docs": [
+                    "Old Visa/Visit Visa",
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 1175.90
+                }, {
+                    "Text": "Change Status",
+                    "Value": 675.65
+                }, {
+                    "Text": "Stamping",
+                    "Value": 925.65
+                }, {
+                    "Text": "Medical Charge - VIP",
+                    "Value": 750
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price (3 yrs)",
+                    "Value": 370
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "2 Hours": {
+                "docs": [
+                    "Old Visa/Visit Visa",
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 1175.90
+                }, {
+                    "Text": "Change Status",
+                    "Value": 675.65
+                }, {
+                    "Text": "Stamping",
+                    "Value": 925.65
+                }, {
+                    "Text": "Medical Charge - VVIP",
+                    "Value": 1070
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price (3 yrs)",
+                    "Value": 370
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        }
+    },
+    "Outside Country": {
+        "title": "Visa Stamping Speed",
+        "options": [
+            "Normal",
+            "Urgent"
+        ],
+        "Normal": {
+            "title": "Medical Certificate Process Speed",
+            "options": [
+                "Normal",
+                "48 Hours",
+                "24  Hours",
+                "5 Hours",
+                "2 Hours"
+            ],
+            "Normal": {
+                "docs": [
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 525.90
+                }, {
+                    "Text": "Stamping",
+                    "Value": 846.65
+                }, {
+                    "Text": "Medical Charges",
+                    "Value": 320
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "48 Hours": {
+                "docs": [
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 525.90
+                }, {
+                    "Text": "Stamping",
+                    "Value": 846.65
+                }, {
+                    "Text": "Medical Charges",
+                    "Value": 430
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "24  Hours": {
+                "docs": [
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 525.90
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }, {
+                    "Text": "Stamping",
+                    "Value": 846.65
+                }, {
+                    "Text": "Medical Charges",
+                    "Value": 530
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "5 Hours": {
+                "docs": [
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 525.90
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }, {
+                    "Text": "Stamping",
+                    "Value": 846.65
+                }, {
+                    "Text": "Medical Charges - VIP",
+                    "Value": 750
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "2 Hours": {
+                "docs": [
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 525.90
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }, {
+                    "Text": "Stamping",
+                    "Value": 846.65
+                }, {
+                    "Text": "Medical Charges - VVIP",
+                    "Value": 1070
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        },
+        "Urgent": {
+            "title": "Medical Certificate Process Speed",
+            "options": [
+                "Normal",
+                "48 Hours",
+                "24  Hours",
+                "5 Hours",
+                "2 Hours"
+            ],
+            "Normal": {
+                "docs": [
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 525.90
+                }, {
+                    "Text": "Stamping",
+                    "Value": 925.65
+                }, {
+                    "Text": "Medical Charges",
+                    "Value": 320
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "48 Hours": {
+                "docs": [
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 525.90
+                }, {
+                    "Text": "Stamping",
+                    "Value": 925.65
+                }, {
+                    "Text": "Medical Charges",
+                    "Value": 430
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "24  Hours": {
+                "docs": [
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 525.90
+                }, {
+                    "Text": "Stamping",
+                    "Value": 925.65
+                }, {
+                    "Text": "Medical Charges",
+                    "Value": 530
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "5 Hours": {
+                "docs": [
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 525.90
+                }, {
+                    "Text": "Stamping",
+                    "Value": 925.65
+                }, {
+                    "Text": "Medical Charges - VIP",
+                    "Value": 750
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            },
+            "2 Hours": {
+                "docs": [
+                    "Trade License (Including Partner page)",
+                    "Immigration card",
+                    "Memorandum of association (MOA)",
+                    "Passport",
+                    "Photo (White background)"
+                ],
+                "PriceDetails": [{
+                    "Text": "Entry Permit",
+                    "Value": 525.90
+                }, {
+                    "Text": "Stamping",
+                    "Value": 925.65
+                }, {
+                    "Text": "Medical Charges - VVIP",
+                    "Value": 1070
+                }, {
+                    "Text": "Insurance (Basic)",
+                    "Value": 788.85
+                }, {
+                    "Text": "Emirates ID Price - 3 years",
+                    "Value": 370
+                }, {
+                    "Text": "Service Charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        ""
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID"
+                    ]
+                }
+            }
+        }
+    }
+}

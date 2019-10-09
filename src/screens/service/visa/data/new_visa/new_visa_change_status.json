@@ -1,0 +1,69 @@
+{
+    "title": "Visa Type",
+    "options": [
+        "Partner/Investor Visa",
+        "Family Visa"
+    ],
+    //new visa > Change Status > Partnerinvestor
+    "Partner/Investor Visa": {
+        "docs": [
+            "New Visa",
+            "Old visa/Visit visa",
+            "Immigration Card",
+            "Trade License",
+            "Passport "
+        ],
+        "PriceDetails": [{
+            "Text": "Gov. fees",
+            "Value": 675.90
+        }, {
+            "Text": "Service charge",
+            "Value": 105
+        }],
+        "Notes": {
+            "Text": "Notes",
+            "Name": "Notes",
+            "Options": [
+                "This process is done for those who have taken the inside country visa. To take the inside country visa, either the person has to have an visit visa or might be under the cancellation period. Fine payment for change status: If a person exceeds the final day of change status, fine payment will be as follows If under visit visa, a person gets 90days time to do the change status. If not the very next day onwards the fine will be 100 aed for one day and goes on. If a person is under cancelled visa and exceeds the last day of change status, fine starts from aed 25 for 180 days. If  not the next 180 days will be of 50 days fine and then the fine increases to 100 aed per day. The service charge will be 105 in addition to the fine. You need to process the visa stamping application within 60 days in order to avoid the violation."
+            ]
+        },
+        "OriginalDocumentRequired": {
+            "Text": "Original Document Required",
+            "Name": "OriginalDocumentRequired",
+            "Options": [
+                "Sponsor's Emirates ID"
+            ]
+        }
+    },
+    //new visa > Change Status > family
+    "Family Visa": {
+        "docs": [
+            "New Visa",
+            "Old visa/Visit visa",
+            "Sponsored Passport",
+            "Sponsor’s Passport",
+            "Sponsor’s Visa"
+        ],
+        "PriceDetails": [{
+            "Text": "Gov. fees",
+            "Value": 638.90
+        }, {
+            "Text": "Service charge",
+            "Value": 105
+        }],
+        "Notes": {
+            "Text": "Notes",
+            "Name": "Notes",
+            "Options": [
+                " This process is done for those who have  taken the inside country visa. To take the inside country visa, either the  person has to have an visit visa or might be under the cancellation period. Fine payment for change status: If  a person exceeds the final day of change status, fine payment will be as  follows  If under visit visa, a person gets 90days  time to do the change status. If not the very next day onwards the fine will be  100 aed for one day and goes on. If a person is under cancelled visa and  exceeds the last day of change status, fine starts from aed 25 for 180 days. If  not the next 180 days will be of 50 days fine and then the fine increases to  100 aed per day. The service charge will be 105 in  addition to the fine. You need to process the visa stamping application within 60 days in order to avoid the violation."
+            ]
+        },
+        "OriginalDocumentRequired": {
+            "Text": "Original Document Required",
+            "Name": "OriginalDocumentRequired",
+            "Options": [
+                "Sponsor's Emirates ID"
+            ]
+        }
+    }
+}

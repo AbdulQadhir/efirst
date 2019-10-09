@@ -1,0 +1,77 @@
+{
+    "title": "Renewal Process Speed",
+    "options": [
+        "Normal",
+        "Urgent"
+    ],
+    "Normal": {
+        "docs": [
+            "Trade License (Including Partner page)",
+            "Immigration card",
+            "Memorandum of association (MOA)",
+            "Passport",
+            "Medical result",
+            "Emirates ID application",
+            "Insurance",
+            "Visa",
+            "Photo (White Background)"
+        ],
+        "PriceDetails": [{
+            "Text": "Gov. fees",
+            "Value": 847
+        }, {
+            "Text": "Service charge",
+            "Value": 105
+        }],
+        "IBAN number": "",
+        "Notes": {
+            "Text": "Notes",
+            "Name": "Notes",
+            "Options": [
+                "Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date"
+            ]
+        },
+        "OriginalDocumentRequired": {
+            "Text": "Original Document Required",
+            "Name": "OriginalDocumentRequired",
+            "Options": [
+                "Sponsor's Emirates ID"
+            ]
+        }
+    },
+    "Urgent": {
+        "docs": [
+            "Trade License (Including Partner page)",
+            "Immigration card",
+            "Memorandum of association (MOA)",
+            "Passport",
+            "Medical result",
+            "Emirates ID application",
+            "Insurance",
+            "Visa",
+            "Photo (White Background)"
+        ],
+        "PriceDetails": [{
+            "Text": "Gov. fees",
+            "Value": 926
+        }, {
+            "Text": "Service charge",
+            "Value": 105
+        }],
+        "IBAN number": "",
+        "Notes": {
+            "Text": "Notes",
+            "Name": "Notes",
+            "Options": [
+                "Fine payment for all the stamping procedure will be 25 aed for the first 180 days. The next 180 days will be of 50 aed  and then 100 aed each day. Fine for stamping comes only when the stamping application is not posted before the final date"
+            ]
+        },
+        "OriginalDocumentRequired": {
+            "Text": "Original Document Required",
+            "Name": "OriginalDocumentRequired",
+            "Options": [
+                "Sponsor's Emirates ID"
+            ]
+        }
+    }
+}

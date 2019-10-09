@@ -1,0 +1,265 @@
+{
+    "title": "Who is the Sponsor?",
+    "options": [
+        "Partner/Investor",
+        "Employee"
+    ],
+    "Partner/Investor": {
+        "title": "Stamping Speed",
+        "options": [
+            "Normal",
+            "Urgent"
+        ],
+        "Normal": {
+            "docs": [
+                "Child’s passport",
+                "Child’s photo (White Background)",
+                "Emirates ID application",
+                "Insurance",
+                "Birth certificate attested",
+                "Birth certificate translated",
+                "Trade License",
+                "Memorandum of Association (MOA)",
+                "Sponsor's passport",
+                "Sponsor's visa",
+                "Residential Ejari under sponsor’s name"
+            ],
+            "PriceDetails": [{
+                "Text": "Security Deposit",
+                "Value": 3060
+            }, {
+                "Text": "Gov. fees",
+                "Value": 671.75
+            }, {
+                "Text": "Stamping",
+                "Value": 609.90
+            }, {
+                "Text": "Insurance",
+                "Value": 695.10
+            }, {
+                "Text": "Service charge",
+                "Value": 105
+            }],
+            "Notes": {
+                "Text": "Notes",
+                "Name": "Notes",
+                "Options": [
+                    "Kids passport has to be made within 60 days of birth.  New born visa has to be stamped within 120 days or else ﬁne will be imposed for each day."
+                ]
+            },
+            "OriginalDocumentRequired": {
+                "Text": "Original Document Required",
+                "Name": "OriginalDocumentRequired",
+                "Options": [
+                    "Sponsor's Emirates ID, Child Passport"
+                ]
+            }
+        },
+        "Urgent": {
+            "docs": [
+                "Child’s passport",
+                "Child’s photo (White Background)",
+                "Emirates ID application",
+                "Insurance",
+                "Birth certificate attested",
+                "Birth certificate translated",
+                "Trade License",
+                "Memorandum of Association (MOA)",
+                "Sponsor's passport",
+                "Sponsor's visa",
+                "Residential Ejari under sponsor’s name"
+            ],
+            "PriceDetails": [{
+                "Text": "Security Deposit",
+                "Value": 3060
+            }, {
+                "Text": "Gov. fees",
+                "Value": 751.75
+            }, {
+                "Text": "Stamping",
+                "Value": 689.90
+            }, {
+                "Text": "Insurance",
+                "Value": 695.10
+            }, {
+                "Text": "Service charge",
+                "Value": 105
+            }],
+            "Notes": {
+                "Text": "Notes",
+                "Name": "Notes",
+                "Options": [
+                    "Kids passport has to be made within 60 days of birth.  New born visa has to be stamped within 120 days or else ﬁne will be imposed for each day."
+                ]
+            },
+            "OriginalDocumentRequired": {
+                "Text": "Original Document Required",
+                "Name": "OriginalDocumentRequired",
+                "Options": [
+                    "Sponsor's Emirates ID, Child Passport"
+                ]
+            }
+        }
+    },
+    "Employee": {
+        "title": "Visa Duration",
+        "options": [
+            "2 years",
+            "3 years"
+        ],
+        "2 years": {
+            "title": "Stamping Speed",
+            "options": [
+                "Normal",
+                "Urgent"
+            ],
+            "Normal": {
+                "docs": [
+                    "Child passport",
+                    "Child’s photo (white background)",
+                    "Emirates ID application",
+                    "Insurance",
+                    "Birth certificate attested",
+                    "Birth certificate translated",
+                    "Labour contract",
+                    "Child's passport",
+                    "Child's visa",
+                    "Residential Ejari under sponsor’s name"
+                ],
+                "PriceDetails": [{
+                    "Text": "Gov. fees",
+                    "Value": 460
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "Kids passport has to be made within 60 days of birth.  New born visa has to be stamped within 120 days or else ﬁne will be imposed for each day."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID, Child Passport"
+                    ]
+                }
+            },
+            "Urgent": {
+                "docs": [
+                    "Child passport",
+                    "Child’s photo (white background)",
+                    "Emirates ID application",
+                    "Insurance",
+                    "Birth certificate attested",
+                    "Birth certificate translated",
+                    "Labour Contract",
+                    "Child's passport",
+                    "Child's visa",
+                    "Residential Ejari under sponsor’s name"
+                ],
+                "PriceDetails": [{
+                    "Text": "Gov. fees",
+                    "Value": 540
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "Kids passport has to be made within 60 days of birth.  New born visa has to be stamped within 120 days or else ﬁne will be imposed for each day."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID, Child Passport"
+                    ]
+                }
+            }
+        },
+        "3 years": {
+            "title": "Stamping Speed",
+            "options": [
+                "Normal",
+                "Urgent"
+            ],
+            "Normal": {
+                "docs": [
+                    "Child passport",
+                    "Child’s photo (white background)",
+                    "Emirates ID application",
+                    "Insurance",
+                    "Birth certificate attested",
+                    "Birth certificate translated",
+                    "Labour contract",
+                    "Child's passport",
+                    "Child's visa",
+                    "Residential Ejari under sponsor’s name"
+                ],
+                "PriceDetails": [{
+                    "Text": "Gov. fees",
+                    "Value": 460
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "Kids passport has to be made within 60 days of birth.  New born visa has to be stamped within 120 days or else ﬁne will be imposed for each day."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID, Child Passport"
+                    ]
+                }
+            },
+            "Urgent": {
+                "docs": [
+                    "Child passport",
+                    "Child’s photo (white background)",
+                    "Emirates ID application",
+                    "Insurance",
+                    "Birth certificate attested",
+                    "Birth certificate translated",
+                    "Labour Contract",
+                    "Child’s passport",
+                    "Child’s visa",
+                    "Residential Ejari under sponsor’s name"
+                ],
+                "PriceDetails": [{
+                    "Text": "Gov. fees",
+                    "Value": 540
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "Kids passport has to be made within 60 days of birth.  New born visa has to be stamped within 120 days or else ﬁne will be imposed for each day."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID, Child Passport"
+                    ]
+                }
+            }
+        }
+    }
+}

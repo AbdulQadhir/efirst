@@ -81,7 +81,7 @@ const VisaService = ({
   const ShowDateTimePicker = () => setFieldValue('IsDatePickerVisible', true);
   const HideDateTimePicker = () => setFieldValue('IsDatePickerVisible', false);
   const HandleDatePicked = date => {
-    setFieldValue('PassportExiryDate', new Date(date).toDateString());
+    setFieldValue('PassportExpiryDate', new Date(date).toDateString());
     HideDateTimePicker();
   };
 
@@ -326,17 +326,17 @@ const VisaService = ({
           {errors.Nationality && <ErrorLabel label={errors.Nationality} />}
 
           <Input2
-            placeholder="Passport Exiry Date *"
+            placeholder="Passport Expiry Date *"
             onTouchStart={ShowDateTimePicker}
-            label="Passport Exiry Date *"
+            label="Passport Expiry Date *"
             onChangeText={value => {
               console.log(value);
-              setFieldValue('PassportExiryDate', value);
+              setFieldValue('PassportExpiryDate', value);
             }}
-            value={dateFormat(values.PassportExiryDate)}
+            value={dateFormat(values.PassportExpiryDate)}
           />
-          {errors.PassportExiryDate && (
-            <ErrorLabel label={errors.PassportExiryDate} />
+          {errors.PassportExpiryDate && (
+            <ErrorLabel label={errors.PassportExpiryDate} />
           )}
           {!navigation.state.params.passportExpiry && (
               <View
@@ -424,7 +424,7 @@ export default withFormik({
     City: '',
     SelectedState: '',
     Nationality: '',
-    PassportExiryDate: null,
+    PassportExpiryDate: null,
     ShowInfo: false,
     AgreeTerms: false,
     ShowTerms: false,
@@ -454,7 +454,7 @@ export default withFormik({
     City: Yup.string().required('Required'),
     SelectedState: Yup.string().required('Required'),
     Nationality: Yup.string().required('Required'),
-    PassportExiryDate: Yup.string().required('Required'),
+    PassportExpiryDate: Yup.string().required("Required").nullable()
   }),
   handleSubmit: (values, {prop}) => {
     if (!phone.isValidNumber()) {
@@ -478,7 +478,7 @@ export default withFormik({
     data.AddressCountry = values.AddressCountry;
     data.AddressState = values.SelectedState;
     data.Nationality = values.Nationality;
-    data.PassportExiryDate = values.PassportExiryDate;
+    data.PassportExpiryDate = values.PassportExpiryDate;
 
     console.log('JSON', 'result = > ' + JSON.stringify(data));
     updateTotalAmount(data.TotalBillAmount);
