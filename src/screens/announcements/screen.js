@@ -6,6 +6,7 @@ import {
   Dimensions,
   RefreshControl,
   ScrollView,
+  Platform,
 } from 'react-native';
 
 import {
@@ -19,7 +20,7 @@ import {calcHeight, calcWidth} from '../../config';
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 
-export default ({body, title, bigPicture}) => {
+export default ({body, title, bigPicture, ios_attachments}) => {
   console.log({body, title, bigPicture});
   return (
     <ScrollView
@@ -33,7 +34,12 @@ export default ({body, title, bigPicture}) => {
           }}>
           <View style={{flex: 1}}>
             <AnnouncementTitle title={title} />
-            {bigPicture && <AnnouncementImage image={bigPicture} />}
+            {Platform.OS === 'android' && bigPicture && (
+              <AnnouncementImage image={bigPicture} />
+            )}
+            {Platform.OS === 'ios' && ios_attachments && (
+              <AnnouncementImage image={ios_attachments} />
+            )}
             <AnnouncementDetails message={body} />
           </View>
         </View>

@@ -454,9 +454,11 @@ export default withFormik({
     City: Yup.string().required('Required'),
     SelectedState: Yup.string().required('Required'),
     Nationality: Yup.string().required('Required'),
-    PassportExpiryDate: Yup.string().required("Required").nullable()
+    PassportExpiryDate: Yup.string()
+      .required('Required')
+      .nullable(),
   }),
-  handleSubmit: (values, {prop}) => {
+  handleSubmit: (values, {props}) => {
     if (!phone.isValidNumber()) {
       return;
     }

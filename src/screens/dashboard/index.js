@@ -59,11 +59,17 @@ class Container extends Component {
           this.props.navigation.navigate('ServiceDetail');
         }
       } else {
-        const {body, title, bigPicture} = openResult.notification.payload;
+        const {
+          body,
+          title,
+          bigPicture,
+          ios_attachments,
+        } = openResult.notification.payload;
         this.props.navigation.navigate('Announcements', {
           title,
           body,
           bigPicture,
+          ios_attachments,
         });
       }
     }, 20);
