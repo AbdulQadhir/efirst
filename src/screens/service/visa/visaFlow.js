@@ -19,6 +19,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 import {calcHeight, calcWidth} from '../../../config';
 import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
+import Loader from '../../../styled/loader';
 
 import {
   HeaderBtnMenu,
@@ -59,13 +60,18 @@ class App extends React.Component {
         options: [],
       },
       _prev_pageData: [],
+      loading: false,
     };
   }
 
  async componentDidMount() {
-   
+
   const lastSelected = this.props.navigation.state.params.lastSelected
   ? this.props.navigation.state.params.lastSelected
+  : '';
+  
+  const select_service = this.props.navigation.state.params.select_service
+  ? this.props.navigation.state.params.select_service
   : '';
 
   var pageData = this.props.navigation.state.params.pageData ? this.props.navigation.state.params.pageData : [];
@@ -75,9 +81,16 @@ class App extends React.Component {
   var options = null;
   if(this.props.navigation.state.params.url)
   {
+    this.setState({loading: true});
     pageData.push({
-      Text: lastSelected,
-      Name: lastSelected.replace(/ /g, '') + "0",
+      Text: "Select Service",
+      Name: "Select Service".replace(/ /g, '') + "0",
+      Value: select_service,
+      ControlType: 'Radio',
+    });
+    pageData.push({
+      Text: "Visa Type",
+      Name: "Visa Type".replace(/ /g, '') + "0",
       Value: lastSelected,
       ControlType: 'Radio',
     });
@@ -87,11 +100,12 @@ class App extends React.Component {
       );
       options = await response.json();
       
-      this.setState({ pageData });
+      this.setState({ pageData, loading: false });
     } catch (error) { 
       this.setState({ options: {
         title: '',
         options: [],
+        loading: false
       }})
     }
   }
@@ -163,19 +177,18 @@ class App extends React.Component {
     var pageData = this.state.pageData;
 
     console.log('result =>', JSON.stringify(pageData));
-    if (this.state.options) {
+    if (this.state.options && this.state.options.title) {
       let obj = pageData.find(o => o.Text === this.state.options.title);
       if (obj) pageData.pop();
     } else pageData.pop();
     var i = 1;
     pageData.push({
-      Text: this.state.options.title,
-      Name: this.state.options.title.replace(/ /g, '') + i++,
+      Text: this.state.options.title ? this.state.options.title : "",
+      Name: (this.state.options.title ? this.state.options.title : "").replace(/ /g, '') + i++,
       Value: option,
       ControlType: 'Radio',
     });
     this.setState({pageData: pageData}, () => {
-      console.log(pageData);
       if (this.state.options[option]['title'])
         this.props.navigation.push('VisaFlow', {
           options: this.state.options[option],
@@ -205,11 +218,13 @@ class App extends React.Component {
   render() {
     return (
       <>
+      
+        <Loader loading={this.state.loading} />
         <View style={styles.body}>
           <VisaBreadCrump path={this.state.visaFlow} />
           <View style={{paddingHorizontal: calcHeight(2.5)}}>
             <SRDetailsHdr label={this.state.lastSelected} />
-            <VisaFlowQst label={this.state.options.title} />
+            <VisaFlowQst label={this.state.options.title ? this.state.options.title : ""} />
             {this.renderList()}
           </View>
         </View>
