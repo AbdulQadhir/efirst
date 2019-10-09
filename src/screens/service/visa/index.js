@@ -4,7 +4,7 @@ import {
   View,
   Text,
   Dimensions,
-  Image
+  ScrollView
 } from 'react-native';
 
 import {VisaBreadCrump,FAQMenuItem} from '../../../pages/uicomponents/components';
@@ -50,6 +50,7 @@ class App extends React.Component {
   return (
     <>
           <View style={styles.body} >
+            <ScrollView  showsVerticalScrollIndicator={false}>
               <View style={{paddingHorizontal:20}}>
                 <View style={styles.box} >
                     <TouchableOpacity onPress={()=>this.openAccordion(1)} >
@@ -65,21 +66,24 @@ class App extends React.Component {
                             select_service: "New Visa"
                           } )} 
                           btnName="Partner / Investor"  
-                          img={require(`${assetsPath}Visa/partner.png`)}/>
+                          img={require(`${assetsPath}Visa/partner.png`)}
+                          img2={require(`${assetsPath}Visa/partner_white.png`)} />
                         <FAQMenuItem 
                           onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Husband",
                           url: 'https://api.efirst.ae/Json/new_visa/husband.json' ,
                           select_service: "New Visa"
                           } )} 
                           btnName="Husband Visa"  
-                          img={require(`${assetsPath}Visa/husband.png`)}/>
+                          img={require(`${assetsPath}Visa/husband.png`)}
+                          img2={require(`${assetsPath}Visa/husband_white.png`)} />
                         <FAQMenuItem 
                           onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Child",
                           url: 'https://api.efirst.ae/Json/new_visa/child.json' ,
                           select_service: "New Visa"
                           } )} 
                           btnName="Child Visa"  
-                          img={require(`${assetsPath}Visa/child.png`)}/>
+                          img={require(`${assetsPath}Visa/child.png`)}
+                          img2={require(`${assetsPath}Visa/child_white.png`)} />
                       </View>
                       <View style={{flexDirection:'row',justifyContent:'center', paddingHorizontal:calcWidth(3)}} >
                         <FAQMenuItem 
@@ -88,21 +92,24 @@ class App extends React.Component {
                           select_service: "New Visa"
                           } )} 
                           btnName="Parent Visa"  
-                          img={require(`${assetsPath}Visa/parent.png`)}/>
+                          img={require(`${assetsPath}Visa/parent.png`)}
+                          img2={require(`${assetsPath}Visa/parent_white.png`)} />
                         <FAQMenuItem 
                           onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Wife",
                           url: 'https://api.efirst.ae/Json/new_visa/wife.json' ,
                           select_service: "New Visa"
                           } )} 
                           btnName="Wife Visa"  
-                          img={require(`${assetsPath}Visa/wife.png`)}/>
+                          img={require(`${assetsPath}Visa/wife.png`)}
+                          img2={require(`${assetsPath}Visa/wife_white.png`)} />
                         <FAQMenuItem 
                           onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Change Status",
                           url: 'https://api.efirst.ae/Json/new_visa/change_status.json' ,
                           select_service: "New Visa"
                           } )} 
                           btnName="Change Status"  
-                          img={require(`${assetsPath}Visa/change_status.png`)}/>
+                          img={require(`${assetsPath}Visa/change_status.png`)}
+                          img2={require(`${assetsPath}Visa/change_status_white.png`)} />
                       </View>
                     </View>
                     )}
@@ -122,21 +129,24 @@ class App extends React.Component {
                         select_service: "Visa Stamping"
                         } )} 
                         btnName="Partner / Investor"  
-                        img={require(`${assetsPath}Visa/partner.png`)}/>
+                        img={require(`${assetsPath}Visa/partner.png`)}
+                        img2={require(`${assetsPath}Visa/partner_white.png`)} />
                       <FAQMenuItem 
                         onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Husband Visa",
                         url: 'https://api.efirst.ae/Json/visa_stamping/husband.json' ,
                         select_service: "Visa Stamping"
                         } )} 
                         btnName="Husband Visa"  
-                        img={require(`${assetsPath}Visa/husband.png`)}/>
+                        img={require(`${assetsPath}Visa/husband.png`)}
+                        img2={require(`${assetsPath}Visa/husband_white.png`)} />
                       <FAQMenuItem 
                         onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Wife Visa",
                         url: 'https://api.efirst.ae/Json/visa_stamping/wife.json' ,
                         select_service: "Visa Stamping"
                          } )} 
                         btnName="Wife Visa"  
-                        img={require(`${assetsPath}Visa/wife.png`)}/>
+                        img={require(`${assetsPath}Visa/wife.png`)}
+                        img2={require(`${assetsPath}Visa/wife_white.png`)} />
                     </View>
                     <View style={{flexDirection:'row',justifyContent:'center', paddingHorizontal:calcWidth(3)}} >
                       <FAQMenuItem 
@@ -145,20 +155,23 @@ class App extends React.Component {
                         select_service: "Visa Stamping"
                          } )} 
                         btnName="Parent Visa"  
-                        img={require(`${assetsPath}Visa/parent.png`)}/>
+                        img={require(`${assetsPath}Visa/parent.png`)}
+                        img2={require(`${assetsPath}Visa/parent_white.png`)} />
                       <FAQMenuItem 
                         onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Child Visa",
                         url: 'https://api.efirst.ae/Json/visa_stamping/child.json' 
                          } )} 
                         btnName="Child Visa"  
-                        img={require(`${assetsPath}Visa/child.png`)}/>
+                        img={require(`${assetsPath}Visa/child.png`)}
+                        img2={require(`${assetsPath}Visa/child_white.png`)} />
                       <FAQMenuItem 
                         onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "New Born",
                         url: 'https://api.efirst.ae/Json/visa_stamping/newborn.json' ,
                         select_service: "Visa Stamping"
                          } )} 
                         btnName="New Born"  
-                        img={require(`${assetsPath}Visa/newborn.png`)}/>
+                        img={require(`${assetsPath}Visa/newborn.png`)}
+                        img2={require(`${assetsPath}Visa/newborn_white.png`)} />
                     </View>
                   </View>
                     )}
@@ -178,21 +191,24 @@ class App extends React.Component {
                         select_service: "Visa Renewal"
                           } )} 
                         btnName="Partner / Investor"  
-                        img={require(`${assetsPath}Visa/partner.png`)}/>
+                        img={require(`${assetsPath}Visa/partner.png`)}
+                        img2={require(`${assetsPath}Visa/partner_white.png`)} />
                       <FAQMenuItem 
                         onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Husband Visa",
                         url: 'https://api.efirst.ae/Json/visa_renewal/husband.json' ,
                         select_service: "Visa Renewal"
                            } )} 
                         btnName="Husband Visa"  
-                        img={require(`${assetsPath}Visa/husband.png`)}/>
+                        img={require(`${assetsPath}Visa/husband.png`)}
+                        img2={require(`${assetsPath}Visa/husband_white.png`)} />
                       <FAQMenuItem 
                         onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Wife Visa",
                         url: 'https://api.efirst.ae/Json/visa_renewal/wife.json' ,
                         select_service: "Visa Renewal"
                            } )} 
                         btnName="Wife Visa"  
-                        img={require(`${assetsPath}Visa/wife.png`)}/>
+                        img={require(`${assetsPath}Visa/wife.png`)}
+                        img2={require(`${assetsPath}Visa/wife_white.png`)} />
                     </View>
                     <View style={{flexDirection:'row',justifyContent:'center', paddingHorizontal:calcWidth(3)}} >
                       <FAQMenuItem 
@@ -201,14 +217,16 @@ class App extends React.Component {
                         select_service: "Visa Renewal"
                             } )} 
                         btnName="Child Visa"  
-                        img={require(`${assetsPath}Visa/child.png`)}/>
+                        img={require(`${assetsPath}Visa/child.png`)}
+                        img2={require(`${assetsPath}Visa/child_white.png`)} />
                       <FAQMenuItem 
                         onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Parent Visa",
                         url: 'https://api.efirst.ae/Json/visa_renewal/parent.json' ,
                         select_service: "Visa Renewal"
                             } )} 
                         btnName="Parent Visa"  
-                        img={require(`${assetsPath}Visa/parent.png`)}/>
+                        img={require(`${assetsPath}Visa/parent.png`)}
+                        img2={require(`${assetsPath}Visa/parent_white.png`)} />
                     </View>
                   </View>
                     )}
@@ -227,20 +245,78 @@ class App extends React.Component {
                         select_service: "Visa Cancellation"
                             } )} 
                         btnName="Partner / Investor"  
-                        img={require(`${assetsPath}Visa/partner.png`)}/>
+                        img={require(`${assetsPath}Visa/partner.png`)}
+                        img2={require(`${assetsPath}Visa/partner_white.png`)} />
                       <FAQMenuItem 
                         onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Partner / Investor",
                         url: 'https://api.efirst.ae/Json/visa_cancellation/family.json' ,
                         select_service: "Visa Cancellation"
                             } )} 
                         btnName="Family Visa"  
-                        img={require(`${assetsPath}Visa/family.png`)}/>
+                        img={require(`${assetsPath}Visa/family.png`)}
+                        img2={require(`${assetsPath}Visa/family_white.png`)} />
                     </View>
                     </View>
                     )}
                 </View>
 
+                <View style={styles.box} >
+                    <TouchableOpacity onPress={()=>this.openAccordion(5)}>
+                          <Text style={{ padding:calcHeight(2), paddingHorizontal:calcWidth(2), fontSize:RFValue(16),fontFamily:'Montserrat-Medium',color:'#081344'}}>Complete Visa Package</Text>
+                    </TouchableOpacity>
+                    { this.state.activeAccordion == 5 && (
+                    <View>
+                      <View style={{flexDirection:'row',justifyContent:'center', paddingHorizontal:calcWidth(3)}} >
+                        <FAQMenuItem 
+                          onPress={()=>this.props.navigation.navigate("VisaFlow", { 
+                            lastSelected: "Partner / Investor", 
+                            url: 'https://api.efirst.ae/Json/complete/partner.json' ,
+                            select_service: "Complete Visa Package"
+                          } )} 
+                          btnName="Partner / Investor"  
+                          img={require(`${assetsPath}Visa/partner.png`)}
+                          img2={require(`${assetsPath}Visa/partner_white.png`)} />
+                        <FAQMenuItem 
+                          onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Husband",
+                          url: 'https://api.efirst.ae/Json/complete/husband.json' ,
+                          select_service: "Complete Visa Package"
+                          } )} 
+                          btnName="Husband Visa"  
+                          img={require(`${assetsPath}Visa/husband.png`)}
+                          img2={require(`${assetsPath}Visa/husband_white.png`)} />
+                        <FAQMenuItem 
+                          onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Child",
+                          url: 'https://api.efirst.ae/Json/complete/child.json' ,
+                          select_service: "Complete Visa Package"
+                          } )} 
+                          btnName="Child Visa"  
+                          img={require(`${assetsPath}Visa/child.png`)}
+                          img2={require(`${assetsPath}Visa/child_white.png`)} />
+                      </View>
+                      <View style={{flexDirection:'row',justifyContent:'center', paddingHorizontal:calcWidth(3)}} >
+                        <FAQMenuItem 
+                          onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Parent",
+                          url: 'https://api.efirst.ae/Json/complete/parent.json' ,
+                          select_service: "Complete Visa Package"
+                          } )} 
+                          btnName="Parent Visa"  
+                          img={require(`${assetsPath}Visa/parent.png`)}
+                          img2={require(`${assetsPath}Visa/parent_white.png`)} />
+                        <FAQMenuItem 
+                          onPress={()=>this.props.navigation.navigate("VisaFlow", { lastSelected: "Wife",
+                          url: 'https://api.efirst.ae/Json/complete/wife.json' ,
+                          select_service: "Complete Visa Package"
+                          } )} 
+                          btnName="Wife Visa"  
+                          img={require(`${assetsPath}Visa/wife.png`)}
+                          img2={require(`${assetsPath}Visa/wife_white.png`)} />
+                      </View>
+                    </View>
+                    )}
+                </View>
+
               </View>
+            </ScrollView >
           </View>
     </>
   );

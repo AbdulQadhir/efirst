@@ -4,82 +4,229 @@
         "Partner/Investor",
         "Employee"
     ],
-    "Partner/Investor": {
-        "title": "Stamping Speed",
+    "Partner/Investor":{
+        "title": "Select Parents",
         "options": [
-            "Normal",
-            "Urgent"
+            "Mother",
+            "Father",
+            "Mother & Father"
         ],
-        "Normal": {
-            "docs": [
-                "Medical result",
-                "Emirates ID application",
-                "Insurance",
-                "Visa page",
-                "Immigration card",
-                "Sponsor's visa"
+        "Mother" : {
+            "title": "Stamping Speed",
+            "options": [
+                "Normal",
+                "Urgent"
             ],
-            "PriceDetails": [{
-                "Text": "Gov. fees (3 yrs visa)",
-                "Value": 671.75
-            }, {
-                "Text": "Service charge",
-                "Value": 105
-            }],
-            "Notes": {
-                "Text": "Notes",
-                "Name": "Notes",
-                "Options": [
-                    "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
-                ]
+            "Normal": {
+                "docs": [
+                    "Medical result",
+                    "Emirates ID application",
+                    "Insurance",
+                    "Visa page",
+                    "Immigration card",
+                    "Sponsor's visa"
+                ],
+                "PriceDetails": [{
+                    "Text": "Gov. fees (3 yrs visa)",
+                    "Value": 671.75
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID, Sponsored Passport"
+                    ]
+                }
             },
-            "OriginalDocumentRequired": {
-                "Text": "Original Document Required",
-                "Name": "OriginalDocumentRequired",
-                "Options": [
-                    "Sponsor's Emirates ID, Sponsored Passport"
-                ]
+            "Urgent": {
+                "docs": [
+                    "Medical result",
+                    "Emirates ID application",
+                    "Insurance",
+                    "Visa page",
+                    "Immigration card",
+                    "Sponsor's visa"
+                ],
+                "PriceDetails": [{
+                    "Text": "Gov. fees (3 yrs visa)",
+                    "Value": 751.75
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID, Sponsored Passport"
+                    ]
+                }
             }
         },
-        "Urgent": {
-            "docs": [
-                "Medical result",
-                "Emirates ID application",
-                "Insurance",
-                "Visa page",
-                "Immigration card",
-                "Sponsor's visa"
+        "Father": {
+            "title": "Stamping Speed",
+            "options": [
+                "Normal",
+                "Urgent"
             ],
-            "PriceDetails": [{
-                "Text": "Gov. fees (3 yrs visa)",
-                "Value": 751.75
-            }, {
-                "Text": "Service charge",
-                "Value": 105
-            }],
-            "Notes": {
-                "Text": "Notes",
-                "Name": "Notes",
-                "Options": [
-                    "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
-                ]
+            "Normal": {
+                "docs": [
+                    "Medical result",
+                    "Emirates ID application",
+                    "Insurance",
+                    "Visa page",
+                    "Immigration card",
+                    "Sponsor's visa"
+                ],
+                "PriceDetails": [{
+                    "Text": "Gov. fees (3 yrs visa)",
+                    "Value": 671.75
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID, Sponsored Passport"
+                    ]
+                }
             },
-            "OriginalDocumentRequired": {
-                "Text": "Original Document Required",
-                "Name": "OriginalDocumentRequired",
-                "Options": [
-                    "Sponsor's Emirates ID, Sponsored Passport"
-                ]
+            "Urgent": {
+                "docs": [
+                    "Medical result",
+                    "Emirates ID application",
+                    "Insurance",
+                    "Visa page",
+                    "Immigration card",
+                    "Sponsor's visa"
+                ],
+                "PriceDetails": [{
+                    "Text": "Gov. fees (3 yrs visa)",
+                    "Value": 751.75
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID, Sponsored Passport"
+                    ]
+                }
+            }
+        },
+        "Mother & Father" : {
+            "title": "Stamping Speed",
+            "options": [
+                "Normal",
+                "Urgent"
+            ],
+            "Normal": {
+                "docs": [
+                    "Medical result",
+                    "Emirates ID application",
+                    "Insurance",
+                    "Visa page",
+                    "Immigration card",
+                    "Sponsor's visa"
+                ],
+                "PriceDetails": [{
+                    "Text": "Gov. fees (3 yrs visa)",
+                    "Value": 671.75
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID, Sponsored Passport"
+                    ]
+                }
+            },
+            "Urgent": {
+                "docs": [
+                    "Medical result",
+                    "Emirates ID application",
+                    "Insurance",
+                    "Visa page",
+                    "Immigration card",
+                    "Sponsor's visa"
+                ],
+                "PriceDetails": [{
+                    "Text": "Gov. fees (3 yrs visa)",
+                    "Value": 751.75
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID, Sponsored Passport"
+                    ]
+                }
             }
         }
-    },
+    } ,
     "Employee": {
-        "title": "Visa Duration",
+        "title": "Select Parents",
         "options": [
-            "3 Years",
-            "2 Years"
+            "Mother",
+            "Father",
+            "Mother & Father"
         ],
-        "3 Years": {
+        "Mother" : {
             "title": "Stamping Speed",
             "options": [
                 "Normal",
@@ -95,8 +242,8 @@
                     "Sponsor's visa"
                 ],
                 "PriceDetails": [{
-                    "Text": "Gov. fees",
-                    "Value": 544.05
+                    "Text": "Gov. fees (3 yrs visa)",
+                    "Value": 671.75
                 }, {
                     "Text": "Service charge",
                     "Value": 105
@@ -105,7 +252,7 @@
                     "Text": "Notes",
                     "Name": "Notes",
                     "Options": [
-                        "Fine payment for all the stamping procedure will be 25 AED for the ﬁrst 180 days. The next 180 days will be of 50 AED and then 100 AED each day. Fine for stamping comes only when the stamping application is not posted till the sixtieth day of the change status or the date of entry."
+                        "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
                     ]
                 },
                 "OriginalDocumentRequired": {
@@ -126,8 +273,8 @@
                     "Sponsor's visa"
                 ],
                 "PriceDetails": [{
-                    "Text": "Gov. fees",
-                    "Value": 624.05
+                    "Text": "Gov. fees (3 yrs visa)",
+                    "Value": 751.75
                 }, {
                     "Text": "Service charge",
                     "Value": 105
@@ -136,7 +283,7 @@
                     "Text": "Notes",
                     "Name": "Notes",
                     "Options": [
-                        "Fine payment for all the stamping procedure will be 25 AED for the ﬁrst 180 days. The next 180 days will be of 50 AED and then 100 AED each day. Fine for stamping comes only when the stamping application is not posted till the sixtieth day of the change status or the date of entry."
+                        "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
                     ]
                 },
                 "OriginalDocumentRequired": {
@@ -148,7 +295,7 @@
                 }
             }
         },
-        "2 Years": {
+        "Father": {
             "title": "Stamping Speed",
             "options": [
                 "Normal",
@@ -164,8 +311,8 @@
                     "Sponsor's visa"
                 ],
                 "PriceDetails": [{
-                    "Text": "Gov. fees",
-                    "Value": 459.90
+                    "Text": "Gov. fees (3 yrs visa)",
+                    "Value": 671.75
                 }, {
                     "Text": "Service charge",
                     "Value": 105
@@ -174,7 +321,7 @@
                     "Text": "Notes",
                     "Name": "Notes",
                     "Options": [
-                        "Fine payment for all the stamping procedure will be 25 AED for the ﬁrst 180 days. The next 180 days will be of 50 AED and then 100 AED each day. Fine for stamping comes only when the stamping application is not posted till the sixtieth day of the change status or the date of entry."
+                        "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
                     ]
                 },
                 "OriginalDocumentRequired": {
@@ -195,8 +342,8 @@
                     "Sponsor's visa"
                 ],
                 "PriceDetails": [{
-                    "Text": "Gov. fees",
-                    "Value": 539.90
+                    "Text": "Gov. fees (3 yrs visa)",
+                    "Value": 751.75
                 }, {
                     "Text": "Service charge",
                     "Value": 105
@@ -205,7 +352,76 @@
                     "Text": "Notes",
                     "Name": "Notes",
                     "Options": [
-                        "Fine payment for all the stamping procedure will be 25 AED for the ﬁrst 180 days. The next 180 days will be of 50 AED and then 100 AED each day. Fine for stamping comes only when the stamping application is not posted till the sixtieth day of the change status or the date of entry."
+                        "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID, Sponsored Passport"
+                    ]
+                }
+            }
+        },
+        "Mother & Father" : {
+            "title": "Stamping Speed",
+            "options": [
+                "Normal",
+                "Urgent"
+            ],
+            "Normal": {
+                "docs": [
+                    "Medical result",
+                    "Emirates ID application",
+                    "Insurance",
+                    "Visa page",
+                    "Immigration card",
+                    "Sponsor's visa"
+                ],
+                "PriceDetails": [{
+                    "Text": "Gov. fees (3 yrs visa)",
+                    "Value": 671.75
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
+                    ]
+                },
+                "OriginalDocumentRequired": {
+                    "Text": "Original Document Required",
+                    "Name": "OriginalDocumentRequired",
+                    "Options": [
+                        "Sponsor's Emirates ID, Sponsored Passport"
+                    ]
+                }
+            },
+            "Urgent": {
+                "docs": [
+                    "Medical result",
+                    "Emirates ID application",
+                    "Insurance",
+                    "Visa page",
+                    "Immigration card",
+                    "Sponsor's visa"
+                ],
+                "PriceDetails": [{
+                    "Text": "Gov. fees (3 yrs visa)",
+                    "Value": 751.75
+                }, {
+                    "Text": "Service charge",
+                    "Value": 105
+                }],
+                "Notes": {
+                    "Text": "Notes",
+                    "Name": "Notes",
+                    "Options": [
+                        "This is the ﬁnal stage of visa process. In this the application will have to be posted and then after the approval the original passport has to be submitted to the immigration with the application paper to get the visa stamping on the passport."
                     ]
                 },
                 "OriginalDocumentRequired": {

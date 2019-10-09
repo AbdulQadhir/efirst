@@ -4,6 +4,7 @@ import {
   Dimensions,
   Text,
   TouchableOpacity,
+  TouchableHighlight,
   View,
   Image,
   Picker,
@@ -923,16 +924,23 @@ export const FAQLogoUnderline = props => {
   );
 };
 
-export const FAQMenuItem = props => {
-  // console.log(props);
-  return (
-    <TouchableOpacity onPress={props.onPress} style={styles.faqView}>
-      <View style={styles.menu} {...props}>
-        <Image style={styles.file_img} source={props.img} />
-      </View>
-      <Text style={styles.faqTxt}>{props.btnName} </Text>
-    </TouchableOpacity>
-  );
+export class FAQMenuItem extends React.Component {
+  state = {
+    isPressed : false
+  }
+  render() {
+    const props = this.props;
+    let img = this.state.isPressed && props.img2 ? props.img2 : props.img;
+    return ( 
+      <TouchableHighlight underlayColor="#ffffff00" onHideUnderlay={()=>{ this.setState({isPressed:false})}} onShowUnderlay={()=>{ this.setState({isPressed:true})}} onPress={props.onPress}>
+        <View style={styles.faqView} >
+          <View style={[styles.menu,this.state.isPressed && props.img2 && {backgroundColor: "#183761"}]} {...props}>
+            <Image style={styles.file_img} source={img} />
+          </View>
+          <Text style={styles.faqTxt}>{props.btnName}</Text>
+        </View>
+      </TouchableHighlight>
+  )}
 };
 
 export const FAQCategoryHdr = props => {
@@ -1059,7 +1067,8 @@ export const SRDocumentItem = props => {
 };
 
 export const VisaFlowQst = props => {
-  return <Text style={styles.visaflow_qst_txt}>{props.label}*</Text>;
+  const label = props.label ? `${props.label}*` : "";
+  return <Text style={styles.visaflow_qst_txt}>{label}</Text>;
 };
 
 export const VisaBreadCrump = props => {
