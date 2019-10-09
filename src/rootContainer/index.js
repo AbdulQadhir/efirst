@@ -16,9 +16,6 @@ class RootContainer extends Component {
     OneSignal.addEventListener('received', this.onReceived);
 
     OneSignal.addEventListener('ids', this.onIds);
-
-    OneSignal.configure(); // <-- add this line
-    console.log('OneSignal==');
   }
   onReceived(notification) {
     //console.log("Notification received: ", notification);

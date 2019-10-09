@@ -118,7 +118,7 @@ export const ButtonLabel = props => {
 export const ErrorLabel = props => {
   const {textStyle, wrapperStyle} = props;
   return (
-    <View style={[styles.errorLbl, , wrapperStyle]} {...props}>
+    <View style={[styles.errorLbl, wrapperStyle]} {...props}>
       <Text style={[styles.txtBtnLbl, {color: colorBottom}, textStyle]}>
         {props.label}
       </Text>
@@ -958,6 +958,29 @@ export const FAQuestion = props => {
   );
 };
 
+export const AnnouncementDetails = ({message}) => (
+  <View style={{marginTop: calcHeight(1)}}>
+    <Text style={styles.not_body}>{message}</Text>
+  </View>
+);
+export const AnnouncementTitle = ({title}) => (
+  <View style={{marginTop: calcHeight(3)}}>
+    <Text style={styles.not_title}>{title}</Text>
+  </View>
+);
+export const AnnouncementImage = ({image}) => (
+  <View style={{alignContent: 'center', marginTop: calcHeight(1)}}>
+    <Image
+      source={{uri: image}}
+      style={{
+        // flexGrow: 1,
+        width: calcWidth(90),
+        height: calcHeight(40),
+      }}
+      resizeMode="contain"
+    />
+  </View>
+);
 export const InputSupport = props => {
   return (
     <TextInput
@@ -1209,6 +1232,19 @@ const styles = EStyleSheet.create({
     fontFamily: 'Montserrat-Light',
     textAlign: 'justify',
     marginHorizontal: calcWidth(3),
+  },
+  not_body: {
+    color: '#081344',
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Light',
+    textAlign: 'justify',
+    lineHeight: calcHeight(3.1),
+  },
+  not_title: {
+    color: '#081344',
+    fontSize: RFValue(13),
+    fontFamily: 'Montserrat-Medium',
+    textAlign: 'justify',
   },
   faq_qst: {
     color: '#081344',

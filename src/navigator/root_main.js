@@ -9,7 +9,7 @@ import BottomBar from './BottomBar/BottomBar';
 import ProfileStack from './profile_stack';
 import SupportStack from './support_stack';
 import VisaStack from './visa_stack';
-
+import AnnounceStack from './announce_stack';
 import {calcHeight, calcWidth} from '../config';
 
 const Tabs = createBottomTabNavigator(
@@ -21,6 +21,7 @@ const Tabs = createBottomTabNavigator(
     FAQ: {screen: FAQStack},
     Support: {screen: SupportStack},
     Visa: {screen: VisaStack},
+    AnnouncementStack: {screen: AnnounceStack},
   },
   {
     backBehavior: 'none',

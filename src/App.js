@@ -17,7 +17,7 @@ Sentry.config(sentryDsn, {
 }).install();
 
 import OneSignal from 'react-native-onesignal';
-OneSignal.init('83811424-4d3d-469e-adf6-f95169abe477', {
+OneSignal.init('c6ea3452-bace-4056-9d63-c2c4f4f58643', {
   kOSSettingsKeyAutoPrompt: true,
 });
 const App: () => React$Node = () => {

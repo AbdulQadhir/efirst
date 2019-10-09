@@ -63,7 +63,7 @@ const darkTheme = StyleSheet.create({
     borderColor: LIGHT_COLOR,
   },
 });
-
+let phone = null;
 const VisaService = ({
   handleSubmit,
   setFieldValue,
@@ -75,8 +75,6 @@ const VisaService = ({
   state,
 }) => {
   let countryPicker = null;
-  let phone = null;
-
   let statePicker = null;
   let nationalityPicker = null;
 
@@ -98,28 +96,15 @@ const VisaService = ({
       : '';
   };
 
-  checkPhoneValid = () => {
+  const checkPhoneValid = () => {
     setPhoneError('');
     if (!phone.isValidNumber()) {
-      console.log('ABC');
       setPhoneError('Invalid Format');
-    } else {
-      console.log('Hi');
-      handleSubmit();
     }
+    handleSubmit();
   };
   componentDidUpdate = () => {
     console.log(attestationPrice);
-  };
-
-  const attestationRateByCountryandDCType = (CountryId, CertificateType) => {
-    if (CountryId && CertificateType) {
-      attestationPrice({
-        CountryId: CountryId,
-        CertificateType: CertificateType,
-        token: token.token,
-      });
-    }
   };
 
   const setExpDateInit = () => {
@@ -377,14 +362,9 @@ const VisaService = ({
               width: calcWidth(88),
             }}>
             <CheckBoxCustom
-              isSelected={values.ShowTerms}
+              isSelected={values.AgreeTerms}
               onPress={() => {
-                console.log(values.ShowTerms);
-                if (values.ShowTerms) {
-                  setFieldValue('ShowTerms', false);
-                } else {
-                  setFieldValue('ShowTerms', true);
-                }
+                setFieldValue('AgreeTerms', !values.AgreeTerms);
               }}
             />
             <Text
@@ -405,7 +385,14 @@ const VisaService = ({
             </Text>
           </View>
 
-          <ButtonNormal label="Pay Now" onPress={checkPhoneValid} />
+          {values.AgreeTerms ? (
+            <ButtonNormal label="Pay Now" onPress={checkPhoneValid} />
+          ) : (
+            <ButtonNormal
+              label="Pay Now"
+              extraStyle={{backgroundColor: '#ff96a8'}}
+            />
+          )}
         </ScrollView>
         <DateTimePicker
           isVisible={values.IsDatePickerVisible}
@@ -469,8 +456,10 @@ export default withFormik({
     Nationality: Yup.string().required('Required'),
     PassportExiryDate: Yup.string().required('Required'),
   }),
-  handleSubmit: (values, {props}) => {
-    console.log('Submit');
+  handleSubmit: (values, {prop}) => {
+    if (!phone.isValidNumber()) {
+      return;
+    }
     const {navigation, updateTotalAmount} = props;
     const token = props.token.token;
     const ServiceName = 'VISA SERVICE';

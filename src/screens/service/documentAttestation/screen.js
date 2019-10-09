@@ -64,7 +64,7 @@ const darkTheme = StyleSheet.create({
     borderColor: LIGHT_COLOR,
   },
 });
-
+let phone = null;
 const DocumentAttestation = ({
   handleSubmit,
   setFieldValue,
@@ -83,12 +83,9 @@ const DocumentAttestation = ({
   state,
 }) => {
   let countryPicker = null;
-  let phone = null;
-
   let statePicker = null;
   let issuedCountryPicker = null;
   let certficatePicker = null;
-
   const openlaunchCamera = i => {
     const options = {
       quality: 1.0,
@@ -180,7 +177,7 @@ const DocumentAttestation = ({
     setPhoneError('');
     if (!phone.isValidNumber()) {
       setPhoneError('Invalid Format');
-      return;
+      //return;
     }
     if (!values.File) {
       setFieldValue('errorFileUpload', 'Passport or Emirates ID is Required');
@@ -550,14 +547,9 @@ const DocumentAttestation = ({
               width: calcWidth(88),
             }}>
             <CheckBoxCustom
-              isSelected={values.ShowTerms}
+              isSelected={values.AgreeTerms}
               onPress={() => {
-                console.log(values.ShowTerms);
-                if (values.ShowTerms) {
-                  setFieldValue('ShowTerms', false);
-                } else {
-                  setFieldValue('ShowTerms', true);
-                }
+                setFieldValue('AgreeTerms', !values.AgreeTerms);
               }}
             />
             <Text
@@ -577,8 +569,14 @@ const DocumentAttestation = ({
               of Service
             </Text>
           </View>
-
-          <ButtonNormal label="Pay Now" onPress={checkPhoneValid} />
+          {values.AgreeTerms ? (
+            <ButtonNormal label="Pay Now" onPress={checkPhoneValid} />
+          ) : (
+            <ButtonNormal
+              label="Pay Now"
+              extraStyle={{backgroundColor: '#ff96a8'}}
+            />
+          )}
         </ScrollView>
       </View>
     </View>
@@ -646,11 +644,14 @@ export default withFormik({
     SelectedState: Yup.string().required('Required'),
   }),
 
-  handleSubmit: (values, {props}) => {
+  handleSubmit: (values, {props, setFieldValue}) => {
     const {attestationrate, setRequestedValue} = props;
     const {File} = values;
-    if (!File) {
-      setFieldValue('errorFileUpload', 'Upload File is Required');
+    if (!File || !phone.isValidNumber()) {
+      if (!File) {
+        setFieldValue('errorFileUpload', 'Upload File is Required');
+      }
+
       return;
     }
     const token = props.token.token;

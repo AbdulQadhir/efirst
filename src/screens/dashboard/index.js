@@ -16,8 +16,15 @@ import {FAQCategoryData, clearFaq} from '../faq/action';
 import AlertView from '../../styled/alert-view';
 import Loader from '../../styled/loader';
 import OneSignal from 'react-native-onesignal';
-import {HeaderBtnMenu, HeaderBtnProfile} from '../../pages/uicomponents/components';
-
+import {
+  HeaderBtnMenu,
+  HeaderBtnProfile,
+} from '../../pages/uicomponents/components';
+const title = 'Download Option';
+const bigPicture =
+  'https://img.onesignal.com/n/08d08eac-2e07-40c9-8801-144268a7e187.jpg';
+const body =
+  'Download your certificate to your Mac, then double click the .cer file to install in Keychain Access. Make sure to save a backup copy of your private and public keys somewhere secure.';
 class Container extends Component {
   constructor(props) {
     super(props);
@@ -31,26 +38,43 @@ class Container extends Component {
   static navigationOptions = ({navigation}) => ({
     title: 'Dashboard',
     headerLeft: (
-      <View style={{flexDirection: "row"}} >
+      <View style={{flexDirection: 'row'}}>
         <HeaderBtnMenu onPress={() => navigation.openDrawer()} />
       </View>
     ),
-    headerRight: <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
+    headerRight: (
+      <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
+    ),
   });
 
   onOpened(openResult) {
+    console.log('openResult==>', openResult);
     const data = openResult.notification.payload.additionalData;
-    if (data) {
-      const {srid} = data;
-      const {token} = this.props.token;
-      if (srid) {
-        this.props.serviceRequestData({serviceId: srid, token});
-        this.props.navigation.navigate('ServiceDetail');
+    setTimeout(() => {
+      if (data) {
+        const {srid} = data;
+        const {token} = this.props.token;
+        if (srid) {
+          this.props.serviceRequestData({serviceId: srid, token});
+          this.props.navigation.navigate('ServiceDetail');
+        }
+      } else {
+        const {body, title, bigPicture} = openResult.notification.payload;
+        this.props.navigation.navigate('Announcements', {
+          title,
+          body,
+          bigPicture,
+        });
       }
-    }
+    }, 20);
   }
 
   componentDidMount = () => {
+    // this.props.navigation.navigate('Announcements', {
+    //   title,
+    //   body,
+    //   bigPicture,
+    // });
     OneSignal.addEventListener('opened', this.onOpened);
     const {token} = this.props.token;
     this.props.DashboardData(token);

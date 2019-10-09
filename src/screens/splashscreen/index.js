@@ -26,7 +26,6 @@ const Background = props => {
               textAlign: 'center',
               fontSize: RFValue(22),
               fontFamily: 'Montserrat-SemiBold',
-              // fontWeight: 'bold',
               color: props.color,
             }}>
             {props.caption}

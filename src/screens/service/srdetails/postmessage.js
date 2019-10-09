@@ -2,7 +2,11 @@ import React from 'react';
 import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
 import {withFormik} from 'formik';
 import * as Yup from 'yup';
-import {Input2, ReplyButton} from '../../../pages/uicomponents/components';
+import {
+  Input2,
+  ReplyButton,
+  ErrorLabel,
+} from '../../../pages/uicomponents/components';
 import Modal from 'react-native-modal';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {calcHeight, calcWidth} from '../../../config';
@@ -76,7 +80,10 @@ const PostMessage = ({
             )}
           </View>
           {errors.MessageTitle && (
-            <Text visible={errors.MessageTitle}>{errors.MessageTitle}</Text>
+            <ErrorLabel
+              label={errors.MessageTitle}
+              wrapperStyle={{paddingLeft: calcHeight(1)}}
+            />
           )}
           <View style={styles.item_margin}>
             <Input2
@@ -91,7 +98,10 @@ const PostMessage = ({
             />
           </View>
           {errors.MessageContent && (
-            <Text visible={errors.MessageContent}>{errors.MessageContent}</Text>
+            <ErrorLabel
+              label={errors.MessageContent}
+              wrapperStyle={{paddingLeft: calcHeight(1)}}
+            />
           )}
           <View style={{alignItems: 'center', paddingTop: calcHeight(2)}}>
             <ReplyButton

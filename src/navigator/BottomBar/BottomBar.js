@@ -120,7 +120,7 @@ const styles = EStyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'space-around',
-    backgroundColor: '#081344',
+    backgroundColor: '#183761',
   },
   view: {
     padding: calcHeight(0.5),

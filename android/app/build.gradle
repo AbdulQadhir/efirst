@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.efirstv2"
+        applicationId "com.efirst"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
