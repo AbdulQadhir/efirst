@@ -245,17 +245,28 @@ const LanguageTranslation = ({
   ];
 
   const renderDocs = i => {
-    return values.Files.map(doc => {
+    return values.Files.map((doc, index) => {
       return (
         <SelectFile
           title="Upload File"
           subTitle={doc.name || 'Select File'}
           onLeftPress={() => openlaunchCamera(0)}
           onRightPress={() => openFile(0)}
+          onDelPress={() => removeFile(index)}
         />
       );
     });
   };
+  const removeFile = index => {
+    let doc = values.Files;
+    doc.splice(index, 1);
+    setFieldValue('Files', doc);
+  };
+
+  const removeEmiratesId = () => {
+    setFieldValue('EmiratesID', null);
+  };
+
   return (
     <View style={styles.body}>
       <Modal
@@ -571,14 +582,22 @@ const LanguageTranslation = ({
 
           <View>
             <UploadTitle title="Passport or Emirates ID*" />
+
             {/* {renderDocs()} */}
-            <SelectFile
-              subTitle={
-                values.EmiratesID ? values.EmiratesID.name : 'Select File'
-              }
-              onLeftPress={() => openlaunchCamera(0, 'EmiratesID')}
-              onRightPress={() => openFile(0, 'EmiratesID')}
-            />
+            {values.EmiratesID ? (
+              <SelectFile
+                subTitle={values.EmiratesID.name}
+                onLeftPress={() => openlaunchCamera(0, 'EmiratesID')}
+                onRightPress={() => openFile(0, 'EmiratesID')}
+                onDelPress={() => removeEmiratesId()}
+              />
+            ) : (
+              <SelectFile
+                subTitle={'Select File'}
+                onLeftPress={() => openlaunchCamera(0, 'EmiratesID')}
+                onRightPress={() => openFile(0, 'EmiratesID')}
+              />
+            )}
             <UploadValdation />
             {values.errorEmiratesIDUpload && (
               <ErrorLabel label="Passport or Emirates ID is Required" />

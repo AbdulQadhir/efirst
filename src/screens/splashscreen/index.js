@@ -17,20 +17,9 @@ const Background = props => {
   return (
     <ImageBackground
       source={props.source}
+      resizeMode="stretch"
       style={{width: '100%', height: '100%'}}>
       <View style={{flex: 1, padding: 2}}>
-        <View style={{flex: 1, padding: 2}}>
-          <Text
-            style={{
-              marginTop: '25%',
-              textAlign: 'center',
-              fontSize: RFValue(22),
-              fontFamily: 'Montserrat-SemiBold',
-              color: props.color,
-            }}>
-            {props.caption}
-          </Text>
-        </View>
         <View style={styles.buttonWrapper}>
           <View
             style={{

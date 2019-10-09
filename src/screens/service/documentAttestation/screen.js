@@ -231,18 +231,10 @@ const DocumentAttestation = ({
     {name: 'Umm Al Qwain'},
   ];
 
-  //   const renderDocs = i => {
-  //     return values.Files.map(doc => {
-  //       return (
-  //         <SelectFile
-  //           title="Upload File"
-  //           subTitle={doc.name || 'Select File'}
-  //           onLeftPress={() => openlaunchCamera(0)}
-  //           onRightPress={() => openFile(0)}
-  //         />
-  //       );
-  //     });
-  //   };
+  const removeFile = () => {
+    setFieldValue('File', null);
+  };
+
   return (
     <View style={styles.body}>
       <Modal
@@ -493,11 +485,21 @@ const DocumentAttestation = ({
           <View>
             <UploadTitle title="Passport or Emirates ID*" />
             {/* {renderDocs()} */}
-            <SelectFile
-              subTitle={values.File ? values.File.name : 'Select File'}
-              onLeftPress={() => openlaunchCamera(0)}
-              onRightPress={() => openFile(0)}
-            />
+            {values.File ? (
+              <SelectFile
+                subTitle={values.File.name}
+                onLeftPress={() => openlaunchCamera(0)}
+                onRightPress={() => openFile(0)}
+                onDelPress={() => removeFile()}
+              />
+            ) : (
+              <SelectFile
+                subTitle={'Select File'}
+                onLeftPress={() => openlaunchCamera(0)}
+                onRightPress={() => openFile(0)}
+              />
+            )}
+
             <UploadValdation />
             {values.errorFileUpload && (
               <ErrorLabel label="Passport or Emirates ID is Required" />
