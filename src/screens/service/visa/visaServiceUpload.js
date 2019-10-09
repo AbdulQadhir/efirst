@@ -312,7 +312,7 @@ class App extends React.Component {
     }
 
     if (validationErr) {
-      // return;
+      return;
     }
 
     var pageData = this.props.navigation.state.params.pageData;
