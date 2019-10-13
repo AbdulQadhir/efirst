@@ -165,7 +165,7 @@ const styles = EStyleSheet.create({
     height: '100%',
   },
   logo_img: {
-    height: calcHeight(18),
+    height: calcHeight(30),
     resizeMode: 'contain',
   },
 });
