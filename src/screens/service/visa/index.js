@@ -30,7 +30,7 @@ class App extends React.Component {
     headerLeft: (
       <View style={{flexDirection: 'row'}}>
         <HeaderBtnMenu onPress={() => navigation.openDrawer()} />
-        <HeaderBtnBack onPress={() => navigation.goBack()} />
+        <HeaderBtnBack onPress={() => navigation.navigate('ServiceHome')} />
       </View>
     ),
     headerRight: (

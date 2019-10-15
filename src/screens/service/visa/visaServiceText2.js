@@ -73,7 +73,7 @@ class App extends React.Component {
     );
     if(this.props.navigation.state.params.docsAndPayment.OriginalDocumentSubmissionType.Value == "Through Courier")
       total += 10;
-    this.setState({ totalBillAmt: total });
+    this.setState({ totalBillAmt: Math.round(total * 100) / 100 });
   };
 
   render() {

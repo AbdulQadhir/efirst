@@ -15,6 +15,7 @@ import {
   UploadValdation,
   UploadTitle,
   CheckBoxCustom,
+  styles
 } from '../../../pages/uicomponents/components';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -36,6 +37,7 @@ import {validateFileTypeAndSizeForTranslation} from '../../../constants';
 import {RFValue, RFPercentage} from 'react-native-responsive-fontsize';
 import ImagePicker from 'react-native-image-picker';
 import DocumentPicker from 'react-native-document-picker';
+
 const DARK_COLOR = '#18171C';
 const LIGHT_COLOR = '#FFF';
 
@@ -236,7 +238,7 @@ const DocumentAttestation = ({
   };
 
   return (
-    <View style={styles.body}>
+    <View style={eStyles.body}>
       <Modal
         style={{top: calcHeight(5), marginBottom: calcHeight(7)}}
         isVisible={state.ShowTerms}>
@@ -248,7 +250,7 @@ const DocumentAttestation = ({
       </Modal>
       <View>
         <ScrollView
-          contentContainerStyle={styles.container}
+          contentContainerStyle={eStyles.container}
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
           <Input2
@@ -276,7 +278,7 @@ const DocumentAttestation = ({
             onChange={value => selectCountry(value)}
             translation="eng"
             // cca2={values.cca2}
-            styles={darkTheme}
+            eStyles={darkTheme}
             hideAlphabetFilter={true}
             closeButtonImage={closeImgLight}
             closeable={true}>
@@ -290,14 +292,14 @@ const DocumentAttestation = ({
               marginHorizontal: calcHeight(1),
               marginVertical: calcHeight(1.3),
             }}
-            textStyle={{
-              fontSize: RFPercentage(2),
+            textStyle={[{
+              fontSize: RFValue(14),
               paddingVertical: calcHeight(1),
-              paddingHorizontal: calcWidth(2),
-              color: '#8d847d',
-              paddingHorizontal: calcHeight(1),
+              paddingHorizontal: calcWidth(1.5),
+              color: '#081344',
+              paddingHorizontal: calcHeight(0.8),
               fontFamily: 'Montserrat-Light',
-            }}
+            }]}
             // textComponent={Input}
             onPressFlag={onPressFlag}
             placeholder="Mobile *"
@@ -704,7 +706,7 @@ export default withFormik({
   },
 })(DocumentAttestation);
 
-const styles = EStyleSheet.create({
+const eStyles = EStyleSheet.create({
   body: {
     flex: 1,
   },

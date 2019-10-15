@@ -412,7 +412,7 @@ class App extends React.Component {
               <Input
                 placeholder="IBAN Number"
                 value={this.state.iban}
-                onChangeText={iban => this.setState({iban})}
+                onChangeText={iban => {if(iban.length<=23)this.setState({iban})} }
               />
               <ErrorLabel label={this.state.ibanValidationMsg} />
               <Input

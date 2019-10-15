@@ -54,7 +54,7 @@ export const Input2 = props => {
       placeholderTextColor="#8d847d"
       {...props}
       style={[
-        styles.input,
+        styles.input2,
         {borderColor: '#999999', borderBottomWidth},
         props.style,
       ]}
@@ -67,7 +67,7 @@ export const InputNoBorder = props => {
       {...props}
       placeholder={props.placeholder}
       style={[
-        styles.input,
+        styles.input2,
         {
           borderBottomWidth: 0,
           flex: 1,
@@ -293,7 +293,7 @@ export const MyRequestItem = ({
   return (
     <TouchableOpacity onPress={onPress} style={styles.myreqitem}>
       <View style={{flex: 1}}>
-        <Text style={styles.myreqitem_head}>Date</Text>
+        <Text style={styles.myreqitem_head}>Date</Text> 
         <Text style={styles.myreqitem_text}>{service.CreatedDate}</Text>
       </View>
       <View style={{flex: 2}}>
@@ -1123,7 +1123,7 @@ export const VisaDtItem = props => {
   return (
     <View style={{padding: calcHeight(1.5)}}>
       <View style={styles.txtBorder}>
-        <Text style={[styles.visadtitem_txt, {color: '#081344'}]}>
+        <Text style={[styles.visadtitem_txt, {color: '#081344'},props.isDoc ? {flex:0.8} : {}]}>
           {props.txt1}
         </Text>
         <Text
@@ -1133,7 +1133,8 @@ export const VisaDtItem = props => {
               textAlign: 'right',
               alignSelf: 'flex-end',
               fontFamily: 'Montserrat-Light',
-            },
+            }
+            ,props.isDoc ? {flex:0.2} : {}
           ]}>
           {props.txt2}{' '}
         </Text>
@@ -1160,7 +1161,7 @@ export const VisaFileFormat = props => (
   </View>
 );
 
-const styles = EStyleSheet.create({
+export const styles = EStyleSheet.create({
   visafileformat_title: {
     fontSize: RFValue(15),
     fontFamily: 'Montserrat-Light',
@@ -1561,9 +1562,9 @@ const styles = EStyleSheet.create({
     fontFamily: 'Montserrat-Light',
   },
   radiotxt: {
-    fontSize: '$inputFontSize',
+    fontSize: RFValue(14),
+    color: '#081344',
     paddingHorizontal: calcWidth(1.5),
-    color: '$inputTextColor',
     fontFamily: 'Montserrat-Light',
     marginBottom: calcHeight(0.5),
   },
@@ -1634,8 +1635,8 @@ const styles = EStyleSheet.create({
     paddingVertical: calcHeight(1),
   },
   servicehome_item_img: {
-    width: calcHeight(6),
-    height: calcHeight(6),
+    width: calcHeight(7),
+    height: calcHeight(7),
     margin: calcHeight(1),
     marginTop: calcHeight(3),
   },
@@ -1669,8 +1670,8 @@ const styles = EStyleSheet.create({
   },
   myreqitem_text: {
     padding: calcHeight(0.7),
-    color: '#4d4d4d',
-    fontSize: RFValue(11),
+    color: '#081344',
+    fontSize: RFValue(12),
     fontFamily: 'Montserrat-Light',
   },
   myreqitem_head: {
@@ -1797,6 +1798,16 @@ const styles = EStyleSheet.create({
     color: '#4d4d4d',
     fontFamily: 'Montserrat-Medium',
     //fontWeight: 'bold',
+  },
+  input2: {
+    fontSize: RFValue(14),
+    color: '#081344',
+    borderBottomWidth: calcHeight(0.1),
+    borderColor: '#081344',
+    paddingHorizontal: calcWidth(1.5),
+    paddingVertical: calcHeight(0.8),
+    margin: calcHeight(1),
+    fontFamily: 'Montserrat-Light',
   },
   input: {
     borderBottomWidth: calcHeight(0.1),
