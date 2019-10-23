@@ -95,9 +95,20 @@ class App extends React.Component {
       ControlType: 'Radio',
     });
     try {
-      let response = await fetch(
-        this.props.navigation.state.params.url,
-      );
+      
+    var myHeaders = new Headers();
+    myHeaders.set('Accept', 'application/json');
+    myHeaders.set('Content-Type', 'application/json');
+    myHeaders.set('Cache-Control', 'no-cache');
+    myHeaders.set('Pragma', 'no-cache');
+    myHeaders.set('Expires', '0');
+
+    let response = await fetch(
+        this.props.navigation.state.params.url, {
+            method: 'GET',
+            headers: myHeaders
+        });
+
       options = await response.json();
       
       this.setState({ pageData, loading: false });
