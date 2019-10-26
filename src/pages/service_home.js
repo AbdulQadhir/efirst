@@ -61,11 +61,9 @@ class App extends Component {
                   this.props.navigation.navigate('LanguageTranslation')
                 }
               />
-
+              
               <ServiceHomeText
-                text={`Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
-
-Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum`}
+                text={``}
               />
             </View>
           </View>

@@ -106,7 +106,6 @@ const DocumentAttestation = ({
           let source = {uri: response.uri};
           let imgName = response.fileName;
           if (Platform.OS === 'ios') {
-            // on iOS, using camera returns undefined fileName. This fixes that issue, so API can work.
             var getFilename = response.uri.split('/');
             imgName = getFilename[getFilename.length - 1];
           }
@@ -124,10 +123,10 @@ const DocumentAttestation = ({
                   name: imgName,
                 };
           //   console.log('PiC====>', pic);
-          //   var files = values.Files;
-          //   if (i == 0) files.push(pic);
-          //   else files[i] = pic;
-          setFieldValue('File', pic);
+          var files = values.Files;
+          if (i == 0) files.push(pic);
+          else files[i] = pic;
+          setFieldValue('Files', files);
 
           return;
         }
@@ -155,10 +154,10 @@ const DocumentAttestation = ({
             type: res.type,
             name: res.name,
           };
-          //   var files = values.Files;
-          //   if (i == 0) files.push(file);
-          //   else files[i] = file;
-          setFieldValue('File', file);
+          var files = values.Files;
+          if (i == 0) files.push(file);
+          else files[i] = file;
+          setFieldValue('Files', files);
         } else {
           showToast('- Invalid file type.\n- File must be smaller than 5 MB');
         }
@@ -233,8 +232,37 @@ const DocumentAttestation = ({
     {name: 'Umm Al Qwain'},
   ];
 
-  const removeFile = () => {
-    setFieldValue('File', null);
+  const removeFile = (i) => {
+    var files = values.Files;
+    if (i > -1) files.splice(i, 1);
+    setFieldValue('Files', files);
+  };
+
+  renderDocNew = () => {
+    return (
+      <SelectFile
+        subTitle={'Select File'}
+        onLeftPress={() => openlaunchCamera(0)}
+        onRightPress={() => openFile(0)}
+      />
+    );
+  };
+
+  renderDocArr = () => {
+    return values.Files ? (
+      values.Files.map((doc, index) => {
+        return (
+          <SelectFile
+            subTitle={doc.name || 'Select File'}
+            onLeftPress={() => openlaunchCamera(index)}
+            onRightPress={() => openFile(index)}
+            onDelPress={() => removeFile(index)}
+          />
+        );
+      })
+    ) : (
+      <View />
+    );
   };
 
   return (
@@ -481,27 +509,13 @@ const DocumentAttestation = ({
                 }
                 setFieldValue('PickUpandDropOption', 'Through Courier');
               }}
-              text="Through Courier"
+              text="Through Courier" 
             />
           </View>
           <View>
             <UploadTitle title="Passport or Emirates ID*" />
-            {/* {renderDocs()} */}
-            {values.File ? (
-              <SelectFile
-                subTitle={values.File.name}
-                onLeftPress={() => openlaunchCamera(0)}
-                onRightPress={() => openFile(0)}
-                onDelPress={() => removeFile()}
-              />
-            ) : (
-              <SelectFile
-                subTitle={'Select File'}
-                onLeftPress={() => openlaunchCamera(0)}
-                onRightPress={() => openFile(0)}
-              />
-            )}
-
+              {renderDocArr()} 
+              {renderDocNew()} 
             <UploadValdation />
             {values.errorFileUpload && (
               <ErrorLabel label="Passport or Emirates ID is Required" />
@@ -620,6 +634,7 @@ export default withFormik({
     callingCode: '971',
     errorPhone: '',
     File: null,
+    Files: [],
     errorFileUpload: null,
     docAttestationCreate,
   }),
@@ -680,7 +695,7 @@ export default withFormik({
     data.append('SelectedCountryId', values.SelectedCountryId);
     data.append('CertificateTypeId', values.SelectedCertificateType);
 
-    data.append('Files[]', values.File, values.File.name);
+    data.append('Files[]', values.Files);
     data.append('Rate', Rate);
     data.append('ServiceId', 6);
     data.append('ServiceName', ServiceName);

@@ -78,7 +78,6 @@ class Slider extends Component {
         require("../../Assets/Slider/slider2.jpg"),
         require("../../Assets/Slider/slider3.jpg"),
         require("../../Assets/Slider/slider4.jpg"),
-        require("../../Assets/Slider/slider5.jpg")
       ],
       captions: [
         "One Touch Visa Services Application",

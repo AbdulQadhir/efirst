@@ -30,6 +30,7 @@ import {
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 const assetsPath = '../../../Assets/';
+import visa_options from './data';
 
 class App extends React.Component {
   static navigationOptions = ({navigation}) => ({
@@ -109,7 +110,7 @@ class App extends React.Component {
             headers: myHeaders
         });
 
-      options = await response.json();
+      options = visa_options; //await response.json();
       
       this.setState({ pageData, loading: false });
     } catch (error) { 
@@ -133,28 +134,7 @@ class App extends React.Component {
   this.setState({lastSelected});
   
 };
-/*
-  componentDidMount = () => {
-    const options = this.props.navigation.state.params.options
-      ? this.props.navigation.state.params.options
-      : visa_options;
-    const pageData = this.props.navigation.state.params.pageData
-      ? this.props.navigation.state.params.pageData
-      : [];
-    const lastSelected = this.props.navigation.state.params.lastSelected
-      ? this.props.navigation.state.params.lastSelected
-      : '';
 
-    console.log('result => mount ', JSON.stringify(pageData));
-    this.setState({options: options});
-    this.setState({pageData: pageData});
-
-    var visaFlow = pageData.map(obj => obj.Value).join(' > ');
-    this.setState({visaFlow: visaFlow});
-
-    this.setState({lastSelected});
-  };
-*/
   handleBackButtonClick = () => {
     if (Array.isArray(this.state.pageData))
       this.setState(
@@ -236,6 +216,7 @@ class App extends React.Component {
             <SRDetailsHdr label={this.state.lastSelected} />
             <VisaFlowQst label={this.state.options.title ? this.state.options.title : ""} />
             {this.renderList()}
+            <VisaFlowChoiceNote text={this.state.options.message ? this.state.options.message : ""} />
           </View>
         </View>
       </>

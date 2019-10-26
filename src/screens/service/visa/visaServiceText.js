@@ -107,7 +107,7 @@ class App extends React.Component {
               <View style={{paddingHorizontal: calcWidth(3)}} >
                 <SRDetailsHdr label="Original Document Required" />  
               </View> 
-              <VisaOgDocTxt text={this.props.navigation.state.params.docsAndPayment.OriginalDocumentRequired} />
+              <VisaOgDocTxt text={this.props.navigation.state.params.docsAndPayment.OriginalDocumentRequired.Options[0]} />
               {this.renderPageData()}
               <View style={{paddingHorizontal: calcWidth(3)}} >
                 <SRDetailsHdr label="Documents Uploaded" />   

@@ -607,8 +607,8 @@ export const SelectFile = props => {
 
 export const UploadValdation = props => (
   <View>
-    <Text style={styles.selectfilefooter}>File Format : jpeg + png + jpg</Text>
-    <Text style={styles.selectfilefooter}>File Size > 5 MB</Text>
+    <Text style={styles.selectfilefooter}>File Format : jpeg | png | jpg</Text>
+    <Text style={styles.selectfilefooter}>{"File Size < 5 MB"}</Text>
   </View>
 );
 
@@ -1200,7 +1200,6 @@ export const styles = EStyleSheet.create({
     color: '#081344',
     padding: calcHeight(1),
     textAlign: 'center',
-    flex: 1,
   },
   visaflow_choice_txt: {
     fontSize: RFValue(13),
