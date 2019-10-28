@@ -143,16 +143,6 @@ class Slider extends Component {
               setStatusBar={this.props.setStatusBar}
             />
           </View>
-          <View style={styles.slide}>
-            <Background
-              last
-              source={this.state.images[4]}
-              color={this.state.color[4]}
-              caption={this.state.captions[4]}
-              navigation={this.props.navigation}
-              setStatusBar={this.props.setStatusBar}
-            />
-          </View>
         </Swiper>
       </View>
     );
