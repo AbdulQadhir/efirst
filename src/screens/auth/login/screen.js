@@ -107,7 +107,6 @@ export default withFormik({
   handleSubmit: async (values, {setSubmitting, props}) => {
     const {changeInternetStatus} = props;
     const {isInternetReachable} = await NetInfo.fetch();
-    console.log('reachanility', isInternetReachable);
     if (!isInternetReachable) {
       changeInternetStatus(false);
       return;

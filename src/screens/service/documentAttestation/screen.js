@@ -15,6 +15,7 @@ import {
   UploadValdation,
   UploadTitle,
   CheckBoxCustom,
+  styles,
 } from '../../../pages/uicomponents/components';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -36,6 +37,7 @@ import {validateFileTypeAndSizeForTranslation} from '../../../constants';
 import {RFValue, RFPercentage} from 'react-native-responsive-fontsize';
 import ImagePicker from 'react-native-image-picker';
 import DocumentPicker from 'react-native-document-picker';
+
 const DARK_COLOR = '#18171C';
 const LIGHT_COLOR = '#FFF';
 
@@ -95,16 +97,12 @@ const DocumentAttestation = ({
     try {
       ImagePicker.showImagePicker(options, response => {
         if (response.didCancel) {
-          console.log('User cancelled photo picker');
         } else if (response.error) {
-          console.log('ImagePicker Error: ', response.error);
         } else if (response.customButton) {
-          console.log('User tapped custom button: ', response.customButton);
         } else {
           let source = {uri: response.uri};
           let imgName = response.fileName;
           if (Platform.OS === 'ios') {
-            // on iOS, using camera returns undefined fileName. This fixes that issue, so API can work.
             var getFilename = response.uri.split('/');
             imgName = getFilename[getFilename.length - 1];
           }
@@ -121,11 +119,11 @@ const DocumentAttestation = ({
                   type: response.type,
                   name: imgName,
                 };
-          //   console.log('PiC====>', pic);
-          //   var files = values.Files;
-          //   if (i == 0) files.push(pic);
-          //   else files[i] = pic;
-          setFieldValue('File', pic);
+
+          var files = values.Files;
+          if (i == 0) files.push(pic);
+          else files[i] = pic;
+          setFieldValue('Files', files);
 
           return;
         }
@@ -140,7 +138,7 @@ const DocumentAttestation = ({
       const res = await DocumentPicker.pick({
         type: [DocumentPicker.types.images],
       });
-      console.log('file', res);
+
       if (res) {
         const {name, size} = res;
         const valdateRes = validateFileTypeAndSizeForTranslation({
@@ -153,27 +151,23 @@ const DocumentAttestation = ({
             type: res.type,
             name: res.name,
           };
-          //   var files = values.Files;
-          //   if (i == 0) files.push(file);
-          //   else files[i] = file;
-          setFieldValue('File', file);
+          var files = values.Files;
+          if (i == 0) files.push(file);
+          else files[i] = file;
+          setFieldValue('Files', files);
         } else {
           showToast('- Invalid file type.\n- File must be smaller than 5 MB');
         }
       }
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   const checkPhoneValid = () => {
     if (values.File === undefined) {
-      console.log('undefined');
     }
     if (!values.File) {
-      console.log('empty');
     }
-    console.log('submit');
+
     setPhoneError('');
     if (!phone.isValidNumber()) {
       setPhoneError('Invalid Format');
@@ -186,9 +180,7 @@ const DocumentAttestation = ({
     }
     handleSubmit();
   };
-  componentDidUpdate = () => {
-    console.log(attestationPrice);
-  };
+  componentDidUpdate = () => {};
 
   const attestationRateByCountryandDCType = (CountryId, CertificateType) => {
     if (CountryId && CertificateType) {
@@ -231,12 +223,41 @@ const DocumentAttestation = ({
     {name: 'Umm Al Qwain'},
   ];
 
-  const removeFile = () => {
-    setFieldValue('File', null);
+  const removeFile = i => {
+    var files = values.Files;
+    if (i > -1) files.splice(i, 1);
+    setFieldValue('Files', files);
+  };
+
+  renderDocNew = () => {
+    return (
+      <SelectFile
+        subTitle={'Select File'}
+        onLeftPress={() => openlaunchCamera(0)}
+        onRightPress={() => openFile(0)}
+      />
+    );
+  };
+
+  renderDocArr = () => {
+    return values.Files ? (
+      values.Files.map((doc, index) => {
+        return (
+          <SelectFile
+            subTitle={doc.name || 'Select File'}
+            onLeftPress={() => openlaunchCamera(index)}
+            onRightPress={() => openFile(index)}
+            onDelPress={() => removeFile(index)}
+          />
+        );
+      })
+    ) : (
+      <View />
+    );
   };
 
   return (
-    <View style={styles.body}>
+    <View style={eStyles.body}>
       <Modal
         style={{top: calcHeight(5), marginBottom: calcHeight(7)}}
         isVisible={state.ShowTerms}>
@@ -248,7 +269,7 @@ const DocumentAttestation = ({
       </Modal>
       <View>
         <ScrollView
-          contentContainerStyle={styles.container}
+          contentContainerStyle={eStyles.container}
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
           <Input2
@@ -290,16 +311,19 @@ const DocumentAttestation = ({
               marginHorizontal: calcHeight(1),
               marginVertical: calcHeight(1.3),
             }}
-            textStyle={{
-              fontSize: RFPercentage(2),
-              paddingVertical: calcHeight(1),
-              paddingHorizontal: calcWidth(2),
-              color: '#8d847d',
-              paddingHorizontal: calcHeight(1),
-              fontFamily: 'Montserrat-Light',
-            }}
+            textStyle={[
+              {
+                fontSize: RFValue(14),
+                paddingVertical: calcHeight(1),
+                paddingHorizontal: calcWidth(1.5),
+                color: '#081344',
+                paddingHorizontal: calcHeight(0.8),
+                fontFamily: 'Montserrat-Light',
+              },
+            ]}
             // textComponent={Input}
             onPressFlag={onPressFlag}
+            editable={true}
             placeholder="Mobile *"
             name="PersonalPhone"
             label="Mobile *"
@@ -484,22 +508,8 @@ const DocumentAttestation = ({
           </View>
           <View>
             <UploadTitle title="Passport or Emirates ID*" />
-            {/* {renderDocs()} */}
-            {values.File ? (
-              <SelectFile
-                subTitle={values.File.name}
-                onLeftPress={() => openlaunchCamera(0)}
-                onRightPress={() => openFile(0)}
-                onDelPress={() => removeFile()}
-              />
-            ) : (
-              <SelectFile
-                subTitle={'Select File'}
-                onLeftPress={() => openlaunchCamera(0)}
-                onRightPress={() => openFile(0)}
-              />
-            )}
-
+            {renderDocArr()}
+            {renderDocNew()}
             <UploadValdation />
             {values.errorFileUpload && (
               <ErrorLabel label="Passport or Emirates ID is Required" />
@@ -618,6 +628,7 @@ export default withFormik({
     callingCode: '971',
     errorPhone: '',
     File: null,
+    Files: [],
     errorFileUpload: null,
     docAttestationCreate,
   }),
@@ -678,7 +689,7 @@ export default withFormik({
     data.append('SelectedCountryId', values.SelectedCountryId);
     data.append('CertificateTypeId', values.SelectedCertificateType);
 
-    data.append('Files[]', values.File, values.File.name);
+    data.append('Files[]', values.Files);
     data.append('Rate', Rate);
     data.append('ServiceId', 6);
     data.append('ServiceName', ServiceName);
@@ -691,7 +702,6 @@ export default withFormik({
     data.append('City', values.City);
     data.append('State', values.SelectedState);
     //data.append('Address', Address);
-    console.log('result =>', JSON.stringify(data));
 
     return values.docAttestationCreate({data, token});
     // return values.docAttestationCreate({
@@ -704,7 +714,7 @@ export default withFormik({
   },
 })(DocumentAttestation);
 
-const styles = EStyleSheet.create({
+const eStyles = EStyleSheet.create({
   body: {
     flex: 1,
   },

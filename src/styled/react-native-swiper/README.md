@@ -278,7 +278,7 @@ AppRegistry.registerComponent('myproject', () => Swiper);
 ```jsx
 var swiper = React.createClass({
   _onMomentumScrollEnd: function (e, state, context) {
-    console.log(state, context.state)
+ 
   },
   render: function() {
     return (

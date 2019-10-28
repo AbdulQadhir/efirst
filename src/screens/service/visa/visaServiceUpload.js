@@ -124,11 +124,8 @@ class App extends React.Component {
     try {
       ImagePicker.showImagePicker(options, response => {
         if (response.didCancel) {
-          console.log('User cancelled photo picker');
         } else if (response.error) {
-          console.log('ImagePicker Error: ', response.error);
         } else if (response.customButton) {
-          console.log('User tapped custom button: ', response.customButton);
         } else {
           let source = {uri: response.uri};
           let imgName = response.fileName;
@@ -192,7 +189,6 @@ class App extends React.Component {
       const res = await DocumentPicker.pick({
         type: [DocumentPicker.types.images],
       });
-      console.log('file', res);
       if (res) {
         const {name, size} = res;
         const valdateRes = validateFileTypeAndSizeForTranslation({
@@ -226,9 +222,7 @@ class App extends React.Component {
           showToast('- Invalid file type.\n- File must be smaller than 5 MB');
         }
       }
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   showToast = text => {
@@ -412,7 +406,9 @@ class App extends React.Component {
               <Input
                 placeholder="IBAN Number"
                 value={this.state.iban}
-                onChangeText={iban => this.setState({iban})}
+                onChangeText={iban => {
+                  if (iban.length <= 23) this.setState({iban});
+                }}
               />
               <ErrorLabel label={this.state.ibanValidationMsg} />
               <Input

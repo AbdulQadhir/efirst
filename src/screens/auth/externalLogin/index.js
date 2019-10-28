@@ -34,19 +34,12 @@ class Container extends Component {
     this.setState({loading: val});
   };
   async componentDidUpdate(prevProps) {
-    //console.log('this.props.token====>', this.props.token);
     if (this.props.token) {
-      //this.props.navigation.navigate('MainMenu');
       if (!this.props.profile.success && !this.props.profile.loading) {
         const token = this.props.token.token;
-        //      this.props.DashboardData(token);
+
         this.props.profileData(token);
       }
-
-      // if (!this.props.dashboard.data && !this.props.dashboard.loading) {
-      //   const token = this.props.token.token;
-      //   this.props.DashboardData(token);
-      // }
     }
     if (this.props.extUserInfo.success && !prevProps.extUserInfo.success) {
       if (!this.props.extUserInfo.data.HasRegistered) {
@@ -69,12 +62,11 @@ class Container extends Component {
     if (this.props.profile.success && !prevProps.profile.success) {
       const {UserId} = this.props.profile.data.userdetail;
       const PlayerId = await AsyncStorage.getItem('playerid');
-      console.log('PlayerId==>', PlayerId);
+
       const data = {UserId, PlayerId};
       const token = this.props.token.token;
       this.props.registerOnesignal({data, token});
       this.props.DashboardData(token);
-      //this.props.navigation.navigate('MainMenu');
     }
     if (this.props.dashboard.success && !prevProps.dashboard.success) {
       const {data} = this.props.dashboard;
@@ -98,7 +90,6 @@ class Container extends Component {
         InReviewTotalUpdateCount +
         RejectedNewUpdateCount +
         RejectedTotalUpdateCount;
-      console.log('Total===>', total);
       if (total > 0) this.props.navigation.navigate('MainMenu');
       else this.props.navigation.navigate('ServiceHome');
     }

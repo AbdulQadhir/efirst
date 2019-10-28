@@ -59,7 +59,6 @@ const OfficeDetails = ({
         label={'Company Details'}
         value={values.ShowEditOffice}
         onPress={value => {
-          console.log('Value', value);
           setFieldValue('ShowEditOffice', value);
         }}
         handleSubmit={checkPhoneValid}
@@ -163,8 +162,7 @@ export default withFormik({
     setFieldValue('ShowEditOffice', false);
     const token = props.token.token;
     const {Company, CompanyEmail, CompanyPhone, CompanyWebsite} = values;
-    console.log(props);
-    console.log(values);
+
     values.userOfficeAddressCreate({
       Company,
       CompanyEmail,

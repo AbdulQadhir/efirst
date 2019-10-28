@@ -30,6 +30,7 @@ import {
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 const assetsPath = '../../../Assets/';
+import visa_options from './data';
 
 class App extends React.Component {
   static navigationOptions = ({navigation}) => ({
@@ -64,41 +65,50 @@ class App extends React.Component {
     };
   }
 
- async componentDidMount() {
+  async componentDidMount() {
+    const lastSelected = this.props.navigation.state.params.lastSelected
+      ? this.props.navigation.state.params.lastSelected
+      : '';
 
-  const lastSelected = this.props.navigation.state.params.lastSelected
-  ? this.props.navigation.state.params.lastSelected
-  : '';
-  
-  const select_service = this.props.navigation.state.params.select_service
-  ? this.props.navigation.state.params.select_service
-  : '';
+    const select_service = this.props.navigation.state.params.select_service
+      ? this.props.navigation.state.params.select_service
+      : '';
 
-  var pageData = this.props.navigation.state.params.pageData ? this.props.navigation.state.params.pageData : [];
+    var pageData = this.props.navigation.state.params.pageData
+      ? this.props.navigation.state.params.pageData
+      : [];
 
-  this.setState({pageData: pageData});
+    this.setState({pageData: pageData});
 
-  var options = null;
-  if(this.props.navigation.state.params.url)
-  {
-    this.setState({loading: true});
-    pageData.push({
-      Text: "Select Service",
-      Name: "Select Service".replace(/ /g, '') + "0",
-      Value: select_service,
-      ControlType: 'Radio',
-    });
-    pageData.push({
-      Text: "Visa Type",
-      Name: "Visa Type".replace(/ /g, '') + "0",
-      Value: lastSelected,
-      ControlType: 'Radio',
-    });
-    try {
-      let response = await fetch(
-        this.props.navigation.state.params.url,
-      );
-      options = await response.json();
+    var options = null;
+    if (this.props.navigation.state.params.url) {
+      this.setState({loading: true});
+      pageData.push({
+        Text: 'Select Service',
+        Name: 'Select Service'.replace(/ /g, '') + '0',
+        Value: select_service,
+        ControlType: 'Radio',
+      });
+      pageData.push({
+        Text: 'Visa Type',
+        Name: 'Visa Type'.replace(/ /g, '') + '0',
+        Value: lastSelected,
+        ControlType: 'Radio',
+      });
+      try {
+        var myHeaders = new Headers();
+        myHeaders.set('Accept', 'application/json');
+        myHeaders.set('Content-Type', 'application/json');
+        myHeaders.set('Cache-Control', 'no-cache');
+        myHeaders.set('Pragma', 'no-cache');
+        myHeaders.set('Expires', '0');
+
+        let response = await fetch(this.props.navigation.state.params.url, {
+          method: 'GET',
+          headers: myHeaders,
+        });
+
+      options = visa_options; //await response.json();
       
       this.setState({ pageData, loading: false });
     } catch (error) { 
@@ -108,42 +118,15 @@ class App extends React.Component {
         loading: false
       }})
     }
-  }
-  else
-  {
-    options = this.props.navigation.state.params.options;
-  }
-  
-  this.setState({options: options});
-
-  var visaFlow = pageData.map(obj => obj.Value).join(' > ');
-  this.setState({visaFlow: visaFlow});
-
-  this.setState({lastSelected});
-  
-};
-/*
-  componentDidMount = () => {
-    const options = this.props.navigation.state.params.options
-      ? this.props.navigation.state.params.options
-      : visa_options;
-    const pageData = this.props.navigation.state.params.pageData
-      ? this.props.navigation.state.params.pageData
-      : [];
-    const lastSelected = this.props.navigation.state.params.lastSelected
-      ? this.props.navigation.state.params.lastSelected
-      : '';
-
-    console.log('result => mount ', JSON.stringify(pageData));
     this.setState({options: options});
-    this.setState({pageData: pageData});
 
     var visaFlow = pageData.map(obj => obj.Value).join(' > ');
     this.setState({visaFlow: visaFlow});
 
-    this.setState({lastSelected});
-  };
-*/
+  this.setState({lastSelected});
+  
+};
+
   handleBackButtonClick = () => {
     if (Array.isArray(this.state.pageData))
       this.setState(
@@ -176,15 +159,18 @@ class App extends React.Component {
     this.setState({selectedOption: option});
     var pageData = this.state.pageData;
 
-    console.log('result =>', JSON.stringify(pageData));
     if (this.state.options && this.state.options.title) {
       let obj = pageData.find(o => o.Text === this.state.options.title);
       if (obj) pageData.pop();
     } else pageData.pop();
     var i = 1;
     pageData.push({
-      Text: this.state.options.title ? this.state.options.title : "",
-      Name: (this.state.options.title ? this.state.options.title : "").replace(/ /g, '') + i++,
+      Text: this.state.options.title ? this.state.options.title : '',
+      Name:
+        (this.state.options.title ? this.state.options.title : '').replace(
+          / /g,
+          '',
+        ) + i++,
       Value: option,
       ControlType: 'Radio',
     });
@@ -223,8 +209,11 @@ class App extends React.Component {
           <VisaBreadCrump path={this.state.visaFlow} />
           <View style={{paddingHorizontal: calcHeight(2.5)}}>
             <SRDetailsHdr label={this.state.lastSelected} />
-            <VisaFlowQst label={this.state.options.title ? this.state.options.title : ""} />
+            <VisaFlowQst
+              label={this.state.options.title ? this.state.options.title : ''}
+            />
             {this.renderList()}
+            <VisaFlowChoiceNote text={this.state.options.message ? this.state.options.message : ""} />
           </View>
         </View>
       </>

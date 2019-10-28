@@ -80,7 +80,7 @@ export default ({
     }
   };
   const emptyText =
-    'Lorum ipsum Lorum ipsum Lorum ipsumLorum ipsum Lorum ipsum Lorum ipsumLorum ipsum Lorum ipsum Lorum ipsum;';
+    '';
   var renderList = () => {
     return services.data.length > 0 ? (
       services.data

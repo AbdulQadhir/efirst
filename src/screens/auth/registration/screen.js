@@ -139,9 +139,7 @@ const styles = EStyleSheet.create({
     flexGrow: 2,
     paddingLeft: calcWidth(5),
     paddingRight: calcWidth(5),
-    //height: calcHeight(10),
     backgroundColor: '#f8f9fc',
-    // backgroundColor: 'red',
     justifyContent: 'center',
   },
 });

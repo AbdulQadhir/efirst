@@ -73,7 +73,7 @@ export default withFormik({
   handleSubmit: (values, {resetForm, setSubmitting, props}) => {
     const {code} = values;
     const {registration} = props;
-    console.log(props);
+
     const {
       data: {Id},
     } = registration;
@@ -95,4 +95,3 @@ const styles = EStyleSheet.create({
     justifyContent: 'center',
   },
 });
- 

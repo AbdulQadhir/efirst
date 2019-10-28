@@ -42,7 +42,6 @@ class Container extends Component {
   });
   componentDidUpdate = prevProps => {
     const {success, error} = this.props.services;
-    //console.log('result => ', `${loading} - ${error} - ${data}`);
 
     if (success && !prevProps.services.success) {
       this.setState({Refreshing: false});

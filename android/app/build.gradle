@@ -170,6 +170,20 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    buildTypes {
+    release {
+        // blah blah
+        matchingFallbacks = ['release']
+    }
+    enterprise {
+        // blah blah
+        matchingFallbacks = ['release']
+    }
+    debug {
+        // blah blah
+        matchingFallbacks = ['debug']
+    }
+}
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->

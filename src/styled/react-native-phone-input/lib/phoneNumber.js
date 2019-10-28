@@ -73,7 +73,6 @@ class PhoneNumber {
     try {
       return phoneUtil.parse(number, iso2);
     } catch (err) {
-      console.log(`Exception was thrown: ${err.toString()}`);
       return null;
     }
   }
@@ -89,13 +88,14 @@ class PhoneNumber {
   }
 
   format(number, iso2) {
-    const formatter = new asYouTypeFormatter(iso2)
+    const formatter = new asYouTypeFormatter(iso2);
     let formatted;
 
-    number.replace(/-/g, '')
+    number
+      .replace(/-/g, '')
       .replace(/ /g, '')
       .split('')
-      .forEach(n => formatted = formatter.inputDigit(n));
+      .forEach(n => (formatted = formatter.inputDigit(n)));
 
     return formatted;
   }

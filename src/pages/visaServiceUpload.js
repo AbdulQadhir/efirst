@@ -5,11 +5,23 @@ import {
   ScrollView,
   Dimensions,
   BackHandler,
-  Text
+  Text,
 } from 'react-native';
 
-import {TxtUnderline, ButtonLong ,ButtonPay,VisaBorder,FileUpload} from "./uicomponents/_components";
-import { VisaBreadCrump, SRDetailsHdr, VisaFlowQst, VisaFlowChoice, VisaFlowChoiceNote } from "./uicomponents/components";
+import {
+  TxtUnderline,
+  ButtonLong,
+  ButtonPay,
+  VisaBorder,
+  FileUpload,
+} from './uicomponents/_components';
+import {
+  VisaBreadCrump,
+  SRDetailsHdr,
+  VisaFlowQst,
+  VisaFlowChoice,
+  VisaFlowChoiceNote,
+} from './uicomponents/components';
 
 import {
   Input,
@@ -23,7 +35,7 @@ import {
 import {validateFileTypeAndSizeForTranslation} from '../constants';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
-import { calcWidth, calcHeight } from '../config';
+import {calcWidth, calcHeight} from '../config';
 
 import ImagePicker from 'react-native-image-picker';
 import DocumentPicker from 'react-native-document-picker';
@@ -32,33 +44,32 @@ const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 
 class App extends React.Component {
-  
   constructor(props) {
     super(props);
     this.state = {
-      submissionType: "Through Courier",
+      submissionType: 'Through Courier',
       docsAttached: [],
       docNames: [],
       docsNotRequired: [],
       docItem: [],
       courier_charge: 10,
-      notes: "",
-      iban: "",
-      validationMsg: ""
+      notes: '',
+      iban: '',
+      validationMsg: '',
     };
   }
-  
+
   componentWillMount = () => {
     BackHandler.addEventListener(
-      "hardwareBackPress",
-      this.handleBackButtonClick
+      'hardwareBackPress',
+      this.handleBackButtonClick,
     );
   };
 
   componentWillUnmount = () => {
     BackHandler.removeEventListener(
-      "hardwareBackPress",
-      this.handleBackButtonClick
+      'hardwareBackPress',
+      this.handleBackButtonClick,
     );
   };
 
@@ -66,16 +77,16 @@ class App extends React.Component {
     if (Array.isArray(this.state.pageData))
       this.setState(
         {
-          pageData: this.state.pageData.pop()
+          pageData: this.state.pageData.pop(),
         },
         () => {
           this.props.navigation.goBack(null);
-        }
+        },
       );
     else this.props.navigation.goBack(null);
     return true;
   };
-  
+
   openlaunchCamera = (doc, index) => {
     const options = {
       quality: 1.0,
@@ -83,14 +94,10 @@ class App extends React.Component {
       maxHeight: 500,
     };
     try {
-
       ImagePicker.showImagePicker(options, response => {
         if (response.didCancel) {
-          console.log('User cancelled photo picker');
         } else if (response.error) {
-          console.log('ImagePicker Error: ', response.error);
         } else if (response.customButton) {
-          console.log('User tapped custom button: ', response.customButton);
         } else {
           let source = {uri: response.uri};
           let imgName = response.fileName;
@@ -99,7 +106,7 @@ class App extends React.Component {
             var getFilename = response.uri.split('/');
             imgName = getFilename[getFilename.length - 1];
           }
-          
+
           var _docs = this.state.docsAttached;
           var _docNames = this.state.docNames;
 
@@ -116,15 +123,16 @@ class App extends React.Component {
                   name: imgName,
                 };
 
-                
-            this.state.docItem.push(file);
-            _docs.push(doc);
-            if (index < 0) {
-              _docNames[doc] = !Array.isArray(_docNames[doc]) ? [] : _docNames[doc];
-              _docNames[doc].push(response.fileName);
-            } else _docNames[doc][index] = response.fileName;
-            this.setState({ docsAttached: _docs });
-            this.setState({ docNames: _docNames });
+          this.state.docItem.push(file);
+          _docs.push(doc);
+          if (index < 0) {
+            _docNames[doc] = !Array.isArray(_docNames[doc])
+              ? []
+              : _docNames[doc];
+            _docNames[doc].push(response.fileName);
+          } else _docNames[doc][index] = response.fileName;
+          this.setState({docsAttached: _docs});
+          this.setState({docNames: _docNames});
 
           return;
         }
@@ -134,27 +142,26 @@ class App extends React.Component {
     }
   };
 
-  openFile = async (doc, index)  => {
+  openFile = async (doc, index) => {
     try {
       const res = await DocumentPicker.pick({
         type: [DocumentPicker.types.images],
       });
-      console.log('file', res);
+
       if (res) {
-        
         const {name, size} = res;
         const valdateRes = validateFileTypeAndSizeForTranslation({
           fileName: name,
           fileSize: size,
         });
-        
+
         if (valdateRes.validateSize && valdateRes.validateType) {
           const file = {
             uri: res.uri,
             type: res.type,
             name: res.name,
           };
-          
+
           var _docs = this.state.docsAttached;
           var _docNames = this.state.docNames;
           _docs.push(doc);
@@ -166,41 +173,41 @@ class App extends React.Component {
             _docNames[doc].push(res.name);
           } else _docNames[doc][index] = res.name;
 
-          this.setState({ docsAttached: _docs });
-          this.setState({ docNames: _docNames });
+          this.setState({docsAttached: _docs});
+          this.setState({docNames: _docNames});
 
           this.state.docItem.push(file);
         } else {
           showToast('- Invalid file type.\n- File must be smaller than 5 MB');
         }
       }
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   renderDocs = () => {
     var docsNotRequired =
       this.props.navigation.state.params.details.docsNotRequired || null;
-      
+
     return this.props.navigation.state.params.details.docs.map(doc => {
       var IsRequired =
         docsNotRequired != null
           ? docsNotRequired.indexOf(doc) >= 0
-            ? ""
-            : "*"
-          : "*";
+            ? ''
+            : '*'
+          : '*';
       return (
-        <View >
-          <TxtSubHead title={`${doc} ${IsRequired}`}  style={{marginBottom:0}}  />
+        <View>
+          <TxtSubHead
+            title={`${doc} ${IsRequired}`}
+            style={{marginBottom: 0}}
+          />
           {this.renderDocArr(doc)}
           {this.renderDocNew(doc)}
         </View>
       );
     });
-    
   };
-  
+
   renderDocNew = doc => {
     return (
       <SelectFile
@@ -217,7 +224,7 @@ class App extends React.Component {
       this.state.docNames[doc].map((doc, index) => {
         return (
           <SelectFile
-            subTitle={doc || "Select File"}
+            subTitle={doc || 'Select File'}
             onLeftPress={() => this.openlaunchCamera(_doc, index)}
             onRightPress={() => this.openFile(_doc, index)}
           />
@@ -228,125 +235,144 @@ class App extends React.Component {
     );
   };
 
-  
   goToDetails = () => {
     var docsNotRequired =
       this.props.navigation.state.params.details.docsNotRequired || [];
     var docs = this.props.navigation.state.params.details.docs || [];
     var docsAttached = this.state.docsAttached || [];
 
-    this.setState({ validationMsg: "" });
+    this.setState({validationMsg: ''});
 
-    var validationErr = "";
+    var validationErr = '';
     docs.forEach(doc => {
       if (docsAttached.indexOf(doc) == -1 && docsNotRequired.indexOf(doc) == -1)
-        validationErr = "Please select all required files";
+        validationErr = 'Please select all required files';
     });
 
-    if(this.props.navigation.state.params.details.ibanRequired && this.state.iban == "")
-      validationErr = "Please fill the IBAN No.";
+    if (
+      this.props.navigation.state.params.details.ibanRequired &&
+      this.state.iban == ''
+    )
+      validationErr = 'Please fill the IBAN No.';
 
     if (validationErr) {
-      this.setState({ validationMsg: validationErr });
-    //  return;
+      this.setState({validationMsg: validationErr});
+      //  return;
     }
-
 
     var pageData = this.props.navigation.state.params.pageData;
     var price_details = this.props.navigation.state.params.details.PriceDetails;
 
     var docsAndPayment = {
-      Text: "Documents and Payment Collection",
+      Text: 'Documents and Payment Collection',
       Name:
-        "PIFV_New_EntryPermit_FamilyVisa_PartnerOrInvestor_HusbandOrWife_InsideCountry",
-      ControlType: "AdditionalDetails",
-      Value: "",
+        'PIFV_New_EntryPermit_FamilyVisa_PartnerOrInvestor_HusbandOrWife_InsideCountry',
+      ControlType: 'AdditionalDetails',
+      Value: '',
       IsRequired: false,
-      IsVisible: true
+      IsVisible: true,
     };
 
     docsAndPayment.IBANNumber = {
-      Text: "IBAN Number",
-      Name: "IBANNumber",
+      Text: 'IBAN Number',
+      Name: 'IBANNumber',
       IsRequired: false,
-      value: this.state.iban
+      value: this.state.iban,
     };
 
     docsAndPayment.AdditionalNotes = {
-      Text: "Additional Notes",
-      Name: "AdditionalNotes",
+      Text: 'Additional Notes',
+      Name: 'AdditionalNotes',
       IsRequired: false,
-      value: this.state.notes
+      value: this.state.notes,
     };
 
     docsAndPayment.OriginalDocumentSubmissionType = {
-      Text: "Original Document Submission Type",
-      Name: "OriginalDocumentSubmissionType",
+      Text: 'Original Document Submission Type',
+      Name: 'OriginalDocumentSubmissionType',
       IsRequired: true,
-      Options: ["Through Courier", "Direct Submission at Office"],
+      Options: ['Through Courier', 'Direct Submission at Office'],
       Value: this.state.submissionType,
-      CourierCharge: 10
+      CourierCharge: 10,
     };
 
     docsAndPayment.PriceDetils = price_details;
     docsAndPayment.Notes = this.props.navigation.state.params.details.Notes;
     docsAndPayment.OriginalDocumentRequired = this.props.navigation.state.params.details.OriginalDocumentRequired;
 
-    this.props.navigation.navigate("VisaDetails", {
+    this.props.navigation.navigate('VisaDetails', {
       pageData: pageData,
       docs: this.props.navigation.state.params.details.docs,
       docsAttached: this.state.docsAttached,
       docItem: this.state.docItem,
       docsAndPayment: docsAndPayment,
-      passportExpiry: this.props.navigation.state.params.details.PassportExpiry ? false : true
+      passportExpiry: this.props.navigation.state.params.details.PassportExpiry
+        ? false
+        : true,
     });
   };
 
-  setSubmissionType = (type) => {
-    this.setState({ submissionType: type})
-  }
+  setSubmissionType = type => {
+    this.setState({submissionType: type});
+  };
 
   render() {
-  return (
-    <>
-        <ScrollView >
-          <View style={styles.body} >
+    return (
+      <>
+        <ScrollView>
+          <View style={styles.body}>
             <VisaBreadCrump path="Flow" />
 
-            <View style={styles.container}  >
+            <View style={styles.container}>
               <SRDetailsHdr label="Origial Document Submission Type" />
-              
-              <VisaFlowChoice label={"Through Courier"} 
-                onPress={()=> this.setSubmissionType("Through Courier")} 
-                isSelected={this.state.submissionType == "Through Courier"}   />
-              <VisaFlowChoice label={"Direct Submission at Office"} 
-                onPress={()=> this.setSubmissionType("Direct Submission at Office")} 
-                isSelected={this.state.submissionType == "Direct Submission at Office"}  />
+
+              <VisaFlowChoice
+                label={'Through Courier'}
+                onPress={() => this.setSubmissionType('Through Courier')}
+                isSelected={this.state.submissionType == 'Through Courier'}
+              />
+              <VisaFlowChoice
+                label={'Direct Submission at Office'}
+                onPress={() =>
+                  this.setSubmissionType('Direct Submission at Office')
+                }
+                isSelected={
+                  this.state.submissionType == 'Direct Submission at Office'
+                }
+              />
 
               {this.renderDocs()}
 
-              <Input placeholder="IBAN Number" value={this.state.iban} onTextChange={(iban)=>this.setState({iban})} />
-              <Input placeholder="Additional Notes" value={this.state.notes} onTextChange={(notes)=>this.setState({notes})}  />
+              <Input
+                placeholder="IBAN Number"
+                value={this.state.iban}
+                onTextChange={iban => this.setState({iban})}
+              />
+              <Input
+                placeholder="Additional Notes"
+                value={this.state.notes}
+                onTextChange={notes => this.setState({notes})}
+              />
 
               <ButtonNormal label="Next" onPress={() => this.goToDetails()} />
-            </View >
+            </View>
           </View>
-        </ScrollView >
-    </>
-  );
+        </ScrollView>
+      </>
+    );
+  }
 }
-};
 
 const styles = EStyleSheet.create({
-  body : {
-    flex: 1
+  body: {
+    flex: 1,
   },
-  container : {
+  container: {
     paddingHorizontal: calcWidth(5),
     paddingVertical: calcHeight(2),
-    backgroundColor: "#f8f9fc",
-    justifyContent:"center"
-  }
+    backgroundColor: '#f8f9fc',
+    justifyContent: 'center',
+  },
 });
 
 export default App;

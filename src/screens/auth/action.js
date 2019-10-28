@@ -223,7 +223,6 @@ const openFetcher2 = async (fetchData, type, dispatch) => {
 };
 
 export const loginUser = formBody => dispatch => {
-  console.log(LOGIN_URL);
   return openFetcher(
     async () => {
       const result = await fetch(LOGIN_URL, {
@@ -268,7 +267,7 @@ export const registerUser = payload => dispatch => {
 
 export const extRegisterUser = payload => dispatch => {
   const token = payload.token;
-  console.log('////////////////////token : ' + token);
+
   const body = JSON.stringify(payload);
   return openRegFetcher(
     async () => {
@@ -362,7 +361,6 @@ export const forgetChangePassword = payload => dispatch => {
 };
 
 export const Logout = token => dispatch => {
-  console.log('Logout==>', token);
   return LogoutFetcher(
     async () => {
       const result = await fetch(LOGOUT_URL, {
@@ -411,7 +409,6 @@ const getUserInfoFetcher = async (fetchData, type, dispatch) => {
 };
 
 export const getUserInfo = token => dispatch => {
-  console.log(`Token = > ${token}`);
   return getUserInfoFetcher(
     async () => {
       const result = await fetch(EXT_USER_INFO_URL, {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Text, Dimensions} from 'react-native';
+import {StyleSheet, View, Text, Dimensions, BackHandler} from 'react-native';
 
 import {ServiceHomeItem} from './uicomponents/components';
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -24,9 +24,44 @@ class App extends Component {
         <HeaderBtnBack onPress={() => navigation.navigate('Dashboard')} />
       </View>
     ),
-    headerRight: <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
+    headerRight: (
+      <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
+    ),
   });
 
+  _didFocusSubscription;
+  _willBlurSubscription;
+  constructor(props) {
+    super(props);
+    this._didFocusSubscription = props.navigation.addListener(
+      'didFocus',
+      payload =>
+        BackHandler.addEventListener(
+          'hardwareBackPress',
+          this.onBackButtonPressAndroid,
+        ),
+    );
+  }
+  componentDidMount() {
+    this._willBlurSubscription = this.props.navigation.addListener(
+      'willBlur',
+      payload =>
+        BackHandler.removeEventListener(
+          'hardwareBackPress',
+          this.onBackButtonPressAndroid,
+        ),
+    );
+  }
+
+  componentWillUnmount() {
+    this._didFocusSubscription && this._didFocusSubscription.remove();
+    this._willBlurSubscription && this._willBlurSubscription.remove();
+  }
+
+  onBackButtonPressAndroid = () => {
+    this.props.navigation.navigate('Dashboard');
+    return true;
+  };
   render() {
     return (
       <View style={styles.body}>
@@ -43,7 +78,7 @@ class App extends Component {
                 title="Visa Services"
                 desc="Apply for New VISA, renewals and cancellations"
                 type={3}
-                onPress={() => this.props.navigation.navigate('VisaHome')}
+                onPress={() => this.props.navigation.navigate('VisaStack')}
               />
               <ServiceHomeItem
                 title="Attestation Services"
@@ -61,11 +96,9 @@ class App extends Component {
                   this.props.navigation.navigate('LanguageTranslation')
                 }
               />
-
+              
               <ServiceHomeText
-                text={`Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
-
-Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum`}
+                text={``}
               />
             </View>
           </View>

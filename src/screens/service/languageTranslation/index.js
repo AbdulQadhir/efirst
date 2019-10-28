@@ -9,7 +9,7 @@ import {
   servicesData,
   updAttestationSRAmt,
 } from '../action';
-import {View} from 'react-native';
+import {View, BackHandler} from 'react-native';
 import Loader from '../../../styled/loader';
 import AlertView from '../../../styled/alert-view';
 import Toast, {DURATION} from 'react-native-easy-toast';
@@ -49,11 +49,27 @@ class Container extends Component {
     this.setState({ShowTerms: state});
   };
   componentDidMount = () => {
+    BackHandler.addEventListener(
+      'hardwareBackPress',
+      this.handleBackButtonClick,
+    );
     this.props.getdoclanguage(this.props.token.token);
     this.props.documentationTypes(this.props.token.token);
   };
   showToast = text => {
     this.refs.validationToasts.show(text, 3000);
+  };
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener(
+      'hardwareBackPress',
+      this.handleBackButtonClick,
+    );
+  }
+
+  handleBackButtonClick = () => {
+    this.props.navigation.goBack();
+    return true;
   };
 
   componentDidUpdate(prevProps) {

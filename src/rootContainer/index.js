@@ -17,9 +17,7 @@ class RootContainer extends Component {
 
     OneSignal.addEventListener('ids', this.onIds);
   }
-  onReceived(notification) {
-    //console.log("Notification received: ", notification);
-  }
+  onReceived(notification) {}
 
   onIds(device) {
     const playerid = device.userId;

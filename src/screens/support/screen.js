@@ -133,6 +133,7 @@ const Support = ({
             keyboardType="numeric"
             onChangePhoneNumber={value => setFieldValue('PersonalPhone', value)}
             value={values.PersonalPhone}
+            editable={true}
           />
           {values.phoneError && <ErrorLabel label="Invalid Phone" />}
           {errors.PersonalPhone && <ErrorLabel label={errors.PersonalPhone} />}

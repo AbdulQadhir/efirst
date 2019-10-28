@@ -80,7 +80,6 @@ class Container extends Component {
     isConnected: true,
   };
   changeInternetStatus = isConnected => {
-    console.log('isConnected,isConnected', isConnected);
     this.setState({isConnected});
   };
   render = () => (

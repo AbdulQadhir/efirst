@@ -22,7 +22,7 @@ import {
   HeaderBtnBack,
   HeaderBtnProfile,
 } from '../../../pages/uicomponents/components';
-import Accordian from '../../../pages/uicomponents/accordian';
+
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 const assetsPath = '../../../Assets/';
@@ -43,11 +43,10 @@ class App extends React.Component {
 
   state = {
     activeAccordion: 1,
-    selectedIndex: 1,
   };
 
-  setSelectedIndex = index => {
-    this.setState({selectedIndex: index});
+  openAccordion = index => {
+    this.setState({activeAccordion: index});
   };
 
   render() {
@@ -57,11 +56,19 @@ class App extends React.Component {
           <ScrollView showsVerticalScrollIndicator={false}>
             <View style={{paddingHorizontal: 20}}>
               <View style={styles.box}>
-                <Accordian
-                  setSelectedIndex={this.setSelectedIndex}
-                  index={1}
-                  selectedIndex={this.state.selectedIndex}
-                  title="New Visa">
+                <TouchableOpacity onPress={() => this.openAccordion(1)}>
+                  <Text
+                    style={{
+                      padding: calcHeight(2),
+                      paddingHorizontal: calcWidth(2),
+                      fontSize: RFValue(16),
+                      fontFamily: 'Montserrat-Medium',
+                      color: '#081344',
+                    }}>
+                    New Visa
+                  </Text>
+                </TouchableOpacity>
+                {this.state.activeAccordion == 1 && (
                   <View>
                     <View
                       style={{
@@ -156,15 +163,23 @@ class App extends React.Component {
                       />
                     </View>
                   </View>
-                </Accordian>
+                )}
               </View>
 
               <View style={styles.box}>
-                <Accordian
-                  setSelectedIndex={this.setSelectedIndex}
-                  index={2}
-                  selectedIndex={this.state.selectedIndex}
-                  title="Visa Stamping">
+                <TouchableOpacity onPress={() => this.openAccordion(2)}>
+                  <Text
+                    style={{
+                      padding: calcHeight(2),
+                      paddingHorizontal: calcWidth(2),
+                      fontSize: RFValue(16),
+                      fontFamily: 'Montserrat-Medium',
+                      color: '#081344',
+                    }}>
+                    Visa Stamping
+                  </Text>
+                </TouchableOpacity>
+                {this.state.activeAccordion == 2 && (
                   <View>
                     <View
                       style={{
@@ -258,15 +273,23 @@ class App extends React.Component {
                       />
                     </View>
                   </View>
-                </Accordian>
+                )}
               </View>
 
               <View style={styles.box}>
-                <Accordian
-                  setSelectedIndex={this.setSelectedIndex}
-                  index={3}
-                  selectedIndex={this.state.selectedIndex}
-                  title="Visa Renewal">
+                <TouchableOpacity onPress={() => this.openAccordion(3)}>
+                  <Text
+                    style={{
+                      padding: calcHeight(2),
+                      paddingHorizontal: calcWidth(2),
+                      fontSize: RFValue(16),
+                      fontFamily: 'Montserrat-Medium',
+                      color: '#081344',
+                    }}>
+                    Visa Renewal
+                  </Text>
+                </TouchableOpacity>
+                {this.state.activeAccordion == 3 && (
                   <View>
                     <View
                       style={{
@@ -348,15 +371,23 @@ class App extends React.Component {
                       />
                     </View>
                   </View>
-                </Accordian>
+                )}
               </View>
 
               <View style={styles.box}>
-                <Accordian
-                  setSelectedIndex={this.setSelectedIndex}
-                  index={4}
-                  selectedIndex={this.state.selectedIndex}
-                  title=" Visa Cancellation">
+                <TouchableOpacity onPress={() => this.openAccordion(4)}>
+                  <Text
+                    style={{
+                      padding: calcHeight(2),
+                      paddingHorizontal: calcWidth(2),
+                      fontSize: RFValue(16),
+                      fontFamily: 'Montserrat-Medium',
+                      color: '#081344',
+                    }}>
+                    Visa Cancellation
+                  </Text>
+                </TouchableOpacity>
+                {this.state.activeAccordion == 4 && (
                   <View>
                     <View
                       style={{
@@ -392,15 +423,23 @@ class App extends React.Component {
                       />
                     </View>
                   </View>
-                </Accordian>
+                )}
               </View>
 
               <View style={styles.box}>
-                <Accordian
-                  setSelectedIndex={this.setSelectedIndex}
-                  index={5}
-                  selectedIndex={this.state.selectedIndex}
-                  title="Complete Visa Package">
+                <TouchableOpacity onPress={() => this.openAccordion(5)}>
+                  <Text
+                    style={{
+                      padding: calcHeight(2),
+                      paddingHorizontal: calcWidth(2),
+                      fontSize: RFValue(16),
+                      fontFamily: 'Montserrat-Medium',
+                      color: '#081344',
+                    }}>
+                    Complete Visa Package
+                  </Text>
+                </TouchableOpacity>
+                {this.state.activeAccordion == 5 && (
                   <View>
                     <View
                       style={{
@@ -482,7 +521,7 @@ class App extends React.Component {
                       />
                     </View>
                   </View>
-                </Accordian>
+                )}
               </View>
             </View>
           </ScrollView>

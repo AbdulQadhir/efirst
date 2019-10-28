@@ -178,7 +178,7 @@ const Fetcher = async (fetchData, type, dispatch) => {
   dispatch(setInStore(null, type.ERROR));
   try {
     const result = await fetchData();
-    console.log('result =>', JSON.stringify(result));
+
     if (checkResult(result, dispatch, error => setInStore(error, type.ERROR))) {
       dispatch(setInStore(result.data, type.DONE));
       dispatch(setInStore(true, type.SUCCESS));

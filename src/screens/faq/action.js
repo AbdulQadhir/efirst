@@ -62,7 +62,6 @@ const Fetcher = async (fetchData, type, dispatch) => {
     const result = await fetchData();
     if (checkResult(result, dispatch, error => setInStore(error, type.ERROR))) {
       dispatch(setInStore(result.data, type.DONE));
-
       dispatch(setInStore(true, type.SUCCESS));
       dispatch({type: 'APPLICATION_STATE_SUCCESS'});
     } else {
@@ -98,15 +97,14 @@ export const FAQCategoryData = token => dispatch => {
 };
 
 const GetFAQById = (categorylist, token, dispatch) => {
-  console.log('categorylist==>', categorylist);
   if (categorylist) {
-    categorylist.forEach(elm => {
-      dispatch(FAQData(token, elm));
+    categorylist.forEach((elm, index) => {
+      dispatch(FAQData(token, elm, index));
     });
   }
 };
 
-export const FAQData = (token, elm) => dispatch => {
+export const FAQData = (token, elm, index) => dispatch => {
   return Fetcher(
     async () => {
       const result = await fetch(`${FAQ_URL}?categoryID=${elm.FAQCategoryID}`, {
@@ -117,7 +115,7 @@ export const FAQData = (token, elm) => dispatch => {
         },
       });
       return result.json().then(data => ({
-        data: {...elm, faq: [...data]},
+        data: {...elm, index, faq: [...data]},
         status: result.ok,
       }));
     },

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Text, TouchableOpacity, View, Modal, Picker } from 'react-native';
+import React, {Component} from 'react';
+import {Text, TouchableOpacity, View, Modal, Picker} from 'react-native';
 import PropTypes from 'prop-types';
 
 import Country from './country';
@@ -46,7 +46,7 @@ export default class CountryPicker extends Component {
   }
 
   onPressCancel() {
-    if(this.props.onPressCancel){
+    if (this.props.onPressCancel) {
       this.props.onPressCancel();
     }
 
@@ -56,7 +56,7 @@ export default class CountryPicker extends Component {
   }
 
   onPressSubmit() {
-    if(this.props.onPressConfirm){
+    if (this.props.onPressConfirm) {
       this.props.onPressConfirm();
     }
 
@@ -82,37 +82,41 @@ export default class CountryPicker extends Component {
   }
 
   renderItem(country, index) {
-    return <PickerItem key={country.iso2} value={country.iso2} label={country.name} />;
+    return (
+      <PickerItem
+        key={country.iso2}
+        value={country.iso2}
+        label={country.name}
+      />
+    );
   }
 
   render() {
-    const { buttonColor } = this.state;
+    const {buttonColor} = this.state;
     const itemStyle = this.props.itemStyle || {};
     return (
       <Modal
         animationType="slide"
         transparent
         visible={this.state.modalVisible}
-        onRequestClose={() => {
-          console.log('Country picker has been closed.');
-        }}
-      >
+        onRequestClose={() => {}}>
         <View style={styles.basicContainer}>
           <View
             style={[
               styles.modalContainer,
-              { backgroundColor: this.props.pickerBackgroundColor || 'white' },
-            ]}
-          >
+              {backgroundColor: this.props.pickerBackgroundColor || 'white'},
+            ]}>
             <View style={styles.buttonView}>
               <TouchableOpacity onPress={this.onPressCancel}>
-                <Text style={[{ color: buttonColor }, this.props.buttonTextStyle]}>
+                <Text
+                  style={[{color: buttonColor}, this.props.buttonTextStyle]}>
                   {this.props.cancelText || 'Cancel'}
                 </Text>
               </TouchableOpacity>
 
               <TouchableOpacity onPress={this.onPressSubmit}>
-                <Text style={[{ color: buttonColor }, this.props.buttonTextStyle]}>
+                <Text
+                  style={[{color: buttonColor}, this.props.buttonTextStyle]}>
                   {this.props.confirmText || 'Confirm'}
                 </Text>
               </TouchableOpacity>
@@ -120,16 +124,17 @@ export default class CountryPicker extends Component {
 
             <View style={styles.mainBox}>
               <Picker
-                ref={(ref) => {
+                ref={ref => {
                   this.picker = ref;
                 }}
                 style={styles.bottomPicker}
                 selectedValue={this.state.selectedCountry}
                 onValueChange={country => this.onValueChange(country)}
                 itemStyle={itemStyle}
-                mode="dialog"
-              >
-                {Country.getAll().map((country, index) => this.renderItem(country, index))}
+                mode="dialog">
+                {Country.getAll().map((country, index) =>
+                  this.renderItem(country, index),
+                )}
               </Picker>
             </View>
           </View>

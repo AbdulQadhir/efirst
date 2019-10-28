@@ -9,8 +9,6 @@ import AlertView from '../../../styled/alert-view';
 class Container extends Component {
   componentDidMount = () => {
     const {token} = this.props.navigation.state.params;
-    console.log('token1==>', token.trim());
-    //if (this.props.user) this.props.navigation.navigate('Profile');
   };
   constructor(props) {
     super(props);

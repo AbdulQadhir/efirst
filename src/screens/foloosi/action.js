@@ -42,8 +42,6 @@ const Fetcher = async (fetchData, type, dispatch) => {
 export const getPaymentDetail = payload => dispatch => {
   const {token, SrId, Amount, UserId} = payload;
   const body = JSON.stringify({SrId, Amount, UserId, Action: 'I'});
-  console.log('body', body);
-  console.log('token', token);
 
   return Fetcher(
     async () => {

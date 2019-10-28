@@ -48,7 +48,6 @@ class Container extends Component {
   });
 
   onOpened(openResult) {
-    console.log('openResult==>', openResult);
     const data = openResult.notification.payload.additionalData;
     setTimeout(() => {
       if (data) {

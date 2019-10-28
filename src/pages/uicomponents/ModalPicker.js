@@ -62,9 +62,10 @@ export default class ModalPicker extends Component {
             }}>
             <Text
               style={{
-                fontSize: RFPercentage(2),
-                paddingVertical: calcHeight(1),
-                color: '#8d847d',
+                fontSize: RFValue(14),
+                paddingHorizontal: calcWidth(0.8),
+                paddingVertical: calcHeight(1.5),
+                color: '#081344',
                 marginLeft: calcHeight(0.8),
                 fontFamily: 'Montserrat-Light',
                 flex: 1,

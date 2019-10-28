@@ -21,7 +21,6 @@ const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 
 export default ({body, title, bigPicture, ios_attachments}) => {
-  console.log({body, title, bigPicture});
   return (
     <ScrollView
       contentContainerStyle={{flex: 1}}

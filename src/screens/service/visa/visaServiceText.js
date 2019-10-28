@@ -6,7 +6,6 @@ import {
   Dimensions
 } from 'react-native';
 
-
 import { VisaBreadCrump, SRDetailsHdr, VisaOgDocTxt, VisaDtItem, ButtonNormal } from '../../../pages/uicomponents/components';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -15,7 +14,6 @@ import {
   HeaderBtnBack,
   HeaderBtnProfile,
 } from '../../../pages/uicomponents/components';
-
 
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
@@ -59,7 +57,7 @@ class App extends React.Component {
     const docs = this.props.navigation.state.params.docsAttached;
     return this.props.navigation.state.params.docs.map(datum => {
       return (
-        <VisaDtItem txt1={datum} txt2={docs.indexOf(datum) >= 0 ? "Yes" : "No"}/>
+        <VisaDtItem isDoc txt1={datum} txt2={docs.indexOf(datum) >= 0 ? "Yes" : "No"}/>
       );
     });
   };
@@ -109,7 +107,7 @@ class App extends React.Component {
               <View style={{paddingHorizontal: calcWidth(3)}} >
                 <SRDetailsHdr label="Original Document Required" />  
               </View> 
-              <VisaOgDocTxt text="Emirates ID" />
+              <VisaOgDocTxt text={this.props.navigation.state.params.docsAndPayment.OriginalDocumentRequired.Options[0]} />
               {this.renderPageData()}
               <View style={{paddingHorizontal: calcWidth(3)}} >
                 <SRDetailsHdr label="Documents Uploaded" />   

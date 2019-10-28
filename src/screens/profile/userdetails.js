@@ -36,14 +36,9 @@ const UserDetails = ({
     };
 
     ImagePicker.showImagePicker(options, response => {
-      console.log('Response = ', response);
-
       if (response.didCancel) {
-        console.log('User cancelled photo picker');
       } else if (response.error) {
-        console.log('ImagePicker Error: ', response.error);
       } else if (response.customButton) {
-        console.log('User tapped custom button: ', response.customButton);
       } else {
         let source = {uri: response.uri};
         let imgName = response.fileName;
@@ -162,7 +157,7 @@ export default withFormik({
     data.append('Designation', Designation);
     data.append('ProfilePicName', ProfilePicName);
     data.append('ProfilePic', ProfilePic);
-    console.log('DATA', data);
+
     values.userProfileCreate({data, token});
   },
 })(UserDetails);

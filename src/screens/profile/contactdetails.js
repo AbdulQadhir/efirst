@@ -38,7 +38,6 @@ const ContactDetails = ({
   };
 
   checkPhoneValid = () => {
-    console.log(phone.isValidNumber());
     setFieldValue('phoneError', null);
     if (values.Phone) {
       if (!phone.isValidNumber()) {
@@ -54,7 +53,6 @@ const ContactDetails = ({
         label={'Contact Details'}
         value={values.ShowEditContact}
         onPress={value => {
-          console.log('Value', value);
           setFieldValue('ShowEditContact', value);
         }}
         handleSubmit={checkPhoneValid}

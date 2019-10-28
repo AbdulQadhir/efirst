@@ -17,7 +17,7 @@ import {
 import {getPaymentDetail} from '../../foloosi/action';
 import Loader from '../../../styled/loader';
 import Toast, {DURATION} from 'react-native-easy-toast';
-import {View} from 'react-native';
+import {View, BackHandler} from 'react-native';
 import AlertView from '../../../styled/alert-view';
 
 class Container extends Component {
@@ -50,9 +50,25 @@ class Container extends Component {
     this.setState({ShowTerms: state});
   };
   componentDidMount = () => {
+    BackHandler.addEventListener(
+      'hardwareBackPress',
+      this.handleBackButtonClick,
+    );
     this.props.getCountries(this.props.token.token);
     this.props.getcertificateType(this.props.token.token);
   };
+  componentWillUnmount() {
+    BackHandler.removeEventListener(
+      'hardwareBackPress',
+      this.handleBackButtonClick,
+    );
+  }
+
+  handleBackButtonClick = () => {
+    this.props.navigation.goBack();
+    return true;
+  };
+
   showToast = text => {
     this.refs.validationToasts.show(text, 3000);
   };

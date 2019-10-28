@@ -86,7 +86,6 @@ const VisaService = ({
   };
 
   const dateFormat = date => {
-    console.log(date);
     return date
       ? new Date(date).getDate() +
           '/' +
@@ -103,9 +102,7 @@ const VisaService = ({
     }
     handleSubmit();
   };
-  componentDidUpdate = () => {
-    console.log(attestationPrice);
-  };
+  componentDidUpdate = () => {};
 
   const setExpDateInit = () => {
     var dt = new Date();
@@ -184,7 +181,6 @@ const VisaService = ({
             }}
             onChange={value => selectCountry(value)}
             translation="eng"
-            // cca2={values.cca2}
             styles={darkTheme}
             hideAlphabetFilter={true}
             closeButtonImage={closeImgLight}
@@ -203,7 +199,7 @@ const VisaService = ({
               fontSize: RFPercentage(2),
               paddingVertical: calcHeight(1),
               paddingHorizontal: calcWidth(2),
-              color: '#8d847d',
+              color: '#081344',
               paddingHorizontal: calcHeight(1),
               fontFamily: 'Montserrat-Light',
             }}
@@ -211,6 +207,7 @@ const VisaService = ({
             onPressFlag={onPressFlag}
             placeholder="Mobile *"
             name="PersonalPhone"
+            editable={true}
             label="Mobile *"
             keyboardType="numeric"
             onChangePhoneNumber={value => setFieldValue('PersonalPhone', value)}
@@ -330,7 +327,6 @@ const VisaService = ({
             onTouchStart={ShowDateTimePicker}
             label="Passport Expiry Date *"
             onChangeText={value => {
-              console.log(value);
               setFieldValue('PassportExpiryDate', value);
             }}
             value={dateFormat(values.PassportExpiryDate)}
@@ -482,7 +478,6 @@ export default withFormik({
     data.Nationality = values.Nationality;
     data.PassportExpiryDate = values.PassportExpiryDate;
 
-    console.log('JSON', 'result = > ' + JSON.stringify(data));
     updateTotalAmount(data.TotalBillAmount);
     const serviceData = JSON.stringify(data);
     const docItem = navigation.state.params.docItem;
@@ -490,8 +485,6 @@ export default withFormik({
     let _data = new FormData();
     docItem.map((item, index) => _data.append('Files[]', item, item.name));
     _data.append('ServiceData', serviceData);
-    console.log('result = > ', serviceData);
-    console.log('data==>', JSON.stringify(_data));
     return props.visaServiceCreate({data: _data, token});
   },
 })(VisaService);

@@ -46,12 +46,11 @@ class Container extends Component {
     }
   }
   showAndHideLoader = val => {
-    console.log('On Load===>', val);
     this.setState({loading: val});
   };
   _onNavigationStateChange = webViewState => {
     var str = webViewState.url;
-    console.log('str========>', str);
+
     var s = str.indexOf('Success');
     var e = str.indexOf('Error');
     if (s >= 0) {
@@ -64,7 +63,6 @@ class Container extends Component {
       });
     }
     if (e >= 0) {
-      console.log('Error========>', e);
       this.WebView.stopLoading();
       this.setState({
         Requested: true,

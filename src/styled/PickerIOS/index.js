@@ -69,8 +69,6 @@ class ApplePicker extends Component {
   onPressCancel = () => this.hide();
 
   onPressSubmit = () => {
-    console.log(this.state.selectedIndex);
-
     this.props.onSubmit(this.state.selectedValue, this.state.selectedIndex);
     this.hide();
   };

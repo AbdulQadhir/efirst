@@ -45,9 +45,8 @@ class Documents extends Component {
       });
   };
   downloadFile(docId) {
-    console.log('id======>', docId);
     this.setState({loading: true});
-    console.log('OPEN');
+
     const {UserId} = this.props.profile.data.userdetail;
     const token = this.props.token.token;
     RNFetchBlob.fetch(
@@ -66,7 +65,6 @@ class Documents extends Component {
         // const localFile = getLocalPath(url);
         const info = res.info();
         const fileName = this.getFileName(info.headers['Content-Disposition']);
-        console.log('FileName', fileName);
         const path = getLocalPath(fileName);
         RNFS.writeFile(path, data, 'base64')
           .then(() => {
@@ -80,23 +78,17 @@ class Documents extends Component {
                   .catch(error => {
                     this.setState({loading: false});
                   });
-              } catch (error) {
-                console.log('Error ' + error);
-              }
+              } catch (error) {}
             }, 50);
 
-            console.log('Image converted to jpg and saved at ' + path);
             this.setState({loading: false});
           })
           .catch(error => {
             this.setState({loading: false});
           });
-        //     // the following conversions are done in js, it's SYNC
-        //     console.log("The file saved to ", res.path());
       })
       // Status code is not 200
       .catch((errorMessage, statusCode) => {
-        console.log('response', errorMessage);
         this.setState({loading: false});
       });
   }

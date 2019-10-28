@@ -18,13 +18,11 @@ class OfflineNotice extends PureComponent {
     setTimeout(this.hideview, 5000);
   }
   hideview = () => {
-    console.log('changeInternetStatus1');
     const {changeInternetStatus} = this.props;
     changeInternetStatus(true);
   };
   render() {
     const {isConnected} = this.props;
-    console.log(this.props);
     return <MiniOfflineSign />;
   }
 }

@@ -40,7 +40,6 @@ const openFetcher = async (fetchData, type, dispatch) => {
 export const supportCreate = payload => dispatch => {
   const {token, supportCreate, ...bodyData} = payload;
   const body = JSON.stringify(bodyData);
-  console.log(body);
   return openFetcher(
     async () => {
       const result = await fetch(SUPPORT_URL, {

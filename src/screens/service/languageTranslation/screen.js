@@ -23,7 +23,6 @@ import {withFormik} from 'formik';
 import * as Yup from 'yup';
 import Modal from 'react-native-modal';
 // import TermsandConditon from '../../termsandcondition';
-
 import ModalPicker from '../../../pages/uicomponents/ModalPicker';
 import {calcHeight, calcWidth} from '../../../config';
 import PhoneInput from '../../../styled/react-native-phone-input/lib';
@@ -98,14 +97,9 @@ const LanguageTranslation = ({
     };
     try {
       ImagePicker.showImagePicker(options, response => {
-        console.log('Response = ', response);
-
         if (response.didCancel) {
-          console.log('User cancelled photo picker');
         } else if (response.error) {
-          console.log('ImagePicker Error: ', response.error);
         } else if (response.customButton) {
-          console.log('User tapped custom button: ', response.customButton);
         } else {
           let source = {uri: response.uri};
           let imgName = response.fileName;
@@ -127,7 +121,7 @@ const LanguageTranslation = ({
                   type: response.type,
                   name: imgName,
                 };
-          console.log('PiC====>', pic);
+
           if (type == 'EmiratesID') {
             setFieldValue('EmiratesID', pic);
           } else {
@@ -150,7 +144,7 @@ const LanguageTranslation = ({
       const res = await DocumentPicker.pick({
         type: [DocumentPicker.types.images],
       });
-      console.log('file', res);
+
       if (res) {
         const {name, size} = res;
         const valdateRes = validateFileTypeAndSizeForTranslation({
@@ -176,9 +170,7 @@ const LanguageTranslation = ({
           showToast('- Invalid file type.\n- File must be smaller than 5 MB');
         }
       }
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
   const languageTranslationRateByLanguages = (toLanguage, fromLanguage) => {
     if (toLanguage && fromLanguage) {
@@ -196,10 +188,8 @@ const LanguageTranslation = ({
     }
 
     if (values.Files.length === 0) {
-      console.log('submit2');
       setFieldValue('errorFileUpload', 'Upload File is Required');
     } else {
-      console.log('submit3');
       setFieldValue('errorFileUpload', null);
     }
     if (!values.EmiratesID) {
@@ -209,9 +199,7 @@ const LanguageTranslation = ({
     }
     handleSubmit();
   };
-  componentDidUpdate = () => {
-    console.log(attestationPrice);
-  };
+  componentDidUpdate = () => {};
 
   navigateToScreen = route => {
     const navigateAction = NavigationActions.navigate({
@@ -326,7 +314,7 @@ const LanguageTranslation = ({
               fontSize: RFPercentage(2),
               paddingVertical: calcHeight(1),
               paddingHorizontal: calcWidth(2),
-              color: '#8d847d',
+              color: '#081344',
               paddingHorizontal: calcHeight(1),
               fontFamily: 'Montserrat-Light',
             }}
@@ -338,6 +326,7 @@ const LanguageTranslation = ({
             keyboardType="numeric"
             onChangePhoneNumber={value => setFieldValue('PersonalPhone', value)}
             value={values.PersonalPhone}
+            editable={true}
           />
           {values.errorPhone != '' && <ErrorLabel label="Invalid Phone" />}
           {errors.PersonalPhone && <ErrorLabel label="Required" />}
@@ -482,7 +471,7 @@ const LanguageTranslation = ({
           )}
 
           <ModalPicker
-            placeholder="Document Language*"
+            placeholder="Document to be Translated*"
             ref={ref => {
               toLanguagePicker = ref;
             }}
@@ -522,7 +511,6 @@ const LanguageTranslation = ({
             <CheckBoxCustom
               isSelected={values.LegalStamp}
               onPress={() => {
-                console.log(values.LegalStamp);
                 if (values.LegalStamp) {
                   setFieldValue('LegalStamp', false);
                 } else {
@@ -623,7 +611,9 @@ const LanguageTranslation = ({
             <PriceDetailItem
               label=" Legal Stamp Charge"
               amount={
-                translationrate.data ? translationrate.data.LeagualStampRate : 0
+                translationrate.data
+                  ? translationrate.data.LeagualStampRate * values.Files.length
+                  : 0
               }
             />
           )}
@@ -645,11 +635,13 @@ const LanguageTranslation = ({
                 ? values.LegalStamp == true
                   ? values.PickUpandDropOption == 'Through Courier'
                     ? translationrate.data.Rate * values.Files.length +
-                      translationrate.data.LeagualStampRate +
+                      translationrate.data.LeagualStampRate *
+                        values.Files.length +
                       translationrate.data.CourierCharge +
                       translationrate.data.ServiceCharge
                     : translationrate.data.Rate * values.Files.length +
-                      translationrate.data.LeagualStampRate +
+                      translationrate.data.LeagualStampRate *
+                        values.Files.length +
                       translationrate.data.ServiceCharge
                   : translationrate.data.Rate * values.Files.length +
                     translationrate.data.ServiceCharge
@@ -803,7 +795,7 @@ export default withFormik({
       ? translationrate.data.CourierCharge
       : 0;
     const leagualStampRate = translationrate.data
-      ? translationrate.data.LeagualStampRate
+      ? translationrate.data.LeagualStampRate * values.Files.length
       : 0;
     const serviceCharge = translationrate.data
       ? translationrate.data.ServiceCharge
@@ -849,7 +841,6 @@ export default withFormik({
     data.append('StreetAddress', values.Street);
     data.append('City', values.City);
     data.append('State', values.SelectedState);
-    console.log('result =>', JSON.stringify(data));
 
     return values.doclangTransCreate({data, token});
   },

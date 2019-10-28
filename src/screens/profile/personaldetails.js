@@ -46,7 +46,6 @@ const PersonalDetails = ({
         label={'Personal Details'}
         value={values.ShowEditPersonal}
         onPress={value => {
-          console.log('Value', value);
           setFieldValue('ShowEditPersonal', value);
         }}
         handleSubmit={handleSubmit}

@@ -20,18 +20,15 @@ import {calcHeight, calcWidth} from '../../../config';
 import {RFValue, RFPercentage} from 'react-native-responsive-fontsize';
 
 class SRInfo extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       totalBillAmt: 0,
-      courier_charge : 10
+      courier_charge: 10,
     };
   }
 
-
   certtificateTypeName = SelectedCertificateType => {
-    console.log('certificateParams =>', SelectedCertificateType);
     const {certificatetype} = this.props;
     const selectCertType = certificatetype.data.filter(
       cert => cert.CertificateTypeID == SelectedCertificateType,
@@ -83,14 +80,14 @@ class SRInfo extends Component {
     await Clipboard.setString(text.toString());
     alert('Copied to Clipboard!');
   };
-  
-  renderPageData = (pageData) => {
+
+  renderPageData = pageData => {
     return pageData.map(datum => {
       return (
-        datum["Text"] != "Documents and Payment Collection" && (
+        datum['Text'] != 'Documents and Payment Collection' && (
           <Input2
             editable={false}
-            value={`${datum["Value"]}`}
+            value={`${datum['Value']}`}
             style={{borderColor: '#8d847d'}}
             multiline={true}
             scrollEnabled={false}
@@ -100,24 +97,24 @@ class SRInfo extends Component {
     });
   };
 
-  renderDocsData = (pageData) => {
+  renderDocsData = pageData => {
     const docsAndPayment = pageData[pageData.length - 1];
     return docsAndPayment.Documents.map(datum => {
       return (
-        datum.Text != "Documents and Payment Collection" && (
-        <Input2
-          editable={false}
-          value={`${datum.Text}: ${datum.FileUploaded}`}
-          style={{borderColor: '#8d847d'}}
-          multiline={true}
-          scrollEnabled={false}
+        datum.Text != 'Documents and Payment Collection' && (
+          <Input2
+            editable={false}
+            value={`${datum.Text}: ${datum.FileUploaded}`}
+            style={{borderColor: '#8d847d'}}
+            multiline={true}
+            scrollEnabled={false}
           />
         )
       );
     });
   };
 
-  renderPriceDts = (pageData) => {
+  renderPriceDts = pageData => {
     const docsAndPayment = pageData[pageData.length - 1];
     return docsAndPayment.PriceDetils.map(datum => {
       return (
@@ -127,20 +124,19 @@ class SRInfo extends Component {
           style={{borderColor: '#8d847d'}}
           multiline={true}
           scrollEnabled={false}
-          />
+        />
       );
     });
   };
 
-  renderTotalPrice = (pageData) => {
-    
+  renderTotalPrice = pageData => {
     const docsAndPayment = pageData[pageData.length - 1];
     let total = docsAndPayment.PriceDetils.reduce(
       (accumulator, item) => accumulator + parseFloat(item.Value),
-      0
+      0,
     );
     if (
-      docsAndPayment.OriginalDocumentSubmissionType.Value == "Through Courier"
+      docsAndPayment.OriginalDocumentSubmissionType.Value == 'Through Courier'
     )
       total += 10;
     return (
@@ -150,7 +146,7 @@ class SRInfo extends Component {
         style={{borderColor: '#8d847d'}}
         multiline={true}
         scrollEnabled={false}
-        />
+      />
     );
   };
 
@@ -173,7 +169,7 @@ class SRInfo extends Component {
     } = this.props;
 
     const pageData = this.props.srInfo.PageData || null;
-    
+
     const ServiceName = this.props.srInfo.Service
       ? this.props.srInfo.Service.ServiceName
       : this.props.srDetail.ServiceName;
@@ -184,7 +180,6 @@ class SRInfo extends Component {
       ? this.props.srInfo.PickUpandDropOption
       : '';
     const {ThruCourier} = this.props.srDetail;
-    console.log('PICKUP==>', PickUpandDropOption);
     return (
       <ScrollView showsVerticalScrollIndicator={false}>
         <>
@@ -345,7 +340,7 @@ class SRInfo extends Component {
                       style={{
                         fontFamily: 'Montserrat-Light',
                         fontSize: RFPercentage(2),
-                        color: '#8d847d',
+                        color: '#081344',
                       }}>
                       Shipment Tracking No :{' '}
                       <Text
@@ -374,7 +369,7 @@ class SRInfo extends Component {
                         <ClipboardIcon
                           name="content-copy"
                           size={RFValue(22)}
-                          color="#8d847d"
+                          color="#081344"
                           style={{marginRight: 2}}
                         />
                       </TouchableOpacity>
@@ -399,7 +394,7 @@ class SRInfo extends Component {
                       style={{
                         fontFamily: 'Montserrat-Light',
                         fontSize: RFPercentage(2),
-                        color: '#8d847d',
+                        color: '#081344',
                       }}>
                       Shipment Tracking No :{' '}
                       <Text
@@ -428,7 +423,7 @@ class SRInfo extends Component {
                         <ClipboardIcon
                           name="content-copy"
                           size={RFValue(22)}
-                          color="#8d847d"
+                          color="#081344"
                           style={{marginRight: 2}}
                         />
                       </TouchableOpacity>
@@ -452,7 +447,7 @@ class SRInfo extends Component {
                     style={{
                       fontFamily: 'Montserrat-Light',
                       fontSize: RFPercentage(2),
-                      color: '#8d847d',
+                      color: '#081344',
                     }}>
                     Shipment Tracking No :{' '}
                     <Text
@@ -481,7 +476,7 @@ class SRInfo extends Component {
                       <ClipboardIcon
                         name="content-copy"
                         size={RFValue(22)}
-                        color="#8d847d"
+                        color="#081344"
                         style={{marginRight: 2}}
                       />
                     </TouchableOpacity>
@@ -497,32 +492,37 @@ class SRInfo extends Component {
                   scrollEnabled={false}
                 />
               )}
-              
-              {pageData && <View>
-                {this.renderPageData(pageData)}
-                {pageData[pageData.length - 1].IBANNumber && pageData[pageData.length - 1].IBANNumber.value!="" && (
-                  <Input2
-                    editable={false}
-                    value={pageData[pageData.length - 1].IBANNumber.value}
-                    style={{borderColor: '#8d847d'}}
-                    multiline={true}
-                    scrollEnabled={false}
-                  />
-                )}
-                {pageData[pageData.length - 1].AdditionalNotes && pageData[pageData.length - 1].AdditionalNotes.value!="" && (
-                  <Input2
-                    editable={false}
-                    value={pageData[pageData.length - 1].AdditionalNotes.value}
-                    style={{borderColor: '#8d847d'}}
-                    multiline={true}
-                    scrollEnabled={false}
-                  />
-                )}
-                {this.renderDocsData(pageData)}
-                {this.renderPriceDts(pageData)}
-                {
-                  pageData[pageData.length - 1].OriginalDocumentSubmissionType.Value == "Through Courier" ?
-                  (
+
+              {pageData && (
+                <View>
+                  {this.renderPageData(pageData)}
+                  {pageData[pageData.length - 1].IBANNumber &&
+                    pageData[pageData.length - 1].IBANNumber.value != '' && (
+                      <Input2
+                        editable={false}
+                        value={pageData[pageData.length - 1].IBANNumber.value}
+                        style={{borderColor: '#8d847d'}}
+                        multiline={true}
+                        scrollEnabled={false}
+                      />
+                    )}
+                  {pageData[pageData.length - 1].AdditionalNotes &&
+                    pageData[pageData.length - 1].AdditionalNotes.value !=
+                      '' && (
+                      <Input2
+                        editable={false}
+                        value={
+                          pageData[pageData.length - 1].AdditionalNotes.value
+                        }
+                        style={{borderColor: '#8d847d'}}
+                        multiline={true}
+                        scrollEnabled={false}
+                      />
+                    )}
+                  {this.renderDocsData(pageData)}
+                  {this.renderPriceDts(pageData)}
+                  {pageData[pageData.length - 1].OriginalDocumentSubmissionType
+                    .Value == 'Through Courier' ? (
                     <Input2
                       editable={false}
                       value={`Courier Charge: AED ${this.state.courier_charge}`}
@@ -530,11 +530,12 @@ class SRInfo extends Component {
                       multiline={true}
                       scrollEnabled={false}
                     />
-                  ) :
-                  (<View />)
-                }
-                {this.renderTotalPrice(pageData)}
-              </View>}
+                  ) : (
+                    <View />
+                  )}
+                  {this.renderTotalPrice(pageData)}
+                </View>
+              )}
             </View>
           </View>
         </>

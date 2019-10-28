@@ -51,10 +51,10 @@ export const Input2 = props => {
 
   return (
     <TextInput
-      placeholderTextColor="#8d847d"
+      placeholderTextColor="#081344"
       {...props}
       style={[
-        styles.input,
+        styles.input2,
         {borderColor: '#999999', borderBottomWidth},
         props.style,
       ]}
@@ -67,7 +67,7 @@ export const InputNoBorder = props => {
       {...props}
       placeholder={props.placeholder}
       style={[
-        styles.input,
+        styles.input2,
         {
           borderBottomWidth: 0,
           flex: 1,
@@ -75,7 +75,7 @@ export const InputNoBorder = props => {
           paddingHorizontal: calcWidth(0),
         },
       ]}
-      placeholderTextColor="#8d847d"
+      placeholderTextColor="#081344"
     />
   );
 };
@@ -471,7 +471,7 @@ export const TxtSubHead = props => {
         },
         props.style,
       ]}>
-      <Text style={[styles.txtSubHead]}>{props.title}</Text>
+      <Text style={[styles.txtSubHead, {color: '#081344'}]}>{props.title}</Text>
     </View>
   );
 };
@@ -525,7 +525,9 @@ export const ButtonNormal = props => {
 };
 
 export const UploadTitle = props => (
-  <Text style={[styles.txtSubHead, {fontWeight: '300'}]}>{props.title}</Text>
+  <Text style={[styles.txtSubHead, {fontWeight: '300', color: '#081344'}]}>
+    {props.title}
+  </Text>
 );
 
 export const ReplyButton = props => {
@@ -546,17 +548,17 @@ export const SelectFile = props => {
         justifyContent: 'center',
         paddingVertical: calcHeight(1.5),
       }}>
-      <View style={{ flex:1, flexDirection: "row" }} >
+      <View style={{flex: 1, flexDirection: 'row'}}>
         <Text style={styles.selectfiletxt}>{props.subTitle}</Text>
         {props.onDelPress && (
-        <TouchableOpacity onPress={props.onDelPress} >
-          <Image
+          <TouchableOpacity onPress={props.onDelPress}>
+            <Image
               style={styles.del_icon_img}
               source={require(`${assetsPath}service/delete.png`)}
             />
-        </TouchableOpacity>
+          </TouchableOpacity>
         )}
-      </View> 
+      </View>
       <View
         style={{
           flexDirection: 'row',
@@ -607,15 +609,15 @@ export const SelectFile = props => {
 
 export const UploadValdation = props => (
   <View>
-    <Text style={styles.selectfilefooter}>File Format : jpeg + png + jpg</Text>
-    <Text style={styles.selectfilefooter}>File Size > 5 MB</Text>
+    <Text style={styles.selectfilefooter}>File Format : jpeg | png | jpg</Text>
+    <Text style={styles.selectfilefooter}>{'File Size < 5 MB'}</Text>
   </View>
 );
 
 export const ModalPickerItem = props => {
   return (
     <TouchableOpacity onPress={props.onPress}>
-      <Text style={[styles.input, {borderColor: '#999999'}]}>
+      <Text style={[styles.input, {borderColor: '#999999', color: '#081344'}]}>
         {props.label}
       </Text>
     </TouchableOpacity>
@@ -926,22 +928,43 @@ export const FAQLogoUnderline = props => {
 
 export class FAQMenuItem extends React.Component {
   state = {
-    isPressed : false
-  }
+    isPressed: false,
+  };
   render() {
     const props = this.props;
     let img = this.state.isPressed && props.img2 ? props.img2 : props.img;
-    return ( 
-      <TouchableHighlight underlayColor="#ffffff00" onHideUnderlay={()=>{ this.setState({isPressed:false})}} onShowUnderlay={()=>{ this.setState({isPressed:true})}} onPress={props.onPress}>
-        <View style={styles.faqView} >
-          <View style={[styles.menu,this.state.isPressed && props.img2 && {backgroundColor: "#183761"}]} {...props}>
+    return (
+      <TouchableHighlight
+        underlayColor="#ffffff00"
+        onHideUnderlay={() => {
+          this.setState({isPressed: false});
+        }}
+        onShowUnderlay={() => {
+          this.setState({isPressed: true});
+        }}
+        onPress={props.onPress}>
+        <View style={styles.faqView}>
+          <View
+            style={[
+              styles.menu,
+              this.state.isPressed
+                ? props.img2 && {
+                    backgroundColor: '#183761',
+                    borderColor: '#183761',
+                  }
+                : {
+                    borderColor: '#183761',
+                  },
+            ]}
+            {...props}>
             <Image style={styles.file_img} source={img} />
           </View>
           <Text style={styles.faqTxt}>{props.btnName}</Text>
         </View>
       </TouchableHighlight>
-  )}
-};
+    );
+  }
+}
 
 export const FAQCategoryHdr = props => {
   return (
@@ -960,7 +983,7 @@ export const FAQuestion = props => {
           justifyContent: 'space-between',
           borderBottomWidth: 1,
           borderColor: '#999999',
-          width: calcWidth(80),
+          // width: calcWidth(80),
           color: '#8d847d',
         }}>
         <Text style={styles.faq_qst}>{props.question}</Text>
@@ -969,7 +992,7 @@ export const FAQuestion = props => {
           source={require(`${assetsPath}FAQMenu/question.png`)}
         />
       </View>
-      <View style={{padding: calcHeight(1)}}>
+      <View style={{paddingVertical: calcHeight(1)}}>
         <Text style={[styles.faq_ans]}>{props.answer}</Text>
       </View>
     </View>
@@ -1067,7 +1090,7 @@ export const SRDocumentItem = props => {
 };
 
 export const VisaFlowQst = props => {
-  const label = props.label ? `${props.label}*` : "";
+  const label = props.label ? `${props.label}*` : '';
   return <Text style={styles.visaflow_qst_txt}>{label}</Text>;
 };
 
@@ -1123,7 +1146,12 @@ export const VisaDtItem = props => {
   return (
     <View style={{padding: calcHeight(1.5)}}>
       <View style={styles.txtBorder}>
-        <Text style={[styles.visadtitem_txt, {color: '#081344'}]}>
+        <Text
+          style={[
+            styles.visadtitem_txt,
+            {color: '#081344'},
+            props.isDoc ? {flex: 0.8} : {},
+          ]}>
           {props.txt1}
         </Text>
         <Text
@@ -1134,6 +1162,7 @@ export const VisaDtItem = props => {
               alignSelf: 'flex-end',
               fontFamily: 'Montserrat-Light',
             },
+            props.isDoc ? {flex: 0.2} : {},
           ]}>
           {props.txt2}{' '}
         </Text>
@@ -1160,7 +1189,7 @@ export const VisaFileFormat = props => (
   </View>
 );
 
-const styles = EStyleSheet.create({
+export const styles = EStyleSheet.create({
   visafileformat_title: {
     fontSize: RFValue(15),
     fontFamily: 'Montserrat-Light',
@@ -1199,7 +1228,6 @@ const styles = EStyleSheet.create({
     color: '#081344',
     padding: calcHeight(1),
     textAlign: 'center',
-    flex: 1,
   },
   visaflow_choice_txt: {
     fontSize: RFValue(13),
@@ -1250,7 +1278,7 @@ const styles = EStyleSheet.create({
     fontSize: RFValue(13),
     fontFamily: 'Montserrat-Light',
     textAlign: 'justify',
-    marginHorizontal: calcWidth(3),
+    //marginHorizontal: calcWidth(3),
   },
   not_body: {
     color: '#081344',
@@ -1309,10 +1337,10 @@ const styles = EStyleSheet.create({
   faqTxt: {
     fontSize: RFValue(11),
     color: '#081344',
-    padding: calcWidth(2),
-    height: calcWidth(12),
+    padding: calcHeight(1),
+    height: calcHeight(6),
     textAlign: 'center',
-    fontFamily: 'Montserrat-Light',
+    fontFamily: 'Montserrat-Medium',
   },
   sidemenuhdr_img_border: {
     width: calcHeight(8.3),
@@ -1561,9 +1589,9 @@ const styles = EStyleSheet.create({
     fontFamily: 'Montserrat-Light',
   },
   radiotxt: {
-    fontSize: '$inputFontSize',
+    fontSize: RFValue(14),
+    color: '#081344',
     paddingHorizontal: calcWidth(1.5),
-    color: '$inputTextColor',
     fontFamily: 'Montserrat-Light',
     marginBottom: calcHeight(0.5),
   },
@@ -1634,8 +1662,8 @@ const styles = EStyleSheet.create({
     paddingVertical: calcHeight(1),
   },
   servicehome_item_img: {
-    width: calcHeight(6),
-    height: calcHeight(6),
+    width: calcHeight(7),
+    height: calcHeight(7),
     margin: calcHeight(1),
     marginTop: calcHeight(3),
   },
@@ -1669,8 +1697,8 @@ const styles = EStyleSheet.create({
   },
   myreqitem_text: {
     padding: calcHeight(0.7),
-    color: '#4d4d4d',
-    fontSize: RFValue(11),
+    color: '#081344',
+    fontSize: RFValue(12),
     fontFamily: 'Montserrat-Light',
   },
   myreqitem_head: {
@@ -1797,6 +1825,16 @@ const styles = EStyleSheet.create({
     color: '#4d4d4d',
     fontFamily: 'Montserrat-Medium',
     //fontWeight: 'bold',
+  },
+  input2: {
+    fontSize: RFValue(14),
+    color: '#081344',
+    borderBottomWidth: calcHeight(0.1),
+    borderColor: '#081344',
+    paddingHorizontal: calcWidth(1.5),
+    paddingVertical: calcHeight(0.8),
+    margin: calcHeight(1),
+    fontFamily: 'Montserrat-Light',
   },
   input: {
     borderBottomWidth: calcHeight(0.1),

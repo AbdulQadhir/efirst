@@ -6,9 +6,7 @@ import VisaDetails from '../screens/service/visa/visaServiceText';
 import VisaDetails2 from '../screens/service/visa/visaServiceText2';
 import VisaPersonalDt from '../screens/service/visa/personalDt';
 import {createStackNavigator} from 'react-navigation-stack';
-import {
-  hdrStyles,
-} from '../pages/uicomponents/components';
+import {hdrStyles} from '../pages/uicomponents/components';
 
 export default VisaStack = createStackNavigator(
   {
@@ -17,7 +15,7 @@ export default VisaStack = createStackNavigator(
     VisaDocs,
     VisaDetails,
     VisaDetails2,
-    VisaPersonalDt
+    VisaPersonalDt,
   },
   {
     defaultNavigationOptions: {

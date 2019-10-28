@@ -115,7 +115,7 @@ class Container1 extends Component {
       userProfileCreate,
       dashboard,
     } = this.props;
-    console.log('Success==>', success);
+
     return (
       <View style={styles.body}>
         <KeyboardAwareScrollView

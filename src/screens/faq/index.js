@@ -37,6 +37,9 @@ class Container extends Component {
       this.handleBackButtonClick,
     );
   }
+  state = {
+    faqList: [],
+  };
   static navigationOptions = ({navigation}) => ({
     title: 'FAQ',
     headerLeft: (
@@ -54,17 +57,19 @@ class Container extends Component {
     return true;
   };
   componentDidMount() {
+    const {faq, data} = this.props;
+    const faqList = data.sort((a, b) => a.index - b.index);
+    this.setState({faqList});
     BackHandler.addEventListener(
       'hardwareBackPress',
       this.handleBackButtonClick,
     );
   }
   render = () => {
-    const {faq, data} = this.props;
+    const {faq} = this.props;
     const {loading, error, success} = faq ? faq : '';
     const support = {FAQCategoryName: 'Have a Question?', faq: []};
-    const faqList = [...data, support];
-    console.log('FAQLIST', faqList);
+    const faqList = [...this.state.faqList, support];
     return (
       <View style={{flex: 1}}>
         <Loader loading={loading} />
