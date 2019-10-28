@@ -16,7 +16,7 @@ export default visa_options = {
 		],
 		"Entry Permit": {
 			"title": "Visa Type",
-			"message": "The message",
+			"message": "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ",
 			"options": [
 				"Partner/Investor Visa",
 				"Family Visa"

@@ -108,8 +108,9 @@ class App extends React.Component {
           headers: myHeaders,
         });
 
-        options = visa_options; //await response.json();
+        options = await response.json();
 
+        this.setState({options: options});
         this.setState({pageData, loading: false});
       } catch (error) {
         this.setState({
@@ -121,7 +122,10 @@ class App extends React.Component {
         });
       }
     }
-    this.setState({options: options});
+    else {
+      if(this.props.navigation.state.params.options)
+        this.setState({options: this.props.navigation.state.params.options});
+    }
 
     var visaFlow = pageData.map(obj => obj.Value).join(' > ');
     this.setState({visaFlow: visaFlow});
@@ -177,12 +181,13 @@ class App extends React.Component {
       ControlType: 'Radio',
     });
     this.setState({pageData: pageData}, () => {
-      if (this.state.options[option]['title'])
+      if (this.state.options[option]['title']){
         this.props.navigation.push('VisaFlow', {
           options: this.state.options[option],
           lastSelected: option,
           pageData: pageData,
         });
+      }
       else {
         this.props.navigation.navigate('VisaDocs', {
           details: this.state.options[option],
@@ -193,7 +198,7 @@ class App extends React.Component {
   };
 
   renderList = () => {
-    return this.state.options.options.map(option => {
+    return this.state.options && this.state.options.options.map(option => {
       return (
         <VisaFlowChoice
           label={option}
@@ -217,7 +222,7 @@ class App extends React.Component {
             {this.renderList()}
             <VisaFlowChoiceNote
               text={
-                this.state.options.message ? this.state.options.message : ''
+                this.state.options && this.state.options.message
               }
             />
           </View>
