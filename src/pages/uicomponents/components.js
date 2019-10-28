@@ -23,6 +23,7 @@ import Radio from './radio';
 import CheckBox from 'react-native-check-box';
 import CheckBoxItem from '../../styled/checkbox';
 import {PROFILE_BASE_URL} from '../../constants';
+import {connect} from 'react-redux';
 // import PickerModal from 'react-native-picker-modal-view';
 
 EStyleSheet.build({
@@ -435,26 +436,6 @@ export const CheckBoxCustom = props => {
       }}>
       <CheckBoxItem {...props} />
       {props.text && <Text style={styles.radiotxt}>{props.text}</Text>}
-    </TouchableOpacity>
-  );
-};
-
-export const HeaderBtnProfile = props => {
-  return (
-    <TouchableOpacity
-      style={{
-        padding: calcHeight(1),
-        paddingRight: calcWidth(4.5),
-        // height: calcHeight(5.5),
-      }}
-      onPress={props.onPress}>
-      <IconsAws
-        name="user-circle-o"
-        style={{
-          color: '#081344',
-          fontSize: RFValue(20),
-        }}
-      />
     </TouchableOpacity>
   );
 };
@@ -1189,6 +1170,58 @@ export const VisaFileFormat = props => (
   </View>
 );
 
+class HeaderBtnProfileScreen extends React.Component {
+  render() {
+    const {onPress, userdetail} = this.props;
+    return (
+      <TouchableOpacity
+        style={{
+          padding: calcHeight(1),
+          paddingRight: calcWidth(4.5),
+          // height: calcHeight(5.5),
+        }}
+        onPress={onPress}>
+        {userdetail.ProfilePic ? (
+          <View style={[styles.profileHeaderBorder]}>
+            <Image
+              style={[
+                styles.profile,
+                {
+                  width: calcHeight(3),
+                  height: calcHeight(3),
+                },
+              ]}
+              source={{
+                uri: `${PROFILE_BASE_URL}${userdetail.ProfilePic}`,
+              }}
+            />
+          </View>
+        ) : (
+          <IconsAws
+            name="user-circle-o"
+            style={{
+              color: '#081344',
+              fontSize: RFValue(20),
+            }}
+          />
+        )}
+      </TouchableOpacity>
+    );
+  }
+}
+
+const mapStateToProps = ({
+  profile: {
+    data: {userdetail},
+  },
+}) => ({
+  userdetail,
+});
+export const HeaderBtnProfile = connect(
+  mapStateToProps,
+  null,
+)(HeaderBtnProfileScreen);
+
 export const styles = EStyleSheet.create({
   visafileformat_title: {
     fontSize: RFValue(15),
@@ -1503,6 +1536,16 @@ export const styles = EStyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: '#8d847d',
+  },
+
+  profileHeaderBorder: {
+    width: calcHeight(4),
+    height: calcHeight(4),
+    borderRadius: calcHeight(2),
+    borderWidth: calcHeight(0.2),
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#081344',
   },
   selectfilefooter: {
     padding: calcWidth(1),

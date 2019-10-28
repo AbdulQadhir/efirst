@@ -79,8 +79,7 @@ export default ({
         break;
     }
   };
-  const emptyText =
-    '';
+  const emptyText = '';
   var renderList = () => {
     return services.data.length > 0 ? (
       services.data
@@ -106,8 +105,7 @@ export default ({
         })
     ) : (
       <View style={[styles.body, {height: calcHeight(70)}]}>
-        <NoRequestsLabel label={noDataLabel} />
-        <NoRequestsBody emptyText={emptyText} img={statusId} />
+        <NoRequestsBody emptyText={noDataLabel} img={statusId} />
       </View>
     );
   };
