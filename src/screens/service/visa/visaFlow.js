@@ -108,24 +108,26 @@ class App extends React.Component {
           headers: myHeaders,
         });
 
-      options = visa_options; //await response.json();
-      
-      this.setState({ pageData, loading: false });
-    } catch (error) { 
-      this.setState({ options: {
-        title: '',
-        options: [],
-        loading: false
-      }})
+        options = visa_options; //await response.json();
+
+        this.setState({pageData, loading: false});
+      } catch (error) {
+        this.setState({
+          options: {
+            title: '',
+            options: [],
+            loading: false,
+          },
+        });
+      }
     }
     this.setState({options: options});
 
     var visaFlow = pageData.map(obj => obj.Value).join(' > ');
     this.setState({visaFlow: visaFlow});
 
-  this.setState({lastSelected});
-  
-};
+    this.setState({lastSelected});
+  }
 
   handleBackButtonClick = () => {
     if (Array.isArray(this.state.pageData))
@@ -213,7 +215,11 @@ class App extends React.Component {
               label={this.state.options.title ? this.state.options.title : ''}
             />
             {this.renderList()}
-            <VisaFlowChoiceNote text={this.state.options.message ? this.state.options.message : ""} />
+            <VisaFlowChoiceNote
+              text={
+                this.state.options.message ? this.state.options.message : ''
+              }
+            />
           </View>
         </View>
       </>

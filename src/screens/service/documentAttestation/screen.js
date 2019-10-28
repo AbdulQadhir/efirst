@@ -119,7 +119,6 @@ const DocumentAttestation = ({
                   type: response.type,
                   name: imgName,
                 };
-
           var files = values.Files;
           if (i == 0) files.push(pic);
           else files[i] = pic;
@@ -297,7 +296,7 @@ const DocumentAttestation = ({
             onChange={value => selectCountry(value)}
             translation="eng"
             // cca2={values.cca2}
-            styles={darkTheme}
+            eStyles={darkTheme}
             hideAlphabetFilter={true}
             closeButtonImage={closeImgLight}
             closeable={true}>
