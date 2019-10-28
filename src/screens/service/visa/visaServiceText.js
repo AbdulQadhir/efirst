@@ -103,7 +103,8 @@ class App extends React.Component {
         <ScrollView>
           <View style={styles.body} >
             <VisaBreadCrump path={this.state.visaFlow} />
-            <View style={styles.container1}  >           
+            <View style={styles.container1}  >  
+              <VisaOgDocTxt text={"Please confirm the dates of issue & expiry (if any), documents you have submitted. If incase of wrong dates your application will be rejected and your refund will be only available within 10-15 days only."} />         
               <View style={{paddingHorizontal: calcWidth(3)}} >
                 <SRDetailsHdr label="Original Document Required" />  
               </View> 
