@@ -162,17 +162,12 @@ const DocumentAttestation = ({
   };
 
   const checkPhoneValid = () => {
-    if (values.File === undefined) {
-    }
-    if (!values.File) {
-    }
-
     setPhoneError('');
     if (!phone.isValidNumber()) {
       setPhoneError('Invalid Format');
       //return;
     }
-    if (!values.File) {
+    if (values.Files.length === 0) {
       setFieldValue('errorFileUpload', 'Passport or Emirates ID is Required');
     } else {
       setFieldValue('errorFileUpload', null);
@@ -228,7 +223,7 @@ const DocumentAttestation = ({
     setFieldValue('Files', files);
   };
 
-  renderDocNew = () => {
+  const renderDocNew = () => {
     return (
       <SelectFile
         subTitle={'Select File'}
@@ -238,7 +233,7 @@ const DocumentAttestation = ({
     );
   };
 
-  renderDocArr = () => {
+  const renderDocArr = () => {
     return values.Files ? (
       values.Files.map((doc, index) => {
         return (
@@ -658,9 +653,9 @@ export default withFormik({
 
   handleSubmit: (values, {props, setFieldValue}) => {
     const {attestationrate, setRequestedValue} = props;
-    const {File} = values;
-    if (!File || !phone.isValidNumber()) {
-      if (!File) {
+    const {Files} = values;
+    if (Files.length === 0 || !phone.isValidNumber()) {
+      if (Files.length === 0) {
         setFieldValue('errorFileUpload', 'Upload File is Required');
       }
 
@@ -688,7 +683,7 @@ export default withFormik({
     data.append('SelectedCountryId', values.SelectedCountryId);
     data.append('CertificateTypeId', values.SelectedCertificateType);
 
-    data.append('Files[]', values.Files);
+    values.Files.map((item, index) => data.append('Files[]', item, item.name));
     data.append('Rate', Rate);
     data.append('ServiceId', 6);
     data.append('ServiceName', ServiceName);
