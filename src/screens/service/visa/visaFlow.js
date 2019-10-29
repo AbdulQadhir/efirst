@@ -109,6 +109,7 @@ class App extends React.Component {
         });
 
         options = await response.json();
+        console.log(options);
 
         this.setState({options: options});
         this.setState({pageData, loading: false});
@@ -121,9 +122,8 @@ class App extends React.Component {
           },
         });
       }
-    }
-    else {
-      if(this.props.navigation.state.params.options)
+    } else {
+      if (this.props.navigation.state.params.options)
         this.setState({options: this.props.navigation.state.params.options});
     }
 
@@ -181,14 +181,13 @@ class App extends React.Component {
       ControlType: 'Radio',
     });
     this.setState({pageData: pageData}, () => {
-      if (this.state.options[option]['title']){
+      if (this.state.options[option]['title']) {
         this.props.navigation.push('VisaFlow', {
           options: this.state.options[option],
           lastSelected: option,
           pageData: pageData,
         });
-      }
-      else {
+      } else {
         this.props.navigation.navigate('VisaDocs', {
           details: this.state.options[option],
           pageData: pageData,
@@ -198,14 +197,17 @@ class App extends React.Component {
   };
 
   renderList = () => {
-    return this.state.options && this.state.options.options.map(option => {
-      return (
-        <VisaFlowChoice
-          label={option}
-          onPress={() => this.NextOption(option)}
-        />
-      );
-    });
+    return (
+      this.state.options &&
+      this.state.options.options.map(option => {
+        return (
+          <VisaFlowChoice
+            label={option}
+            onPress={() => this.NextOption(option)}
+          />
+        );
+      })
+    );
   };
 
   render() {
@@ -221,9 +223,7 @@ class App extends React.Component {
             />
             {this.renderList()}
             <VisaFlowChoiceNote
-              text={
-                this.state.options && this.state.options.message
-              }
+              text={this.state.options && this.state.options.message}
             />
           </View>
         </View>

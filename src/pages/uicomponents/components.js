@@ -913,7 +913,7 @@ export class FAQMenuItem extends React.Component {
   };
   render() {
     const props = this.props;
-    let img = this.state.isPressed && props.img2 ? props.img2 : props.img;
+
     return (
       <TouchableHighlight
         underlayColor="#ffffff00"
@@ -938,7 +938,12 @@ export class FAQMenuItem extends React.Component {
                   },
             ]}
             {...props}>
-            <Image style={styles.file_img} source={img} />
+            <Image
+              style={styles.file_img}
+              source={
+                this.state.isPressed ? props.img2 && props.img2 : props.img
+              }
+            />
           </View>
           <Text style={styles.faqTxt}>{props.btnName}</Text>
         </View>

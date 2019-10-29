@@ -90,7 +90,6 @@ class Slider extends Component {
         require('../../Assets/bg/slider2.jpg'),
         require('../../Assets/bg/slider3.jpg'),
         require('../../Assets/bg/slider4.jpg'),
-        require('../../Assets/bg/slider5.jpg'),
       ],
       captions: [
         'One Touch Visa Services Application',
@@ -151,16 +150,6 @@ class Slider extends Component {
               source={this.state.images[3]}
               color={this.state.color[3]}
               caption={this.state.captions[3]}
-              navigation={this.props.navigation}
-              setStatusBar={this.props.setStatusBar}
-            />
-          </View>
-          <View style={styles.slide}>
-            <Background
-              last
-              source={this.state.images[4]}
-              color={this.state.color[4]}
-              caption={this.state.captions[4]}
               navigation={this.props.navigation}
               setStatusBar={this.props.setStatusBar}
             />
