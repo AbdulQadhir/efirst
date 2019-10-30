@@ -124,7 +124,6 @@ class Slider extends Component {
               caption={this.state.captions[0]}
               navigation={this.props.navigation}
               setStatusBar={this.props.setStatusBar}
-              onNext={this.onNext}
             />
           </View>
           <View style={styles.slide}>
@@ -152,6 +151,7 @@ class Slider extends Component {
               caption={this.state.captions[3]}
               navigation={this.props.navigation}
               setStatusBar={this.props.setStatusBar}
+              last={true}
             />
           </View>
         </Swiper>

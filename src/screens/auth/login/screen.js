@@ -65,7 +65,7 @@ const LoginForm = ({
         <ButtonLabel
           wrapperStyle={{alignSelf: 'flex-end'}}
           textStyle={{fontFamily: 'Montserrat-LightItalic'}}
-          label={'Forget Password?'}
+          label={'Forgot Password?'}
           onPress={() => navigation.navigate('ForgetPassword')}
         />
         <Button label="Login" onPress={handleSubmit} />

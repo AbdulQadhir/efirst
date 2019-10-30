@@ -136,7 +136,7 @@ export const ButtonExtLogin = props => {
         onPress={() =>
           navigation.navigate('ExternalLogin', {
             uri: BASE_URL + extLoginUrls.data[0].Url,
-            headerTitle: 'wwww.facebook.com',
+            headerTitle: 'www.facebook.com',
           })
         }
         style={styles.btnExtLeft}
@@ -151,7 +151,7 @@ export const ButtonExtLogin = props => {
         onPress={() =>
           navigation.navigate('ExternalLogin', {
             uri: BASE_URL + extLoginUrls.data[1].Url,
-            headerTitle: 'wwww.google.com',
+            headerTitle: 'www.google.com',
           })
         }
         style={styles.btnExtRight}

@@ -33,7 +33,7 @@ const ResetPasswordForm = ({
         contentContainerStyle={styles.container}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled">
-        <LabelHeader label={'Forget Password'} />
+        <LabelHeader label={'Forgot Password'} />
 
         <LabelInput label={'Registered Email'} />
         <Input

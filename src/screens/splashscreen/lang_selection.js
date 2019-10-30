@@ -84,7 +84,7 @@ class SplashScreen extends Component {
     try {
       this.props.setStatusBar(false);
       const value = await AsyncStorage.getItem('InitialLogin');
-      if (value !== null) {
+      if (value == null) {
         this.setState({getStartedText: 'Get Started...!'});
         setTimeout(() => {
           this.props.setStatusBar(true);

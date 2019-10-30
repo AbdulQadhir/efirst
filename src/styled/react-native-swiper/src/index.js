@@ -622,14 +622,14 @@ export default class extends Component {
       );
     }
 
-    return (
+    return this.state.index !== this.state.total - 1 ? (
       <TouchableOpacity
         style={styles.button}
         onPress={() => button !== null && this.scrollBy(1)}
         disabled={this.props.disableNextButton}>
         <View>{button}</View>
       </TouchableOpacity>
-    );
+    ) : null;
   };
 
   renderPrevButton = () => {
