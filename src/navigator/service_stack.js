@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {View} from 'react-native';
 import ServiceHome from '../pages/service_home';
-import Attestation from '../pages/attestation';
 import DocumentAttestation from '../screens/service/documentAttestation';
 import Foloosi from '../screens/foloosi';
 import VisaStack from './visa_stack';
@@ -18,7 +17,6 @@ import {
 export default DashboardStack = createStackNavigator(
   {
     ServiceHome,
-    Attestation,
     DocumentAttestation,
     LanguageTranslation,
     Foloosi,
