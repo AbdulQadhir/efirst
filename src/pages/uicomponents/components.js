@@ -303,7 +303,7 @@ export const MyRequestItem = ({
           {service.SRTitle} - SR{service.SRID}
         </Text>
       </View>
-      <View style={{flex: 1}}>
+      <View style={{flex: 2}}>
         <Text style={[styles.myreqitem_head, {textAlign: 'center'}]}>
           Status
         </Text>
@@ -1691,7 +1691,7 @@ export const styles = EStyleSheet.create({
     paddingVertical: calcHeight(0.55),
   },
   servicehome_item_btn: {
-    backgroundColor: '#47489f',
+    backgroundColor: '#183761',
     padding: calcHeight(0.9),
     alignItems: 'center',
     borderRadius: calcHeight(1),

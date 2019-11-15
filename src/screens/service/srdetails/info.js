@@ -24,7 +24,7 @@ class SRInfo extends Component {
     super(props);
     this.state = {
       totalBillAmt: 0,
-      courier_charge: 10,
+      courier_charge: 15,
     };
   }
 
@@ -138,7 +138,8 @@ class SRInfo extends Component {
     if (
       docsAndPayment.OriginalDocumentSubmissionType.Value == 'Through Courier'
     )
-      total += 10;
+    //add courier charge
+      total += 15;
     return (
       <Input2
         editable={false}
