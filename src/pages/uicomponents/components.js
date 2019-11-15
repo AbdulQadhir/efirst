@@ -303,7 +303,7 @@ export const MyRequestItem = ({
           {service.SRTitle} - SR{service.SRID}
         </Text>
       </View>
-      <View style={{flex: 1}}>
+      <View style={{flex: 2}}>
         <Text style={[styles.myreqitem_head, {textAlign: 'center'}]}>
           Status
         </Text>
