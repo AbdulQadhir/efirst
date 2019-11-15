@@ -39,7 +39,7 @@ class App extends React.Component {
     this.state = {
       visaFlow: "",
       totalBillAmt: 0,
-      courier_charge: 10
+      courier_charge: 15
     };
   }
 

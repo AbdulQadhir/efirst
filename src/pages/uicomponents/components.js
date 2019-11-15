@@ -1931,7 +1931,7 @@ export const styles = EStyleSheet.create({
   button_normal: {
     width: calcWidth(65),
     padding: calcHeight(1.8),
-    backgroundColor: '#f84563',
+    backgroundColor: '#183761',
     borderRadius: calcHeight(2),
     alignItems: 'center',
     alignSelf: 'center',
