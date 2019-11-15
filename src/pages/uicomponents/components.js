@@ -1691,7 +1691,7 @@ export const styles = EStyleSheet.create({
     paddingVertical: calcHeight(0.55),
   },
   servicehome_item_btn: {
-    backgroundColor: '#47489f',
+    backgroundColor: '#183761',
     padding: calcHeight(0.9),
     alignItems: 'center',
     borderRadius: calcHeight(1),
@@ -1931,7 +1931,7 @@ export const styles = EStyleSheet.create({
   button_normal: {
     width: calcWidth(65),
     padding: calcHeight(1.8),
-    backgroundColor: '#183761',
+    backgroundColor: '#f84563',
     borderRadius: calcHeight(2),
     alignItems: 'center',
     alignSelf: 'center',
