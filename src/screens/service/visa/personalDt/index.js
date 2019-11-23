@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import VisaServicePersonalScreen from './screen';
 import {connect} from 'react-redux';
-import {visaServiceCreate, activateSR} from '../../action';
+import {visaServiceCreate, activateSR, servicesData} from '../../action';
 import {
   HeaderBtnMenu,
   HeaderBtnBack,
@@ -66,6 +66,11 @@ class Container extends Component {
           `${OFFER_ADD_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=${uniqueID}`,
         );
 
+
+        const {token} = this.props.token;
+        const statusId = null;
+        this.props.servicesData({statusId, token});
+        
         this.props.navigation.navigate('MyRequests', {
           headerTitle: 'My Requests',
           noDataLabel: 'No recent service request',
@@ -130,7 +135,8 @@ const mapStateToProps = ({
 const mapDispatchToProps = dispatch => ({
   visaServiceCreate: payload => dispatch(visaServiceCreate(payload)),
   getPaymentDetail: payload => dispatch(getPaymentDetail(payload)),
-  activateSR: payload => dispatch(activateSR(payload))
+  activateSR: payload => dispatch(activateSR(payload)),
+  servicesData: payload => dispatch(servicesData(payload)),
 });
 
 export default connect(

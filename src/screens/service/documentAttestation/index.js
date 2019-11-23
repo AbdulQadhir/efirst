@@ -117,6 +117,10 @@ class Container extends Component {
         `${OFFER_ADD_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=${uniqueID}`,
       );
 
+      const {token} = this.props.token;
+      const statusId = null;
+      this.props.servicesData({statusId, token});
+      
       this.props.navigation.navigate('MyRequests', {
         headerTitle: 'My Requests',
         noDataLabel: 'No recent service request',
