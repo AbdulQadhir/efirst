@@ -13,13 +13,14 @@ import {
 import {
   HeaderBtnMenu,
   HeaderBtnBack,
-  HeaderBtnProfile,
+  HeaderBtnProfile, 
 } from '../../../pages/uicomponents/components';
 import {getPaymentDetail} from '../../foloosi/action';
 import Loader from '../../../styled/loader';
 import Toast, {DURATION} from 'react-native-easy-toast';
 import {View, BackHandler} from 'react-native';
 import AlertView from '../../../styled/alert-view';
+import { OFFER_CHK_URL, OFFER_ADD_URL } from "../../../constants";
 
 class Container extends Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class Container extends Component {
       UpdatedSRAmount: false,
       SRAmount: '0',
       ShowTerms: false,
+      offerUsed: false
     };
   }
   static navigationOptions = ({navigation}) => ({
@@ -44,19 +46,34 @@ class Container extends Component {
       <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
     ),
   });
+  
   setRequestedValue = amount => {
     this.setState({Requested: true, SRAmount: amount});
   };
   setShowTerms = state => {
     this.setState({ShowTerms: state});
   };
-  componentDidMount = () => {
+  async componentDidMount(){
     BackHandler.addEventListener(
       'hardwareBackPress',
       this.handleBackButtonClick,
     );
     this.props.getCountries(this.props.token.token);
     this.props.getcertificateType(this.props.token.token);
+    
+    try {
+      let response = await fetch(
+        `${OFFER_CHK_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=14111`,
+      );
+      let responseJson = await response.json();
+      
+      if(responseJson.result)
+        this.setState({offerUsed: true})
+      else
+        this.setState({offerUsed: false})
+
+    } catch (error) {
+    }
   };
   componentWillUnmount() {
     BackHandler.removeEventListener(
@@ -74,7 +91,7 @@ class Container extends Component {
     this.refs.validationToasts.show(text, 3000);
   };
   
-  componentDidUpdate(prevProps) {
+  async componentDidUpdate(prevProps) {
     if (
       this.props.documentattestation.success &&
       !prevProps.documentattestation.success
@@ -92,6 +109,10 @@ class Container extends Component {
 
     if(this.props.srActivation.success && !prevProps.srActivation.success)
     {
+      let response = await fetch(
+        `${OFFER_ADD_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=14111`,
+      );
+
       this.props.navigation.navigate('MyRequests', {
         headerTitle: 'My Requests',
         noDataLabel: 'No recent service request',
@@ -149,6 +170,7 @@ class Container extends Component {
           {...this.props}
           state={this.state}
           setShowTerms={this.setShowTerms}
+          offerUsed={this.state.offerUsed}
         />
         <Toast
           ref="validationToasts"
@@ -173,7 +195,7 @@ const mapStateToProps = ({
   profile,
   token,
   srActivation,
-  paymentdetail,
+  paymentdetail
 }) => ({
   countries,
   certificatetype,
@@ -183,7 +205,7 @@ const mapStateToProps = ({
   profile,
   token,
   srActivation,
-  paymentdetail,
+  paymentdetail
 });
 
 const mapDispatchToProps = dispatch => ({

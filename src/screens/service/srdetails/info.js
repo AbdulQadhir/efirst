@@ -138,8 +138,8 @@ class SRInfo extends Component {
     if (
       docsAndPayment.OriginalDocumentSubmissionType.Value == 'Through Courier'
     )
-    //add courier charge
-      total += 15;
+    
+    total += pageData[pageData.length - 1].CourierCharge || this.state.courier_charge;
     return (
       <Input2
         editable={false}

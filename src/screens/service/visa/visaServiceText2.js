@@ -98,7 +98,7 @@ class App extends React.Component {
               
               {
                 this.props.navigation.state.params.docsAndPayment.OriginalDocumentSubmissionType.Value == "Through Courier" ?
-                (<PriceDetailItem label={"Courier Charge"} amount={this.state.courier_charge} />) :
+                (<PriceDetailItem label={"Courier Charge"} amount={this.props.navigation.state.params.CourierCharge} />) :
                 (<View />)
               }
 

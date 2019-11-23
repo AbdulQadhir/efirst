@@ -342,6 +342,7 @@ class App extends React.Component {
       IsRequired: true,
       Options: ['Through Courier', 'Direct Submission at Office'],
       Value: this.state.submissionType,
+      CourierCharge: this.props.navigation.state.params.details.CourierCharge || 15
     };
 
     docsAndPayment.PriceDetils = price_details;

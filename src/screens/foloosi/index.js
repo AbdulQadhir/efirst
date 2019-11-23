@@ -7,6 +7,8 @@ import {PAYMENT_WEB_URL} from '../../constants';
 //import success from './success';
 import Loader from '../../styled/loader';
 import {HeaderBtnBack} from '../../pages/uicomponents/components';
+import { OFFER_CHK_URL, OFFER_ADD_URL } from "../../constants";
+
 class Container extends Component {
   constructor(props) {
     super(props);
@@ -26,11 +28,16 @@ class Container extends Component {
       </View>
     ),
   });
-  componentDidUpdate() {
+  async componentDidUpdate() {
     const {srid} = this.props.navigation.state.params;
 
     if (this.state.Requested) {
       if (this.state.type == 'success') {
+        
+        let response = await fetch(
+          `${OFFER_CHK_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=14111`,
+        );
+
         const {token} = this.props.token;
         const statusId = null;
         this.props.servicesData({statusId, token});

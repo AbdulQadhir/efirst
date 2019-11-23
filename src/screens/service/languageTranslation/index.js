@@ -10,6 +10,7 @@ import {
   updAttestationSRAmt,
   activateSR
 } from '../action';
+import { OFFER_CHK_URL, OFFER_ADD_URL } from "../../../constants";
 import {View, BackHandler} from 'react-native';
 import Loader from '../../../styled/loader';
 import AlertView from '../../../styled/alert-view';
@@ -29,6 +30,7 @@ class Container extends Component {
       UpdatedSRAmount: false,
       SRAmount: '0',
       ShowTerms: false,
+      offerUsed: false
     };
   }
   static navigationOptions = ({navigation}) => ({
@@ -49,13 +51,29 @@ class Container extends Component {
   setShowTerms = state => {
     this.setState({ShowTerms: state});
   };
-  componentDidMount = () => {
+  async componentDidMount() {
     BackHandler.addEventListener(
       'hardwareBackPress',
       this.handleBackButtonClick,
     );
     this.props.getdoclanguage(this.props.token.token);
     this.props.documentationTypes(this.props.token.token);
+    
+
+
+    try {
+      let response = await fetch(
+        `${OFFER_CHK_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=14111`,
+      );
+      let responseJson = await response.json();
+      
+      if(responseJson.result)
+        this.setState({offerUsed: true})
+      else
+        this.setState({offerUsed: false})
+
+    } catch (error) {
+    }
   };
   showToast = text => {
     this.refs.validationToasts.show(text, 3000);
@@ -73,7 +91,7 @@ class Container extends Component {
     return true;
   };
 
-  componentDidUpdate(prevProps) {
+  async componentDidUpdate(prevProps) {
     if (
       this.props.langtranslation.success &&
       !prevProps.langtranslation.success
@@ -92,6 +110,10 @@ class Container extends Component {
 
     if(this.props.srActivation.success && !prevProps.srActivation.success)
     {
+      let response = await fetch(
+        `${OFFER_ADD_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=14111`,
+      );
+
       this.props.navigation.navigate('MyRequests', {
         headerTitle: 'My Requests',
         noDataLabel: 'No recent service request',
@@ -148,6 +170,7 @@ class Container extends Component {
           {...this.props}
           state={this.state}
           setShowTerms={this.setShowTerms}
+          offerUsed={this.state.offerUsed}
         />
         <Toast
           ref="validationToasts"
@@ -173,6 +196,7 @@ const mapStateToProps = ({
   docSRAmUpdation,
   paymentdetail,
   srActivation,
+  offer
 }) => ({
   documentlanguage,
   translationrate,
@@ -183,6 +207,7 @@ const mapStateToProps = ({
   docSRAmUpdation,
   paymentdetail,
   srActivation,
+  offer
 });
 const mapDispatchToProps = dispatch => ({
   translationPrice: payload => dispatch(translationPrice(payload)),

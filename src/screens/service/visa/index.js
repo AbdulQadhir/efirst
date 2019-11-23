@@ -8,6 +8,9 @@ import {
   BackHandler,
 } from 'react-native';
 
+import {connect} from 'react-redux';
+import { OFFER_CHK_URL, OFFER_ADD_URL } from "../../../constants";
+
 import {
   VisaBreadCrump,
   FAQMenuItem,
@@ -44,7 +47,24 @@ class App extends React.Component {
   state = {
     activeAccordion: 1,
     selectedIndex: 1,
+    url: "Json"
   };
+
+  async componentDidMount(){
+    try {
+      let response = await fetch(
+        `${OFFER_CHK_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=14111`,
+      );
+      let responseJson = await response.json();
+      
+      if(responseJson.result)
+        this.setState({ url: "Json" });
+      else
+        this.setState({ url: "Offer-Json" });
+
+    } catch (error) {
+    }
+  }
 
   setSelectedIndex = index => {
     this.setState({selectedIndex: index});
@@ -74,7 +94,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Partner / Investor',
                             url:
-                              'https://api.efirst.ae/Json/new_visa/partner.json',
+                              `https://api.efirst.ae/${this.state.url}/new_visa/partner.json`,
                             select_service: 'New Visa',
                           })
                         }
@@ -87,7 +107,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Husband',
                             url:
-                              'https://api.efirst.ae/Json/new_visa/husband.json',
+                              `https://api.efirst.ae/${this.state.url}/new_visa/husband.json`,
                             select_service: 'New Visa',
                           })
                         }
@@ -100,7 +120,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Child',
                             url:
-                              'https://api.efirst.ae/Json/new_visa/child.json',
+                              `https://api.efirst.ae/${this.state.url}/new_visa/child.json`,
                             select_service: 'New Visa',
                           })
                         }
@@ -120,7 +140,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Parent',
                             url:
-                              'https://api.efirst.ae/Json/new_visa/parent.json',
+                              `https://api.efirst.ae/${this.state.url}/new_visa/parent.json`,
                             select_service: 'New Visa',
                           })
                         }
@@ -133,7 +153,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Wife',
                             url:
-                              'https://api.efirst.ae/Json/new_visa/wife.json',
+                              `https://api.efirst.ae/${this.state.url}/new_visa/wife.json`,
                             select_service: 'New Visa',
                           })
                         }
@@ -146,7 +166,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Change Status',
                             url:
-                              'https://api.efirst.ae/Json/new_visa/change_status.json',
+                              `https://api.efirst.ae/${this.state.url}/new_visa/change_status.json`,
                             select_service: 'New Visa',
                           })
                         }
@@ -177,7 +197,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Partner / Investor',
                             url:
-                              'https://api.efirst.ae/Json/visa_stamping/partner.json',
+                              `https://api.efirst.ae/${this.state.url}/visa_stamping/partner.json`,
                             select_service: 'Visa Stamping',
                           })
                         }
@@ -190,7 +210,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Husband Visa',
                             url:
-                              'https://api.efirst.ae/Json/visa_stamping/husband.json',
+                              `https://api.efirst.ae/${this.state.url}/visa_stamping/husband.json`,
                             select_service: 'Visa Stamping',
                           })
                         }
@@ -203,7 +223,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Wife Visa',
                             url:
-                              'https://api.efirst.ae/Json/visa_stamping/wife.json',
+                              `https://api.efirst.ae/${this.state.url}/visa_stamping/wife.json`,
                             select_service: 'Visa Stamping',
                           })
                         }
@@ -223,7 +243,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Parent Visa',
                             url:
-                              'https://api.efirst.ae/Json/visa_stamping/parent.json',
+                              `https://api.efirst.ae/${this.state.url}/visa_stamping/parent.json`,
                             select_service: 'Visa Stamping',
                           })
                         }
@@ -236,7 +256,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Child Visa',
                             url:
-                              'https://api.efirst.ae/Json/visa_stamping/child.json',
+                              `https://api.efirst.ae/${this.state.url}/visa_stamping/child.json`,
                           })
                         }
                         btnName="Child Visa"
@@ -248,7 +268,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'New Born',
                             url:
-                              'https://api.efirst.ae/Json/visa_stamping/newborn.json',
+                              `https://api.efirst.ae/${this.state.url}/visa_stamping/newborn.json`,
                             select_service: 'Visa Stamping',
                           })
                         }
@@ -279,7 +299,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Partner / Investor',
                             url:
-                              'https://api.efirst.ae/Json/visa_renewal/partner.json',
+                              `https://api.efirst.ae/${this.state.url}/visa_renewal/partner.json`,
                             select_service: 'Visa Renewal',
                           })
                         }
@@ -292,7 +312,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Husband Visa',
                             url:
-                              'https://api.efirst.ae/Json/visa_renewal/husband.json',
+                              `https://api.efirst.ae/${this.state.url}/visa_renewal/husband.json`,
                             select_service: 'Visa Renewal',
                           })
                         }
@@ -305,7 +325,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Wife Visa',
                             url:
-                              'https://api.efirst.ae/Json/visa_renewal/wife.json',
+                              `https://api.efirst.ae/${this.state.url}/visa_renewal/wife.json`,
                             select_service: 'Visa Renewal',
                           })
                         }
@@ -325,7 +345,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Child Visa',
                             url:
-                              'https://api.efirst.ae/Json/visa_renewal/child.json',
+                              `https://api.efirst.ae/${this.state.url}/visa_renewal/child.json`,
                             select_service: 'Visa Renewal',
                           })
                         }
@@ -338,7 +358,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Parent Visa',
                             url:
-                              'https://api.efirst.ae/Json/visa_renewal/parent.json',
+                              `https://api.efirst.ae/${this.state.url}/visa_renewal/parent.json`,
                             select_service: 'Visa Renewal',
                           })
                         }
@@ -369,7 +389,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Partner / Investor',
                             url:
-                              'https://api.efirst.ae/Json/visa_cancellation/partner.json',
+                              `https://api.efirst.ae/${this.state.url}/visa_cancellation/partner.json`,
                             select_service: 'Visa Cancellation',
                           })
                         }
@@ -382,7 +402,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Partner / Investor',
                             url:
-                              'https://api.efirst.ae/Json/visa_cancellation/family.json',
+                              `https://api.efirst.ae/${this.state.url}/visa_cancellation/family.json`,
                             select_service: 'Visa Cancellation',
                           })
                         }
@@ -413,7 +433,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Partner / Investor',
                             url:
-                              'https://api.efirst.ae/Json/complete/partner.json',
+                              `https://api.efirst.ae/${this.state.url}/complete/partner.json`,
                             select_service: 'Complete Visa Package',
                           })
                         }
@@ -426,7 +446,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Husband',
                             url:
-                              'https://api.efirst.ae/Json/complete/husband.json',
+                              `https://api.efirst.ae/${this.state.url}/complete/husband.json`,
                             select_service: 'Complete Visa Package',
                           })
                         }
@@ -439,7 +459,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Child',
                             url:
-                              'https://api.efirst.ae/Json/complete/child.json',
+                              `https://api.efirst.ae/${this.state.url}/complete/child.json`,
                             select_service: 'Complete Visa Package',
                           })
                         }
@@ -459,7 +479,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Parent',
                             url:
-                              'https://api.efirst.ae/Json/complete/parent.json',
+                              `https://api.efirst.ae/${this.state.url}/complete/parent.json`,
                             select_service: 'Complete Visa Package',
                           })
                         }
@@ -472,7 +492,7 @@ class App extends React.Component {
                           this.props.navigation.navigate('VisaFlow', {
                             lastSelected: 'Wife',
                             url:
-                              'https://api.efirst.ae/Json/complete/wife.json',
+                              `https://api.efirst.ae/${this.state.url}/complete/wife.json`,
                             select_service: 'Complete Visa Package',
                           })
                         }
@@ -512,5 +532,16 @@ const styles = EStyleSheet.create({
     padding: 20,
   },
 });
+const mapStateToProps = ({
+  offer
+}) => ({
+  offer
+});
+const mapDispatchToProps = dispatch => ({
+});
 
-export default App;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(App);
+

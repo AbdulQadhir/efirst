@@ -12,6 +12,7 @@ import Loader from '../../../../styled/loader';
 import Toast, {DURATION} from 'react-native-easy-toast';
 import {View} from 'react-native';
 import AlertView from '../../../../styled/alert-view';
+import { OFFER_CHK_URL, OFFER_ADD_URL } from "../../../../constants";
 
 class Container extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class Container extends Component {
   };
   componentDidMount = () => {};
 
-  componentDidUpdate(prevProps) {
+  async componentDidUpdate(prevProps) {
     if (this.props.visaservice.success && !prevProps.visaservice.success) {
       this.setState({Requested: false, UpdatedSRAmount: true});
 
@@ -59,6 +60,10 @@ class Container extends Component {
 
     if(this.props.srActivation.success && !prevProps.srActivation.success)
     {
+        let response = await fetch(
+          `${OFFER_ADD_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=14111`,
+        );
+
         this.props.navigation.navigate('MyRequests', {
           headerTitle: 'My Requests',
           noDataLabel: 'No recent service request',

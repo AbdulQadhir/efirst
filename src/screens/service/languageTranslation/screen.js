@@ -82,6 +82,7 @@ const LanguageTranslation = ({
   navigation,
   showToast,
   setShowTerms,
+  offerUsed
 }) => {
   let countryPicker = null;
   let statePicker = null;
@@ -654,15 +655,19 @@ const LanguageTranslation = ({
           <PriceDetailItem
             label="Service Charge"
             amount={
+              offerUsed ?
               translationrate.data ? translationrate.data.ServiceCharge : 0
+              : 0
             }
           />
           {translationrate.data && values.LegalStamp == true && (
             <PriceDetailItem
               label=" Legal Stamp Charge"
               amount={
+                offerUsed ?
                 translationrate.data
                   ? translationrate.data.LeagualStampRate * values.Files.length
+                  : 0
                   : 0
               }
             />
@@ -674,13 +679,16 @@ const LanguageTranslation = ({
               <PriceDetailItem
                 label="Courier Charge"
                 amount={
+                  offerUsed ?
                   translationrate.data ? translationrate.data.CourierCharge : 0
+                  : 0
                 }
               />
             )}
 
           <TxtTotalAmount
             amount={
+              offerUsed ?
               translationrate.data
                 ? values.LegalStamp == true
                   ? values.PickUpandDropOption == 'Through Courier'
@@ -695,6 +703,7 @@ const LanguageTranslation = ({
                       translationrate.data.ServiceCharge
                   : translationrate.data.Rate * values.Files.length +
                     translationrate.data.ServiceCharge
+                : 0
                 : 0
             }
           />
@@ -753,6 +762,7 @@ export default withFormik({
     documenttypes,
     token,
     doclangTransCreate,
+    offerUsed
   }) => ({
     CustomerName: profile.data.userdetail.FirstName,
     Email: profile.data.contactdetail.Email,
@@ -784,6 +794,7 @@ export default withFormik({
     errorPassportsUpload: null,
     errorSelectedLang: null,
     ShowTerms: false,
+    offerUsed
   }),
   validateOnChange: false,
 
@@ -862,8 +873,10 @@ export default withFormik({
         ? values.PickUpandDropOption == 'Through Courier'
           ? totalDocRate + leagualStampRate + courierCharge + serviceCharge
           : totalDocRate + leagualStampRate + serviceCharge
-        : totalDocRate;
-        
+        : totalDocRate + serviceCharge;
+    
+    Rate = offerUsed ? Rate : 0;
+
     setRequestedValue(Rate);
     let data = new FormData();
     values.Files.map((item, index) => data.append('Files[]', item, item.name));
