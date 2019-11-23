@@ -157,6 +157,7 @@ const openAttestationFetcher = async (fetchData, type, dispatch) => {
   dispatch(setInStore(null, type.ERROR));
   try {
     const result = await fetchData();
+    console.log("result=>",JSON.stringify(result));
     if (checkResult(result, dispatch, error => setInStore(error, type.ERROR))) {
       dispatch(setInStore(result.data, type.DONE));
       dispatch(setInStore(true, type.SUCCESS));
@@ -271,9 +272,9 @@ export const visaServiceCreate = payload => dispatch => {
 };
 
 export const updAttestationSRAmt = payload => dispatch => {
-  const {token, ...bodyData} = payload;
+  const bodyData = payload;
   const body = JSON.stringify(bodyData);
-
+  alert(body);
   return openAttestationFetcher(
     async () => {
       const result = await fetch(
@@ -283,7 +284,7 @@ export const updAttestationSRAmt = payload => dispatch => {
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${bodyData.token.token}`,
           },
           body,
         },
@@ -300,12 +301,12 @@ export const updAttestationSRAmt = payload => dispatch => {
 };
 
 export const activateSR = payload => dispatch => {
-  const {token, srid} = payload;
-  const body = JSON.stringify(srid);
+  const {token, SRID} = payload;
+  const body = JSON.stringify(SRID);
 
   return openAttestationFetcher(
     async () => {
-      const result = await fetch(ACTIVATE_SR + '?srid=' + srid, {
+      const result = await fetch(ACTIVATE_SR + '?srid=' + SRID, {
         method: 'POST',
         headers: {
           Accept: 'application/json',

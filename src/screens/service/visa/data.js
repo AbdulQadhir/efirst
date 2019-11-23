@@ -36,6 +36,7 @@ export default visa_options = {
 						"Passport",
 						"Photo (White background)"
 					],
+					"CourierCharge" : 25,
 					"PriceDetails": [{
 						"Text": "Gov. fees",
 						"Value": 1175.90

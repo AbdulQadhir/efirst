@@ -89,4 +89,4 @@ export const UNREGISTER_ONESIGNAL_URL = `${BASE_URL}/OneSignal/UnregisterOneSign
 export const PAYMENT_URL = `${BASE_URL}/api/FoloosiPayment`;
 
 export const PAYMENT_WEB_URL =
-  'https://staging.efirst.ae/foloosipayment/index/';
+  'https://app.efirst.ae/foloosipayment/index/';

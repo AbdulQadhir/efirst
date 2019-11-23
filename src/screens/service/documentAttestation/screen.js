@@ -658,9 +658,9 @@ export default withFormik({
       if (Files.length === 0) {
         setFieldValue('errorFileUpload', 'Upload File is Required');
       }
-
       return;
     }
+
     const token = props.token.token;
     const Address = `${values.Address1},${values.Street} ${values.City}, ${values.SelectedState} ${values.AddressCountry} - ${values.Zip}`;
     var Rate = attestationrate.data
@@ -698,13 +698,6 @@ export default withFormik({
     //data.append('Address', Address);
 
     return values.docAttestationCreate({data, token});
-    // return values.docAttestationCreate({
-    //   ...values,
-    //   Address,
-    //   Rate,
-    //   ServiceName,
-    //   token,
-    // });
   },
 })(DocumentAttestation);
 

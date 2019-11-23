@@ -92,6 +92,7 @@ class App extends React.Component {
       docsAndPayment,
       data: _data,
       passportExpiry : this.props.navigation.state.params.passportExpiry,
+      CourierCharge : this.props.navigation.state.params.CourierCharge,
       docItem,
       visaFlow: this.state.visaFlow
     });

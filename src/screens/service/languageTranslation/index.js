@@ -8,6 +8,7 @@ import {
   doclangTransCreate,
   servicesData,
   updAttestationSRAmt,
+  activateSR
 } from '../action';
 import {View, BackHandler} from 'react-native';
 import Loader from '../../../styled/loader';
@@ -89,15 +90,31 @@ class Container extends Component {
       });
     }
 
+    if(this.props.srActivation.success && !prevProps.srActivation.success)
+    {
+      this.props.navigation.navigate('MyRequests', {
+        headerTitle: 'My Requests',
+        noDataLabel: 'No recent service request',
+        statusId: null,
+      });
+    }
+
     if (this.props.paymentdetail.success && !prevProps.paymentdetail.success) {
       const {UserId} = this.props.profile.data.userdetail;
       var {Id} = this.props.paymentdetail.data;
       var {SRID} = this.props.langtranslation.data;
-      this.props.navigation.navigate('Foloosi', {
-        Id,
-        userid: UserId,
-        srid: SRID,
-      });
+      if(this.state.SRAmount == 0)
+      {
+        this.props.activateSR({ token: this.props.token.token , SRID });
+      }
+      else
+      {
+        this.props.navigation.navigate('Foloosi', {
+          Id,
+          userid: UserId,
+          srid: SRID,
+        });
+      }
     }
   }
 
@@ -155,6 +172,7 @@ const mapStateToProps = ({
   langtranslation,
   docSRAmUpdation,
   paymentdetail,
+  srActivation,
 }) => ({
   documentlanguage,
   translationrate,
@@ -164,6 +182,7 @@ const mapStateToProps = ({
   langtranslation,
   docSRAmUpdation,
   paymentdetail,
+  srActivation,
 });
 const mapDispatchToProps = dispatch => ({
   translationPrice: payload => dispatch(translationPrice(payload)),
@@ -173,6 +192,7 @@ const mapDispatchToProps = dispatch => ({
   servicesData: payload => dispatch(servicesData(payload)),
   updAttestationSRAmt: payload => dispatch(updAttestationSRAmt(payload)),
   getPaymentDetail: payload => dispatch(getPaymentDetail(payload)),
+  activateSR: payload => dispatch(activateSR(payload))
 });
 
 export default connect(

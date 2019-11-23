@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import VisaServicePersonalScreen from './screen';
 import {connect} from 'react-redux';
-import {visaServiceCreate} from '../../action';
+import {visaServiceCreate, activateSR} from '../../action';
 import {
   HeaderBtnMenu,
   HeaderBtnBack,
@@ -57,15 +57,31 @@ class Container extends Component {
       });
     }
 
+    if(this.props.srActivation.success && !prevProps.srActivation.success)
+    {
+        this.props.navigation.navigate('MyRequests', {
+          headerTitle: 'My Requests',
+          noDataLabel: 'No recent service request',
+          statusId: null,
+        });
+    }
+
     if (this.props.paymentdetail.success && !prevProps.paymentdetail.success) {
       const {UserId} = this.props.profile.data.userdetail;
       var {Id} = this.props.paymentdetail.data;
       var {SRID} = this.props.visaservice.data.Result;
-      this.props.navigation.navigate('Foloosi', {
-        Id,
-        userid: UserId,
-        srid: SRID,
-      });
+      if(this.state.totalBillAmt == 0)
+      {
+        this.props.activateSR({ token: this.props.token.token , SRID });
+      }
+      else
+      {
+        this.props.navigation.navigate('Foloosi', {
+          Id,
+          userid: UserId,
+          srid: SRID,
+        });
+      }
     }
   }
 
@@ -95,16 +111,19 @@ const mapStateToProps = ({
   token,
   visaservice,
   paymentdetail,
+  srActivation,
 }) => ({
   docSRAmUpdation,
   profile,
   token,
   visaservice,
   paymentdetail,
+  srActivation,
 });
 const mapDispatchToProps = dispatch => ({
   visaServiceCreate: payload => dispatch(visaServiceCreate(payload)),
   getPaymentDetail: payload => dispatch(getPaymentDetail(payload)),
+  activateSR: payload => dispatch(activateSR(payload))
 });
 
 export default connect(

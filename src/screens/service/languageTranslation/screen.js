@@ -863,6 +863,7 @@ export default withFormik({
           ? totalDocRate + leagualStampRate + courierCharge + serviceCharge
           : totalDocRate + leagualStampRate + serviceCharge
         : totalDocRate;
+        
     setRequestedValue(Rate);
     let data = new FormData();
     values.Files.map((item, index) => data.append('Files[]', item, item.name));

@@ -526,7 +526,7 @@ class SRInfo extends Component {
                     .Value == 'Through Courier' ? (
                     <Input2
                       editable={false}
-                      value={`Courier Charge: AED ${this.state.courier_charge}`}
+                      value={`Courier Charge: AED ${pageData[pageData.length - 1].CourierCharge || this.state.courier_charge}`}
                       style={{borderColor: '#8d847d'}}
                       multiline={true}
                       scrollEnabled={false}

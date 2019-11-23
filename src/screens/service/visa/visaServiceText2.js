@@ -60,19 +60,20 @@ class App extends React.Component {
     this.props.navigation.navigate("VisaPersonalDt", {
       data,
       passportExpiry : this.props.navigation.state.params.passportExpiry,
+      CourierCharge : this.props.navigation.state.params.CourierCharge,
       docItem: this.props.navigation.state.params.docItem,
     });
   }
   
   componentDidMount = () => {
-    this.setState({ visaFlow : this.props.navigation.state.params.visaFlow })
+    this.setState({ visaFlow : this.props.navigation.state.params.visaFlow, courier_charge: this.props.navigation.state.params.CourierCharge })
 
     let total = this.props.navigation.state.params.docsAndPayment.PriceDetils.reduce(
       (accumulator, item) => accumulator + parseFloat(item.Value),
       0
     );
     if(this.props.navigation.state.params.docsAndPayment.OriginalDocumentSubmissionType.Value == "Through Courier")
-      total += 10;
+      total += this.props.navigation.state.params.CourierCharge;
     this.setState({ totalBillAmt: Math.round(total * 100) / 100 });
   };
 

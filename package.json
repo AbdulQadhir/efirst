@@ -13,6 +13,8 @@
     "@react-native-community/async-storage": "^1.6.2",
     "@react-native-community/netinfo": "^4.2.2",
     "@react-native-community/viewpager": "^2.0.0",
+    "@react-native-firebase/app": "^6.0.4",
+    "@react-native-firebase/firestore": "^6.0.4",
     "formik": "^1.5.8",
     "jetifier": "^1.6.4",
     "react": "16.9.0",
