@@ -823,7 +823,7 @@ export default withFormik({
     SelectedState: Yup.string().required('Required'),
   }),
 
-  handleSubmit: (values, {props, setFieldValue}) => {
+  handleSubmit: (values, {props, setFieldValue, offerUsed}) => {
     const {
       Files,
       SelectedFromDocumentLanguageId,

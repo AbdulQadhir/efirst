@@ -21,6 +21,8 @@ import {
   HeaderBtnBack,
   HeaderBtnProfile,
 } from '../../../pages/uicomponents/components';
+import DeviceInfo from 'react-native-device-info';
+
 class Container extends Component {
   constructor(props) {
     super(props);
@@ -62,8 +64,9 @@ class Container extends Component {
 
 
     try {
+      const uniqueID = DeviceInfo.getUniqueId();
       let response = await fetch(
-        `${OFFER_CHK_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=14111`,
+        `${OFFER_CHK_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=${uniqueID}`,
       );
       let responseJson = await response.json();
       
@@ -110,8 +113,9 @@ class Container extends Component {
 
     if(this.props.srActivation.success && !prevProps.srActivation.success)
     {
+      const uniqueID = DeviceInfo.getUniqueId();
       let response = await fetch(
-        `${OFFER_ADD_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=14111`,
+        `${OFFER_ADD_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=${uniqueID}`,
       );
 
       this.props.navigation.navigate('MyRequests', {

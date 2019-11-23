@@ -8,6 +8,7 @@ import {PAYMENT_WEB_URL} from '../../constants';
 import Loader from '../../styled/loader';
 import {HeaderBtnBack} from '../../pages/uicomponents/components';
 import { OFFER_CHK_URL, OFFER_ADD_URL } from "../../constants";
+import DeviceInfo from 'react-native-device-info';
 
 class Container extends Component {
   constructor(props) {
@@ -34,9 +35,11 @@ class Container extends Component {
     if (this.state.Requested) {
       if (this.state.type == 'success') {
         
+        const uniqueID = DeviceInfo.getUniqueId();
         let response = await fetch(
-          `${OFFER_CHK_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=14111`,
+          `${OFFER_ADD_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=${uniqueID}`,
         );
+
 
         const {token} = this.props.token;
         const statusId = null;

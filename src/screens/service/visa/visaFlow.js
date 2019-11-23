@@ -103,6 +103,7 @@ class App extends React.Component {
         myHeaders.set('Pragma', 'no-cache');
         myHeaders.set('Expires', '0');
 
+
         let response = await fetch(this.props.navigation.state.params.url, {
           method: 'GET',
           headers: myHeaders,

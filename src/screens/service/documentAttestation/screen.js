@@ -656,7 +656,7 @@ export default withFormik({
     SelectedState: Yup.string().required('Required'),
   }),
 
-  handleSubmit: (values, {props, setFieldValue}) => {
+  handleSubmit: (values, {props, setFieldValue, offerUsed}) => {
     const {attestationrate, setRequestedValue} = props;
     const {Files} = values;
     if (Files.length === 0 || !phone.isValidNumber()) {

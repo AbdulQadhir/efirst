@@ -306,7 +306,7 @@ class App extends React.Component {
     }
 
     if (validationErr) {
-     // return;
+      return;
     }
 
     var pageData = this.props.navigation.state.params.pageData;
@@ -342,21 +342,21 @@ class App extends React.Component {
       IsRequired: true,
       Options: ['Through Courier', 'Direct Submission at Office'],
       Value: this.state.submissionType,
-      CourierCharge: this.props.navigation.state.params.details.CourierCharge || 15
+      CourierCharge: typeof(this.props.navigation.state.params.details.CourierCharge) === "undefined" ? 15 : this.props.navigation.state.params.details.CourierCharge
     };
 
     docsAndPayment.PriceDetils = price_details;
     docsAndPayment.Notes = this.props.navigation.state.params.details.Notes;
     docsAndPayment.OriginalDocumentRequired = this.props.navigation.state.params.details.OriginalDocumentRequired;
-    docsAndPayment.CourierCharge = this.props.navigation.state.params.details.CourierCharge || 15
-    
+    docsAndPayment.CourierCharge = typeof(this.props.navigation.state.params.details.CourierCharge) === "undefined" ? 15 : this.props.navigation.state.params.details.CourierCharge
+
     this.props.navigation.navigate('VisaDetails', {
       pageData: pageData,
       docs: this.props.navigation.state.params.details.docs,
       docsAttached: this.state.docsAttached,
       docItem: this.state.docItem,
       docsAndPayment: docsAndPayment,
-      CourierCharge: this.props.navigation.state.params.details.CourierCharge || 15,
+      CourierCharge: typeof(this.props.navigation.state.params.details.CourierCharge) === "undefined" ? 15 : this.props.navigation.state.params.details.CourierCharge,
       passportExpiry: this.props.navigation.state.params.details.PassportExpiry
         ? false
         : true,

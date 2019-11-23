@@ -43,12 +43,14 @@ class App extends React.Component {
       <HeaderBtnProfile onPress={() => navigation.navigate('Profile')} />
     ),
   });
-
-  state = {
-    activeAccordion: 1,
-    selectedIndex: 1,
-    url: "Json"
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeAccordion: 1,
+      selectedIndex: 1,
+      url: "Json"
+    };
+  }
 
   async componentDidMount(){
     try {
@@ -533,9 +535,9 @@ const styles = EStyleSheet.create({
   },
 });
 const mapStateToProps = ({
-  offer
+  profile
 }) => ({
-  offer
+  profile
 });
 const mapDispatchToProps = dispatch => ({
 });
