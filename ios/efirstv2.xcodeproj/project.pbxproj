@@ -21,18 +21,19 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* efirstv2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* efirstv2Tests.m */; };
 		3F7D3382590A49EBB192876D /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20A91C832B464A03865DEB68 /* Octicons.ttf */; };
+		4DF909DD0C44C5CBAE83DC99 /* libPods-efirstv2-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7917500D84E41CAB88E42304 /* libPods-efirstv2-tvOS.a */; };
 		4FC81F19B458409C980F00F7 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A59ED3692567493C80056703 /* Montserrat-SemiBold.otf */; };
+		511507B16B4FB981C9FC221E /* libPods-efirstv2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 089B154D32489508C42BADD8 /* libPods-efirstv2.a */; };
 		5141CB7B724A42EF90E1CD71 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9CE0BD5C77F42B28D250480 /* AntDesign.ttf */; };
 		5728EB108BC7453CB70BBAE1 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DF070D77A494F9EFE4F6F /* SimpleLineIcons.ttf */; };
-		67D8804B6C251F487D0CE0F5 /* libPods-efirstv2-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8AF174545782995F35BD44D /* libPods-efirstv2-tvOSTests.a */; };
 		6B65DAFBF29B4859912EB344 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2691C3716D8C4339A7FC4AB5 /* FontAwesome5_Solid.ttf */; };
 		6BE695B69CC743A19257FCDC /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C80FDF7ACADB45D79C7399C3 /* EvilIcons.ttf */; };
 		844AA536DCF04A87A8728CAE /* Montserrat-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B394826A434C480D8FA5FD92 /* Montserrat-MediumItalic.otf */; };
-		88562C258BEDDC5D4F2A2D8F /* libPods-efirstv2-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FAA3FC6C246DAB9801E5473 /* libPods-efirstv2-tvOS.a */; };
 		9075404B74E74121A7489089 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 420545B946D34A0995513A9D /* FontAwesome5_Brands.ttf */; };
 		A70890B2EB194CF7BEA97C59 /* Montserrat-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17B0BB8750504AD997CB080F /* Montserrat-Thin.otf */; };
 		AC16B6A021434FBCAD252357 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DAA8E99844347D08D4A689C /* FontAwesome5_Regular.ttf */; };
 		AF1E67C98192488D99EE515A /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0445FD51048040089B87C856 /* MaterialCommunityIcons.ttf */; };
+		B1BBE1EA373F5C1926530501 /* libPods-efirstv2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4606A393BC3CF809C2F27750 /* libPods-efirstv2Tests.a */; };
 		B326BAF4B2C0407FB69E5D5D /* Montserrat-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF87ED8A90134B5AA8C61031 /* Montserrat-LightItalic.otf */; };
 		CFB3978BE63A48258607AC1F /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAA9590B3F5F4B239C4A9598 /* Foundation.ttf */; };
 		D37E5416196D44F9AF503A45 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F20F9B3C4C44DD89C2EE8DD /* MaterialIcons.ttf */; };
@@ -40,8 +41,7 @@
 		DE3FE9A86AAB4244BB2A1F1B /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7DE0B92AEC24EE281B0E87E /* Ionicons.ttf */; };
 		E336EC06233F6AB5008C65DB /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E336EC05233F6AB5008C65DB /* Montserrat-Light.otf */; };
 		E7CDA2CB38864BF8B7601D9A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB885BA96E9F486C9CF711F8 /* FontAwesome.ttf */; };
-		F441A5BC21767466BD822CED /* libPods-efirstv2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE752EE25FEACC9C48174EA /* libPods-efirstv2.a */; };
-		FB7519808FA5269CDF7C17D3 /* libPods-efirstv2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 477FB0CCE0D1B827AE95785E /* libPods-efirstv2Tests.a */; };
+		F05B5137631EC7DFAA436F9D /* libPods-efirstv2-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D410BEE544DB2265868E8E /* libPods-efirstv2-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,11 +68,11 @@
 		00E356F21AD99517003FC87E /* efirstv2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = efirstv2Tests.m; sourceTree = "<group>"; };
 		03F9962B6A304A5AA49F5A9F /* Montserrat-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Medium.otf"; path = "../src/Assets/fonts/Montserrat-Medium.otf"; sourceTree = "<group>"; };
 		0445FD51048040089B87C856 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		08A43C51E200159FEBFD4F71 /* Pods-efirstv2-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-efirstv2-tvOSTests/Pods-efirstv2-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		089B154D32489508C42BADD8 /* libPods-efirstv2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-efirstv2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A98CFF859C42138738AB15 /* MontserratAlternates-ThinItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-ThinItalic.otf"; path = "../src/Assets/Fonts/MontserratAlternates-ThinItalic.otf"; sourceTree = "<group>"; };
 		0CECF91FC3BB444B92CFDC7E /* Montserrat-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Medium.otf"; path = "../src/Assets/Fonts/Montserrat-Medium.otf"; sourceTree = "<group>"; };
 		131B43FFFB274591B668B1F9 /* MontserratAlternates-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-BlackItalic.otf"; path = "../src/Assets/Fonts/MontserratAlternates-BlackItalic.otf"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* efirstv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = efirstv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* efirstv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = efirstv2.app; path = efirst.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = efirstv2/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = efirstv2/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -81,74 +81,74 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = efirstv2/main.m; sourceTree = "<group>"; };
 		17B0BB8750504AD997CB080F /* Montserrat-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Thin.otf"; path = "../src/Assets/fonts/Montserrat-Thin.otf"; sourceTree = "<group>"; };
 		198F2DE2ED594E40889C7267 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		1C064C68A2D1B1A7E7EEB8A6 /* Pods-efirstv2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2Tests.release.xcconfig"; path = "Target Support Files/Pods-efirstv2Tests/Pods-efirstv2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		1E23A85199D6FF3EF662167E /* Pods-efirstv2-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-efirstv2-tvOSTests/Pods-efirstv2-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		20A91C832B464A03865DEB68 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		2691C3716D8C4339A7FC4AB5 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* efirstv2-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "efirstv2-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* efirstv2-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "efirstv2-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E99F2597F124C2D9EFDCD1F /* Montserrat-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Light.otf"; path = "../src/Assets/Fonts/Montserrat-Light.otf"; sourceTree = "<group>"; };
 		2F20F9B3C4C44DD89C2EE8DD /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		30E3773692BFD0779C4B17EC /* Pods-efirstv2-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2-tvOS.release.xcconfig"; path = "Target Support Files/Pods-efirstv2-tvOS/Pods-efirstv2-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		358E3B2B12704BAEB5D44296 /* Montserrat-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Italic.otf"; path = "../src/Assets/Fonts/Montserrat-Italic.otf"; sourceTree = "<group>"; };
 		3A4828279ACF4CE4A73E8D65 /* Montserrat-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-BoldItalic.otf"; path = "../src/Assets/Fonts/Montserrat-BoldItalic.otf"; sourceTree = "<group>"; };
 		3BA0AFBC03B04A69AC1721E0 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		3C223A7FDBC971C9027A82C4 /* Pods-efirstv2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2.debug.xcconfig"; path = "Target Support Files/Pods-efirstv2/Pods-efirstv2.debug.xcconfig"; sourceTree = "<group>"; };
 		3D32D50F757D4119960F775E /* MontserratAlternates-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-ExtraBold.otf"; path = "../src/Assets/Fonts/MontserratAlternates-ExtraBold.otf"; sourceTree = "<group>"; };
-		3FE752EE25FEACC9C48174EA /* libPods-efirstv2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-efirstv2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		420545B946D34A0995513A9D /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		423F6A58398C491C8D07F8D5 /* Montserrat-ExtraBoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraBoldItalic.otf"; path = "../src/Assets/Fonts/Montserrat-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
 		43B47221B74244E9B3562315 /* MontserratAlternates-SemiBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-SemiBold.otf"; path = "../src/Assets/Fonts/MontserratAlternates-SemiBold.otf"; sourceTree = "<group>"; };
-		477FB0CCE0D1B827AE95785E /* libPods-efirstv2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-efirstv2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4606A393BC3CF809C2F27750 /* libPods-efirstv2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-efirstv2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A4DF070D77A494F9EFE4F6F /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		4EF5A40DF05948558CF1C08A /* MontserratAlternates-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-Black.otf"; path = "../src/Assets/Fonts/MontserratAlternates-Black.otf"; sourceTree = "<group>"; };
 		4F8FB477C8C04B729D52088D /* Montserrat-ExtraLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraLight.otf"; path = "../src/Assets/Fonts/Montserrat-ExtraLight.otf"; sourceTree = "<group>"; };
 		5109652177934F809A94F21D /* MontserratAlternates-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-Regular.otf"; path = "../src/Assets/Fonts/MontserratAlternates-Regular.otf"; sourceTree = "<group>"; };
-		57055DE8AD4DB005710C49E7 /* Pods-efirstv2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2.release.xcconfig"; path = "Target Support Files/Pods-efirstv2/Pods-efirstv2.release.xcconfig"; sourceTree = "<group>"; };
 		5AB48D4F97264341AC5406A5 /* Montserrat-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-BlackItalic.otf"; path = "../src/Assets/Fonts/Montserrat-BlackItalic.otf"; sourceTree = "<group>"; };
 		5BC97315B0DE46A8858BF3AB /* MontserratAlternates-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-BoldItalic.otf"; path = "../src/Assets/Fonts/MontserratAlternates-BoldItalic.otf"; sourceTree = "<group>"; };
 		61F11497F46B4610AE00D7BA /* Montserrat-ExtraLightItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraLightItalic.otf"; path = "../src/Assets/Fonts/Montserrat-ExtraLightItalic.otf"; sourceTree = "<group>"; };
 		634A61A470294BD8B0C9F529 /* MontserratAlternates-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-Thin.otf"; path = "../src/Assets/Fonts/MontserratAlternates-Thin.otf"; sourceTree = "<group>"; };
 		6B10D2602E104D7689EEC3E0 /* MontserratAlternates-ExtraLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-ExtraLight.otf"; path = "../src/Assets/Fonts/MontserratAlternates-ExtraLight.otf"; sourceTree = "<group>"; };
+		701FB139E8551908F4A47CF1 /* Pods-efirstv2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2.release.xcconfig"; path = "Target Support Files/Pods-efirstv2/Pods-efirstv2.release.xcconfig"; sourceTree = "<group>"; };
 		723DDB5D83EA4A2A872AEAC9 /* MontserratAlternates-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-Italic.otf"; path = "../src/Assets/Fonts/MontserratAlternates-Italic.otf"; sourceTree = "<group>"; };
 		76B59EF05A054FDDAD05553E /* Montserrat-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Thin.otf"; path = "../src/Assets/Fonts/Montserrat-Thin.otf"; sourceTree = "<group>"; };
+		7917500D84E41CAB88E42304 /* libPods-efirstv2-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-efirstv2-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2A61DBA737465DA58C73B2 /* MontserratAlternates-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-Medium.otf"; path = "../src/Assets/Fonts/MontserratAlternates-Medium.otf"; sourceTree = "<group>"; };
 		80998EF1051A4C9780F8802F /* MONTSERRAT-REGULAR.TTF */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MONTSERRAT-REGULAR.TTF"; path = "../src/Assets/Fonts/MONTSERRAT-REGULAR.TTF"; sourceTree = "<group>"; };
+		8455894AB51292E27DF7A82C /* Pods-efirstv2-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-efirstv2-tvOSTests/Pods-efirstv2-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		86236B554ABC4C229CEADC3A /* MontserratAlternates-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-Light.otf"; path = "../src/Assets/Fonts/MontserratAlternates-Light.otf"; sourceTree = "<group>"; };
 		86ABA7E684C24D07A05B155C /* Montserrat-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Black.otf"; path = "../src/Assets/Fonts/Montserrat-Black.otf"; sourceTree = "<group>"; };
 		88D2AE105F5243E29717C25C /* MontserratAlternates-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-MediumItalic.otf"; path = "../src/Assets/Fonts/MontserratAlternates-MediumItalic.otf"; sourceTree = "<group>"; };
 		8B2B39380C264B38A120E11C /* MontserratAlternates-ExtraLightItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-ExtraLightItalic.otf"; path = "../src/Assets/Fonts/MontserratAlternates-ExtraLightItalic.otf"; sourceTree = "<group>"; };
 		8BBA6B0B57C647FEBB41C795 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		8DAA8E99844347D08D4A689C /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		8E355E7348DE1F1DCC05392D /* Pods-efirstv2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2Tests.debug.xcconfig"; path = "Target Support Files/Pods-efirstv2Tests/Pods-efirstv2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		90152159D4BF4F248C27AB9E /* MontserratAlternates-ExtraBoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-ExtraBoldItalic.otf"; path = "../src/Assets/Fonts/MontserratAlternates-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
-		9FAA3FC6C246DAB9801E5473 /* libPods-efirstv2-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-efirstv2-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A78FC1A67841EEA36B9D4D /* Montserrat-SemiBoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBoldItalic.otf"; path = "../src/Assets/Fonts/Montserrat-SemiBoldItalic.otf"; sourceTree = "<group>"; };
 		A59ED3692567493C80056703 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBold.otf"; path = "../src/Assets/fonts/Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		A7DE0B92AEC24EE281B0E87E /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		A92A38AF601F412F901C118D /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
-		AA665E4F12AC0B17F832F56B /* Pods-efirstv2-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2-tvOS.release.xcconfig"; path = "Target Support Files/Pods-efirstv2-tvOS/Pods-efirstv2-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		AA6B5C0A75D7424491FC1FA4 /* Montserrat-ThinItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ThinItalic.otf"; path = "../src/Assets/Fonts/Montserrat-ThinItalic.otf"; sourceTree = "<group>"; };
-		AD3F704F2784EF3AAD04D0A5 /* Pods-efirstv2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2.debug.xcconfig"; path = "Target Support Files/Pods-efirstv2/Pods-efirstv2.debug.xcconfig"; sourceTree = "<group>"; };
 		B00C5B4173E041BF81DB1056 /* Montserrat-LightItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-LightItalic.otf"; path = "../src/Assets/Fonts/Montserrat-LightItalic.otf"; sourceTree = "<group>"; };
 		B394826A434C480D8FA5FD92 /* Montserrat-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-MediumItalic.otf"; path = "../src/Assets/fonts/Montserrat-MediumItalic.otf"; sourceTree = "<group>"; };
 		B9D972F8BCAA4596855D038E /* Montserrat-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.otf"; path = "../src/Assets/Fonts/Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		BA9FCE7E037F444086FA3CAA /* Montserrat-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-MediumItalic.otf"; path = "../src/Assets/Fonts/Montserrat-MediumItalic.otf"; sourceTree = "<group>"; };
 		BF83AC9B74C743A2822BF35C /* MontserratAlternates-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-Bold.otf"; path = "../src/Assets/Fonts/MontserratAlternates-Bold.otf"; sourceTree = "<group>"; };
-		BFAFBF8F623E8D258B849015 /* Pods-efirstv2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2Tests.debug.xcconfig"; path = "Target Support Files/Pods-efirstv2Tests/Pods-efirstv2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C7B9DF3051124F1D812F88DC /* MontserratAlternates-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-Black.ttf"; path = "../src/Assets/Fonts/MontserratAlternates-Black.ttf"; sourceTree = "<group>"; };
 		C80FDF7ACADB45D79C7399C3 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		CB885BA96E9F486C9CF711F8 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		CF87ED8A90134B5AA8C61031 /* Montserrat-LightItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-LightItalic.otf"; path = "../src/Assets/fonts/Montserrat-LightItalic.otf"; sourceTree = "<group>"; };
 		D4AA9CA3EA7644C493FEFD0A /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBold.otf"; path = "../src/Assets/Fonts/Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		D716BA4F7EE84FA8B6D5A241 /* Montserrat-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Light.otf"; path = "../src/Assets/fonts/Montserrat-Light.otf"; sourceTree = "<group>"; };
-		D8AF174545782995F35BD44D /* libPods-efirstv2-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-efirstv2-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA9590B3F5F4B239C4A9598 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		DD96E5424A24406FA889B2EF /* MontserratAlternates-LightItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-LightItalic.otf"; path = "../src/Assets/Fonts/MontserratAlternates-LightItalic.otf"; sourceTree = "<group>"; };
-		DFC82F7095301BE1A2D0359A /* Pods-efirstv2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2Tests.release.xcconfig"; path = "Target Support Files/Pods-efirstv2Tests/Pods-efirstv2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E30BE88B234DB6CB0022F3CB /* efirstv2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = efirstv2.entitlements; path = efirstv2/efirstv2.entitlements; sourceTree = "<group>"; };
 		E336EC05233F6AB5008C65DB /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Light.otf"; path = "../src/Assets/fonts/Montserrat-Light.otf"; sourceTree = "<group>"; };
+		E7D410BEE544DB2265868E8E /* libPods-efirstv2-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-efirstv2-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9CE0BD5C77F42B28D250480 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		ED21175E5A154BD0B36E27F9 /* MontserratAlternates-SemiBoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MontserratAlternates-SemiBoldItalic.otf"; path = "../src/Assets/Fonts/MontserratAlternates-SemiBoldItalic.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		EEAB37A77E7D442B8360FDD0 /* Pods-efirstv2-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-efirstv2-tvOSTests/Pods-efirstv2-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		F87667485D0F7D594518ACFD /* Pods-efirstv2-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-efirstv2-tvOS/Pods-efirstv2-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		F9BE39956D5AF3EE9687BD3D /* Pods-efirstv2-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-efirstv2-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-efirstv2-tvOS/Pods-efirstv2-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FA06CC4EF29F416A9DB81F16 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraBold.otf"; path = "../src/Assets/Fonts/Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,7 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB7519808FA5269CDF7C17D3 /* libPods-efirstv2Tests.a in Frameworks */,
+				B1BBE1EA373F5C1926530501 /* libPods-efirstv2Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F441A5BC21767466BD822CED /* libPods-efirstv2.a in Frameworks */,
+				511507B16B4FB981C9FC221E /* libPods-efirstv2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88562C258BEDDC5D4F2A2D8F /* libPods-efirstv2-tvOS.a in Frameworks */,
+				4DF909DD0C44C5CBAE83DC99 /* libPods-efirstv2-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67D8804B6C251F487D0CE0F5 /* libPods-efirstv2-tvOSTests.a in Frameworks */,
+				F05B5137631EC7DFAA436F9D /* libPods-efirstv2-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,10 +225,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				3FE752EE25FEACC9C48174EA /* libPods-efirstv2.a */,
-				9FAA3FC6C246DAB9801E5473 /* libPods-efirstv2-tvOS.a */,
-				D8AF174545782995F35BD44D /* libPods-efirstv2-tvOSTests.a */,
-				477FB0CCE0D1B827AE95785E /* libPods-efirstv2Tests.a */,
+				089B154D32489508C42BADD8 /* libPods-efirstv2.a */,
+				7917500D84E41CAB88E42304 /* libPods-efirstv2-tvOS.a */,
+				E7D410BEE544DB2265868E8E /* libPods-efirstv2-tvOSTests.a */,
+				4606A393BC3CF809C2F27750 /* libPods-efirstv2Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -236,14 +236,14 @@
 		5C3767282E75594D78DB0D84 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AD3F704F2784EF3AAD04D0A5 /* Pods-efirstv2.debug.xcconfig */,
-				57055DE8AD4DB005710C49E7 /* Pods-efirstv2.release.xcconfig */,
-				F87667485D0F7D594518ACFD /* Pods-efirstv2-tvOS.debug.xcconfig */,
-				AA665E4F12AC0B17F832F56B /* Pods-efirstv2-tvOS.release.xcconfig */,
-				08A43C51E200159FEBFD4F71 /* Pods-efirstv2-tvOSTests.debug.xcconfig */,
-				EEAB37A77E7D442B8360FDD0 /* Pods-efirstv2-tvOSTests.release.xcconfig */,
-				BFAFBF8F623E8D258B849015 /* Pods-efirstv2Tests.debug.xcconfig */,
-				DFC82F7095301BE1A2D0359A /* Pods-efirstv2Tests.release.xcconfig */,
+				3C223A7FDBC971C9027A82C4 /* Pods-efirstv2.debug.xcconfig */,
+				701FB139E8551908F4A47CF1 /* Pods-efirstv2.release.xcconfig */,
+				F9BE39956D5AF3EE9687BD3D /* Pods-efirstv2-tvOS.debug.xcconfig */,
+				30E3773692BFD0779C4B17EC /* Pods-efirstv2-tvOS.release.xcconfig */,
+				8455894AB51292E27DF7A82C /* Pods-efirstv2-tvOSTests.debug.xcconfig */,
+				1E23A85199D6FF3EF662167E /* Pods-efirstv2-tvOSTests.release.xcconfig */,
+				8E355E7348DE1F1DCC05392D /* Pods-efirstv2Tests.debug.xcconfig */,
+				1C064C68A2D1B1A7E7EEB8A6 /* Pods-efirstv2Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -356,7 +356,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "efirstv2Tests" */;
 			buildPhases = (
-				5AF9CD05E5BE40A5A9872924 /* [CP] Check Pods Manifest.lock */,
+				630CC819EED35BF4B9DC860B /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -375,13 +375,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "efirstv2" */;
 			buildPhases = (
-				FB2A10F7796F8ECC9068CD80 /* [CP] Check Pods Manifest.lock */,
+				D3F6269EADD0FF608E2B91B7 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				2A5D44E2F29B55CB6F3E8A9C /* [CP] Copy Pods Resources */,
+				C5046E4E481EECCE99B98FEF /* [CP] Copy Pods Resources */,
+				212A9190284D7CB2AF5DB42E /* [CP-User] [RNFB] Core Configuration */,
 			);
 			buildRules = (
 			);
@@ -396,7 +397,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "efirstv2-tvOS" */;
 			buildPhases = (
-				BD31C272E7701FD26FF1B027 /* [CP] Check Pods Manifest.lock */,
+				CCE96727ABED269AE6E7FBCA /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -416,7 +417,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "efirstv2-tvOSTests" */;
 			buildPhases = (
-				42FE014E9232515603DF95C2 /* [CP] Check Pods Manifest.lock */,
+				A25B49D8A80FD6D4FB60442F /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -445,7 +446,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = 3F939LJVSH;
+						DevelopmentTeam = 775ZVCH543;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -563,7 +564,75 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		2A5D44E2F29B55CB6F3E8A9C /* [CP] Copy Pods Resources */ = {
+		212A9190284D7CB2AF5DB42E /* [CP-User] [RNFB] Core Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] [RNFB] Core Configuration";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\n_MAX_LOOKUPS=2;\n_SEARCH_RESULT=''\n_RN_ROOT_EXISTS=''\n_CURRENT_LOOKUPS=1\n_JSON_ROOT=\"'react-native'\"\n_JSON_FILE_NAME='firebase.json'\n_JSON_OUTPUT_BASE64='e30=' # { }\n_CURRENT_SEARCH_DIR=${PROJECT_DIR}\n_PLIST_BUDDY=/usr/libexec/PlistBuddy\n_TARGET_PLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n_DSYM_PLIST=\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\"\n\n# plist arrays\n_PLIST_ENTRY_KEYS=()\n_PLIST_ENTRY_TYPES=()\n_PLIST_ENTRY_VALUES=()\n\nfunction setPlistValue {\n  echo \"info:      setting plist entry '$1' of type '$2' in file '$4'\"\n  ${_PLIST_BUDDY} -c \"Add :$1 $2 '$3'\" $4 || echo \"info:      '$1' already exists\"\n}\n\nfunction getFirebaseJsonKeyValue () {\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$1'); puts output[$_JSON_ROOT]['$2']\"\n  else\n    echo \"\"\n  fi;\n}\n\nfunction jsonBoolToYesNo () {\n  if [[ $1 == \"false\" ]]; then\n    echo \"NO\"\n  elif [[ $1 == \"true\" ]]; then\n    echo \"YES\"\n  else echo \"NO\"\n  fi\n}\n\necho \"info: -> RNFB build script started\"\necho \"info: 1) Locating ${_JSON_FILE_NAME} file:\"\n\nif [[ -z ${_CURRENT_SEARCH_DIR} ]]; then\n  _CURRENT_SEARCH_DIR=$(pwd)\nfi;\n\nwhile true; do\n  _CURRENT_SEARCH_DIR=$(dirname \"$_CURRENT_SEARCH_DIR\")\n  if [[ \"$_CURRENT_SEARCH_DIR\" == \"/\" ]] || [[ ${_CURRENT_LOOKUPS} -gt ${_MAX_LOOKUPS} ]]; then break; fi;\n  echo \"info:      ($_CURRENT_LOOKUPS of $_MAX_LOOKUPS) Searching in '$_CURRENT_SEARCH_DIR' for a ${_JSON_FILE_NAME} file.\"\n  _SEARCH_RESULT=$(find \"$_CURRENT_SEARCH_DIR\" -maxdepth 2 -name ${_JSON_FILE_NAME} -print | head -n 1)\n  if [[ ${_SEARCH_RESULT} ]]; then\n    echo \"info:      ${_JSON_FILE_NAME} found at $_SEARCH_RESULT\"\n    break;\n  fi;\n  _CURRENT_LOOKUPS=$((_CURRENT_LOOKUPS+1))\ndone\n\nif [[ ${_SEARCH_RESULT} ]]; then\n  _JSON_OUTPUT_RAW=$(cat \"${_SEARCH_RESULT}\")\n  _RN_ROOT_EXISTS=$(ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$_JSON_OUTPUT_RAW'); puts output[$_JSON_ROOT]\" || echo '')\n\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    _JSON_OUTPUT_BASE64=$(python -c 'import json,sys,base64;print(base64.b64encode(json.dumps(json.loads(open('\"'${_SEARCH_RESULT}'\"').read())['${_JSON_ROOT}'])))' || echo \"e30=\")\n  fi\n\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n\n  # config.messaging_auto_init_enabled\n  _MESSAGING_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"messaging_auto_init_enabled\")\n  if [[ $_MESSAGING_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseMessagingAutoInitEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_MESSAGING_AUTO_INIT\")\")\n  fi\n\n  # config.crashlytics_disable_auto_disabler - undocumented for now - mainly for debugging, document if becomes usful\n  _CRASHLYTICS_AUTO_DISABLE_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"crashlytics_disable_auto_disabler\")\n  if [[ $_CRASHLYTICS_AUTO_DISABLE_ENABLED == \"true\" ]]; then\n    echo \"Disabled Crashlytics auto disabler.\" # do nothing\n  else\n    _PLIST_ENTRY_KEYS+=(\"firebase_crashlytics_collection_enabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"NO\")\n  fi\n\n  # config.admob_delay_app_measurement_init\n  _ADMOB_DELAY_APP_MEASUREMENT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"admob_delay_app_measurement_init\")\n  if [[ $_ADMOB_DELAY_APP_MEASUREMENT == \"true\" ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GADDelayAppMeasurementInit\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"YES\")\n  fi\n\n  # config.admob_ios_app_id\n  _ADMOB_IOS_APP_ID=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"admob_ios_app_id\")\n  if [[ $_ADMOB_IOS_APP_ID ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GADApplicationIdentifier\")\n    _PLIST_ENTRY_TYPES+=(\"string\")\n    _PLIST_ENTRY_VALUES+=(\"$_ADMOB_IOS_APP_ID\")\n  fi\nelse\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n  echo \"warning:   A firebase.json file was not found, whilst this file is optional it is recommended to include it to configure firebase services in React Native Firebase.\"\nfi;\n\necho \"info: 2) Injecting Info.plist entries: \"\n\n# Log out the keys we're adding\nfor i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n  echo \"    ->  $i) ${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\"\ndone\n\nfor plist in ${_TARGET_PLIST} ${_DSYM_PLIST} ; do\n  if [[ -f ${plist} ]]; then\n    for i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n      setPlistValue \"${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\" \"${plist}\"\n    done\n  else\n    echo \"warning:   A Info.plist build output file was not found (${plist})\"\n  fi\ndone\n\necho \"info: <- RNFB build script finished\"\n\n\n\n";
+		};
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		630CC819EED35BF4B9DC860B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-efirstv2Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A25B49D8A80FD6D4FB60442F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-efirstv2-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5046E4E481EECCE99B98FEF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -586,6 +655,7 @@
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -605,71 +675,14 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-efirstv2/Pods-efirstv2-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Bundle React Native Code And Images";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		42FE014E9232515603DF95C2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-efirstv2-tvOSTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5AF9CD05E5BE40A5A9872924 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-efirstv2Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BD31C272E7701FD26FF1B027 /* [CP] Check Pods Manifest.lock */ = {
+		CCE96727ABED269AE6E7FBCA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -691,7 +704,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FB2A10F7796F8ECC9068CD80 /* [CP] Check Pods Manifest.lock */ = {
+		D3F6269EADD0FF608E2B91B7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -818,7 +831,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFAFBF8F623E8D258B849015 /* Pods-efirstv2Tests.debug.xcconfig */;
+			baseConfigurationReference = 8E355E7348DE1F1DCC05392D /* Pods-efirstv2Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -841,7 +854,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DFC82F7095301BE1A2D0359A /* Pods-efirstv2Tests.release.xcconfig */;
+			baseConfigurationReference = 1C064C68A2D1B1A7E7EEB8A6 /* Pods-efirstv2Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -861,7 +874,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD3F704F2784EF3AAD04D0A5 /* Pods-efirstv2.debug.xcconfig */;
+			baseConfigurationReference = 3C223A7FDBC971C9027A82C4 /* Pods-efirstv2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = efirstv2/efirstv2.entitlements;
@@ -869,7 +882,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = 3F939LJVSH;
+				DEVELOPMENT_TEAM = 775ZVCH543;
 				INFOPLIST_FILE = efirstv2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -877,8 +890,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.efirst;
-				PRODUCT_NAME = efirstv2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.efirstapp;
+				PRODUCT_NAME = efirst;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -887,14 +900,14 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57055DE8AD4DB005710C49E7 /* Pods-efirstv2.release.xcconfig */;
+			baseConfigurationReference = 701FB139E8551908F4A47CF1 /* Pods-efirstv2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = efirstv2/efirstv2.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3F939LJVSH;
+				DEVELOPMENT_TEAM = 775ZVCH543;
 				INFOPLIST_FILE = efirstv2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -902,8 +915,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.efirst;
-				PRODUCT_NAME = efirstv2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.efirstapp;
+				PRODUCT_NAME = efirst;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -912,7 +925,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F87667485D0F7D594518ACFD /* Pods-efirstv2-tvOS.debug.xcconfig */;
+			baseConfigurationReference = F9BE39956D5AF3EE9687BD3D /* Pods-efirstv2-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -940,7 +953,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA665E4F12AC0B17F832F56B /* Pods-efirstv2-tvOS.release.xcconfig */;
+			baseConfigurationReference = 30E3773692BFD0779C4B17EC /* Pods-efirstv2-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -968,7 +981,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 08A43C51E200159FEBFD4F71 /* Pods-efirstv2-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 8455894AB51292E27DF7A82C /* Pods-efirstv2-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -995,7 +1008,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EEAB37A77E7D442B8360FDD0 /* Pods-efirstv2-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 1E23A85199D6FF3EF662167E /* Pods-efirstv2-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
