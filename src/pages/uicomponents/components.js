@@ -1595,7 +1595,7 @@ export const styles = EStyleSheet.create({
   txt_total_amt: {
     flex: 1,
     padding: calcHeight(1),
-    backgroundColor: '#47489f',
+    backgroundColor: '#183761',
     borderRadius: calcHeight(1),
     alignItems: 'center',
     textAlign: 'center',
@@ -1611,7 +1611,7 @@ export const styles = EStyleSheet.create({
   pricedt_item_amt: {
     width: calcWidth(30),
     padding: calcHeight(1),
-    backgroundColor: '#47489f',
+    backgroundColor: '#183761',
     borderRadius: calcHeight(0.8),
     alignItems: 'center',
     textAlign: 'center',
@@ -1900,7 +1900,7 @@ export const styles = EStyleSheet.create({
     fontFamily: 'Montserrat-Light',
   },
   reply_button: {
-    backgroundColor: '#47489f',
+    backgroundColor: '#183761',
     paddingVertical: calcHeight(0.4),
     paddingHorizontal: calcWidth(7),
     borderRadius: calcHeight(1),

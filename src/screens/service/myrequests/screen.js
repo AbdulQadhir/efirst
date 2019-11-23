@@ -45,7 +45,7 @@ export default ({
         return {
           color: '#ffffff',
           borderColor: '#6F5F0F',
-          backgroundColor: '#47489f',
+          backgroundColor: '#183761',
           statusLabel: ProcessName,
         };
       case 'Completed':
