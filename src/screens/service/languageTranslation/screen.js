@@ -488,8 +488,8 @@ const LanguageTranslation = ({
             onChange={value => {
               setFieldValue('SelectedFromDocumentLanguageId', value);
               languageTranslationRateByLanguages(
-                value,
                 values.SelectedToDocumentLanguageId,
+                value,
               );
             }}>
             {documentlanguage.data.map((language, index) => (
@@ -516,8 +516,8 @@ const LanguageTranslation = ({
             onChange={value => {
               setFieldValue('SelectedToDocumentLanguageId', value);
               languageTranslationRateByLanguages(
-                values.SelectedFromDocumentLanguageId,
                 value,
+                values.SelectedFromDocumentLanguageId,
               );
             }}>
             {documentlanguage.data.map((language, index) => (
@@ -647,8 +647,10 @@ const LanguageTranslation = ({
           <PriceDetailItem
             label="Translation Charge"
             amount={
+              offerUsed ?
               translationrate.data
                 ? translationrate.data.Rate * values.Files.length
+                : 0
                 : 0
             }
           />
@@ -823,7 +825,7 @@ export default withFormik({
     SelectedState: Yup.string().required('Required'),
   }),
 
-  handleSubmit: (values, {props, setFieldValue, offerUsed}) => {
+  handleSubmit: (values, {props, setFieldValue}) => {
     const {
       Files,
       SelectedFromDocumentLanguageId,
@@ -855,7 +857,7 @@ export default withFormik({
       return;
     }
 
-    const {translationrate, setRequestedValue} = props;
+    const {translationrate, setRequestedValue, offerUsed} = props;
     const token = props.token.token;
     const docRate = translationrate.data ? translationrate.data.Rate : 0;
     const courierCharge = translationrate.data
