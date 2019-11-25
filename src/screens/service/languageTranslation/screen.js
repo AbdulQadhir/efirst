@@ -647,8 +647,10 @@ const LanguageTranslation = ({
           <PriceDetailItem
             label="Translation Charge"
             amount={
+              offerUsed ?
               translationrate.data
                 ? translationrate.data.Rate * values.Files.length
+                : 0
                 : 0
             }
           />
@@ -828,7 +830,7 @@ export default withFormik({
     SelectedState: Yup.string().required('Required'),
   }),
 
-  handleSubmit: (values, {props, setFieldValue, offerUsed}) => {
+  handleSubmit: (values, {props, setFieldValue}) => {
     const {
       Files,
       SelectedFromDocumentLanguageId,
@@ -860,7 +862,7 @@ export default withFormik({
       return;
     }
 
-    const {translationrate, setRequestedValue} = props;
+    const {translationrate, setRequestedValue, offerUsed} = props;
     const token = props.token.token;
     const docRate = translationrate.data ? translationrate.data.Rate : 0;
     const courierCharge = translationrate.data

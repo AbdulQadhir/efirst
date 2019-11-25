@@ -139,7 +139,7 @@ class SRInfo extends Component {
       docsAndPayment.OriginalDocumentSubmissionType.Value == 'Through Courier'
     )
     
-    total += pageData[pageData.length - 1].CourierCharge || this.state.courier_charge;
+    total += typeof(pageData[pageData.length - 1].CourierCharge) == "undefined" ? this.state.courier_charge : pageData[pageData.length - 1].CourierCharge;
     return (
       <Input2
         editable={false}
@@ -526,7 +526,7 @@ class SRInfo extends Component {
                     .Value == 'Through Courier' ? (
                     <Input2
                       editable={false}
-                      value={`Courier Charge: AED ${pageData[pageData.length - 1].CourierCharge || this.state.courier_charge}`}
+                      value={`Courier Charge: AED ${typeof(pageData[pageData.length - 1].CourierCharge) == "undefined" ? this.state.courier_charge : pageData[pageData.length - 1].CourierCharge}`}
                       style={{borderColor: '#8d847d'}}
                       multiline={true}
                       scrollEnabled={false}

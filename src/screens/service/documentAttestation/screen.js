@@ -129,7 +129,7 @@ const DocumentAttestation = ({
         }
       });
     } catch (err) {
-      alert(err);
+    //  alert(err);
     }
   };
 
@@ -656,8 +656,8 @@ export default withFormik({
     SelectedState: Yup.string().required('Required'),
   }),
 
-  handleSubmit: (values, {props, setFieldValue, offerUsed}) => {
-    const {attestationrate, setRequestedValue} = props;
+  handleSubmit: (values, {props, setFieldValue}) => {
+    const {attestationrate, setRequestedValue, offerUsed} = props;
     const {Files} = values;
     if (Files.length === 0 || !phone.isValidNumber()) {
       if (Files.length === 0) {
@@ -678,7 +678,7 @@ export default withFormik({
     Rate = offerUsed ? Rate : 0;
     const ServiceName = 'ATTESTATION SERVICE';
     setRequestedValue(Rate);
-
+    
     let data = new FormData();
     data.append('CustomerName', values.CustomerName);
     data.append('Email', values.Email);

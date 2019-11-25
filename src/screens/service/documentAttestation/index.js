@@ -75,7 +75,7 @@ class Container extends Component {
         this.setState({offerUsed: false})
 
     } catch (error) {
-      alert(error)
+    //  alert(error)
     }
   };
   componentWillUnmount() {
@@ -102,7 +102,7 @@ class Container extends Component {
       this.setState({Requested: false, UpdatedSRAmount: true});
       var SrId = this.props.documentattestation.data.SRID;
       const {UserId} = this.props.profile.data.userdetail;
-      this.props.getPaymentDetail({
+      this.props.getPaymentDetail({ 
         token: this.props.token.token,
         SrId,
         Amount: this.state.SRAmount,
@@ -110,7 +110,7 @@ class Container extends Component {
       });
     }
 
-    if(this.props.srActivation.success && !prevProps.srActivation.success)
+    if(this.props.srActivation.success && !prevProps.srActivation.success && this.state.SRAmount == 0)
     {
       const uniqueID = DeviceInfo.getUniqueId();
       let response = await fetch(

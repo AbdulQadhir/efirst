@@ -111,7 +111,7 @@ class Container extends Component {
       });
     }
 
-    if(this.props.srActivation.success && !prevProps.srActivation.success)
+    if(this.props.srActivation.success && !prevProps.srActivation.success && this.state.SRAmount == 0)
     {
       const uniqueID = DeviceInfo.getUniqueId();
       let response = await fetch(

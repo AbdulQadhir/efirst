@@ -91,5 +91,5 @@ export const PAYMENT_URL = `${BASE_URL}/api/FoloosiPayment`;
 export const PAYMENT_WEB_URL =
   'https://app.efirst.ae/foloosipayment/index/';
 
-export const OFFER_ADD_URL = "http://www.ncod.in/efirst/controller/addDevice.php";
-export const OFFER_CHK_URL = "http://www.ncod.in/efirst/controller/chkOffer.php";
+export const OFFER_ADD_URL = "https://innestore.com/efirst_device/controller/addDevice.php";
+export const OFFER_CHK_URL = "https://innestore.com/efirst_device/controller/chkOffer.php";
