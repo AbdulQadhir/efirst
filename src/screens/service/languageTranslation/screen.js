@@ -82,7 +82,7 @@ const LanguageTranslation = ({
   navigation,
   showToast,
   setShowTerms,
-  offerUsed
+  offerUsed,
 }) => {
   let countryPicker = null;
   let statePicker = null;
@@ -488,8 +488,8 @@ const LanguageTranslation = ({
             onChange={value => {
               setFieldValue('SelectedFromDocumentLanguageId', value);
               languageTranslationRateByLanguages(
-                value,
                 values.SelectedToDocumentLanguageId,
+                value,
               );
             }}>
             {documentlanguage.data.map((language, index) => (
@@ -516,8 +516,8 @@ const LanguageTranslation = ({
             onChange={value => {
               setFieldValue('SelectedToDocumentLanguageId', value);
               languageTranslationRateByLanguages(
-                values.SelectedFromDocumentLanguageId,
                 value,
+                values.SelectedFromDocumentLanguageId,
               );
             }}>
             {documentlanguage.data.map((language, index) => (
@@ -655,19 +655,22 @@ const LanguageTranslation = ({
           <PriceDetailItem
             label="Service Charge"
             amount={
-              offerUsed ?
-              translationrate.data ? translationrate.data.ServiceCharge : 0
-              : 0
+              offerUsed
+                ? translationrate.data
+                  ? translationrate.data.ServiceCharge
+                  : 0
+                : 0
             }
           />
           {translationrate.data && values.LegalStamp == true && (
             <PriceDetailItem
               label=" Legal Stamp Charge"
               amount={
-                offerUsed ?
-                translationrate.data
-                  ? translationrate.data.LeagualStampRate * values.Files.length
-                  : 0
+                offerUsed
+                  ? translationrate.data
+                    ? translationrate.data.LeagualStampRate *
+                      values.Files.length
+                    : 0
                   : 0
               }
             />
@@ -679,31 +682,33 @@ const LanguageTranslation = ({
               <PriceDetailItem
                 label="Courier Charge"
                 amount={
-                  offerUsed ?
-                  translationrate.data ? translationrate.data.CourierCharge : 0
-                  : 0
+                  offerUsed
+                    ? translationrate.data
+                      ? translationrate.data.CourierCharge
+                      : 0
+                    : 0
                 }
               />
             )}
 
           <TxtTotalAmount
             amount={
-              offerUsed ?
-              translationrate.data
-                ? values.LegalStamp == true
-                  ? values.PickUpandDropOption == 'Through Courier'
-                    ? translationrate.data.Rate * values.Files.length +
-                      translationrate.data.LeagualStampRate *
-                        values.Files.length +
-                      translationrate.data.CourierCharge +
-                      translationrate.data.ServiceCharge
+              offerUsed
+                ? translationrate.data
+                  ? values.LegalStamp == true
+                    ? values.PickUpandDropOption == 'Through Courier'
+                      ? translationrate.data.Rate * values.Files.length +
+                        translationrate.data.LeagualStampRate *
+                          values.Files.length +
+                        translationrate.data.CourierCharge +
+                        translationrate.data.ServiceCharge
+                      : translationrate.data.Rate * values.Files.length +
+                        translationrate.data.LeagualStampRate *
+                          values.Files.length +
+                        translationrate.data.ServiceCharge
                     : translationrate.data.Rate * values.Files.length +
-                      translationrate.data.LeagualStampRate *
-                        values.Files.length +
                       translationrate.data.ServiceCharge
-                  : translationrate.data.Rate * values.Files.length +
-                    translationrate.data.ServiceCharge
-                : 0
+                  : 0
                 : 0
             }
           />
@@ -762,7 +767,7 @@ export default withFormik({
     documenttypes,
     token,
     doclangTransCreate,
-    offerUsed
+    offerUsed,
   }) => ({
     CustomerName: profile.data.userdetail.FirstName,
     Email: profile.data.contactdetail.Email,
@@ -794,7 +799,7 @@ export default withFormik({
     errorPassportsUpload: null,
     errorSelectedLang: null,
     ShowTerms: false,
-    offerUsed
+    offerUsed,
   }),
   validateOnChange: false,
 
@@ -874,7 +879,7 @@ export default withFormik({
           ? totalDocRate + leagualStampRate + courierCharge + serviceCharge
           : totalDocRate + leagualStampRate + serviceCharge
         : totalDocRate + serviceCharge;
-    
+
     Rate = offerUsed ? Rate : 0;
 
     setRequestedValue(Rate);
