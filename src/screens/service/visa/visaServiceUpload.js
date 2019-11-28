@@ -134,10 +134,8 @@ class App extends React.Component {
             var getFilename = response.uri.split('/');
             imgName = getFilename[getFilename.length - 1];
           }
-
           var _docs = this.state.docsAttached;
           var _docNames = this.state.docNames;
-
           const file =
             Platform.OS === 'ios'
               ? {
@@ -150,18 +148,16 @@ class App extends React.Component {
                   type: response.type,
                   name: imgName,
                 };
-
           this.state.docItem.push(file);
           _docs.push(doc);
           if (index < 0) {
             _docNames[doc] = !Array.isArray(_docNames[doc])
               ? []
               : _docNames[doc];
-            _docNames[doc].push(response.fileName);
-          } else _docNames[doc][index] = response.fileName;
+            _docNames[doc].push(imgName);
+          } else _docNames[doc][index] = imgName;
           this.setState({docsAttached: _docs});
           this.setState({docNames: _docNames});
-
           return;
         }
       });
@@ -263,10 +259,12 @@ class App extends React.Component {
     );
   };
 
-  renderDocArr = doc => {
-    const _doc = doc;
-    return this.state.docNames[doc] ? (
-      this.state.docNames[doc].map((doc, index) => {
+  renderDocArr = docs => {
+    const _doc = docs;
+
+    return this.state.docNames[docs] ? (
+      this.state.docNames[docs].map((doc, index) => {
+        console.log('doccc', doc);
         return (
           <SelectFile
             subTitle={doc || 'Select File'}
@@ -342,13 +340,21 @@ class App extends React.Component {
       IsRequired: true,
       Options: ['Through Courier', 'Direct Submission at Office'],
       Value: this.state.submissionType,
-      CourierCharge: typeof(this.props.navigation.state.params.details.CourierCharge) === "undefined" ? 15 : this.props.navigation.state.params.details.CourierCharge
+      CourierCharge:
+        typeof this.props.navigation.state.params.details.CourierCharge ===
+        'undefined'
+          ? 15
+          : this.props.navigation.state.params.details.CourierCharge,
     };
 
     docsAndPayment.PriceDetils = price_details;
     docsAndPayment.Notes = this.props.navigation.state.params.details.Notes;
     docsAndPayment.OriginalDocumentRequired = this.props.navigation.state.params.details.OriginalDocumentRequired;
-    docsAndPayment.CourierCharge = typeof(this.props.navigation.state.params.details.CourierCharge) === "undefined" ? 15 : this.props.navigation.state.params.details.CourierCharge
+    docsAndPayment.CourierCharge =
+      typeof this.props.navigation.state.params.details.CourierCharge ===
+      'undefined'
+        ? 15
+        : this.props.navigation.state.params.details.CourierCharge;
 
     this.props.navigation.navigate('VisaDetails', {
       pageData: pageData,
@@ -356,7 +362,11 @@ class App extends React.Component {
       docsAttached: this.state.docsAttached,
       docItem: this.state.docItem,
       docsAndPayment: docsAndPayment,
-      CourierCharge: typeof(this.props.navigation.state.params.details.CourierCharge) === "undefined" ? 15 : this.props.navigation.state.params.details.CourierCharge,
+      CourierCharge:
+        typeof this.props.navigation.state.params.details.CourierCharge ===
+        'undefined'
+          ? 15
+          : this.props.navigation.state.params.details.CourierCharge,
       passportExpiry: this.props.navigation.state.params.details.PassportExpiry
         ? false
         : true,

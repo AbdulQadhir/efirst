@@ -21,7 +21,7 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - OneSignal (2.11.0)
+  - OneSignal (2.11.2)
   - RCTRequired (0.61.1)
   - RCTTypeSafety (0.61.1):
     - FBLazyVector (= 0.61.1)
@@ -189,14 +189,14 @@ PODS:
     - React
   - react-native-image-picker (1.1.0):
     - React
-  - react-native-netinfo (4.2.2):
+  - react-native-netinfo (4.6.1):
     - React
-  - react-native-onesignal (3.4.1):
-    - OneSignal (= 2.11.0)
+  - react-native-onesignal (3.5.0):
+    - OneSignal (= 2.11.2)
     - React (< 1.0.0, >= 0.13.0)
-  - react-native-viewpager (2.0.0):
+  - react-native-viewpager (3.1.0):
     - React
-  - react-native-webview (7.4.1):
+  - react-native-webview (7.5.1):
     - React
   - React-RCTActionSheet (0.61.1):
     - React-Core/RCTActionSheetHeaders (= 0.61.1)
@@ -235,17 +235,17 @@ PODS:
     - ReactCommon/jscallinvoker (= 0.61.1)
   - rn-fetch-blob (0.11.2):
     - React-Core
-  - RNCAsyncStorage (1.6.2):
+  - RNCAsyncStorage (1.6.3):
     - React
   - RNDeviceInfo (5.3.1):
     - React
   - RNFileViewer (1.0.1):
     - React
-  - RNFS (2.14.1):
+  - RNFS (2.16.2):
     - React
-  - RNGestureHandler (1.4.1):
+  - RNGestureHandler (1.5.1):
     - React
-  - RNReanimated (1.3.0):
+  - RNReanimated (1.4.0):
     - React
   - RNVectorIcons (6.6.0):
     - React
@@ -391,7 +391,7 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: c4cf958af1b97799b524f63a26a1c509c0295b04
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
-  OneSignal: 1e2ed98358f87cb755e7262412ddb2949b8e5c55
+  OneSignal: 4e3e68bb6c29975286a2fa910cb49132bc6e20bb
   RCTRequired: 53825815218847d3e9c7b6d92ad2d197a926d51e
   RCTTypeSafety: d886540c518e53064dfa081bf7693fd650699b92
   React: 5dea58967c421bd1fdf6b94c18b9ed0f5134683c
@@ -403,10 +403,10 @@ SPEC CHECKSUMS:
   React-jsinspector: 574d597112f9ea3d1b717f6fb62aef764c70dd6f
   react-native-document-picker: c36bf5f067a581657ecaf7124dcd921a8be19061
   react-native-image-picker: 7a85cf7b0a53845f03ae52fb4592a2748ded069b
-  react-native-netinfo: 2bb2e5094edcfecfb340a85053608526cb20f185
-  react-native-onesignal: 9a31fb7de8802bd150a1519fbde2fbc47596520c
-  react-native-viewpager: b3af530800cc7d160dbba33496340c6f7af41f6f
-  react-native-webview: e800df5dd1a0f3555fd543ebf7d881a9014851f2
+  react-native-netinfo: a59d8426a8484f739fe3a95dd6ad5af1435db05f
+  react-native-onesignal: 663944f5290d758d138b65ab6e60cf7d9c8e8f8f
+  react-native-viewpager: 66c02e8a18d2d11eef08c84ed9a406b149791751
+  react-native-webview: 2aadbfef6b9eaa9e89b306ae3e31e6e870a6306d
   React-RCTActionSheet: af4d951113b1e068bb30611f91b984a7a73597ff
   React-RCTAnimation: 4f518d70bb6890b7c3d9d732f84786d6693ca297
   React-RCTBlob: 072a4888c08de0eef6d04eaa727d25e577e6ff26
@@ -418,12 +418,12 @@ SPEC CHECKSUMS:
   React-RCTVibration: 8be61459e3749d1fb02cf414edd05b3007622882
   ReactCommon: 4fba5be89efdf0b5720e0adb3d8d7edf6e532db0
   rn-fetch-blob: f525a73a78df9ed5d35e67ea65e79d53c15255bc
-  RNCAsyncStorage: 60a80e72d95bf02a01cace55d3697d9724f0d77f
+  RNCAsyncStorage: 3c304d1adfaea02ec732ac218801cb13897aa8c0
   RNDeviceInfo: 6f20764111df002b4484f90cbe0a861be29bcc6c
   RNFileViewer: 5047ecf40477339723cc08abd55b5ebcefcef4b5
-  RNFS: a8fbe7060fa49157d819466404794ad9c58e58cf
-  RNGestureHandler: 4cb47a93019c1a201df2644413a0a1569a51c8aa
-  RNReanimated: 6abbbae2e5e72609d85aabd92a982a94566885f1
+  RNFS: 0d4191b1052bef9ce70deff00a5b4169c62bbd9b
+  RNGestureHandler: 7add966bb5d90ee8cf38d4341f87814474357972
+  RNReanimated: b2ab0b693dddd2339bd2f300e770f6302d2e960c
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: d8c572ddec8d05b7dba08e4e5f1924004a177078
 

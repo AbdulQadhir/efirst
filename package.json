@@ -12,11 +12,7 @@
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.2",
     "@react-native-community/netinfo": "^4.2.2",
-<<<<<<< HEAD
-    "@react-native-community/viewpager": "^2.0.0",
-=======
     "@react-native-community/viewpager": "^3.1.0",
->>>>>>> 2cf5cd68b641761fa2c17f7613c679b060e99116
     "formik": "^1.5.8",
     "react": "16.9.0",
     "react-native": "0.61.1",
