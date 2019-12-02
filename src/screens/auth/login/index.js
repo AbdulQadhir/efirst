@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View} from 'react-native';
+import {View, Linking, Alert} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import LoginScreen from './screen';
 import {connect} from 'react-redux';
@@ -10,6 +10,7 @@ import {registerOnesignal} from '../../onesignal/action';
 import AlertView from '../../../styled/alert-view';
 import MiniOfflineSign from '../../../styled/OfflineNotice';
 import Loader from '../../../styled/loader';
+
 class Container extends Component {
   state = {
     success: false,
@@ -17,6 +18,7 @@ class Container extends Component {
     loading: false,
   };
   componentDidMount = async () => {
+
     const showSuccess = this.props.navigation.getParam('showSuccess', null);
     if (showSuccess) {
       this.setState({success: true});

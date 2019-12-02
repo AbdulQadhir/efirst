@@ -5413,6 +5413,11 @@ react-native-check-box@^2.1.7:
   dependencies:
     prop-types "^15.5.7"
 
+react-native-check-version@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-check-version/-/react-native-check-version-1.0.4.tgz#ff645bd956abe5ff3920e3548278d8e4b810e512"
+  integrity sha512-PBsS8ab134gxYkbaZw7eTswcrubyLj+XGku8v01ugXTmYp102ydXMdelcEI2aNNCQdNKpVEqSbjRLnMEOHwNUA==
+
 react-native-country-picker-modal@^0.8.0:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/react-native-country-picker-modal/-/react-native-country-picker-modal-0.8.0.tgz#dacfdc79629a47637ca29eb908f85560a6b3110d"

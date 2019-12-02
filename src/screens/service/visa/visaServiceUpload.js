@@ -33,7 +33,7 @@ import {
   HeaderBtnProfile,
 } from '../../../pages/uicomponents/components';
 
-import {validateFileTypeAndSizeForTranslation} from '../../../constants';
+import {validateFileTypeAndSizeForVisa,validateFileTypeAndSizeForVisaType2} from '../../../constants';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {calcWidth, calcHeight} from '../../../config';
@@ -75,6 +75,7 @@ class App extends React.Component {
       validationMsg: '',
       visaFlow: '',
       ibanValidationMsg: '',
+      error: []
     };
   }
 
@@ -127,6 +128,16 @@ class App extends React.Component {
         } else if (response.error) {
         } else if (response.customButton) {
         } else {
+          
+        const {fileName, fileSize} = response;
+        
+        const valdateRes = validateFileTypeAndSizeForVisaType2({
+          fileName,
+          fileSize,
+        });
+
+        if (valdateRes.validateSize && valdateRes.validateType) {
+          
           let source = {uri: response.uri};
           let imgName = response.fileName;
           if (Platform.OS === 'ios') {
@@ -158,7 +169,19 @@ class App extends React.Component {
           } else _docNames[doc][index] = imgName;
           this.setState({docsAttached: _docs});
           this.setState({docNames: _docNames});
+          
+          var error = this.state.error;
+          error[doc] = '';
+          this.setState({error : error});
+
           return;
+        }
+        else {
+          var error = this.state.error;
+          error[doc] = 'Invalid file type. File must be smaller than 4 MB';
+          this.setState({error : error});
+        //  this.showToast('- Invalid file type.\n- File must be smaller than 4 MB');
+        }
         }
       });
     } catch (err) {
@@ -187,7 +210,7 @@ class App extends React.Component {
       });
       if (res) {
         const {name, size} = res;
-        const valdateRes = validateFileTypeAndSizeForTranslation({
+        const valdateRes = validateFileTypeAndSizeForVisa({
           fileName: name,
           fileSize: size,
         });
@@ -213,9 +236,15 @@ class App extends React.Component {
           this.setState({docsAttached: _docs});
           this.setState({docNames: _docNames});
 
+          var error = this.state.error;
+          error[doc] = '';
+          this.setState({error : error});
+
           this.state.docItem.push(file);
         } else {
-          showToast('- Invalid file type.\n- File must be smaller than 5 MB');
+          var error = this.state.error;
+          error[doc] = 'Invalid file type. File must be smaller than 4 MB';
+          this.setState({error : error});
         }
       }
     } catch (err) {}
@@ -244,6 +273,8 @@ class App extends React.Component {
           />
           {this.renderDocArr(doc)}
           {this.renderDocNew(doc)}
+          
+          <ErrorLabel label={this.state.error[doc]} />
         </View>
       );
     });

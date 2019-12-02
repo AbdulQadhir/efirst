@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 
 import {connect} from 'react-redux';
-import { OFFER_CHK_URL, OFFER_ADD_URL } from "../../../constants";
 
 import {
   VisaBreadCrump,
@@ -52,20 +51,8 @@ class App extends React.Component {
     };
   }
 
-  async componentDidMount(){
-    try {
-      let response = await fetch(
-        `${OFFER_CHK_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=14111`,
-      );
-      let responseJson = await response.json();
-      
-      if(responseJson.result)
-        this.setState({ url: "Json" });
-      else
-        this.setState({ url: "Offer-Json" });
-
-    } catch (error) {
-    }
+  componentDidMount(){
+    
   }
 
   setSelectedIndex = index => {

@@ -4,7 +4,8 @@ import AsyncStorage from '@react-native-community/async-storage';
 import {DASHBOARD_DATA_URL} from '../../constants';
 import {NavigationActions} from 'react-navigation';
 import {setStatusBar} from './action';
-import {Text, View, Image, Dimensions} from 'react-native';
+import {Text, View, Image, Dimensions, Linking, TouchableOpacity} from 'react-native';
+import { checkVersion } from 'react-native-check-version'
 
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {calcHeight, calcWidth} from '../../config';
@@ -19,7 +20,8 @@ class SplashScreen extends Component {
       loading: true,
       error: '',
       showText: true,
-      getStartedText: '',
+      getStartedText: 'Get Started...!',
+      updateNeeded: false,
     };
 
     setInterval(() => {
@@ -81,11 +83,24 @@ class SplashScreen extends Component {
   }
 
   async componentDidMount() {
+    
+    await checkVersion()
+    .then(version => {
+          if (version.needsUpdate) {
+            this.setState({getStartedText: 'Please update the app!', updateNeeded: true});
+          }
+      })
+      .catch(e => {
+          // Error - could not get version info for some reason
+          console.log('Failed getting version info:'+ e)
+      })
+      
+    
     try {
       this.props.setStatusBar(false);
       const value = await AsyncStorage.getItem('InitialLogin');
+      if(!this.state.updateNeeded){
       if (value !== null) {
-        this.setState({getStartedText: 'Get Started...!'});
         setTimeout(() => {
           this.props.setStatusBar(true);
           this.props.navigation.navigate('Auth');
@@ -93,11 +108,11 @@ class SplashScreen extends Component {
       } else {
         AsyncStorage.setItem('InitialLogin', '1');
         this.setState({loading: false});
-        this.setState({getStartedText: 'Get Started...!'});
         setTimeout(() => {
           this.props.navigation.navigate('SplashSlider');
         }, 3000);
       }
+    }
     } catch (error) {
       this.setState({loading: false});
     }
@@ -113,7 +128,9 @@ class SplashScreen extends Component {
               style={styles.logo_img}
               source={require('../../Assets/logo.png')}
             />
-            <Text style={styles.txtgetstarted}>{getStartedText}</Text>
+            <TouchableOpacity onPress={()=>this.state.updateNeeded ? Linking.openURL("market://details?id=com.efirst") : ()=>{}} >
+              <Text style={styles.txtgetstarted}>{getStartedText}</Text>
+            </TouchableOpacity>
           </View>
         </View>
         <View

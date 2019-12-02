@@ -82,7 +82,6 @@ const LanguageTranslation = ({
   navigation,
   showToast,
   setShowTerms,
-  offerUsed,
 }) => {
   let countryPicker = null;
   let statePicker = null;
@@ -647,33 +646,27 @@ const LanguageTranslation = ({
           <PriceDetailItem
             label="Translation Charge"
             amount={
-              offerUsed ?
               translationrate.data
                 ? translationrate.data.Rate * values.Files.length
-                : 0
                 : 0
             }
           />
           <PriceDetailItem
             label="Service Charge"
             amount={
-              offerUsed
-                ? translationrate.data
+                translationrate.data
                   ? translationrate.data.ServiceCharge
                   : 0
-                : 0
             }
           />
           {translationrate.data && values.LegalStamp == true && (
             <PriceDetailItem
               label=" Legal Stamp Charge"
               amount={
-                offerUsed
-                  ? translationrate.data
+                  translationrate.data
                     ? translationrate.data.LeagualStampRate *
                       values.Files.length
                     : 0
-                  : 0
               }
             />
           )}
@@ -684,19 +677,16 @@ const LanguageTranslation = ({
               <PriceDetailItem
                 label="Courier Charge"
                 amount={
-                  offerUsed
-                    ? translationrate.data
+                    translationrate.data
                       ? translationrate.data.CourierCharge
                       : 0
-                    : 0
                 }
               />
             )}
 
           <TxtTotalAmount
             amount={
-              offerUsed
-                ? translationrate.data
+               translationrate.data
                   ? values.LegalStamp == true
                     ? values.PickUpandDropOption == 'Through Courier'
                       ? translationrate.data.Rate * values.Files.length +
@@ -711,7 +701,6 @@ const LanguageTranslation = ({
                     : translationrate.data.Rate * values.Files.length +
                       translationrate.data.ServiceCharge
                   : 0
-                : 0
             }
           />
 
@@ -769,7 +758,6 @@ export default withFormik({
     documenttypes,
     token,
     doclangTransCreate,
-    offerUsed,
   }) => ({
     CustomerName: profile.data.userdetail.FirstName,
     Email: profile.data.contactdetail.Email,
@@ -801,7 +789,6 @@ export default withFormik({
     errorPassportsUpload: null,
     errorSelectedLang: null,
     ShowTerms: false,
-    offerUsed,
   }),
   validateOnChange: false,
 
@@ -862,7 +849,7 @@ export default withFormik({
       return;
     }
 
-    const {translationrate, setRequestedValue, offerUsed} = props;
+    const {translationrate, setRequestedValue} = props;
     const token = props.token.token;
     const docRate = translationrate.data ? translationrate.data.Rate : 0;
     const courierCharge = translationrate.data
@@ -882,7 +869,6 @@ export default withFormik({
           : totalDocRate + leagualStampRate + serviceCharge
         : totalDocRate + serviceCharge;
 
-    Rate = offerUsed ? Rate : 0;
 
     setRequestedValue(Rate);
     let data = new FormData();

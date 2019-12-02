@@ -82,8 +82,7 @@ const DocumentAttestation = ({
   navigation,
   setShowTerms,
   showToast,
-  state,
-  offerUsed
+  state
 }) => {
   let countryPicker = null;
   let statePicker = null;
@@ -514,12 +513,12 @@ const DocumentAttestation = ({
 
           <PriceDetailItem
             label="Attestation Charge"
-            amount={offerUsed ? attestationrate.data ? attestationrate.data.Rate : 0 : 0}
+            amount={attestationrate.data ? attestationrate.data.Rate : 0}
           />
           <PriceDetailItem
             label="Service Charge"
             amount={
-              offerUsed ? attestationrate.data ? attestationrate.data.ServiceCharge : 0 : 0
+              attestationrate.data ? attestationrate.data.ServiceCharge : 0
             }
           />
 
@@ -528,14 +527,13 @@ const DocumentAttestation = ({
               <PriceDetailItem
                 label="Courier Charge"
                 amount={
-                  offerUsed ? attestationrate.data ? attestationrate.data.CourierCharge : 0 : 0
+                  attestationrate.data ? attestationrate.data.CourierCharge : 0 
                 }
               />
             )}
 
           <TxtTotalAmount
             amount={
-              offerUsed ? 
               attestationrate.data
                 ? values.PickUpandDropOption == 'Through Courier'
                   ? attestationrate.data.Rate +
@@ -543,7 +541,6 @@ const DocumentAttestation = ({
                     attestationrate.data.ServiceCharge
                   : attestationrate.data.Rate +
                     attestationrate.data.ServiceCharge
-                : 0
                 : 0
             }
           />
@@ -603,7 +600,6 @@ export default withFormik({
     profile,
     token,
     docAttestationCreate,
-    offerUsed
   }) => ({
     CustomerName: profile.data.userdetail.FirstName,
     Email: profile.data.contactdetail.Email,
@@ -629,7 +625,6 @@ export default withFormik({
     Files: [],
     errorFileUpload: null,
     docAttestationCreate,
-    offerUsed
   }),
   validateOnChange: false,
   validationSchema: Yup.object().shape({
@@ -657,7 +652,7 @@ export default withFormik({
   }),
 
   handleSubmit: (values, {props, setFieldValue}) => {
-    const {attestationrate, setRequestedValue, offerUsed} = props;
+    const {attestationrate, setRequestedValue} = props;
     const {Files} = values;
     if (Files.length === 0 || !phone.isValidNumber()) {
       if (Files.length === 0) {
@@ -675,7 +670,6 @@ export default withFormik({
           attestationrate.data.ServiceCharge
         : attestationrate.data.Rate + attestationrate.data.ServiceCharge
       : 0;
-    Rate = offerUsed ? Rate : 0;
     const ServiceName = 'ATTESTATION SERVICE';
     setRequestedValue(Rate);
     

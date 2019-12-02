@@ -1,4 +1,4 @@
-import {DASHBOARD_DATA_URL, OFFER_ADD_URL, OFFER_CHK_URL} from '../../constants';
+import {DASHBOARD_DATA_URL} from '../../constants';
 export const dashboardState = {
   LOADING: 'DASHBOARD_LOADING',
   SUCCESS: 'DASHBOARD_SUCCESS',
@@ -63,36 +63,3 @@ export const DashboardData = token => dispatch => {
   );
 };
 
-export const setOfferUsed = payload => dispatch =>  {
-  dispatch(setInStore(true, offerState.USED));
-}
-
-export const setOfferNotUsed = payload => dispatch =>  {
-  dispatch(setInStore(false, offerState.USED));
-}
-
-export const offerAddDevice = payload => dispatch => {
-    async () => {
-      const result = await fetch(`${OFFER_ADD_URL}?email=${payload.email}&device=${payload.device}`);
-      dispatch(setInStore(true, offerState.USED));
-    }
-};
-
-export const chkOffer = payload => dispatch => {
-  async () => {
-    try {
-      let response = await fetch(
-        `${OFFER_CHK_URL}?email=ddd&device=33`,
-      );
-      let responseJson = await response.json();
-      alert(JSON.stringify(responseJson));
-      console.log("OfferState=>"+JSON.stringify(data.result));
-      if(responseJson.result)
-        dispatch(setInStore(false, type.USED));
-      else
-        dispatch(setInStore(true, type.USED));
-    } catch (error) {
-      alert(error);
-    }
-  }
-};

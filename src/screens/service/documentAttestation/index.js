@@ -20,8 +20,6 @@ import Loader from '../../../styled/loader';
 import Toast, {DURATION} from 'react-native-easy-toast';
 import {View, BackHandler} from 'react-native';
 import AlertView from '../../../styled/alert-view';
-import { OFFER_CHK_URL, OFFER_ADD_URL } from "../../../constants";
-import DeviceInfo from 'react-native-device-info';
 
 class Container extends Component {
   constructor(props) {
@@ -31,8 +29,7 @@ class Container extends Component {
       Requested: false,
       UpdatedSRAmount: false,
       SRAmount: '0',
-      ShowTerms: false,
-      offerUsed: false
+      ShowTerms: false
     };
   }
   static navigationOptions = ({navigation}) => ({
@@ -62,21 +59,6 @@ class Container extends Component {
     this.props.getCountries(this.props.token.token);
     this.props.getcertificateType(this.props.token.token);
     
-    try {
-      const uniqueID = DeviceInfo.getUniqueId();
-      let response = await fetch(
-        `${OFFER_CHK_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=${uniqueID}`,
-      );
-      let responseJson = await response.json();
-      
-      if(responseJson.result)
-        this.setState({offerUsed: true})
-      else
-        this.setState({offerUsed: false})
-
-    } catch (error) {
-    //  alert(error)
-    }
   };
   componentWillUnmount() {
     BackHandler.removeEventListener(
@@ -112,10 +94,6 @@ class Container extends Component {
 
     if(this.props.srActivation.success && !prevProps.srActivation.success && this.state.SRAmount == 0)
     {
-      const uniqueID = DeviceInfo.getUniqueId();
-      let response = await fetch(
-        `${OFFER_ADD_URL}?email=${this.props.profile.data.contactdetail.Email}&device_id=${uniqueID}`,
-      );
 
       const {token} = this.props.token;
       const statusId = null;
@@ -178,7 +156,6 @@ class Container extends Component {
           {...this.props}
           state={this.state}
           setShowTerms={this.setShowTerms}
-          offerUsed={this.state.offerUsed}
         />
         <Toast
           ref="validationToasts"

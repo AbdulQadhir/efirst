@@ -27,6 +27,32 @@ export const validateFileTypeAndSizeForTranslation = ({fileName, fileSize}) => {
   };
   return result;
 };
+
+export const validateFileTypeAndSizeForVisa = ({fileName, fileSize}) => {
+  const filetypes = ['jpeg', 'jpg', 'png'];
+  const ext = fileName.split('.').pop();
+  const validateType = filetypes.includes(ext);
+  const validateSize = fileSize <= 4194304;
+
+  const result = {
+    validateType,
+    validateSize,
+  };
+  return result;
+};
+
+export const validateFileTypeAndSizeForVisaType2 = ({fileName, fileSize}) => {
+  const filetypes = ['jpeg', 'jpg', 'png'];
+  const ext = fileName.split('.').pop();
+  const validateType = filetypes.includes(ext);
+  const validateSize = fileSize <= 154500;
+
+  const result = {
+    validateType,
+    validateSize,
+  };
+  return result;
+};
 /// BASE URL ///
 export const BASE_URL = 'https://api.efirst.ae/';
 export const PROFILE_BASE_URL =
@@ -91,5 +117,3 @@ export const PAYMENT_URL = `${BASE_URL}/api/FoloosiPayment`;
 export const PAYMENT_WEB_URL =
   'https://app.efirst.ae/foloosipayment/index/';
 
-export const OFFER_ADD_URL = "https://innestore.com/efirst_device/controller/addDevice.php";
-export const OFFER_CHK_URL = "https://innestore.com/efirst_device/controller/chkOffer.php";
