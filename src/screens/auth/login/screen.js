@@ -73,6 +73,10 @@ const LoginForm = ({
           label={"Don't have an account ? Sign up"}
           onPress={() => navigation.navigate('Register')}
         />
+        <ButtonLabel
+          label={"Have an OTP?"}
+          onPress={() => navigation.navigate('ConfirmEmail')}
+        />
         {!extLoginUrls.error && !extLoginUrls.loading ? (
           <ButtonExtLogin extLoginUrls={extLoginUrls} navigation={navigation} />
         ) : (
