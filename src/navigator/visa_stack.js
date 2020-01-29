@@ -1,4 +1,3 @@
-import React, {Component} from 'react';
 import VisaHome from '../screens/service/visa';
 import VisaFlow from '../screens/service/visa/visaFlow';
 import VisaDocs from '../screens/service/visa/visaServiceUpload';
@@ -25,3 +24,4 @@ export default VisaStack = createStackNavigator(
     },
   },
 );
+

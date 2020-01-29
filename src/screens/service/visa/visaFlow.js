@@ -31,6 +31,7 @@ const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 const assetsPath = '../../../Assets/';
 import visa_options from './data';
+import { thisTypeAnnotation } from '../../../../node_modules/@babel/types';
 
 class App extends React.Component {
   static navigationOptions = ({navigation}) => ({
@@ -38,7 +39,11 @@ class App extends React.Component {
     headerLeft: (
       <View style={{flexDirection: 'row'}}>
         <HeaderBtnMenu onPress={() => navigation.openDrawer()} />
-        <HeaderBtnBack onPress={() => navigation.goBack()} />
+        <HeaderBtnBack onPress={() => {
+          if (Array.isArray(navigation.state.params.pageData))
+            navigation.setParams({ pageData: navigation.state.params.pageData.pop() })
+          navigation.goBack(null);
+        }} />
       </View>
     ),
     headerRight: (
@@ -65,7 +70,9 @@ class App extends React.Component {
     };
   }
 
+  
   async componentDidMount() {
+    
     const lastSelected = this.props.navigation.state.params.lastSelected
       ? this.props.navigation.state.params.lastSelected
       : '';
@@ -135,19 +142,12 @@ class App extends React.Component {
   }
 
   handleBackButtonClick = () => {
-    if (Array.isArray(this.state.pageData))
-      this.setState(
-        {
-          pageData: this.state.pageData.pop(),
-        },
-        () => {
-          this.props.navigation.goBack(null);
-        },
-      );
-    else this.props.navigation.goBack(null);
+    if (Array.isArray(this.props.navigation.state.params.pageData))
+      this.props.navigation.setParams({ pageData: this.props.navigation.state.params.pageData.pop() })
+    this.props.navigation.goBack(null);
     return true;
   };
-
+  
   componentWillMount = () => {
     BackHandler.addEventListener(
       'hardwareBackPress',
@@ -165,7 +165,6 @@ class App extends React.Component {
   NextOption = option => {
     this.setState({selectedOption: option});
     var pageData = this.state.pageData;
-
     if (this.state.options && this.state.options.title) {
       let obj = pageData.find(o => o.Text === this.state.options.title);
       if (obj) pageData.pop();
